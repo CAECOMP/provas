@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Comando goto</h3>
+
+<p>Vamos mencionar o goto apenas para que você saiba que ele existe. O <b>goto</b> é o
+último comando de controle de fluxo. Ele pertence a uma classe à parte: a dos comandos
+de salto incondicional. O <b>goto</b> realiza um salto para um local especificado. Este
+local é determinado por um rótulo. Um rótulo, na linguagem C, é uma marca no programa.
+Você dá o nome que quiser a esta marca. Podemos tentar escrever uma forma geral: </p>
+
+<p>&nbsp; 
+
+<dl>
+  <dt><i>nome_do_rótulo:</i></dt>
+  <dd><i>....</i></dd>
+  <dd><br>
+    <i>goto nome_do_rótulo;</i> <br>
+    <i>....</i> <p>&nbsp;</p>
+  </dd>
+</dl>
+
+<p>Devemos declarar o nome do rótulo na posição para a qual vamos dar o salto seguido
+de <b>:</b>. O <b>goto</b> pode saltar para um rótulo que esteja mais à frente ou para
+trás no programa. Uma observação importante é que o rótulo e o <b>goto</b> devem
+estar dentro da mesma <i>função</i>. Como exemplo do uso do <b>goto</b> vamos reescrever
+o equivalente ao comando <b><a HREF="c430.html">for</a></b> apresentado na seção
+equivalente ao mesmo: </p>
+
+<p>&nbsp; 
+
+<ul>
+  <i><p>inicialização;</i></p>
+</ul>
+<i>
+
+<p>início_do_loop:</i> 
+
+<ul>
+  <i><p>if (condição)</i> <ul>
+    <i><p>{</i> <br>
+    <i>declaração;</i> <br>
+    <i>incremento;</i> <br>
+    <i>goto início_do_loop;</i> <br>
+    <i>}</i> </p>
+    <p>&nbsp;</p>
+  </ul>
+</ul>
+
+<p>O comando <b>goto</b> deve ser utilizado com parcimônia, pois o abuso no seu uso tende
+a tornar o código confuso. O <b>goto</b> não é um comando <i>necessário</i>, podendo
+sempre ser substituído por outras estruturas de controle. Recomendamos que o <b>goto</b>
+nunca seja usado. </p>
+
+<p>Existem algumas situações muito específicas onde o comando <b>goto</b> pode tornar
+um código mais fácil de se entender <b><i><font COLOR="#FF0000">se</font></i></b> ele
+for bem empregado. Um caso em que ele pode ser útil é quando temos vários loops e <b>if</b>s
+aninhados e se queira, por algum motivo, sair destes loops e <b>if</b>s todos de uma vez.
+Neste caso um <b>goto</b> resolve o problema mais elegantemente que vários <b>break</b>s,
+sem contar que os <b>break</b>s exigiriam muito mais testes. Ou seja, neste caso o <b>goto</b>
+é mais elegante e mais rápido. </p>
+
+<p>O exemplo da página anterior pode ser reescrito usando-se o <i>goto</i>: </p>
+
+<pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+	int opcao;
+	while (opcao != 5)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	{
+		REFAZ: printf(&quot;\n\n Escolha uma opcao entre 1 e 5: &quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		scanf(&quot;%d&quot;, &amp;opcao);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		if ((opcao &gt; 5)||(opcao &lt;1)) goto REFAZ;&nbsp; /* Opcao invalida: volta ao rotulo REFAZ */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		switch (opcao)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 1:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Primeira opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 2:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Segunda opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 3:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Terceira opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 4:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Quarta opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 5:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Abandonando..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	}
+	return(0);
+}</pre>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Escreva um programa que peça três inteiros, correspondentes a <u>dia</u>
+, <u>mês</u> e <u>ano</u>. Peça os números até conseguir valores que estejam na faixa
+correta (dias entre 1 e 31, mês entre 1 e 12 e ano entre 1900 e 2100). Verifique se o
+mês e o número de dias batem (incluindo verificação de anos bissextos). Se estiver
+tudo certo imprima o número que aquele dia corresponde no ano. Comente seu programa. </font></p>
+
+<p><font SIZE="+1">PS: Um ano é bissexto se for divisível por 4 e não for divisível
+por 100, exceto para os anos divisíveis por 400, que também são bissextos.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c470.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a><a HREF="c490.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

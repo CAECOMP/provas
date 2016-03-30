@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+<meta NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (Win95; I) [Netscape]">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<h2 align="center"><font SIZE="+3">Curso de C</font></h2>
+
+<p align="center"><img SRC="line.gif" HEIGHT="8" WIDTH="485"> </p>
+
+<h3>Lendo e Escrevendo Caracteres</h3>
+
+<ul>
+  <li><a HREF="#c921">getche e getch</a></li>
+  <li><a HREF="#c922">putchar</a></li>
+</ul>
+
+<hr>
+
+<p>Uma das funções mais básicas de um sistema é a entrada e saída de informações em
+dispositivos. Estes podem ser um monitor, uma impressora ou um arquivo em disco. Vamos ver
+os principais comandos que o C nos fornece para isto. </p>
+
+<h4><a NAME="c921"></a>getche e getch</h4>
+
+<p>As funções getch() e getche() não são definidas pelo padrão ANSI. Porém, elas
+geralmente são incluídas em compiladores baseados no DOS, e se encontram no header file <i>conio.h</i>.
+Vale a pena repetir: são funções comuns apenas para compiladores baseados em DOS e, se
+você estiver no UNIX normalmente não terá estas funções disponíveis. </p>
+
+<p>Protótipos: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int getch (void);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int getche (void);</pre>
+<b>
+
+<p>getch()</b> espera que o usuário digite uma tecla e retorna este caractere. Você pode
+estar estranhando o fato de <b>getch()</b> retornar um inteiro, mas não há problema pois
+este inteiro é tal que quando igualado a um <b>char</b> a conversão é feita
+corretamente. A função <b>getche()</b> funciona exatamente como <b>getch()</b>. A
+diferença é que <b>getche()</b> gera um &quot;echo&quot; na tela antes de retornar a
+tecla. </p>
+
+<p>Se a tecla pressionada for um caractere especial estas funções retornam zero. Neste
+caso você deve usar as funções novamente para pegar o código da tecla extendida
+pressionada. </p>
+
+<p>A função equivalente a <strong>getche()</strong> no mundo ANSI é o <strong>getchar()</strong>.
+O problema com getchar é que o caracter lido é colocado em uma área intermediária até
+que o usuário digite um &lt;ENTER&gt;, o que pode ser extremamente inconveniente em
+ambientes interativos.</p>
+
+<h4><a NAME="c922"></a>putchar</h4>
+
+<p>Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int putchar (int c);</pre>
+<b>
+
+<p>putchar()</b> coloca o caractere c na tela. Este caractere é colocado na posição
+atual do cursor. Mais uma vez os tipos são inteiros, mas você não precisa se preocupar
+com este fato. O header file é <i>stdio.h</i>. </p>
+<a HREF="c910.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c900.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c930.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

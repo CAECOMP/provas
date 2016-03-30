@@ -1,0 +1,173 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Estruturas - Primeira parte</h3>
+
+<ul>
+  <li><a HREF="#cB11">Criando</a></li>
+  <li><a HREF="#cB12">Usando</a></li>
+  <li><a HREF="#cB13">Matrizes de estruturas</a></li>
+</ul>
+
+<hr>
+
+<p>Uma estrutura agrupa várias variáveis numa só. Funciona como uma ficha pessoal que
+tenha nome, telefone e endereço. A ficha seria uma estrutura. A estrutura, então, serve
+para agrupar um conjunto de dados não similares, formando um novo tipo de dados.</p>
+
+<h4><a NAME="cB11"></a>Criando</h4>
+
+<p>Para se criar uma estrutura usa-se o comando <b>struct</b>. Sua forma geral é: 
+
+<dl>
+  <dt><i>struct nome_do_tipo_da_estrutura</i></dt>
+  <dd><i>{</i></dd>
+  <dd><i>tipo_1 nome_1;</i></dd>
+  <dd><i>tipo_2 nome_2;</i></dd>
+  <dd><i>...</i></dd>
+  <dd><i>tipo_n nome_n;</i></dd>
+  <dd><i>} variáveis_estrutura;</i></dd>
+</dl>
+
+<p>O nome_do_tipo_da_estrutura é o nome para a estrutura. As variáveis_estrutura são
+opcionais e seriam nomes de variáveis que o usuário já estaria declarando e que seriam
+do tipo nome_do_tipo_da_estrutura.&nbsp; Um primeiro exemplo:</p>
+
+<p><font face="Courier New">struct est{<br>
+&nbsp;&nbsp;&nbsp; int i;<br>
+&nbsp;&nbsp;&nbsp; float f;<br>
+} a, b;</font></p>
+
+<p>Neste caso, est é uma estrutura com dois campos, i e f. Foram também declaradas duas
+variáveis, a e b que são do tipo da estrutura, isto é, a possui os campos i e f, o
+mesmo acontecendo com b.</p>
+
+<p>Vamos criar uma estrutura de endereço: </p>
+
+<pre>struct tipo_endereco
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char rua [50];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int numero;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char bairro [20];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char cidade [30];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char sigla_estado [3];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int CEP;
+};</pre>
+
+<p>Vamos agora criar uma estrutura chamada ficha_pessoal com os dados pessoais de uma
+pessoa: </p>
+
+<pre>struct ficha_pessoal
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char nome [50];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int telefone;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct tipo_endereco endereco;
+};</pre>
+
+<p>Vemos, pelos exemplos acima,&nbsp; que uma estrutura pode fazer parte de outra ( a
+struct tipo_endereco é usada pela struct ficha_pessoal). </p>
+
+<h4><a NAME="cB12"></a>Usando</h4>
+
+<p>Vamos agora utilizar as estruturas declaradas na seção anterior para escrever um
+programa que preencha uma ficha. </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct tipo_endereco
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char rua [50];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int numero;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char bairro [20];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char cidade [30];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char sigla_estado [3];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int CEP;
+};
+
+struct ficha_pessoal
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char nome [50];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int telefone;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct tipo_endereco endereco;
+};
+
+main (void)
+{
+	struct ficha_pessoal ficha;
+	strcpy (ficha.nome,&quot;Luiz Osvaldo Silva&quot;);
+	ficha.telefone=4921234;
+	strcpy (ficha.endereco.rua,&quot;Rua das Flores&quot;);
+	ficha.endereco.numero=10;
+	strcpy (ficha.endereco.bairro,&quot;Cidade Velha&quot;);
+	strcpy (ficha.endereco.cidade,&quot;Belo Horizonte&quot;);
+	strcpy (ficha.endereco.sigla_estado,&quot;MG&quot;);
+	ficha.endereco.CEP=31340230;
+	return 0;
+}</pre>
+
+<p>O programa declara uma variável ficha do tipo <b>ficha_pessoal</b> e preenche os seus
+dados. O exemplo mostra como podemos acessar um elemento de uma estrutura: basta usar o
+ponto (<b>.</b>). Assim, para acessar o campo telefone de ficha, escrevemos:</p>
+
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ficha.telefone = 4921234;</em></p>
+
+<p>Como a struct ficha pessoal possui um campo, endereco, que também é uma struct,
+podemos fazer acesso aos campos desta struct interna da seguinte maneira:</p>
+
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ficha.endereco.numero = 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ficha.endereco.CEP=31340230;</em></p>
+
+<p>Desta forma, estamos acessando, primeiramente, o campo endereco da struct ficha e,
+dentro deste campo, estamos acessando o campo numero e o campo CEP.</p>
+
+<h4><a NAME="cB13"></a>Matrizes de estruturas</h4>
+
+<p>Um estrutura é como qualquer outro tipo de dado no C. Podemos, portanto, criar
+matrizes de estruturas. Vamos ver como ficaria a declaração de um vetor de 100 fichas
+pessoais: </p>
+
+<pre>struct ficha_pessoal fichas [100];</pre>
+
+<p>Poderíamos então acessar a segunda letra da sigla de estado da décima terceira ficha
+fazendo: </p>
+
+<pre>fichas[12].endereco.sigla_estado[1];</pre>
+
+<pre><font face="Times New Roman">Analise atentamente como isto está sendo feito ...</font></pre>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Escreva um programa
+fazendo o uso de struct's. Você deverá criar uma struct chamada Ponto, contendo apenas a
+posição x e y (inteiros) do ponto. Declare 2 pontos, leia a posição (coordenadas x e
+y) de cada um e calcule a distância entre eles. Apresente no final a distância entre os
+dois pontos.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="cb00.html">
+
+<p align="center"><img SRC="up.gif" ALT="Índice da Aula" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="cb20.html"><img SRC="right.gif" ALT="Próxima página"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

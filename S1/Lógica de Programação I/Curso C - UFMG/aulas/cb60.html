@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>O Comando typedef</h3>
+
+<p>O comando <b>typedef</b> permite ao programador definir um novo nome para um
+determinado tipo. Sua forma geral é: </p>
+
+<p><i>typedef antigo_nome novo_nome;</i> </p>
+
+<p>Como exemplo vamos dar o nome de <b>inteiro</b> para o tipo <b>int</b>: </p>
+
+<pre>typedef int inteiro;</pre>
+
+<p>Agora podemos declarar o tipo <b>inteiro</b>. <br>
+O comando <b>typedef</b> também pode ser utilizado para dar nome a tipos complexos, como
+as estruturas. As estruturas criadas no exemplo da <a HREF="cb50.html">página anterior</a>
+poderiam ser definidas como tipos através do comando <b>typedef</b>. O exemplo ficaria: </p>
+
+<p><tt>#include &lt;stdio.h&gt;</tt> <br>
+<tt>typedef struct tipo_endereco</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char rua [50];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int numero;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char bairro [20];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char cidade [30];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char sigla_estado [3];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int CEP;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } TEndereco;</tt> <br>
+<tt>typedef struct ficha_pessoal</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char nome [50];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int telefone;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEndereco endereco;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }TFicha;</tt> <br>
+<tt>void main(void)</tt> <br>
+<tt>{</tt> <br>
+<tt>TFicha *ex;</tt> <br>
+<tt>...</tt> <br>
+<tt>}</tt> </p>
+
+<p>Veja que não é mais necessário usar a palavra chave struct para declarar variáveis
+do tipo ficha pessoal. Basta agora usar o novo tipo definido TFicha.</p>
+<a HREF="cb50.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="cb00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb70.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

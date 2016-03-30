@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>Conversão de Tipos</h3>
+
+<p>Em atribuições no C temos o seguinte formato: </p>
+
+<p><i>destino=orígem;</i> </p>
+
+<p>Se o destino e a orígem são de tipos diferentes o compilador faz uma conversão entre
+os tipos. Nem todas as conversões são possíveis. O primeiro ponto a ser ressaltado é
+que o valor de origem é convertido para o valor de destino antes de ser atribuído e não
+o contrário. </p>
+
+<p>É importante lembrar que quando convertemos um tipo numérico para outro nós nunca <i>ganhamos</i>
+precisão. Nós podemos perder precisão ou no máximo manter a precisão anterior. Isto
+pode ser entendido de uma outra forma. Quando convertemos um número não estamos
+introduzindo no sistema nenhuma informação adicional. Isto implica que nunca vamos <i>ganhar</i>
+precisão. </p>
+
+<p align="center">Abaixo vemos uma tabela de conversões numéricas com <i>perda</i> de
+precisão, para um compilador com palavra de 16 bits: <br>
+&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr ALIGN="LEFT">
+    <th>De</th>
+    <th>Para</th>
+    <th>Informação Perdida</th>
+  </tr>
+  <tr>
+    <td>unsigned char</td>
+    <td>char</td>
+    <td>Valores maiores que 127 são alterados</td>
+  </tr>
+  <tr>
+    <td>short int</td>
+    <td>char</td>
+    <td>Os 8 bits de mais alta ordem</td>
+  </tr>
+  <tr>
+    <td>int</td>
+    <td>char</td>
+    <td>Os 8 bits de mais alta ordem</td>
+  </tr>
+  <tr>
+    <td>long int</td>
+    <td>char</td>
+    <td>Os 24 bits de mais alta ordem</td>
+  </tr>
+  <tr>
+    <td>long int</td>
+    <td>short int</td>
+    <td>Os 16 bits de mais alta ordem</td>
+  </tr>
+  <tr>
+    <td>long int</td>
+    <td>int</td>
+    <td>Os 16 bits de mais alta ordem</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>int</td>
+    <td>Precisão - resultado arredondado</td>
+  </tr>
+  <tr>
+    <td>double</td>
+    <td>float</td>
+    <td>Precisão - resultado arredondado</td>
+  </tr>
+  <tr>
+    <td>long double</td>
+    <td>double</td>
+    <td>Precisão - resultado arredondado</td>
+  </tr>
+</table>
+</center></div><a HREF="ca20.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="ca40.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

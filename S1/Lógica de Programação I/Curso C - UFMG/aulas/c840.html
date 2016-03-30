@@ -1,0 +1,56 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>As Diretivas ifdef e endif</h3>
+
+<p>Nesta seção, e até <a HREF="c870.html">mais a frente</a>, veremos as diretivas de
+compilação condicional. Elas são muito parecidas com os comandos de execução
+condicional do C. As duas primeiras diretivas que veremos são as <b>#ifdef</b> e <b>#endif</b>.
+Suas formas gerais são: </p>
+
+<p>&nbsp;<i>#ifdef nome_da_macro</i> <br>
+<i>sequência_de_declarações</i> <br>
+<i>#endif</i> </p>
+
+<p>&nbsp;A sequência de declarações será compilada apenas se o nome da macro estiver
+definido. A diretiva de compilação <b>#endif</b> é util para definir o fim de uma
+sequência de declarações para todas as diretivas de compilação condicional. As linhas
+</p>
+
+<pre>
+#define PORT_0 0x378
+...
+/* Linhas de codigo qualquer... */
+...
+#ifdef PORT_0
+  #define PORTA PORT_0
+  #include &quot;../sys/port.h&quot;
+#endif
+</pre>
+
+<p>demonstram como estas diretivas podem ser utilizadas. Caso <i>PORT_0</i> tenha sido
+previamente definido, a macro <i>PORTA</i> é definida e o header file <i>port.h</i> é
+incluído. </p>
+<a HREF="c830.html">
+
+<p align="center"><img ALT="Página Anterior" SRC="left.gif" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp; <a HREF="c800.html"><img ALT="Índice da Aula" SRC="up.gif"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp; <a HREF="c850.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

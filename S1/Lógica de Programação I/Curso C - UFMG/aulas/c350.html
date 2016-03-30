@@ -1,0 +1,153 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Operadores Aritméticos e de Atribuição</h3>
+
+<p>Os operadores aritméticos são usados para desenvolver operações matemáticas. A
+seguir apresentamos a lista dos operadores aritméticos do C: </p>
+
+<p>&nbsp; </p>
+
+<table WIDTH="73%">
+  <tr>
+    <td WIDTH="80"><b><font SIZE="+1">Operador&nbsp;</font></b>&nbsp; <br>
+    +&nbsp; <br>
+    -&nbsp; <br>
+    *&nbsp; <br>
+    /&nbsp; <br>
+    %&nbsp; <br>
+    ++&nbsp; <br>
+    --&nbsp;</td>
+    <td WIDTH="300"><b><font SIZE="+1">Ação</font></b>&nbsp; <br>
+    Soma (inteira e ponto flutuante)&nbsp; <br>
+    Subtração ou Troca de sinal (inteira e ponto flutuante)&nbsp; <br>
+    Multiplicação (inteira e ponto flutuante)&nbsp; <br>
+    Divisão (inteira e ponto flutuante)&nbsp; <br>
+    Resto de divisão (de inteiros)&nbsp; <br>
+    Incremento (inteiro e ponto flutuante)&nbsp; <br>
+    Decremento (inteiro e ponto flutuante)&nbsp;</td>
+  </tr>
+</table>
+
+<p>O C possui operadores unários e binários. Os unários agem sobre uma variável
+apenas, modificando ou não o seu valor, e retornam o valor final da variável. Os
+binários usam duas variáveis e retornam um terceiro valor, sem alterar as variáveis
+originais. A soma é um operador binário pois pega duas variáveis, soma seus valores,
+sem alterar as variáveis, e retorna esta soma. Outros operadores binários são os
+operadores <b>-</b> (subtração), <b>*</b>, <b>/</b> e <b>%</b>. O operador <b>-</b> como
+troca de sinal é um operador unário que não altera a variável sobre a qual é
+aplicado, pois ele retorna o valor da variável multiplicado por -1. </p>
+
+<p>O operador / (divisão) quando aplicado a variáveis inteiras, nos fornece o resultado
+da divisão inteira; quando aplicado a variáveis em ponto flutuante nos fornece o
+resultado da divisão &quot;real&quot;. O operador % fornece o resto da divisão de dois
+inteiros. Assim seja o seguinte trecho de código: </p>
+
+<p><font face="Courier New"><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int
+a = 17, b = 3;</font><big><big><big><br>
+</big></big></big><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x, y;</font><big><big><big><br>
+</big></big></big><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float z = 17.
+, z1, z2;</font><big><big><big><br>
+</big></big></big><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = a / b;</font><big><big><big><br>
+</big></big></big><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = a % b;</font><big><big><big><br>
+</big></big></big><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z1 = z / b;</font><big><big><big><br>
+</big></big></big><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z2 = a/b;</font></font></p>
+
+<p>ao final da execução destas linhas, os valores calculados seriam&nbsp; x = 5,&nbsp; y
+= 2,&nbsp; z1 = 5.666666 e z2 = 5.0 . Note que, na linha correspondente a z2,
+primeiramente é feita uma divisão inteira (pois os dois operandos são inteiros).
+Somente após efetuada a divisão é que o resultado é atribuído a uma variável float. </p>
+
+<p>&nbsp;Os operadores de incremento e decremento são unários que alteram a variável
+sobre a qual estão aplicados. O que eles fazem é incrementar ou decrementar, a variável
+sobre a qual estão aplicados, de 1. Então <br>
+&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x--;</pre>
+
+<p>são equivalentes a </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=x+1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=x-1;</pre>
+
+<p>Estes operadores podem ser pré-fixados ou pós- fixados. A diferença é que quando
+são pré-fixados eles incrementam e retornam o valor da variável já incrementada.
+Quando são pós-fixados eles retornam o valor da variável sem o incremento e depois
+incrementam a variável. Então, em </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=23;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y=x++;</pre>
+
+<p>teremos, no final, <b>y=23</b> e <b>x=24</b>. Em </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=23;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y=++x;</pre>
+
+<p>teremos, no final, <b>y=24</b> e <b>x=24</b>. Uma curiosidade: a linguagem de
+programação C++ tem este nome pois ela seria um &quot;incremento&quot; da linguagem C
+padrão. A linguagem C++ é igual a linguagem C só que com extensões que permitem a
+programação orientada a objeto, o que é um recurso extra. </p>
+
+<p>&nbsp;O operador de atribuição do C é o <b>=</b>. O que ele faz é pegar o valor à
+direita e atribuir à variável da esquerda. Além disto ele retorna o valor que ele
+atribuiu. Isto faz com que as seguintes expressões sejam válidas: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=y=z=1.5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Expressao 1 */
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (k=w) ...&nbsp;&nbsp;&nbsp; 	/* Expressao 2 */</pre>
+
+<p>A expressão 1 é válida, pois quando fazemos <b>z=1.5</b> ela retorna 1.5, que é
+passado adiante, fazendo y = 1.5 e posteriormente x = 1.5. A expressão 2 será verdadeira
+se <b>w</b> for diferente de zero, pois este será o valor retornado por <b>k=w</b>. Pense
+bem antes de usar a expressão dois, pois ela pode gerar erros de interpretação. Você <i>não</i>
+está comparando <b>k</b> e <b>w</b>. Você está atribuindo o valor de <b>w</b> a <b>k</b>
+e usando este valor para tomar a decisão. </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</font></p>
+
+<p><font SIZE="+1">Diga o resultado das variáveis x, y e z depois da seguinte sequência
+de operações:</font> </p>
+
+<pre><font SIZE="+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x,y,z;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=y=10;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z=++x;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=-x;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=x+y-(z--);</font></pre>
+
+<hr WIDTH="300">
+<a HREF="c340.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c300.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c360.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

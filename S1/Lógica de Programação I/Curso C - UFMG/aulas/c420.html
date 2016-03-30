@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Comando switch</h3>
+
+<p>O comando <b><a HREF="c410.html#c411.html">if-else</a></b> e o comando <b>switch</b>
+são os dois comandos de tomada de decisão. Sem dúvida alguma o mais importante dos dois
+é o <b><a HREF="c410.html">if</a></b>, mas o comando <b>switch</b> tem aplicações
+valiosas. Mais uma vez vale lembrar que devemos usar o comando certo no local certo. Isto
+assegura um código limpo e de fácil entendimento. O comando <b>switch</b> é próprio
+para se testar uma variável em relação a diversos valores pré-estabelecidos. Sua forma
+geral é: </p>
+
+<p>&nbsp; 
+
+<dl>
+  <dt><i>switch (variável)</i></dt>
+  <dd><i>{</i></dd>
+  <dd><br>
+    <i>case constante_1:</i> <br>
+    <i>declaração_1;</i> <br>
+    <i>break;</i> <br>
+    <i>case constante_2:</i> <br>
+    <i>declaração_2;</i> <br>
+    <i>break;</i> <br>
+    <i>.</i> <br>
+    <i>.</i> <br>
+    <i>.</i> <br>
+    <i>case constante_n:</i> <br>
+    <i>declaração_n;</i> <br>
+    <i>break;</i> <br>
+    <i>default</i> <br>
+    <i>declaração_default;</i> <br>
+    <i>}</i> <p>&nbsp;</p>
+  </dd>
+</dl>
+
+<p>Podemos fazer uma analogia entre o <b>switch</b> e a estrutura <b><a
+HREF="c410.html#c412.html">if-else-if</a></b> <a HREF="c410.html#c412.html">apresentada
+anteriormente</a>. A diferença fundamental é que a estrutura <b>switch</b> <i>não</i>
+aceita expressões. Aceita apenas constantes. O <b>switch</b> testa a variável e executa
+a declaração cujo <b>case</b> corresponda ao valor atual da variável. A declaração <b>default</b>
+é opcional e será executada apenas se a variável, que está sendo testada, não for
+igual a nenhuma das constantes. </p>
+
+<p>&nbsp;O comando <b><a HREF="c460.html">break</a></b>, faz com que o <b>switch</b> seja
+interrompido assim que uma das declarações seja executada. Mas ele não é essencial ao
+comando <b>switch</b>. Se após a execução da declaração não houver um <b><a
+HREF="c460.html">break</a></b>, o programa continuará executando. Isto pode ser útil em
+algumas situações, mas eu recomendo cuidado. Veremos agora um exemplo do comando <b>switch</b>:
+</p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num;
+	printf (&quot;Digite um numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	switch (num)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	case 9:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nO numero e igual a 9.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	case 10:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nO numero e igual a 10.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	case 11:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nO numero e igual a 11.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	default:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nO numero nao e nem 9 nem 10 nem 11.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	return(0);
+}</pre>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font></p>
+
+<p><font SIZE="+1">Escreva um programa que pede para o usuário entrar um número
+correspondente a um dia da semana e que então apresente na tela o nome do dia. utilizando
+o comando switch. </font></p>
+
+<hr WIDTH="300">
+<a HREF="c410.html">
+
+<p align="center"><img ALT="Página Anterior" SRC="left.gif" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp; <a HREF="c400.html"><img ALT="Índice da Aula" SRC="up.gif"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp; <a HREF="c430.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

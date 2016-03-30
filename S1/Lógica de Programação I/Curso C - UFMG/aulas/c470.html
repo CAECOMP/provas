@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Comando continue</h3>
+
+<p>O comando <b>continue</b> pode ser visto como sendo o oposto do <b><a HREF="c460.html">break</a></b>.
+Ele só funciona dentro de um loop. Quando o comando <b>continue</b> é encontrado, o loop
+pula para a próxima iteração, sem o abandono do loop, ao contrário do que acontecia no
+comando <b>break</b>. </p>
+
+<p>O programa abaixo exemplifica o uso do <i>continue</i>: </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+	int opcao;
+	while (opcao != 5)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		printf(&quot;\n\n Escolha uma opcao entre 1 e 5: &quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		scanf(&quot;%d&quot;, &amp;opcao);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		if ((opcao &gt; 5)||(opcao &lt;1)) continue;&nbsp; /* Opcao invalida: volta ao inicio do loop */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		switch (opcao)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 1:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Primeira opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 2:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Segunda opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 3:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Terceira opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 4:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Quarta opcao..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		case 5:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 			printf(&quot;\n --&gt; Abandonando..&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		break;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+return(0);
+}</pre>
+
+<p>O programa acima ilustra uma aplicação simples para o <i>continue</i>. Ele recebe uma
+opção do usuario. Se esta opção for inválida, o <i>continue</i> faz com que o fluxo
+seja desviado de volta ao início do loop. Caso a opção escolhida seja válida o
+programa segue normalmente. </p>
+<a HREF="c460.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c480.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

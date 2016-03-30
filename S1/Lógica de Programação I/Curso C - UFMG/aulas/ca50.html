@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Ponteiros para Funções</h3>
+
+<p>O C permite que acessemos variáveis e funções através de ponteiros! Podemos então
+fazer coisas como, por exemplo, passar uma função como argumento para outra função. Um
+ponteiro para uma função tem a seguinte declaração: </p>
+
+<p><i>tipo_de_retorno (*nome_do_ponteiro)();</i> </p>
+
+<p>ou <br>
+<i>tipo_de_retorno (*nome_do_ponteiro)(declaração_de_parâmetros);</i> </p>
+
+<p>Repare nos parênteses que devem ser colocados obrigatoriamente. Se declaramos:</p>
+
+<p><em>tipo_de_retorno * nome(declaração_de_parâmetros);</em></p>
+
+<p>Estaríamos, na realidade, declarando uma função que retornaria um ponteiro para o
+tipo especificado.</p>
+
+<p>Porém, não é obrigatório se declarar os parâmetros da função. Veja um exemplo do
+uso de ponteiros para funções: </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+void PrintString (char *str, int (*func)(const char *));
+main (void)
+{
+	char String [20]=&quot;Curso de C.&quot;;
+	int (*p)(const char *);	/* Declaracao do ponteiro para função 
+				Funcao apontada e' inteira e recebe como parametro
+				uma string constante */
+	p=puts;		/* O ponteiro p passa a apontar para a função puts 
+			   que tem o seguinte prototipo: int puts(const char *) */
+	PrintString (String, p);	/* O ponteiro é passado como parametro para PrintString */
+	return 0;
+}
+void PrintString (char *str, int (*func)(const char *))
+{
+	(*func)(str);	/* chamada a função através do ponteiro para função */
+	func(str);	/* maneira também válida de se fazer a chamada a função puts
+			   através do ponteiro para função func  */
+}</pre>
+
+<p>Veja que fizemos a atribuição de puts a p simplesmente usando:</p>
+
+<p><em>p = puts;</em></p>
+
+<p>Disto, concluímos que o nome de uma função (sem os parênteses) é, na realidade, o
+endereço daquela função! Note, também, as duas formas alternativas de se chamar uma
+função através de um ponteiro. No programa acima, fizemos esta chamada por:</p>
+
+<p><em>(*func)(str);</em></p>
+
+<p>e</p>
+
+<p><em>func(str);</em></p>
+
+<p>Estas formas são equivalentes entre si. </p>
+
+<p>Além disto, no programa, a função <b>PrintString()</b> usa uma função qualquer <b>func</b>
+para imprimir a string na tela. O programador pode então fornecer não só a string mas
+também a função que será usada para imprimí-la. No <b>main()</b> vemos como podemos
+atribuir, ao ponteiro para funções <b>p</b>, o endereço da função <b>puts()</b> do C.
+</p>
+
+<p>Em síntese, ao declarar um ponteiro para função, podemos atribuir a este ponteiro o
+endereço de uma função e podemos também chamar a função apontada através dele. <strong>Não
+</strong>podemos fazer algumas coisas que fazíamos com ponteiros &quot;normais&quot;,
+como, por exemplo, incrementar ou decrementar um ponteiro para função.</p>
+<a HREF="ca40.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="ca60.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

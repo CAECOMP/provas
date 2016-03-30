@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>Modificadores de Acesso</h3>
+
+<ul>
+  <li><a HREF="#cA11">const</a></li>
+  <li><a HREF="#cA12">volatile</a></li>
+</ul>
+
+<hr>
+
+<p>Estes modificadores, como o próprio nome indica, mudam a maneira com a qual a
+variável é acessada e modificada. </p>
+
+<h4><a NAME="cA11"></a>const</h4>
+
+<p>O modificador <b>const</b> faz com que a variável não possa ser modificada no
+programa. Como o nome já sugere é útil para se declarar constantes. Poderíamos ter,
+por exemplo: </p>
+
+<pre>const float PI=3.141;</pre>
+
+<p>Podemos ver pelo exemplo que as variáveis com o modificador <b>const</b> podem ser
+inicializadas. Mas <b>PI</b> não poderia ser alterado em qualquer outra parte do
+programa. Se o programador tentar modificar <b>PI</b> o compilador gerará um erro de
+compilação. </p>
+
+<p>O uso mais importante de <b>const</b> não é declarar variáveis constantes no
+programa. Seu uso mais comum é evitar que um parâmetro de uma função seja alterado
+pela função. Isto é muito útil no caso de um ponteiro, pois o conteúdo de um ponteiro
+pode ser alterado por uma função. Para tanto, basta declarar o parâmetro como <b>const</b>.
+Veja o exemplo: </p>
+
+<pre>#include &lt;stdio.h&gt;
+int sqr (const int *num);
+main (void)
+{
+int a=10;
+int b;
+b=sqr (&amp;a);
+}
+int sqr (const int *num)
+{
+return ((*num)*(*num));
+}</pre>
+
+<p>No exemplo, <b>num</b> está protegido contra alterações. Isto quer dizer que, se
+tentássemos fazer </p>
+
+<pre>*num=10;</pre>
+
+<p>dentro da função <b>sqr()</b> o compilador daria uma mensagem de erro. </p>
+
+<h4><a NAME="cA12"></a>volatile</h4>
+
+<p>O modificador <b>volatile</b> diz ao compilador que a variável em questão pode ser
+alterada sem que este seja avisado. Isto evita &quot;bugs&quot; seríssimos. Digamos que,
+por exemplo, tenhamos uma variável que o BIOS do computador altera de minuto em minuto
+(um relógio por exemplo). Seria muito bom que declarássemos esta variável como sendo <b>volatile</b>.
+</p>
+<a HREF="ca00.html">
+
+<p align="center"><img SRC="up.gif" ALT="Índice da Aula" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca20.html"><img SRC="right.gif" ALT="Próxima página"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> .</p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

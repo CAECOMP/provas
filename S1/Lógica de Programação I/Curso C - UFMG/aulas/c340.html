@@ -1,0 +1,198 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Constantes</h3>
+
+<ul>
+  <li><a HREF="#c341.html">Constantes dos tipos básicos</a></li>
+  <li><a HREF="#c342.html">Constantes hexadecimais e octais</a></li>
+  <li><a HREF="#c343.html">Constantes strings</a></li>
+  <li><a HREF="#c344.html">Constantes de barra invertida</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p>Constantes são valores que são mantidos fixos pelo compilador. Já usamos constantes
+neste curso. São consideradas constantes, por exemplo, os números e caracteres como
+45.65 ou 'n', etc... </p>
+
+<p>&nbsp;<a NAME="c341.html"></a> </p>
+
+<h4>Constantes dos tipos básicos</h4>
+
+<p>Abaixo vemos as constantes relativas aos tipos básicos do C: &nbsp; </p>
+
+<table WIDTH="440" style="border: 1px solid">
+  <tr VALIGN="TOP">
+    <td WIDTH="165" style="border: 1px solid"><p align="left"><b><font SIZE="+1">Tipo de Dado</font></b>&nbsp;
+    </td>
+    <td WIDTH="267" style="border: 1px solid"><p align="left"><b><font SIZE="+1">Exemplos de
+    Constantes&nbsp;</font></b>&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">char&nbsp; </td>
+    <td WIDTH="267" style="border: 1px solid">'b' '\n' '\0'&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">int&nbsp;&nbsp; </td>
+    <td WIDTH="267" style="border: 1px solid">2 32000 -130&nbsp;</td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">long int&nbsp; &nbsp;</td>
+    <td WIDTH="267" style="border: 1px solid">100000 -467&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">short int&nbsp; </td>
+    <td WIDTH="267" style="border: 1px solid">100 -30&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">unsigned int</td>
+    <td WIDTH="267" style="border: 1px solid">50000 35678</td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">float&nbsp; </td>
+    <td WIDTH="267" style="border: 1px solid">0.0 23.7 -12.3e-10&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="165" style="border: 1px solid">double</td>
+    <td WIDTH="267" style="border: 1px solid">12546354334.0 -0.0000034236556</td>
+  </tr>
+</table>
+
+<p><a NAME="c342.html"></a></p>
+
+<h4>Constantes hexadecimais e octais</h4>
+
+<p>Muitas vezes precisamos inserir constantes hexadecimais (base dezesseis) ou octais
+(base oito) no nosso programa. O C permite que se faça isto. As constantes hexadecimais
+começam com 0x. As constantes octais começam em 0. Alguns exemplos: &nbsp; </p>
+<div align="left">
+
+<table WIDTH="533" border="1">
+  <tr VALIGN="TOP">
+    <td WIDTH="231"><b><font SIZE="+1">Constante</font></b></td>
+    <td WIDTH="290"><b><font SIZE="+1">Tipo</font></b></td>
+  </tr>
+  <tr>
+    <td WIDTH="231">0xEF&nbsp; </td>
+    <td WIDTH="290">Constante Hexadecimal (8 bits)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="231">0x12A4&nbsp; </td>
+    <td WIDTH="290">Constante Hexadecimal (16 bits)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="231">03212&nbsp; </td>
+    <td WIDTH="290">Constante Octal (12 bits)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="231">034215432&nbsp;</td>
+    <td WIDTH="290">Constante Octal (24 bits)&nbsp;</td>
+  </tr>
+</table>
+</div>
+
+<p>Nunca escreva portanto 013 achando que o C vai compilar isto como se fosse 13. Na
+linguagem C 013 é diferente de 13! </p>
+
+<p>&nbsp;<a NAME="c343.html"></a> </p>
+
+<h4>Constantes strings</h4>
+<a HREF="c240.html#c242.html">
+
+<p>Já mostramos</a> como o C trata strings. Vamos agora alertar para o fato de que uma
+string <b>&quot;Joao&quot;</b> é na realidade uma constante string. Isto implica, por
+exemplo, no fato de que <b>'t'</b> é diferente de <b>&quot;t&quot;</b>, pois <b>'t'</b>
+é um <b>char</b> enquanto que <b>&quot;t&quot;</b> é uma constante string com dois <b>chars</b>
+onde o primeiro é <b>'t'</b> e o segundo é <b>'\0'</b>. </p>
+
+<p>&nbsp;<a NAME="c344.html"></a> </p>
+
+<h4>Constantes de barra invertida</h4>
+
+<p>O C utiliza, para nos facilitar a tarefa de programar, vários códigos chamados
+códigos de barra invertida. Estes são caracteres que podem ser usados como qualquer
+outro. Uma lista com alguns&nbsp; dos códigos de barra invertida é dada a seguir: </p>
+
+<p>&nbsp; </p>
+<div align="left">
+
+<table WIDTH="557" border="1" style="border: medium solid">
+  <tr>
+    <td WIDTH="118"><font SIZE="+1"><b>Código</b>&nbsp;</font>&nbsp; <br>
+    </td>
+    <td WIDTH="427"><b><font SIZE="+1">Significado&nbsp;</font></b>&nbsp; <br>
+    </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\b&nbsp;</td>
+    <td WIDTH="427">Retrocesso (&quot;back&quot;)</td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\f&nbsp; </td>
+    <td WIDTH="427">Alimentação de formulário (&quot;form feed&quot;)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\n&nbsp; </td>
+    <td WIDTH="427">Nova linha (&quot;new line&quot;)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\t&nbsp; </td>
+    <td WIDTH="427">Tabulação horizontal (&quot;tab&quot;)&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\&quot;&nbsp; </td>
+    <td WIDTH="427">Aspas&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\'&nbsp; </td>
+    <td WIDTH="427">Apóstrofo&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\0&nbsp; &nbsp;</td>
+    <td WIDTH="427">Nulo (0 em decimal)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\\&nbsp; </td>
+    <td WIDTH="427">Barra invertida&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\v&nbsp; </td>
+    <td WIDTH="427">Tabulação vertical&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\a&nbsp;</td>
+    <td WIDTH="427">Sinal sonoro (&quot;beep&quot;)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\N&nbsp; </td>
+    <td WIDTH="427">Constante octal (N é o valor da constante)&nbsp; </td>
+  </tr>
+  <tr>
+    <td WIDTH="118">\xN</td>
+    <td WIDTH="427">Constante hexadecimal (N é o valor da constante)</td>
+  </tr>
+</table>
+</div><a HREF="c330.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c300.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c350.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> <a NAME="c510.html"></a> </p>
+
+<h3>Vetores</h3>
+
+<p>Vetores nada mais são que matrizes unidimensionais. Vetores são uma estrutura de
+dados muito utilizada. É importante notar que vetores, matrizes bidimensionais e matrizes
+de qualquer dimensão são caracterizadas por terem todos os elementos pertencentes ao
+mesmo tipo de dado. Para se declarar um vetor podemos utilizar a seguinte forma geral: </p>
+
+<p>&nbsp;<i>tipo_da_variável nome_da_variável [tamanho];</i> </p>
+
+<p>&nbsp;Quando o C vê uma declaração como esta ele reserva um espaço na memória
+suficientemente grande para armazenar o número de células especificadas em tamanho. Por
+exemplo, se declararmos: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float exemplo [20];</pre>
+
+<p>o C irá reservar 4x20=80 bytes. Estes bytes são reservados de maneira contígua. Na
+linguagem C a numeração começa sempre em zero. Isto significa que, no exemplo acima, os
+dados serão indexados de 0 a 19. Para acessá-los vamos escrever: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exemplo[0]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exemplo[1]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exemplo[19]</pre>
+
+<p>Mas ninguém o impede de escrever: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exemplo[30]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exemplo[103]</pre>
+
+<p>Por quê? Porque o C não verifica se o índice que você usou está dentro dos limites
+válidos. Este é um cuidado que <i>você</i> deve tomar. Se o programador não tiver
+atenção com os limites de validade para os índices ele corre o risco de ter variáveis
+sobreescritas ou de ver o computador travar. Bugs terríveis podem surgir. Vamos ver agora
+um exemplo de utilização de vetores: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num[100];&nbsp; /* Declara um vetor de inteiros de 100 posicoes */
+	int count=0;&nbsp;&nbsp;
+	int totalnums;
+	do
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\nEntre com um numero (-999 p/ terminar): &quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	scanf (&quot;%d&quot;,&amp;num[count]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	count++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } while (num[count-1]!=-999);
+	totalnums=count-1;
+	printf (&quot;\n\n\n\t Os números que você digitou foram:\n\n&quot;);
+	for (count=0;count&lt;totalnums;count++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot; %d&quot;,num[count]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(0);
+}</pre>
+
+<p>No exemplo acima, o inteiro <i>count</i> é inicializado em 0. O programa pede pela
+entrada de números até que o usuário entre com o Flag -999. Os números são
+armazenados no vetor <b>num</b>. A cada número armazenado, o contador do vetor é
+incrementado para na próxima iteração escrever na próxima posição do vetor. Quando o
+usuário digita o flag, o programa abandona o primeiro loop e armazena o total de números
+gravados. Por fim, todos os números são impressos. É bom lembrar aqui que nenhuma
+restrição é feita quanto a quantidade de números digitados. Se o usuário digitar mais
+de 100 números, o programa tentará ler normalmente, mas o programa os escreverá em uma
+parte não alocada de memória, pois o espaço alocado foi para somente 100 inteiros. Isto
+pode resultar nos mais variados erros no instante da&nbsp; execução do programa. </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Reescreva o exemplo acima, realizando a cada leitura um teste para ver
+se a dimensão do vetor não foi ultrapassada. Caso o usuário entre com 100 números, o
+programa deverá abortar o loop de leitura automaticamente. O uso do Flag (-999) não deve
+ser retirado.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c500.html">
+
+<p align="center"><img SRC="up.gif" ALT="Índice da Aula" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c520.html"><img SRC="right.gif" ALT="Próxima página"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

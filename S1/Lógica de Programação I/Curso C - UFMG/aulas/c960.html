@@ -1,0 +1,168 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+</head>
+
+<body TEXT="#000000" LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff" ALINK="#FF0000">
+
+<h2 ALIGN="CENTER">Curso de C</h2>
+
+<p ALIGN="CENTER"><img SRC="line.gif" WIDTH="485" HEIGHT="8"></p>
+
+<h3 align="center">Lendo e Escrevendo Caracteres em Arquivos</h3>
+
+<ul>
+  <li><a HREF="#c961">putc</a> </li>
+  <li><a HREF="#c962">getc</a> </li>
+  <li><a HREF="#c963">feof</a> </li>
+</ul>
+
+<hr>
+
+<h4><a NAME="c961"></a>putc</h4>
+
+<p>A função putc é a primeira função de escrita de arquivo que veremos. Seu
+protótipo é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int putc (int ch,FILE *fp);</pre>
+
+<p>Escreve um caractere no arquivo.</p>
+
+<p>O programa a seguir lê uma string do teclado e escreve-a, caractere por caractere em
+um arquivo em disco (o arquivo arquivo.txt, que será aberto no diretório corrente). </p>
+
+<p>&nbsp;</p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+ FILE *fp;
+ char string[100];
+ int i;
+ fp = fopen(&quot;arquivo.txt&quot;,&quot;w&quot;);   /* Arquivo ASCII, para escrita */
+ if(!fp)
+ {
+    printf( &quot;Erro na abertura do arquivo&quot;);
+    exit(0);
+ }
+ printf(&quot;Entre com a string a ser gravada no arquivo:&quot;);
+ gets(string);
+ for(i=0; string[i]; i++) putc(string[i], fp); /* Grava a string, caractere a caractere */
+ fclose(fp);
+ return 0;
+}</pre>
+
+<p>Depois de executar este programa, verifique o conteúdo do arquivo arquivo.txt (você
+pode usar qualquer editor de textos). Você verá que a string que você digitou está
+armazenada nele.</p>
+
+<h4><a NAME="c962"></a>getc</h4>
+
+<p>Retorna um caractere lido do arquivo. Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int getc (FILE *fp);</pre>
+
+<h4><a NAME="c963"></a>feof</h4>
+
+<p>EOF (&quot;End of file&quot;) indica o fim de um arquivo. Às vezes, é necessário
+verificar se um arquivo chegou ao fim. Para isto podemos usar a função <b>feof()</b>.
+Ela retorna não-zero se o arquivo chegou ao EOF, caso contrário retorna zero. Seu
+protótipo é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int feof (FILE *fp);</pre>
+
+<p>Outra forma de se verificar se o final do arquivo foi atingido é comparar o caractere
+lido por getc com EOF. O programa a seguir abre um arquivo já existente e o lê, caracter
+por caracter, até que o final do arquivo seja atingido. Os caracteres lidos são
+apresentados na tela:</p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+int main()<br>
+{<br>
+FILE *fp;<br>
+char c;<br>
+fp = fopen(&quot;arquivo.txt&quot;,&quot;r&quot;);&nbsp;&nbsp; /* Arquivo ASCII, para
+leitura */<br>
+if(!fp)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; printf( &quot;Erro na abertura do arquivo&quot;);<br>
+&nbsp;&nbsp;&nbsp; exit(0);<br>
+}<br>
+while((c = getc(fp) ) != EOF)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Enquanto não chegar ao
+final do arquivo */<big><br>
+</big>&nbsp;&nbsp;&nbsp; printf(&quot;%c&quot;, c);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* imprime o caracter lido */<br>
+fclose(fp);<br>
+return 0;<br>
+}</font></p>
+
+<p>&nbsp;</p>
+
+<p>A seguir é apresentado um programa onde várias operações com arquivos são
+realizadas, usando as funções vistas nesta página. Primeiro o arquivo é aberto para a
+escrita, e imprime-se algo nele. Em seguida, o arquivo é fechado e novamente aberto para
+a leitura. Verifique o exemplo. </p>
+
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+void main()
+{
+        FILE *p;
+        char c, str[30], frase[80] = &quot;Este e um arquivo chamado: &quot;;
+        int i;
+        /* Le um nome para o arquivo a ser aberto: */
+        printf(&quot;\n\n Entre com um nome para o arquivo:\n&quot;);
+        gets(str);
+
+        if (!(p = fopen(str,&quot;w&quot;)))  /* Caso ocorra algum erro na abertura do arquivo..*/
+        {                           /* o programa aborta automaticamente */
+          printf(&quot;Erro! Impossivel abrir o arquivo!\n&quot;);
+          exit(1);
+        }
+        /* Se nao houve erro, imprime no arquivo e o fecha ...*/
+        strcat(frase, str);
+        for (i=0; frase[i]; i++)
+         putc(frase[i],p);
+        fclose(p);
+
+        /* Abre novamente para  leitura  */
+        p = fopen(str,&quot;r&quot;);
+        c = getc(p);		/* Le o primeiro caracter */
+        while (!feof(p))        /* Enquanto não se chegar no final do arquivo */
+        {    
+                printf(&quot;%c&quot;,c); /*   Imprime o caracter na tela */
+                c = getc(p);    /* Le um novo caracter no arquivo */
+        }
+        fclose(p);              /* Fecha o arquivo */
+}<big>
+</big></pre>
+
+<hr>
+
+<p align="center"><big><big>Auto-Avaliação</big></big></p>
+
+<p><big>Veja como você está: escreva um programa que abra um arquivo texto e conte o
+número de caracteres presentes nele. Imprima o número de caracteres na tela.</big></p>
+
+<hr>
+
+<p ALIGN="CENTER"><a HREF="c950.html"><img SRC="left.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c900.html"><img SRC="up.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c970.html"><img SRC="right.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT="P"></a></p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

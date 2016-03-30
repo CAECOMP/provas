@@ -1,0 +1,248 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Operadores Relacionais e Lógicos</h3>
+
+<p>Os operadores relacionais do C realizam <b><i>comparações</i></b> entre variáveis.
+São eles: </p>
+
+<p align="center">&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr>
+    <td ALIGN="CENTER"><b><font SIZE="+1">Operador&nbsp;</font></b>&nbsp; <br>
+    &gt;&nbsp; <br>
+    &gt;=&nbsp; <br>
+    &lt;&nbsp; <br>
+    &lt;=&nbsp; <br>
+    ==&nbsp; <br>
+    !=&nbsp;</td>
+    <td><b><font SIZE="+1">Ação&nbsp;</font></b>&nbsp; <br>
+    Maior do que&nbsp; <br>
+    Maior ou igual a&nbsp; <br>
+    Menor do que&nbsp; <br>
+    Menor ou igual a&nbsp; <br>
+    Igual a&nbsp; <br>
+    Diferente de&nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p>Os operadores relacionais retornam verdadeiro (1) ou falso (0). Para verificar o
+funcionamento dos operadores relacionais, execute o programa abaixo:</p>
+<font SIZE="2">
+
+<pre></font><font size="4">/* Este programa ilustra o funcionamento dos operadores relacionais. */
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j;
+    printf(&quot;\nEntre com dois numeros inteiros: &quot;);
+    scanf(&quot;%d%d&quot;, &amp;i, &amp;j);
+    printf(&quot;\n%d == %d é %d\n&quot;, i, j, i==j);
+    printf(&quot;\n%d != %d é %d\n&quot;, i, j, i!=j);
+    printf(&quot;\n%d &lt;= %d é %d\n&quot;, i, j, i&lt;=j);
+    printf(&quot;\n%d &gt;= %d é %d\n&quot;, i, j, i&gt;=j);
+    printf(&quot;\n%d &lt; %d é %d\n&quot;, i, j, i&lt;j);
+    printf(&quot;\n%d &gt; %d é %d\n&quot;, i, j, i&gt;j);
+    return(0);
+}</font><font
+SIZE="2"></pre>
+</font>
+
+<p>Você pode notar que o resultado dos operadores relacionais é sempre igual a 0 (falso)
+ou 1 (verdadeiro).</p>
+
+<p>Para fazer <b><i>operações com valores lógicos </i></b>(verdadeiro e falso) temos <b><i>os
+operadores lógicos</i></b>: </p>
+
+<p align="center">&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr>
+    <td ALIGN="CENTER"><b><font SIZE="+1">Operador</font></b>&nbsp; <br>
+    &amp;&amp;&nbsp; <br>
+    ||&nbsp; <br>
+    !&nbsp;</td>
+    <td><b><font SIZE="+1">Ação&nbsp;</font></b>&nbsp; <br>
+    AND (E)&nbsp; <br>
+    OR (OU)&nbsp; <br>
+    NOT (NÃO)&nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p>Usando os operadores relacionais e lógicos podemos realizar uma grande gama de testes.
+A tabela-verdade destes operadores é dada a seguir: </p>
+
+<p align="center">&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr ALIGN="CENTER">
+    <td WIDTH="100"><b><font SIZE="+1">p&nbsp;</font></b>&nbsp; <br>
+    falso&nbsp; <br>
+    falso&nbsp; <br>
+    verdadeiro&nbsp; <br>
+    verdadeiro&nbsp;</td>
+    <td WIDTH="100"><b><font SIZE="+1">q&nbsp;</font></b>&nbsp; <br>
+    falso&nbsp; <br>
+    verdadeiro&nbsp; <br>
+    falso&nbsp; <br>
+    verdadeiro&nbsp;</td>
+    <td NOWRAP><b><font SIZE="+1">p AND q&nbsp;</font></b>&nbsp; <br>
+    falso&nbsp; <br>
+    falso&nbsp; <br>
+    falso&nbsp; <br>
+    verdadeiro&nbsp;</td>
+    <td WIDTH="100"><b><font SIZE="+1">p OR q&nbsp;</font></b>&nbsp; <br>
+    falso&nbsp; <br>
+    verdadeiro&nbsp; <br>
+    verdadeiro&nbsp; <br>
+    verdadeiro&nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p align="left">O programa a seguir ilustra o funcionamento dos operadores lógicos.
+Compile-o e faça testes com vários valores para i e j:</p>
+<font SIZE="2">
+
+<pre></font><font size="4">#include &lt;stdio.h&gt; 
+int main()
+{
+    int i, j;
+    printf(&quot;informe dois números(cada um sendo 0 ou 1): &quot;);
+    scanf(&quot;%d%d&quot;, &amp;i, &amp;j);
+    printf(&quot;%d AND %d é %d\n&quot;, i, j, i &amp;&amp; j);
+    printf(&quot;%d OR %d é %d\n&quot;, i, j, i || j);
+    printf(&quot;NOT %d é %d\n&quot;, i, !i);
+}</font><font
+SIZE="2"></pre>
+</font>
+
+<p align="left">Exemplo: No trecho de programa abaixo a operação j++ será executada,
+pois o resultado da expressão lógica é verdadeiro:</p>
+
+<p align="left"><font face="Courier New">int i = 5, j =7;<br>
+if ( (i &gt; 3) &amp;&amp; ( j &lt;= 7)&nbsp; &amp;&amp; ( i != j) )&nbsp; j++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V&nbsp;&nbsp;&nbsp; AND &nbsp;&nbsp;
+V&nbsp;&nbsp;&nbsp;&nbsp; AND&nbsp;&nbsp; V&nbsp; = V</font></p>
+
+<p align="left">Mais um exemplo. O programa abaixo, imprime na tela somente os números
+pares entre 1 e 100, apesar da variação de i ocorrer de 1 em 1:</p>
+<font SIZE="2">
+
+<pre></font><font size="4">/* Imprime os números pares entre 1 e 100. */
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i;
+    for(i=1; i&lt;=100; i++)
+        if(!(i%2)) printf(&quot;%d &quot;,i);     /* o operador de resto dará falso (zero) */
+}                                       /* quando usada c/ número par. Esse resultado*/
+                                        /* é invertido pelo ! */</font><font
+SIZE="2"></pre>
+</font>
+
+<h3>Operadores Lógicos Bit a Bit</h3>
+
+<p align="left">O C permite que se faça <b><i>operações lógicas &quot;bit-a- bit&quot;</i></b>
+em números. Ou seja, neste caso, o número é representado por sua forma binária e as
+operações são feitas em cada bit dele. Imagine um número inteiro de 16 bits, a
+variável i, armazenando o valor 2. A representação binária de i, será:
+0000000000000010 (quinze zeros e um único 1 na segunda posição da direita para a
+esquerda). Poderemos fazer operações em cada um dos bits deste número. Por exemplo, se
+fizermos a negação do número (operação binária NOT, ou operador binário ~ em C),
+isto é, ~i, o número se transformará em 1111111111111101. As operações binárias
+ajudam programadores que queiram trabalhar com o computador em &quot;baixo nível&quot;.
+As operações lógicas bit a bit só podem ser usadas nos tipos <b>char</b>, <b>int</b> e
+<b>long int</b>. Os operadores são: <br>
+&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr ALIGN="LEFT">
+    <th>Operador</th>
+    <th>Ação</th>
+  </tr>
+  <tr>
+    <td>&amp;</td>
+    <td>AND</td>
+  </tr>
+  <tr>
+    <td>|</td>
+    <td>OR</td>
+  </tr>
+  <tr>
+    <td>^</td>
+    <td>XOR (OR exclusivo)</td>
+  </tr>
+  <tr>
+    <td>~</td>
+    <td>NOT</td>
+  </tr>
+  <tr>
+    <td>&gt;&gt;</td>
+    <td>Deslocamento de bits a direita</td>
+  </tr>
+  <tr>
+    <td>&lt;&lt;</td>
+    <td>Deslocamento de bits a esquerda</td>
+  </tr>
+</table>
+</center></div>
+
+<p>Os operadores <b>&amp;</b>, <b>|</b>, <b>^</b> e <b>~</b> são as operações lógicas
+bit a bit. A forma geral dos operadores de deslocamento é: </p>
+
+<p><i>valor&gt;&gt;número_de_deslocamentos</i> </p>
+
+<p><i>valor&lt;&lt;número_de_deslocamentos</i> </p>
+
+<p>O número_de_deslocamentos indica o quanto cada bit irá ser deslocado.&nbsp; Por
+exemplo, para a variável i anterior, armazenando o número 2: </p>
+
+<p>i &lt;&lt; 3; </p>
+
+<p align="left">fará com que i agora tenha a representação binária:&nbsp;
+0000000000010000, isto é, o valor armazenado em i passa a ser igual a 16. </p>
+
+<hr WIDTH="300" align="center">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</font></p>
+
+<p><font SIZE="+1">Diga se as seguintes expressões serão verdadeiras ou falsas:</font> </p>
+
+<pre><font SIZE="+1">-&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((10&gt;5)||(5&gt;10))
+-&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (!(5==6)&amp;&amp;(5!=6)&amp;&amp;((2&gt;1)||(5&lt;=4)))</font></pre>
+
+<hr WIDTH="300" align="center">
+<a HREF="c350.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c300.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c370.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

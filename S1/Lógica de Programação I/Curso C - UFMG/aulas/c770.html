@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Passagem de parâmetros por valor e passagem por referência</h3>
+
+<p>Já vimos que, na linguagem C, quando chamamos uma função os parâmetros formais da
+função copiam os valores dos parâmetros que são passados para a função. Isto quer
+dizer que não são alterados os valores que os parâmetros têm fora da função. Este
+tipo de chamada de função é denominado chamada por valor. Isto ocorre porque são
+passados para a função apenas os valores dos parâmetros e não os próprios
+parâmetros. Veja o exemplo abaixo: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+float sqr (float num);
+void main ()
+{
+	float num,sq;
+	printf (&quot;Entre com um numero: &quot;);
+	scanf (&quot;%f&quot;,&amp;num);
+	sq=sqr(num);
+	printf (&quot;\n\nO numero original e: %f\n&quot;,num);
+	printf (&quot;O seu quadrado vale: %f\n&quot;,sq);
+}
+
+float sqr (float num)
+{
+	num=num*num;
+	return num;
+}</pre>
+
+<p>No exemplo acima o parâmetro formal <b>num</b> da função <b>sqr()</b> sofre
+alterações dentro da função, mas a variável <b>num</b> da função <b>main()</b>
+permanece inalterada: é uma chamada por valor. </p>
+
+<p>&nbsp;Outro tipo de passagem de parâmetros para uma&nbsp; função ocorre quando
+alterações nos parâmetros formais, dentro da função, alteram os valores dos
+parâmetros que foram passados para a função. Este tipo de chamada de função tem o
+nome de &quot;chamada por referência&quot;. Este nome vem do fato de que, neste tipo de
+chamada, não se passa para a função os valores das variáveis, mas sim suas
+referências (a função usa as referências para alterar os valores das variáveis fora
+da função). </p>
+
+<p>&nbsp;O C só faz chamadas por valor. Isto é bom quando queremos usar os parâmetros
+formais à vontade dentro da função, sem termos que nos preocupar em estar alterando os
+valores dos parâmetros que foram passados para a função. Mas isto também pode ser ruim
+às vezes, porque podemos querer mudar os valores dos parâmetros fora da função
+também. O C++ tem um recurso que permite ao programador fazer chamadas por referência.
+Há entretanto, no C, um recurso de programação que podemos usar para simular uma
+chamada por referência. </p>
+
+<p>&nbsp;Quando queremos alterar as variáveis que são passadas para uma função, nós
+podemos declarar seus parâmetros formais como sendo <i>ponteiros</i>. Os ponteiros são a
+&quot;referência&quot; que precisamos para poder alterar a variável fora da função. O
+único inconveniente é que, quando usarmos a função, teremos de lembrar de colocar um <b>&amp;</b>
+na frente das variáveis que estivermos passando para a função. Veja um exemplo: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+void Swap (int *a,int *b);
+void main (void)
+{
+	int num1,num2;
+	num1=100;
+	num2=200;
+	Swap (&amp;num1,&amp;num2);
+	printf (&quot;\n\nEles agora valem %d&nbsp; %d\n&quot;,num1,num2);
+}
+void Swap (int *a,int *b)
+{
+	int temp;
+	temp=*a;
+	*a=*b;
+	*b=temp;
+}</pre>
+
+<p>Não é muito difícil. O que está acontecendo é que passamos para a função Swap o
+endereço das variáveis num1 e num2. Estes endereços são copiados nos ponteiros a e b.
+Através do operador * estamos acessando o conteúdo apontado pelos ponteiros e
+modificando-o. Mas, quem é este conteúdo? Nada mais que os valores armazenados em num1 e
+num2, que, portanto, estão sendo modificados! </p>
+
+<p>Espere um momento... será que nós já não vimos esta estória de chamar uma função
+com as variáveis precedidas de <b>&amp;</b>? Já! É assim que nós chamamos a função <b>scanf()</b>.
+Mas porquê? Vamos pensar um pouco. A função <b>scanf()</b> usa chamada por referência
+porque ela precisa alterar as variáveis que passamos para ela! Não é para isto mesmo
+que ela é feita? Ela lê variáveis para nós e portanto precisa alterar seus valores.
+Por isto passamos para a função o endereço da variável a ser modificada! <br>
+</p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</font> <br>
+<font SIZE="+1">&nbsp; Escreva uma função que receba duas variáveis inteiras e
+&quot;zere&quot; o valor das variáveis.&nbsp; Use o que você aprendeu nesta página para
+fazer a implementação</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c760.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c780.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

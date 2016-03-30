@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Ponteiros para Ponteiros</h3>
+
+<p>Um ponteiro para um ponteiro é como se você anotasse o endereço de um papel que tem
+o endereço da casa do seu amigo. Podemos declarar um ponteiro para um ponteiro com a
+seguinte notação: </p>
+
+<p>&nbsp;<i>tipo_da_variável **nome_da_variável;</i> </p>
+
+<p>&nbsp;Algumas considerações: <b>**nome_da_variável</b> é o conteúdo final da
+variável apontada; <b>*nome_da_variável</b> é o conteúdo do ponteiro intermediário. </p>
+
+<p>&nbsp;No C podemos declarar ponteiros para ponteiros para ponteiros, ou então,
+ponteiros para ponteiros para ponteiros para ponteiros (UFA!) e assim por diante. Para
+fazer isto (não me pergunte a utilidade disto!) basta aumentar o número de asteriscos na
+declaracão. A lógica é a mesma. </p>
+
+<p>Para acessar o valor desejado apontado por um ponteiro para ponteiro, o operador
+asterisco deve ser aplicado duas vezes, como mostrado no exemplo abaixo:</p>
+
+<p>&nbsp;</p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; float fpi = 3.1415, *pf, **ppf;<br>
+&nbsp;&nbsp;&nbsp; pf = &amp;fpi;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* pf armazena o endereco de fpi */<br>
+&nbsp;&nbsp;&nbsp; ppf = &amp;pf;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* ppf armazena o endereco de pf */<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;%f&quot;, **ppf);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Imprime
+o valor de fpi */<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;%f&quot;, *pf); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* Tambem imprime o valor de fpi */<br>
+&nbsp;&nbsp;&nbsp; return(0);<br>
+}</font></p>
+
+<p align="center">&nbsp;</p>
+
+<hr>
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><big>Verifique o programa abaixo. Encontre o seu erro e corrija-o para que escreva o
+numero 10 na tela. </big><br>
+</p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt; <br>
+int main() <br>
+{ <br>
+&nbsp;&nbsp;&nbsp; int x, *p, **q; <br>
+&nbsp;&nbsp;&nbsp; p = &amp;x; <br>
+&nbsp;&nbsp;&nbsp; q = &amp;p; <br>
+&nbsp;&nbsp;&nbsp; x = 10; <br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\n%d\n&quot;, &amp;q); <br>
+&nbsp;&nbsp;&nbsp; return(0);<br>
+} </font></p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<p align="center">&nbsp; <a HREF="c640.html"><img ALT="Página Anterior" SRC="left.gif"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp; <a HREF="c600.html"><img
+ALT="Índice da Aula" SRC="up.gif" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp; <a
+HREF="c660.html"><img SRC="right.gif" ALT="Próxima Página" BORDER="0" HEIGHT="34"
+WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

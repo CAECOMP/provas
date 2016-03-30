@@ -1,0 +1,175 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Comando for</h3>
+
+<ul>
+  <li><a HREF="#c431.html">O loop infinito</a></li>
+  <li><a HREF="#c432.html">O loop sem conteúdo</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p><b>for</b> é a primeira de uma série de três estruturas para se trabalhar com loops
+de repetição. As outras são&nbsp; <b><a HREF="c440.html">while</a></b> e&nbsp; <b><a
+HREF="c450.html">do</a></b>. As três compõem a segunda família de comandos de controle
+de fluxo. Podemos pensar nesta família como sendo a das estruturas de repetição
+controlada. </p>
+
+<p>&nbsp;Como já foi dito, o loop <b>for</b> é usado para repetir um comando, ou bloco
+de comandos, diversas vezes, de maneira que se possa ter um bom controle sobre o loop. Sua
+forma geral é: </p>
+
+<p>&nbsp;<i>for (inicialização;condição;incremento) declaração;</i> </p>
+
+<p>&nbsp;O melhor modo de se entender o loop <b>for</b> é ver como ele funciona &quot;por
+dentro&quot;. O loop <b>for</b> é equivalente a se fazer o seguinte: </p>
+
+<p>&nbsp; 
+
+<dl>
+  <dt><i>inicialização;</i></dt>
+  <dt><i>if (condição)</i></dt>
+  <dd><i>{</i></dd>
+  <dd><br>
+    <i>declaração;</i> <br>
+    <i>incremento;</i> <br>
+    <i>&quot;Volte para o comando if&quot;</i> <br>
+    <i>}</i> <p>&nbsp;</p>
+  </dd>
+</dl>
+
+<p>Podemos ver, então, que o <b>for</b> executa a inicialização incondicionalmente e
+testa a condição. Se a condição for falsa ele não faz mais nada. Se a condição for
+verdadeira ele executa a declaração, faz o incremento e volta a testar a condição. Ele
+fica repetindo estas operações até que a condição seja falsa. Um ponto importante é
+que podemos omitir qualquer um dos elementos do <b>for</b>, isto é, se não quisermos uma
+inicialização poderemos omiti-la. Abaixo vemos um programa que coloca os primeiros 100
+números inteiros na tela: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int count;
+	for (count=1; count&lt;=100; count++) printf (&quot;%d &quot;,count);
+	return(0);
+}</pre>
+
+<p>Note que, no exemplo acima, há uma diferença em relação <a
+HREF="c250.html#c252.html">ao exemplo anterior</a>. O incremento da variável <b>count</b>
+é feito usando o operador de incremento que nós agora já conhecemos. Esta é a forma
+usual de se fazer o incremento (ou decremento) em um loop <b>for</b>. </p>
+
+<p>&nbsp;O <b>for</b> na linguagem C é&nbsp; bastante flexível. Temos acesso à
+inicialização, à condição e ao incremento. Qualquer uma destas partes do for pode ser
+uma expressão qualquer do C, desde que ela seja válida. Isto nos permite fazer o que
+quisermos com o comando. As três formas do for abaixo são válidas:</p>
+
+<pre>for ( count = 1; count &lt; 100 ; count++) { ... }
+for (count = 1; count &lt; NUMERO_DE_ELEMENTOS ; count++) { ... }
+for (count = 1; count &lt; BusqueNumeroDeElementos() ; count+=2) { ... }
+etc ...
+</pre>
+
+<p>Preste atenção ao último exemplo: o incremento está sendo feito de dois em dois.
+Além disto, no teste está sendo utilizada uma função (BusqueNumeroDeElementos() ) que
+retorna um valor que está sendo comparado com count. </p>
+
+<h4>O loop infinito</h4>
+
+<p>O loop infinito tem a forma </p>
+
+<p>&nbsp;<i>for (inicialização; ;incremento) declaração;</i> </p>
+
+<p>&nbsp;Este loop chama-se loop infinito porque será executado para sempre (não
+existindo a condição, ela será sempre considerada verdadeira), a não ser que ele seja
+interrompido. Para interromper um loop como este usamos o comando <b><a HREF="c460.html">break</a></b>.
+O comando <b><a HREF="c460.html">break</a></b> vai quebrar o loop infinito e o programa
+continuará sua execução normalmente. </p>
+
+<p>&nbsp; Como exemplo vamos ver um programa que faz a leitura de uma tecla e sua
+impressão na tela, até que o usuario aperte uma tecla sinalizadora de final (um FLAG). O
+nosso FLAG será a letra 'X'. Repare que tivemos que usar dois scanf() dentro do for. Um
+busca o caractere que foi digitado e o outro busca o outro caracter digitado na
+seqüência, que é o caractere correspondente ao &lt;ENTER&gt;.</p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+   int Count;
+   char ch;
+   printf(&quot; Digite uma letra - &lt;X para sair&gt; &quot;);
+   for (Count=1;;Count++)
+   {
+     scanf(&quot;%c&quot;, &amp;ch);
+     if (ch == 'X') break;
+     printf(&quot;\nLetra: %c \n&quot;,ch);
+     scanf(&quot;%c&quot;, &amp;ch);
+   }
+   return(0);
+}</pre>
+
+<p><a NAME="c432.html"></a> </p>
+
+<h4>O loop sem conteúdo</h4>
+
+<p>Loop sem conteúdo é aquele no qual se omite a declaração. Sua forma geral é
+(atenção ao ponto e vírgula!): </p>
+
+<p>&nbsp;<i>for (inicialização;condição;incremento);</i> </p>
+
+<p>&nbsp;Uma das aplicações desta estrutura é gerar tempos de espera. O programa </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	long int i;
+	printf(&quot;\a&quot;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	     /* Imprime o caracter de alerta (um beep) */
+	for (i=0; i&lt;10000000; i++);&nbsp; /* Espera 10.000.000 de iteracoes */
+	printf(&quot;\a&quot;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Imprime outro caracter de alerta */
+	return(0);
+}</pre>
+
+<p>faz isto. </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Faça um programa que inverta uma string: leia a string com gets e
+armazene-a invertida em outra string. Use o comando for para varrer a string até o seu
+final.</font></p>
+
+<hr WIDTH="300">
+<a HREF="c420.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c440.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

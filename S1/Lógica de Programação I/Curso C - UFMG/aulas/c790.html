@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Os Argumentos argc e argv</h3>
+
+<p>A função <b>main()</b> pode ter parâmetros formais. Mas o programador não pode
+escolher quais serão eles. A declaração mais completa que se pode ter para a função <b>main()</b>
+é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main (int argc,char *argv[]);</pre>
+
+<p>Os parâmetros <b>argc</b> e <b>argv</b> dão ao programador acesso à linha de comando
+com a qual o programa foi chamado. </p>
+
+<p>&nbsp;O <b>argc</b> (argument count) é um inteiro e possui o número de argumentos com
+os quais a função <b>main()</b> foi chamada na linha de comando. Ele é, no mínimo 1,
+pois o nome do programa é contado como sendo o primeiro argumento. </p>
+
+<p>&nbsp;O <b>argv</b> (argument values) é um ponteiro para uma matriz de strings. Cada
+string desta matriz é um dos parâmetros da linha de comando. O <b>argv[0]</b> sempre
+aponta para o nome do programa (que, como já foi dito, é considerado o primeiro
+argumento). É para saber quantos elementos temos em <b>argv</b> que temos <b>argc</b>. </p>
+
+<p><strong>Exemplo:</strong> Escreva um programa que faça uso dos parâamentros <i>argv</i>
+e <i>argc</i>. O programa deverá receber da linha de comando o dia, mês e ano correntes,
+e imprimir a data em formato apropriado. Veja o exemplo, supondo que o executável se
+chame data: </p>
+
+<pre>data 19 04 99</pre>
+
+<p>O programa deverá imprimir: </p>
+
+<pre>19 de abril de 1999</pre>
+<tt>
+
+<p>#include &lt;stdio.h&gt;</tt> <br>
+<tt>#include &lt;stdlib.h&gt;</tt> <br>
+<tt>void main(int argc, char *argv[])</tt> <br>
+<tt>{</tt> <br>
+<tt>int mes;</tt> <br>
+<tt>char *nomemes [] = {&quot;Janeiro&quot;, &quot;Fevereiro&quot;, &quot;Março&quot;,
+&quot;Abril&quot;, &quot;Maio&quot;,</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&quot;Junho&quot;, &quot;Julho&quot;, &quot;Agosto&quot;, &quot;Setembro&quot;,
+&quot;Outubro&quot;,</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&quot;Novembro&quot;, &quot;Dezembro&quot;};</tt> </p>
+
+<p><tt>if(argc == 4) /* Testa se o numero de parametros fornecidos esta' correto</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+o primeiro parametro e' o nome do programa, o segundo o dia</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+o terceiro o mes e o quarto os dois ultimos algarismos do ano */</tt> <br>
+<tt>{</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; mes = atoi(argv[2]);&nbsp; /* argv contem strings. A string
+referente ao mes deve ser</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+transformada em um numero inteiro. A funcao atoi esta</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sendo usada para isto: recebe a string e transforma no</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+inteiro equivalente */</tt> </p>
+
+<p><tt>&nbsp;&nbsp;&nbsp; if (mes&lt;1 || mes&gt;12)&nbsp; /* Testa se o mes e' valido */</tt>
+<br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;Erro!\nUso: data dia mes ano,
+todos inteiros&quot;);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; else</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;\n%s de %s de 19%s&quot;, argv[1],
+nomemes[mes-1], argv[3]);</tt> <br>
+<tt>}</tt> </p>
+
+<p><tt>else printf(&quot;Erro!\nUso: data dia mes ano, todos inteiros&quot;);</tt> </p>
+
+<p><tt>}</tt> <br>
+</p>
+<a HREF="c780.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c7a0.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

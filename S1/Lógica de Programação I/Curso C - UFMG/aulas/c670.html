@@ -1,0 +1,475 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Curso de C - Avaliação automática das aulas 5 e 6</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+
+<p align="left"><font SIZE="+3" color="#000080">Auto-avaliação on-line: aulas 5 e 6</font>
+</p>
+<script>
+<!--  hide script from obsolete browsers
+
+function makeArray(length)
+ {
+  for (var i=0; i < length; i++)
+   {
+    this[i] = 0;
+   }
+  this.length = length;
+ }
+
+var NumQuestions = 12;   // Change this value for each test var
+
+ArraySize = NumQuestions + 1;
+
+// Add an extra array element so that we don't have to use index 0.  That way
+// each question number is its own index into the array.
+
+var questions = new makeArray(ArraySize);
+
+function zeroit()
+ {
+  for (var i=0; i < ArraySize; i++)
+   {
+    questions[i] = 0;
+   }
+ }
+
+function check()
+ {
+  var NumCorrect = 0;
+  var score = 0;
+
+  for (var i=1; i < ArraySize; i++)
+   {
+    NumCorrect += questions[i];
+   }
+
+  score = 100 * NumCorrect/NumQuestions;
+  document.question.good.value = score;
+ }
+
+// end hiding contents -->
+
+</script>
+
+
+<hr>
+
+<form NAME="question">
+  <p><br>
+  <font SIZE="+1">Responda as perguntas abaixo, escolhendo a alternativa adequada para cada
+  questão. Ao terminar, aperte o botão <a HREF="#verifica">&quot;Verifica&nbsp; nota&quot;</a>
+  no final do formulário. Você pode fazer quantas tentativas quiser até atingir a nota
+  100. Se quiser recomeçar, basta apertar o botão <a HREF="#verifica">&quot;Limpa&quot;</a>
+  no final do formulário<b>.</b></font> </p>
+  <p>1- Seja um vetor declarado por </p>
+  <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int vet[10];</tt> </p>
+  <p>&nbsp;&nbsp;&nbsp; Qual elemento deste vetor é acessado quando se escreve vet[2] ? <ol
+  TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Primeiro elemento&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Segundo elemento&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Terceiro elemento&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Quarto elemento&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>2- Se declararmos um vetor como: </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; int vet[30]</tt> </p>
+  <p>&nbsp;&nbsp;&nbsp; a instrução abaixo acessa corretamente os elementos deste vetor? </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; for (j=0; j &lt;= 30; j++)</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vet[j] = j*j;</tt> <ol TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Sim</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>3- Seja a matriz matrx declarada e inicializada por: </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; int matrx[][4] = {1,2,3,4,5,6,7,8,9,10,11,12};</tt> </p>
+  <p>O que conterá o elemento matrx[1][2] ? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">2</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">5&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">6&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">7&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>4- Se uma string for declarada como: </p>
+  <p>&nbsp;&nbsp;&nbsp; char str[20]; </p>
+  <p>o número máximo de caracteres que poderão ser lidos e armazenados nela é: <ol
+  START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">18&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">19&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">20</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">21&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>5- Qual função pode ser usada para determinar o comprimento de uma string? <ol
+  START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">gets</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">strcpy</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td><b>c.</b></td>
+        <td>strcat</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] =1"></td>
+        <td><b>d.</b></td>
+        <td>strlen</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td><b>e.</b></td>
+        <td>strcmp</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>6- Qual das instruções abaixo é correta para declarar um ponteiro para inteiro? <ol
+  START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">*int pti;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">*pti;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">&amp;i;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">int_pti pti;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=1"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">int *pti;&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>7-&nbsp; Seja a seguinte seqüência de instruções em um programa C: </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; int *pti;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; int i = 10;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; pti = &amp;i;</tt> </p>
+  <p>&nbsp;&nbsp;&nbsp; Qual afirmativa é <b>falsa</b>? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td VALIGN="TOP"><b>a.&nbsp;</b></td>
+        <td VALIGN="TOP">pti armazena o endereço de i&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">*pti é igual a 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td><b>c.</b>&nbsp;</td>
+        <td>ao se executar *pti = 20; i passará a ter o valor 20</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td><b>d.</b>&nbsp;</td>
+        <td>ao se alterar o valor de i, *pti será modificado</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] =1"></td>
+        <td><b>e.</b>&nbsp;</td>
+        <td>pti é igual a 10</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>8- Se i e j são variáveis inteiras e pi e pj são ponteiros para inteiro, qual
+  atribuição <b>é ilegal</b>? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">pi = &amp;i;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">*pj = &amp;j;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">pj = &amp;*&amp;j;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">i = *&amp;*&amp;j;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">i = (*pi)+++*q;&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>9- Seja a seguinte seqüência de instruções em um programa C: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int *pti;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int
+  veti[]={10,7,2,6,3};</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pti
+  = veti;</font> </p>
+  <p>Qual afirmativa é <b>falsa</b>? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">*pti é igual a 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">*(pti+2) é igual a 2&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">pti[4] é igual a 3</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">pti[1] é igual a 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">*(veti+3) é igual a 6</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>10- Na seqüência de instruções abaixo: </p>
+  <p>&nbsp;&nbsp;&nbsp; float f; <br>
+  &nbsp;&nbsp;&nbsp; float *pf; <br>
+  &nbsp;&nbsp;&nbsp; pf = &amp;f; <br>
+  &nbsp;&nbsp;&nbsp; scanf(&quot;%f&quot;, pf); <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10] = 1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Efetuamos a leitura de f</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não efetuamos a leitura de f</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Temos um erro de sintaxe&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Deveríamos estar usando &amp;pf no scanf&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>11- Seja a seguinte seqüência de instruções </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; int i=10, j=20;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; int *pti, *ptj;</font> <br>
+  <tt>&nbsp;&nbsp;&nbsp; pti = &amp;i;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; ptj = &amp;j;</tt> </p>
+  <p>Qual expressão <b>não é válida</b>? <ol START="4">
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">j = pti == ptj;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">i = pti-ptj;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">pti += ptj;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">pti++;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">i = pti || ptj;&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>12- Seja a declaração: </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; int matr[][4] = {1,2,3,4,5,6,7,8,9,10,11,12}</tt> </p>
+  <p>Qual afirmativa é falsa? <ol START="4">
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">**matr é igual a 1</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">*(*(matr+1)+2) é igual a 7&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">*(matr[2]+3) é igual a 12</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">(*(matr+2))[2] é igual a 11</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=1"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">*((*matr)+1) é igual a 5</td>
+      </tr>
+    </table>
+    <p><a NAME="verifica"></a></p>
+  </ol>
+  <p><input type="button" value="Verifica nota" onclick="check()"><input type="reset"
+  name="resetMe" value="Limpa" onclick="zeroit()"> </p>
+  <p>Sua nota é:&nbsp;<input type="text" name="good" size="4" value="0">em um máximo de
+  100. <br>
+  </p>
+</form>
+
+<p>&nbsp;</p>
+<a HREF="c660.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c600.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

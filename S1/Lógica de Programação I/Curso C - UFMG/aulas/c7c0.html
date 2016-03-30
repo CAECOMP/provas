@@ -1,0 +1,457 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Curso de C - Avaliação automática das aulas 5 e 6</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+
+<p align="left"><font face="Arial" color="#000080" size="4">Auto-avaliação on-line: aula
+7</font><big> </big></p>
+
+<hr>
+<script>
+
+<!--  hide script from obsolete browsers
+
+function makeArray(length)
+ {
+  for (var i=0; i < length; i++)
+   {
+    this[i] = 0;
+   }
+  this.length = length;
+ }
+
+var NumQuestions = 10;   // Change this value for each test var
+
+ArraySize = NumQuestions + 1;
+
+// Add an extra array element so that we don't have to use index 0.  That way
+// each question number is its own index into the array.
+
+var questions = new makeArray(ArraySize);
+
+function zeroit()
+ {
+  for (var i=0; i < ArraySize; i++)
+   {
+    questions[i] = 0;
+   }
+ }
+
+function check()
+ {
+  var NumCorrect = 0;
+  var score = 0;
+
+  for (var i=1; i < ArraySize; i++)
+   {
+    NumCorrect += questions[i];
+   }
+
+  score = 100 * NumCorrect/NumQuestions;
+  document.question.good.value = score;
+ }
+
+// end hiding contents -->
+
+</script>
+
+
+<p>&nbsp; </p>
+
+<form NAME="question">
+  <p><br>
+  <font SIZE="+1">Responda as perguntas abaixo, escolhendo a alternativa adequada para cada
+  questão. Ao terminar, aperte o botão <a HREF="#verifica">&quot;Verifica&nbsp; nota&quot;</a>
+  no final do formulário. Você pode fazer quantas tentativas quiser até atingir a nota
+  100. Se quiser recomeçar, basta apertar o botão <a HREF="#verifica">&quot;Limpa&quot;</a>
+  no final do formulário.</font> </p>
+  <p>1- Qual a afirmativa verdadeira? <ol TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Você pode retornar para um programa quantas variáveis de uma função
+        desejar através do comando return&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma função só pode ter um comando return&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Os protótipos de função servem para declarar as funções, isto é,
+        indicar para o compilador qual o seu nome, tipo de retorno e o número e tipos dos
+        parâmetros&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma função não pode retornar um ponteiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>2- : Qual das seguintes razões não é uma razão válida para o uso de funções em
+  C? <ol TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Funções usam menos memória do que se repetirmos o mesmo código
+        várias vezes</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Funções rodam mais rápido&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td><b>c.</b></td>
+        <td>Funções fornecem um meio de esconder cálculos em uma &quot;caixa preta&quot; que
+        pode ser usada sem a preocupação de detalhes internos de implementação</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td><b>d.</b></td>
+        <td>Funções mantêm variáveis protegidas das outras partes do programa</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>3- Qual a afirmativa falsa? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Se uma função não retorna nada ela deve ser declarada como void</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">O retorno da função main é feito para o sistema operacional&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">stdio.h e string.h contêm o protótipo de algumas funções da
+        biblioteca do C&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Funções podem ser definidas dentro de outras funções&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma das opções anteriores é falsa</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>4- Qual a afirmativa verdadeira? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">stdio.h e string.h contêm o corpo de algumas funções da biblioteca do
+        C&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Funções podem ser chamadas por outras funções&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Em um programa C todas as funções de um programa devem estar em um
+        único arquivo .c</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Variáveis declaradas em uma função são acessíveis por todas as
+        outras funções&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td><b>e.</b>&nbsp;</td>
+        <td>Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>5- Qual a afirmativa verdadeira? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5] =1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">A palavra reservada auto é utilizada para dizer que uma variável é
+        local (automática). Porém, ela pode ser omitida dentro de uma função, pois todas as
+        variáveis são locais por default.</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não se pode utilizar variáveis com o mesmo nome em funções
+        diferentes.</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td><b>c.</b></td>
+        <td>Os parâmetros recebidos por uma função têm o mesmo endereço das variáveis usadas
+        na chamada à função</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] =0"></td>
+        <td><b>d.</b></td>
+        <td>Quando uma variável local tem o mesmo nome de uma variável global, a variável local
+        se torna inacessível e a variável global é acessível</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td><b>e.</b></td>
+        <td>Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>6- Qual a afirmativa falsa? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Os parâmetros recebidos por uma função armazenam cópias das
+        variáveis usadas na chamada da função&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Variáveis globais são conhecidas e podem ser alteradas por todas as
+        funções do programa</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Quando queremos alterar as variáveis que são passadas como parâmetros
+        para uma função, devemos declará-las como ponteiros na função</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">A função scanf necessita receber como parâmetro o endereço da
+        variável de entrada, porque ela precisa alterar esta variável.&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=1"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma das opções anteriores é falsa</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>7-&nbsp; O que imprime o programa abaixo? </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; void func();</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; int i = 10;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; void main()</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; {</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i=20;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func();</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;i= %d &quot;, i);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i = 30;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func();</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;i= %d
+  &quot;, i);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; }</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; void func()</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; {</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;i = %d &quot;, i);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; }</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;</tt> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td VALIGN="TOP"><b>a.&nbsp;</b></td>
+        <td VALIGN="TOP">i= 20 i= 20 i= 30 i= 30</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">i= 10 i= 20 i=10 i= 30</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td><b>c.</b>&nbsp;</td>
+        <td>i= 20 i=10 i=10 i=30</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td><b>d.</b>&nbsp;</td>
+        <td>i= 10 i=10 i=10 i=10</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] =0"></td>
+        <td><b>e.</b>&nbsp;</td>
+        <td>Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>8- Ao se utilizar um vetor como parâmetro para uma função que informação está
+  sendo passada à função? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma cópia de todos elementos do vetor</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma cópia do primeiro elemento do vetor&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">O endereço do primeiro elemento do vetor&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">O endereço de todos os elementos do vetor&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>9- Sejam par1, par2 e par3 variáveis inteiras. Se chamarmos uma função pela
+  instrução: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;
+  func(&amp;par1,&amp;par2,&amp;par3);</font> </p>
+  <p>Para que servem &amp;par1, &amp;par2 e &amp;par3 ? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">São valores inteiros passados para a função&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Servem para armazenar os endereços da função e das funções que
+        chamaram</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">São os endereços das variáveis da função que chamou. Nestes
+        endereços iremos armazenar os valores a serem modificados pela função</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Armazenam os endereços das funções de biblioteca usados na
+        função&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>10- O que imprime o programa a seguir? </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; func(int *a, int b)</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; {</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int temp;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp = *a;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *a = b;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = temp;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; }</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; void main()</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; {</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int a = 10, b = 20;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func(&amp;a, b);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;a = %d, b = %d&quot;, a, b);</tt>
+  <br>
+  <tt>&nbsp;&nbsp;&nbsp; }</tt> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 10, b = 20</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 20, b = 10</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 10, b = 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 20, b = 20</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p><a NAME="verifica"></a></p>
+  <p><input type="button" value="Verifica nota" onclick="check()"><input type="reset"
+  name="resetMe" value="Limpa" onclick="zeroit()"> </p>
+  <p>Sua nota é:&nbsp;<input type="text" name="good" size="4" value="0">em um máximo de
+  100. <br>
+  </p>
+</form>
+<a HREF="c7b0.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>
