@@ -1,0 +1,191 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>Especificadores de Classe de Armazenamento</h3>
+
+<ul>
+  <li><a HREF="#cA21">auto</a></li>
+  <li><a HREF="#cA22">extern</a></li>
+  <li><a HREF="#cA23">static</a></li>
+  <li><a HREF="#cA24">register</a></li>
+</ul>
+
+<hr>
+
+<p>Estes modificadores de tipo atuam sobre a maneira com a qual o compilador vai armazenar
+a variável. </p>
+
+<h4><a NAME="cA21"></a>auto</h4>
+
+<p>O especificador de classe de armazenamento <b>auto</b> define variáveis automáticas,
+isto é, variáveis locais. Raramente usado pois todas as variáveis locais do C são <b>auto</b>
+por definição. </p>
+
+<h4><a NAME="cA22"></a>extern</h4>
+
+<p>O <b>extern</b> define variáveis que serão usadas em um arquivo apesar de terem sido
+declaradas em outro. Ao contrário dos programas até aqui vistos, podemos ter programas
+de vários milhares de linhas. Estes podem ser divididos em vários arquivos (módulos)
+que serão compilados separadamente. Digamos que para um programa grande tenhamos duas
+variáveis globais: um inteiro <b>count</b> e um <b>float sum</b>. Estas variáveis são
+declaradas normalmente em um dos módulos do programa. Por exemplo: </p>
+
+<pre>int count;
+float sum;
+main (void)
+{
+...
+return 0;
+}</pre>
+
+<p>Num outro módulo do programa temos uma rotina que deve usar as variáveis globais
+acima. Digamos que a rotina que queremos se chama <b>RetornaCount()</b> e retorna o valor
+atual de <b>count</b>. O problema é que este módulo será compilado em separado e não
+tomará conhecimento dos outros módulos. O que fazer? Será que funcionaria se fizermos
+assim: </p>
+
+<pre>int count;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* errado */
+float sum;
+int RetornaCount (void)
+{
+return count;
+}</pre>
+
+<p>Não. O módulo compilaria sem problema, mas, na hora que fizermos a linkagem (união
+dos módulos já compilados para gerar o executável) vamos nos deparar com uma mensagem
+de erro dizendo que as variáveis globais count e sum foram declaradas mais de uma vez. A
+maneira correta de se escrever o módulo com a função <b>RetornaCount()</b> é: </p>
+
+<pre>extern int count;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* certo */
+extern float sum;
+int RetornaCount (void)
+{
+return count;
+}</pre>
+
+<p>Assim, o compilador irá saber que <b>count</b> e <b>sum</b> estão sendo usados no
+bloco mas que foram declarados em outro. </p>
+
+<h4><a NAME="cA23"></a>static</h4>
+
+<p>O funcionamento das variáveis declaradas como <b>static</b> depende se estas são
+globais ou locais. </p>
+
+<p>Variáveis globais <b>static</b> funcionam como variáveis globais dentro de um
+módulo, ou seja, são variáveis globais que não são (e nem podem ser) conhecidas em
+outros modulos. Isto é util se quisermos isolar pedaços de um programa para evitar
+mudanças acidentais em variáveis globais. </p>
+
+<p>Variáveis locais <b>static</b> são variáveis cujo valor é mantido de uma chamada da
+função para a outra. Veja o exemplo: </p>
+
+<pre>int count (void)
+{
+static int num=0;
+num++;
+return num;
+}</pre>
+
+<p>A função <b>count()</b> retorna o número de vezes que ela já foi chamada. Veja que
+a variável local <b>int</b> é inicializada. Esta inicialização só vale para a <i>primeira</i>
+vez que a função é chamada pois <b>num</b> deve manter o seu valor de uma chamada para
+a outra. O que a função faz é incrementar num a cada chamada e retornar o seu valor. A
+melhor maneira de se entender esta variável local <b>static</b> é implementando. Veja
+por si mesmo, executando seu próprio programa que use este conceito. </p>
+
+<h4><a NAME="cA24"></a>register</h4>
+
+<p>O computador tem a memória principal e os registradores da CPU. As variáveis (assim
+como o programa como um todo) são armazenados na memória. O modificador <b>register</b>
+diz ao compilador que a variável em questão deve ser, se possível, usada em um
+registrador da CPU. </p>
+
+<p>Vamos agora ressaltar vários pontos importantes. Em primeiro lugar, porque usar o <b>register</b>?
+Variáveis nos registradores da CPU vão ser acessadas em um tempo muito menor pois os
+registradores são muito mais rápidos que a memória. Em segundo lugar, em que tipo de
+variável usar o <b>register</b>? O <b>register</b> <i>não</i> pode ser usado em
+variáveis globais. Isto implicaria que um registrador da CPU ficaria o tempo todo ocupado
+por conta de uma variável. Os tipos de dados onde é mais aconselhado o uso do <b>register</b>
+são os tipos <b>char</b> e <b>int</b>, mas pode-se usá-lo em qualquer tipo de dado. Em
+terceiro lugar, o <b>register</b> é um pedido que o programador faz ao compilador. Este
+não precisa ser atendido necessariamente. </p>
+
+<p>Um exemplo do uso do register é dado: </p>
+
+<pre>main (void)
+{
+register int count;
+for (count=0;count&lt;10;count++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+return 0;
+}</pre>
+
+<p>O loop <b>for</b> acima será executado mais rapidamente do que seria se não
+usássemos o <b>register</b>. Este é o uso mais recomendável para o <b>register</b>: uma
+variável que será usada muitas vezes em seguida. </p>
+
+<p>&nbsp;</p>
+
+<hr width="300">
+
+<p align="center"><big><big>Auto-Avaliação</big></big></p>
+
+<p><strong><font face="Arial">Veja como você está: </font></strong></p>
+
+<p><font face="Arial">Considerando o conceito e finalidade dos modificadores de tipo,
+relacione as afirmativas com as palavras reservadas correspondentes (todas as afirmativas
+devem ser preenchidas com o número relacionado ao modificador correspondente, e existe
+pelo menos uma afirmativa para cada modificador): <br>
+&nbsp;&nbsp; (1)const&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(3)extern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (5)register&nbsp;&nbsp;&nbsp;&nbsp; (7)void <br>
+&nbsp;&nbsp; (2)volatile&nbsp;&nbsp;&nbsp;&nbsp;
+(4)static&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(6)auto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+
+<p><font face="Arial">(&nbsp;&nbsp; ) informa ao compilador que o valor da variável não
+pode ser alterado por nenhum comando do programa, mas que pode ser inicializado <br>
+(&nbsp;&nbsp; ) informa ao compilador que nenhum valor será devolvido pela função <br>
+(&nbsp;&nbsp; ) informa ao compilador que a variável pode ser modificada por algum evento
+que não está sob&nbsp; o controle do programa <br>
+(&nbsp;&nbsp; ) avisa ao compilador que as variáveis que o seguem já foram declaradas em
+outro lugar <br>
+(&nbsp;&nbsp; ) torna a variável permanente, mantendo seu valor entre chamadas <br>
+(&nbsp;&nbsp; ) útil ao escrever funções generalizadas e funções de biblioteca que
+podem ser usadas por&nbsp; outros programadores, pois permite esconder porções do
+programa de outras partes do código, evitando assim o uso de variável global <br>
+(&nbsp;&nbsp; ) quando apontadores forem passados para a função, garante que nenhum
+código na função&nbsp;&nbsp; poderá modificar os objetos apontados <br>
+(&nbsp;&nbsp; ) armazena o valor da variável em um registrador da CPU, acelerando
+operações <br>
+(&nbsp;&nbsp; ) usada para declarar variáveis locais automáticas, mas muito pouco usada
+por&nbsp; já ser o padrão (default) <br>
+(&nbsp;&nbsp; ) avisa ao compilador que a variável em questão sera largamente usada e
+deve permanecer acessível da forma mais eficiente possível <br>
+(&nbsp;&nbsp; ) permite ao compilador conhecer a variável sem criar armazenamento para
+ela novamente em&nbsp; outro modulo </font></p>
+
+<hr width="300">
+<a HREF="ca10.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="ca30.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

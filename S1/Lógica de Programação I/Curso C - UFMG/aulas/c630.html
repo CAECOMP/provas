@@ -1,0 +1,260 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Ponteiros e Vetores</h3>
+
+<ul>
+  <li><a HREF="#c631.html">Vetores como ponteiros</a></li>
+  <li><a HREF="#c632.html">Ponteiros como vetores</a></li>
+  <li><a HREF="#c633.html">Strings</a></li>
+  <li><a HREF="#c634.html">Endereços de elementos de vetores</a></li>
+  <li><a HREF="#c635.html">Vetores de ponteiros</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p>Veremos nestas seções que ponteiros e vetores têm uma ligação muito forte. </p>
+
+<p>&nbsp;<a NAME="c631.html"></a> </p>
+
+<h4>Vetores como ponteiros</h4>
+
+<p>Vamos dar agora uma idéia de como o C trata vetores. </p>
+
+<p>&nbsp;Quando você declara uma matriz da seguinte forma: </p>
+
+<p>&nbsp;<i>tipo_da_variável nome_da_variável [tam1][tam2] ... [tamN];</i> </p>
+
+<p>&nbsp;o compilador C calcula o tamanho, em bytes, necessário para armazenar esta
+matriz. Este tamanho é: </p>
+
+<p>&nbsp;<i>tam1 x tam2 x tam3 x ... x tamN x tamanho_do_tipo</i> </p>
+
+<p>&nbsp;O compilador então aloca este número de bytes em um espaço livre de memória.
+O <i>nome da variável</i> que você declarou é na verdade <i>um ponteiro para o tipo da
+variável da matriz</i>. Este conceito é fundamental. Eis porque: Tendo alocado na
+memória o espaço para a matriz, ele toma o nome da variável (que é um ponteiro) e
+aponta para o <i>primeiro</i> elemento da matriz. </p>
+
+<p>&nbsp;Mas aí surge a pergunta: então como é que podemos usar a seguinte notação? </p>
+
+<p>&nbsp;<i>nome_da_variável[índice]</i> </p>
+
+<p>&nbsp;Isto pode ser facilmente explicado desde que você entenda que a notação acima
+é <i>absolutamente equivalente</i> a se fazer: </p>
+
+<p>&nbsp;<i>*(nome_da_variável+índice)</i> </p>
+
+<p>&nbsp;Agora podemos entender como é que funciona um vetor! Vamos ver o que podemos
+tirar de informação deste fato. Fica claro, por exemplo, porque é que, no C, a
+indexação começa com zero. É porque, ao pegarmos o valor do primeiro elemento de um
+vetor, queremos, de fato, <b>*nome_da_variável</b> e então devemos ter um índice igual
+a zero. Então sabemos que: </p>
+
+<p>&nbsp;<i>*nome_da_variável</i> é equivalente a <i>nome_da_variável[0]</i> </p>
+
+<p>&nbsp;Outra coisa: apesar de, na maioria dos casos, não fazer muito sentido,
+poderíamos ter índices negativos. Estaríamos pegando posições de memória antes do
+vetor. Isto explica também porque o C não verifica a validade dos índices. Ele <i>não</i>
+sabe o tamanho do vetor. Ele apenas aloca a memória, ajusta o ponteiro do nome do vetor
+para o início do mesmo e, quando você usa os índices, encontra os elementos
+requisitados. </p>
+
+<p>&nbsp;Vamos ver agora um dos usos mais importantes dos ponteiros: a varredura
+sequencial de uma matriz. Quando temos que varrer todos os elementos de uma matriz de uma
+forma sequencial, podemos usar um ponteiro, o qual vamos incrementando. Qual a vantagem?
+Considere o seguinte programa para zerar uma matriz: </p>
+
+<p>&nbsp; </p>
+
+<pre>int main ()
+{
+	float matrx [50][50];
+	int i,j;
+	for (i=0;i&lt;50;i++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	for (j=0;j&lt;50;j++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	matrx[i][j]=0.0;
+	return(0);
+}</pre>
+
+<p>Podemos reescrevê-lo usando ponteiros: </p>
+
+<p>&nbsp; </p>
+
+<pre>int main ()
+{
+	float matrx [50][50];
+	float *p;
+	int count;
+	p=matrx[0];
+	for (count=0;count&lt;2500;count++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	*p=0.0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	p++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	return(0);
+}</pre>
+
+<p>No primeiro programa, <i>cada</i> vez que se faz <b>matrx[i][j]</b> o programa tem que
+calcular o deslocamento para dar ao ponteiro. Ou seja, o programa tem que calcular 2500
+deslocamentos. No segundo programa o único cálculo que deve ser feito é o de um
+incremento de ponteiro. Fazer 2500 incrementos em um ponteiro é muito mais rápido que
+calcular 2500 deslocamentos completos. </p>
+
+<p>&nbsp;Há uma diferença entre o nome de um vetor e um ponteiro que deve ser frisada:
+um ponteiro é uma variável, mas o nome de um vetor não é uma variável. Isto
+significa, que não se consegue alterar o endereço que é apontado pelo &quot;nome do
+vetor&quot;. Seja: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp; int vetor[10];
+&nbsp;&nbsp;&nbsp;&nbsp; int *ponteiro, i;
+&nbsp;&nbsp;&nbsp;&nbsp; ponteiro = &amp;i;
+
+     /* as operacoes a seguir sao invalidas */
+
+&nbsp;&nbsp;&nbsp;&nbsp; vetor = vetor + 2;&nbsp;&nbsp;&nbsp;&nbsp; /* ERRADO: vetor nao e' variavel */
+&nbsp;&nbsp;&nbsp;&nbsp; vetor++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* ERRADO: vetor nao e' variavel */
+&nbsp;&nbsp;&nbsp;&nbsp; vetor = ponteiro;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* ERRADO: vetor nao e' variavel */</pre>
+
+<p>Teste as operações acima no seu compilador. Ele dará uma mensagem de erro. Alguns
+compiladores dirão que vetor não é um Lvalue. Lvalue, significa &quot;Left value&quot;,
+um símbolo que pode ser colocado do lado esquerdo de uma expressão de atribuição, isto
+é, uma variável. Outros compiladores dirão que tem-se &quot;incompatible types in
+assignment&quot;, tipos incompatíveis em uma atribuição. </p>
+
+<pre>/* as operacoes abaixo sao validas */
+
+&nbsp;&nbsp;&nbsp;&nbsp; ponteiro = vetor;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* CERTO: ponteiro e' variavel */
+&nbsp;&nbsp;&nbsp;&nbsp; ponteiro = vetor+2;&nbsp;&nbsp;&nbsp; /* CERTO: ponteiro e' variavel */</pre>
+
+<p>&nbsp;O que você aprendeu nesta seção é de suma importância. Não siga adiante
+antes de entendê- la bem. </p>
+
+<p>&nbsp;<a NAME="c632.html"></a> </p>
+
+<h4>Ponteiros como vetores</h4>
+
+<p>Sabemos agora que, na verdade, o nome de um vetor é um ponteiro constante. Sabemos
+também que podemos indexar o nome de um vetor. Como consequência podemos também indexar
+um ponteiro qualquer. O programa mostrado a seguir funciona perfeitamente: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int matrx [10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int *p;
+	p=matrx;
+	printf (&quot;O terceiro elemento do vetor e: %d&quot;,p[2]);
+	return(0);
+}</pre>
+
+<p>Podemos ver que <b>p[2]</b> equivale a <b>*(p+2)</b>. </p>
+
+<p>&nbsp;<a NAME="c633.html"></a> </p>
+
+<h4>Strings</h4>
+
+<p>Seguindo o raciocínio acima, nomes de strings, são do tipo <b>char*</b>. Isto nos
+permite escrever a nossa função <b>StrCpy()</b>, que funcionará de forma semelhante à
+função <b><a HREF="c520.html#c522.html">strcpy()</a></b> da biblioteca: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+void StrCpy (char *destino,char *origem)
+{
+while (*origem)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *destino=*origem;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; origem++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; destino++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+*destino='\0';
+}
+int main ()
+{
+	char str1[100],str2[100],str3[100];
+	printf (&quot;Entre com uma string: &quot;);
+	gets (str1);
+	StrCpy (str2,str1);
+	StrCpy (str3,&quot;Voce digitou a string &quot;);
+	printf (&quot;\n\n%s%s&quot;,str3,str2);
+	return(0);
+}</pre>
+
+<p>Há vários pontos a destacar no programa acima. Observe que podemos passar ponteiros
+como argumentos de funções. Na verdade é assim que funções como <b>gets()</b> e <b><a
+HREF="c520.html#c522.html">strcpy()</a></b> funcionam. Passando o ponteiro você
+possibilita à função <i>alterar</i> o conteúdo das strings. Você já estava passando
+os ponteiros e não sabia. No comando <b>while (*origem)</b> estamos usando o fato de que
+a string termina com '\0' como critério de parada. Quando fazemos <b>origem++</b> e <b>destino++</b>
+o leitor poderia argumentar que estamos alterando o valor do ponteiro-base da string,
+contradizendo o que recomendei que se deveria fazer, no final de <a HREF="#c631.html">uma
+seção anterior</a>. O que o leitor talvez não saiba ainda (e que será estudado em
+detalhe mais adiante) é que, no C, são passados para as funções <i>cópias</i> dos
+argumentos. Desta maneira, quando alteramos o ponteiro <b>origem</b> na função <b>StrCpy()</b>
+o ponteiro <b>str2</b> permanece inalterado na função <b>main()</b>. </p>
+
+<p>&nbsp;<a NAME="c634.html"></a> </p>
+
+<h4>Endereços de elementos de vetores</h4>
+
+<p>Nesta seção vamos apenas ressaltar que a notação </p>
+
+<p>&nbsp;<i>&amp;nome_da_variável[índice]</i> </p>
+
+<p>&nbsp;é válida e retorna o endereço do ponto do vetor indexado por índice. Isto
+seria equivalente a nome_da_variável + indice. É interessante notar que, como
+consequência, o ponteiro <b>nome_da_variável</b> tem o endereço <b>&amp;nome_da_variável[0]</b>,
+que indica onde na memória está guardado o valor do primeiro elemento do vetor. </p>
+
+<p>&nbsp;<a NAME="c635.html"></a> </p>
+
+<h4>Vetores de ponteiros</h4>
+
+<p>Podemos construir vetores de ponteiros como declaramos vetores de qualquer outro tipo.
+Uma declaração de um vetor de ponteiros inteiros poderia ser: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *pmatrx [10];</pre>
+
+<p>No caso acima, <b>pmatrx</b> é um vetor que armazena 10 ponteiros para
+inteiros.&nbsp;&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Fizemos a função StrCpy(). Faça uma função StrLen() e StrCat() que
+funcionem como as funções strlen() e strcat() de string.h respectivamente</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c620.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c600.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c640.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

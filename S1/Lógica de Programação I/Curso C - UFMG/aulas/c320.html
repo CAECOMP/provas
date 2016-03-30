@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Os Tipos do C</h3>
+
+<p>O C tem 5 tipos básicos: <b>char</b>, <b>int</b>, <b>float</b>, <b>void, double</b>.
+Destes não vimos ainda os dois últimos: O <b>double</b> é o ponto flutuante duplo e
+pode ser visto como um ponto flutuante com muito mais precisão. O void é o tipo vazio,
+ou um &quot;tipo sem tipo&quot;. A aplicação deste &quot;tipo&quot; será vista
+posteriormente.</p>
+
+<p align="left">&nbsp;Para cada um dos tipos de variáveis existem os modificadores de
+tipo. Os modificadores de tipo do C são quatro: <b>signed</b>, <b>unsigned</b>, <b>long</b>
+e <b>short</b>. Ao <b>float</b> não se pode aplicar nenhum e ao <b>double</b> pode-se
+aplicar apenas o <b>long</b>. Os quatro modificadores podem ser aplicados a inteiros. A
+intenção é que <b>short</b> e <b>long</b> devam prover tamanhos diferentes de inteiros
+onde isto for prático. Inteiros menores (<strong>short</strong>) ou maiores (<strong>long</strong>).
+<b>int </b>normalmente terá o tamanho natural para uma determinada máquina. Assim, numa
+máquina de 16 bits, <b>int</b> provavelmente terá 16 bits. Numa máquina de 32, <b>int</b>
+deverá ter 32 bits. Na verdade, cada compilador é livre para escolher tamanhos adequados
+para o seu próprio hardware, com a única restrição de que <b>shorts ints</b> e<b> ints</b>
+devem ocupar pelo menos 16 bits, <b>longs ints</b> pelo menos 32 bits, e <b>short int</b>
+não pode ser maior que <b>int</b>, que não pode ser maior que <b>long int</b>. O
+modificador <strong>unsigned</strong> serve para especificar variáveis sem sinal. Um <strong>unsigned
+int</strong> será um inteiro que assumirá apenas valores positivos. A seguir estão
+listados os tipos de dados permitidos e seu valores máximos e mínimos em um compilador
+típico para um hardware de 16 bits. Também nesta tabela está especificado o formato que
+deve ser utilizado para ler os tipos de dados com a função scanf(): <br>
+&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr ALIGN="CENTER">
+    <td ALIGN="CENTER" ROWSPAN="2" WIDTH="120">Tipo</td>
+    <td ALIGN="CENTER" ROWSPAN="2" WIDTH="100">Num de bits</td>
+    <td ALIGN="CENTER" ROWSPAN="2" WIDTH="100">Formato para leitura com scanf</td>
+    <td COLSPAN="2" WIDTH="200"><p align="center">Intervalo</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td ALIGN="CENTER" WIDTH="110">Inicio</td>
+    <td WIDTH="110">Fim</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td ALIGN="left">char</td>
+    <td ALIGN="CENTER">8</td>
+    <td ALIGN="CENTER">%c</td>
+    <td ALIGN="CENTER">-128</td>
+    <td align="center">127</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td ALIGN="left">unsigned char</td>
+    <td ALIGN="CENTER">8</td>
+    <td ALIGN="CENTER">%c</td>
+    <td ALIGN="CENTER">0</td>
+    <td align="center">255</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td ALIGN="left">signed char</td>
+    <td align="center">8</td>
+    <td align="center">%c</td>
+    <td align="center">-128</td>
+    <td align="center">127</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>int</td>
+    <td align="center">16</td>
+    <td align="center">%i</td>
+    <td align="center">-32.768</td>
+    <td align="center">32.767</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>unsigned int</td>
+    <td align="center">16</td>
+    <td align="center">%u</td>
+    <td align="center">0</td>
+    <td align="center">65.535&nbsp;</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>signed int</td>
+    <td align="center">16</td>
+    <td align="center">%i</td>
+    <td align="center">-32.768&nbsp;</td>
+    <td align="center">32.767</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>short int</td>
+    <td align="center">16</td>
+    <td align="center">%hi</td>
+    <td align="center">-32.768</td>
+    <td align="center">32.767</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>unsigned short int</td>
+    <td align="center">16</td>
+    <td align="center">%hu</td>
+    <td align="center">0</td>
+    <td align="center">65.535</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>signed short int</td>
+    <td align="center">16</td>
+    <td align="center">%hi</td>
+    <td align="center">-32.768</td>
+    <td align="center">32.767&nbsp;</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>long int</td>
+    <td align="center">32</td>
+    <td align="center">%li</td>
+    <td align="center">-2.147.483.648</td>
+    <td align="center">2.147.483.647</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>signed long int</td>
+    <td align="center">32</td>
+    <td align="center">%li</td>
+    <td align="center">-2.147.483.648</td>
+    <td align="center">2.147.483.647</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>unsigned long int</td>
+    <td align="center">32</td>
+    <td align="center">%lu</td>
+    <td align="center">0</td>
+    <td align="center">4.294.967.295</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>float</td>
+    <td ALIGN="CENTER">32</td>
+    <td ALIGN="CENTER">%f</td>
+    <td align="center">3,4E-38</td>
+    <td align="center">3.4E+38&nbsp;</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>double</td>
+    <td align="center">64</td>
+    <td align="center">%lf</td>
+    <td align="center">1,7E-308</td>
+    <td align="center">1,7E+308</td>
+  </tr>
+  <tr ALIGN="CENTER">
+    <td>long double</td>
+    <td align="center">80</td>
+    <td align="center">%Lf</td>
+    <td align="center">3,4E-4932&nbsp;</td>
+    <td align="center">3,4E+4932</td>
+  </tr>
+</table>
+</center></div>
+
+<p>O tipo <b>long double</b> é o tipo de ponto flutuante com maior precisão. É
+importante observar que os intervalos de ponto flutuante, na tabela acima, estão
+indicados em faixa de <i>expoente</i>, mas os números podem assumir valores tanto
+positivos quanto negativos. </p>
+
+<p><br>
+&nbsp; </p>
+<a HREF="c310.html">
+
+<p align="center"><img SRC="left.gif" ALT="Voltar" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a
+HREF="c300.html"><img SRC="up.gif" ALT="Índice" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a
+HREF="c330.html"><img SRC="right.gif" ALT="Prosseguir" BORDER="0" HEIGHT="34" WIDTH="37"></a>
+</p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

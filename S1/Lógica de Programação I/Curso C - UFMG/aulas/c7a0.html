@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Curso de C - Recursividade</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Recursividade</h3>
+
+<p>Na linguagem C, assim como em muitas outras linguagens de programação, uma função
+pode chamar a si própria. Uma função assim é chamada função recursiva. Todo cuidado
+é pouco ao se fazer funções recursivas. A primeira coisa a se providenciar é um
+critério de parada. Este vai determinar quando a função deverá parar de chamar a si
+mesma. Isto impede que a função se chame infinitas vezes. </p>
+
+<p>Uma função que calcule o fatorial de um número inteiro n é um bom exemplo de uma
+função recursiva: </p>
+
+<pre>#include &lt;stdio.h&gt;
+int fat(int n)
+{
+	if (n)&nbsp;
+&nbsp; 	  return n*fat(n-1);
+	else return 1;
+}
+
+int main()
+{
+	int n;
+	printf(&quot;\n\nDigite um valor para n: &quot;);
+	scanf(&quot;%d&quot;, &amp;n);
+	printf(&quot;\nO fatorial de %d e' %d&quot;, n, fat(n));
+	return 0;
+}</pre>
+
+<p>Note que, enquanto n não for igual a 0, a função fat chama a si mesma, cada vez com
+um valor menor. n=0 é critério de parada para esta função. </p>
+
+<p>Há certos algoritmos que são mais eficientes quando feitos de maneira recursiva, mas
+a recursividade é algo a ser evitado sempre que possível, pois, se usada incorretamente,
+tende a consumir muita memória e ser lenta. Lembre-se que memória é consumida cada vez
+que o computador faz uma chamada a uma função. Com funções recursivas a memória do
+computador pode se esgotar rapidamente. </p>
+
+<p>&nbsp; </p>
+<a HREF="c790.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c7b0.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

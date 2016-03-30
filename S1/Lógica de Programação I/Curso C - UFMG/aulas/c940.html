@@ -1,0 +1,333 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+</head>
+
+<body TEXT="#000000" LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff" ALINK="#FF0000">
+
+<h2 ALIGN="CENTER">Curso de C</h2>
+
+<h2 ALIGN="CENTER"><img SRC="line.gif" WIDTH="485" HEIGHT="8"></h2>
+
+<h3 ALIGN="CENTER">Entrada e Saída Formatada</h3>
+
+<ul>
+  <li><a HREF="#c941">printf</a></li>
+  <li><a HREF="#c942">scanf</a></li>
+  <li><a href="#c943">sprintf e sscanf</a></li>
+</ul>
+
+<hr>
+
+<p>As funções que resumem todas as funções de entrada e saída formatada no C são as
+funções <b>printf()</b> e <b>scanf()</b>. Um domínio destas funções é fundamental ao
+programador.</p>
+
+<h4><a NAME="c941"></a>printf</h4>
+
+<p>Protótipo:</p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int printf (char *str,...);</pre>
+
+<p>As reticências no protótipo da função indicam que esta função tem um número de
+argumentos variável. Este número está diretamente relacionado com a string de controle <b>str</b>,
+que deve ser fornecida como primeiro argumento. A string de controle tem dois componentes.
+O primeiro são caracteres a serem impressos na tela. O segundo são os comandos de
+formato. Como já vimos, os últimos determinam uma exibição de variáveis na saída. Os
+comandos de formato são precedidos de <b>%</b>. A cada comando de formato deve
+corresponder um argumento na função <b>printf()</b>. Se isto não ocorrer podem
+acontecer erros imprevisíveis no programa.</p>
+
+<p>Abaixo apresentamos a tabela de códigos de formato:<br>
+&nbsp;</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="1">
+  <tr>
+    <td VALIGN="MIDDLE"><p ALIGN="CENTER"><b>Código</b></td>
+    <td VALIGN="MIDDLE"><b><p ALIGN="CENTER">Formato</b></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%c</td>
+    <td VALIGN="MIDDLE">Um caracter (char)</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%d</td>
+    <td VALIGN="MIDDLE">Um número inteiro decimal (int)</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%i</td>
+    <td VALIGN="MIDDLE">O mesmo que %d</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%e</td>
+    <td VALIGN="MIDDLE">Número em notação científica com o &quot;e&quot;minúsculo</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%E</td>
+    <td VALIGN="MIDDLE">Número em notação científica com o &quot;e&quot;maiúsculo</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%f</td>
+    <td VALIGN="MIDDLE">Ponto flutuante decimal</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%g</td>
+    <td VALIGN="MIDDLE">Escolhe automaticamente o melhor entre %f e %e</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%G</td>
+    <td VALIGN="MIDDLE">Escolhe automaticamente o melhor entre %f e %E</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%o</td>
+    <td VALIGN="MIDDLE">Número octal</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%s</td>
+    <td VALIGN="MIDDLE">String</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%u</td>
+    <td VALIGN="MIDDLE">Decimal &quot;unsigned&quot; (sem sinal)</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%x</td>
+    <td VALIGN="MIDDLE">Hexadecimal com letras minúsculas</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%X</td>
+    <td VALIGN="MIDDLE">Hexadecimal com letras maiúsculas</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%%</td>
+    <td VALIGN="MIDDLE">Imprime um %</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%p</td>
+    <td VALIGN="MIDDLE">Ponteiro</td>
+  </tr>
+</table>
+</center></div>
+
+<p ALIGN="CENTER">Vamos ver alguns exemplos:<br>
+&nbsp;</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="1">
+  <tr>
+    <td VALIGN="MIDDLE"><p ALIGN="CENTER"><b>Código</b></td>
+    <td VALIGN="MIDDLE"><b><p ALIGN="CENTER">Imprime</b></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE"><tt>printf (&quot;Um %%%c %s&quot;,'c',&quot;char&quot;);</tt></td>
+    <td VALIGN="MIDDLE"><tt>Um %c char</tt></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE"><tt>printf (&quot;%X %f %e&quot;,107,49.67,49.67);</tt></td>
+    <td VALIGN="MIDDLE"><tt>6B 49.67 4.967e1</tt></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE"><tt>printf (&quot;%d %o&quot;,10,10);</tt></td>
+    <td VALIGN="MIDDLE"><tt>10 12</tt></td>
+  </tr>
+</table>
+</center></div>
+
+<p>É possível também indicar o tamanho do campo, justificação e o número de casas
+decimais. Para isto usa-se códigos colocados entre o <b>%</b> e a letra que indica o tipo
+de formato.</p>
+
+<p>Um inteiro indica o tamanho mínimo, em caracteres, que deve ser reservado para a
+saída. Se colocarmos então <b>%5d</b> estamos indicando que o campo terá cinco
+caracteres de comprimento <i>no mínimo</i>. Se o inteiro precisar de mais de cinco
+caracteres para ser exibido então o campo terá o comprimento necessário para exibi-lo.
+Se o comprimento do inteiro for menor que cinco então o campo terá cinco de comprimento
+e será preenchido com espaços em branco. Se se quiser um preenchimento com zeros pode-se
+colocar um zero antes do número. Temos então que <b>%05d</b> reservará cinco casas para
+o número e se este for menor então se fará o preenchimento com zeros.</p>
+
+<p>O alinhamento padrão é à direita. Para se alinhar um número à esquerda usa-se um
+sinal - antes do número de casas. Então <b>%-5d</b> será o nosso inteiro com o número
+mínimo de cinco casas, só que justificado a esquerda.</p>
+
+<p>Pode-se indicar o número de casas decimais de um número de ponto flutuante. Por
+exemplo, a notação <b>%10.4f</b> indica um ponto flutuante de comprimento total dez e
+com 4 casas decimais. Entretanto, esta mesma notação, quando aplicada a tipos como
+inteiros e strings indica o número mínimo e máximo de casas. Então <b>%5.8d</b> é um
+inteiro com comprimento mínimo de cinco e máximo de oito.</p>
+
+<p>Vamos ver alguns exemplos:<br>
+&nbsp;</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="1">
+  <tr>
+    <td VALIGN="MIDDLE"><p ALIGN="CENTER"><b>Código</b></td>
+    <td VALIGN="MIDDLE"><b><p ALIGN="CENTER">Imprime</b></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE"><tt>printf (&quot;%-5.2f&quot;,456.671);</tt></td>
+    <td VALIGN="MIDDLE"><tt>| 456.67|</tt></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE"><tt>printf (&quot;%5.2f&quot;,2.671);</tt></td>
+    <td VALIGN="MIDDLE"><tt>| 2.67|</tt></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE"><tt>printf (&quot;%-10s&quot;,&quot;Ola&quot;);</tt></td>
+    <td VALIGN="MIDDLE"><tt>|Ola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt></td>
+  </tr>
+</table>
+</center></div>
+
+<p ALIGN="left">Nos exemplos o &quot;pipe&quot; ( <b>|</b> ) indica o início e o fim do
+campo mas não são escritos na tela.</p>
+
+<h4><a NAME="c942"></a>scanf</h4>
+
+<p>Protótipo:</p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int scanf (char *str,...);</pre>
+
+<p>A string de controle str determina, assim como com a função <b>printf()</b>, quantos
+parâmetros a função vai necessitar. Devemos sempre nos lembrar que a função <b>scanf()</b>
+deve receber ponteiros como parâmetros. Isto significa que as variáveis que não sejam
+por natureza ponteiros devem ser passadas precedidas do operador <b>&amp;</b>. Os
+especificadores de formato de entrada são muito parecidos com os de <b>printf()</b>. Os
+caracteres de conversão <i>d, i, u</i> e <i>x</i> podem ser precedidos por <i>h</i> para
+indicarem que um apontador para <i>short</i> ao invés de <i>int</i> aparece na lista de
+argumento, ou pela letra <i>l</i> (letra ele) para indicar que que um apontador para <i>long</i>
+aparece na lista de argumento. Semelhantemente, os caracteres de conversão <i>e, f </i>e<i>
+g </i>podem ser precedidos por <i>l</i> para indicarem que um apontador para <i>double </i>ao
+invés de <i>float</i> está na lista de argumento. &nbsp;Exemplos:</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="1">
+  <tr>
+    <td VALIGN="MIDDLE"><p ALIGN="CENTER"><b>Código</b></td>
+    <td VALIGN="MIDDLE"><b><p ALIGN="CENTER">Formato</b></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%c</td>
+    <td VALIGN="MIDDLE">Um único caracter (char)</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%d</td>
+    <td VALIGN="MIDDLE">Um número decimal (int)</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%i</td>
+    <td VALIGN="MIDDLE">Um número inteiro</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%hi</td>
+    <td VALIGN="MIDDLE">Um short int</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%li</td>
+    <td VALIGN="MIDDLE">Um long int</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%e</td>
+    <td VALIGN="MIDDLE">Um ponto flutuante</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%f</td>
+    <td VALIGN="MIDDLE">Um ponto flutuante</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%lf</td>
+    <td VALIGN="MIDDLE">Um double</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%h</td>
+    <td VALIGN="MIDDLE">Inteiro curto</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%o</td>
+    <td VALIGN="MIDDLE">Número octal</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%s</td>
+    <td VALIGN="MIDDLE">String</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%x</td>
+    <td VALIGN="MIDDLE">Número hexadecimal</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE">%p</td>
+    <td VALIGN="MIDDLE">Ponteiro</td>
+  </tr>
+</table>
+</center></div>
+
+<p><a name="c943"></a><strong>sprintf e sscanf</strong></p>
+
+<p>sprintf e sscanf são semelhantes a printf e scanf. Porém, ao invés de escreverem na
+saída padrão ou lerem da entrada padrão, escrevem ou leem em uma string. Os protótipos
+são:</p>
+
+<pre>int sprintf (char *destino, char *controle, ...);</pre>
+
+<pre>int sscanf (char *destino, char *controle, ...);</pre>
+
+<p>Estas funções são muito utilizadas para fazer a conversão entre dados na forma
+numérica e sua representação na forma de strings. No programa abaixo, por exemplo, a
+variável i é &quot;impressa&quot; em string1. Além da representação de i como uma
+string, string1 também conterá &quot;Valor de i=&quot; .</p>
+
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+    int i;
+    char string1[20];
+    printf( &quot; Entre um valor inteiro: &quot;);
+    scanf(&quot;%d&quot;, &amp;i);
+    sprintf(string1,&quot;Valor de i = %d&quot;, i);
+    puts(string1);
+    return 0;
+}</pre>
+
+<p>Já no programa abaixo, foi utilizada a função sscanf para converter a informação
+armazenada em string1 em seu valor numérico:</p>
+
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j, k;
+    char string1[]= &quot;10 20 30&quot;;
+    sscanf(string1, &quot;%d %d %d&quot;, &amp;i, &amp;j, &amp;k);
+    printf(&quot;Valores lidos: %d, %d, %d&quot;, i, j, k);
+    return 0;
+}</pre>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font></p>
+
+<p><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Escreva um programa que
+leia (via teclado) e apresente uma matriz 3X3 na tela. Utilize os novos códigos de
+formato aprendidos para que a matriz se apresente corretamente identada. Altere os tipos
+de dados da matriz (int, float, double) e verifique a formatação correta para a
+identação. Verifique também a leitura e impressão de números hexadecimais. </p>
+</font>
+
+<hr WIDTH="300">
+
+<p ALIGN="CENTER"><a HREF="c930.html"><img SRC="left.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c900.html"><img SRC="up.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c950.html"><img SRC="right.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT="P"></a></p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Protótipos de Funções</h3>
+
+<p>Até agora, nos exemplos apresentados, escrevemos as funções antes de escrevermos a
+função <b>main()</b>. Isto é, as funções estão fisicamente antes da função <b>main()</b>.
+Isto foi feito por uma razão. Imagine-se na pele do compilador. Se você fosse compilar a
+função <b>main()</b>, onde são chamadas as funções, você teria que saber com
+antecedência quais são os tipos de retorno e quais são os parâmetros das funções
+para que você pudesse gerar o código corretamente. Foi por isto as funções foram
+colocadas antes da função <b>main()</b>: quando o compilador chegasse à função <b>main()</b>
+ele já teria compilado as funções e já saberia seus formatos. </p>
+
+<p>&nbsp;Mas, muitas vezes, não poderemos nos dar ao luxo de escrever nesta ordem. Muitas
+vezes teremos o nosso programa espalhado por vários arquivos. Ou seja, estaremos chamando
+funções em um arquivo que serão compiladas em outro arquivo. Como manter a coerência? </p>
+
+<p>&nbsp;A solução são os protótipos de funções. Protótipos são nada mais, nada
+menos, que declarações de funções. Isto é, você declara uma função que irá usar.
+O compilador toma então conhecimento do formato daquela função antes de compilá-la. O
+código correto será então gerado. Um protótipo tem o seguinte formato: </p>
+
+<p>&nbsp;<i>tipo_de_retorno nome_da_função (declaração_de_parâmetros);</i> </p>
+
+<p>&nbsp;onde o tipo-de-retorno, o nome-da-função e a declaração-de-parâmetros são
+os mesmos que você pretende usar quando realmente escrever a função. Repare que os
+protótipos têm uma nítida semelhança com as <a HREF="c330.html">declarações de
+variáveis</a>. Vamos implementar agora um dos exemplos da <a HREF="c720.html">seção
+anterior</a> com algumas alterações e com protótipos: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+float Square (float a);
+int main ()
+{
+	float num;
+	printf (&quot;Entre com um numero: &quot;);
+	scanf (&quot;%f&quot;,&amp;num);
+	num=Square(num);
+	printf (&quot;\n\nO seu quadrado vale: %f\n&quot;,num);
+	return 0;
+}
+float Square (float a)
+{
+	return (a*a);
+}</pre>
+
+<p>Observe que a função <b>Square()</b> está colocada depois de <b>main()</b>, mas o
+seu protótipo está antes. Sem isto este programa não funcionaria corretamente. </p>
+
+<p>&nbsp;Usando protótipos você pode construir funções que retornam quaisquer tipos de
+variáveis. É bom ressaltar que funções podem também retornar ponteiros sem qualquer
+problema. Os protótipos não só ajudam o compilador. Eles ajudam a você também: usando
+protótipos, o compilador evita erros, não deixando que o programador use funções com
+os parâmetros errados e com o tipo de retorno errado, o que é uma grande ajuda! </p>
+<a HREF="c720.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c740.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

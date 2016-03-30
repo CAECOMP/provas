@@ -1,0 +1,143 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Uso do Rhide</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#000000" VLINK="#551A8B" ALINK="#FF0000"
+leftmargin="0">
+<font SIZE="+1" COLOR="#000080" FACE="Arial">
+
+<p>Uso do RHIDE</font> <br>
+</p>
+
+<hr>
+
+<p><font FACE="Arial">Nesta página fornecemos algumas instruções básicas para uso do
+ambiente de programação RHIDE (estas instruções também são válidas para o TClite).
+O RHIDE facilita em muito a criação de programas em C. As instruções fornecidas são
+básicas, para que se consiga compilar e executar os primeiros programas em C. Com o uso
+do HELP do RHIDE você conseguirá maiores informações.</font> </p>
+
+<p><font SIZE="+1" FACE="Arial"><b>Passos a serem seguidos para utilizar o RHIDE:</b></font>
+</p>
+
+<p align="left"><font FACE="Arial">1- Instalar o DJGPP e o RHIDE em seu computador. Veja
+como, <a HREF="faq-main.html#din5">clicando aqui.</a></font> <br>
+<font FACE="Arial">2- Abrir uma janela do DOS, ir para o diretório onde voce vai criar
+seus programas e digitar: <b>rhide&nbsp;&nbsp;&nbsp;</b></font> <br>
+<font FACE="Arial">3- Se você vai criar um novo arquivo de programa, chamar a opção
+File -&gt; New (ver figura abaixo)</font> </p>
+
+<p align="center">&nbsp;<img SRC="images/rhidenew.gif" BORDER="3" HEIGHT="224" WIDTH="310">
+</p>
+
+<p align="left"><font FACE="Arial">4- Uma vez criado um novo arquivo, digite o seu
+programa nele, como indicado abaixo:</font> </p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_pgdigit.gif" BORDER="3" HEIGHT="148"
+WIDTH="668"> </p>
+
+<p align="left"><font FACE="Arial">5- Agora você pode salvar o seu programa, chamando
+File -&gt; Save, e digitando o nome do arquivo .c que vai armazenar seu programa. Por
+exemplo, digite prog1.c e a seguir clique em Open (sim, é&nbsp; Open mesmo, esta caixa de
+diálogo está trocada), como no exemplo abaixo: <br>
+<strong>OBS:</strong>&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1) não use nomes com número de caracteres maior que 8. O Rhide é um programa para DOS e
+não entende os nomes longos do Windows 95<br>
+&nbsp;&nbsp; </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font FACE="Arial">2) Sempre coloque a extensão do arquivo que você está criando. O
+Rhide não coloca o .c automáticamente!</font></p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_save.gif" BORDER="3" HEIGHT="272"
+WIDTH="392"> </p>
+
+<p><font FACE="Arial">6- O próximo passo a ser seguido é compilar o programa (gerando o
+arquivo .o) e linkar com as bibliotecas do C (gerando o arquivo executável, .exe). Chame
+a opção Compile -&gt; Make. Caso não existam erros no seu programa, aparecerão as
+mensagens:</font> </p>
+
+<p><font FACE="Arial">Compiling: prog1.c</font> <br>
+<font FACE="Arial">No errors</font> <br>
+<font FACE="Arial">Creating: prog1.exe</font> <br>
+<font FACE="Arial">no errors</font> </p>
+
+<p align="left"><font FACE="Arial">na janela de mensagens, conforme a figura abaixo. Se
+houver erros, o Rhide indicará a linha onde este erro ocorreu e você deverá corrigir o
+seu programa.</font></p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_make.gif" BORDER="3" HEIGHT="166"
+WIDTH="494"> </p>
+
+<p align="left"><font FACE="Arial">7- Agora você pode executar o programa, chamando a
+opção Run -&gt; Run, conforme a figura abaixo:</font> </p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_run.gif" BORDER="3" HEIGHT="274"
+WIDTH="679"> </p>
+
+<p align="left"><font FACE="Arial">8- Um programa simples como este vai enviar a mensagem <b><i>Ola!
+Eu estou vivo!&nbsp; </i></b>para a tela do DOS e terminar a execução, apresentando uma
+caixa de dialógo com um botão de OK e a mensagem <strong>Program exit code -1 (0xffffff)</strong>.
+Não se assuste, isto não é uma mensagem de erro! Se você quiser ver a tela do DOS,
+após o término da execução, poderá chamar FILE -&gt; DOS Shell. Depois é só digitar
+exit &lt;enter&gt; para você voltar ao RHIDE. Você também pode apertar simultaneamente
+as teclas <strong>&lt;ALT&gt; e &lt;F5&gt;,</strong> para chavear entre a tela do DOS e a
+tela do RHIDE.&nbsp; Se você quiser ver a tela do DOS antes do término da execução,
+terá que momentaneamente parar a execução. Existem várias formas de fazer isto. Uma
+delas é modificar o seu programa para que ele tenha uma entrada &quot;fictícia&quot; de
+dados. Inclua a linha <b>scanf(&quot;\n&quot;);</b>&nbsp;&nbsp; no programa, como indicado
+na figura abaixo.</font> </p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_scanf.gif" BORDER="3" HEIGHT="157"
+WIDTH="422"> </p>
+
+<p align="left">&nbsp;<font FACE="Arial">9- Ao fazer isto, recompile o programa e
+execute-o novamente. Você vai ver uma tela semelhante à apresentada na figura abaixo.
+Repare a mensagem Ola! Estou vivo. , na parte inferior da tela. Para continuar a
+execução, você terá que digitar alguma coisa para o <b>scanf</b> e apertar a tecla
+&lt;Enter&gt; em seguida. O programa então terminará sua execução e você voltará ao
+ambiente do Rhide.</font> </p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_msdos.gif" HEIGHT="280" WIDTH="677"> </p>
+
+<p align="left"><font FACE="Arial">10- Outra forma de verificar o que um programa está
+fazendo é executá-lo passo a passo. O Rhide permite isto. Basta chamar a opção Run
+-&gt; Step over, como indicado na figura abaixo, ou então apertar a tecla F8. A cada vez
+que você fizer isto, o programa executará uma instrução. A barra azul claro indica
+qual é a instrução corrente. Para ver a tela de saída, você pode apertar
+simultaneamente &lt;ALT&gt; e &lt;F5&gt;. Existem várias outras opções de execução
+disponíveis no menu Run. Você pode verificar o que elas fazem consultando <a
+HREF="#item11">o Help do Rhide, conforme item 11 abaixo</a>. É também interessante você
+conhecer as opções que estão no menu <font COLOR="#FF0000">Debug,</font> que auxiliam
+bastante no processo de depuração de programas.</font> &nbsp;</p>
+
+<p align="center"><img SRC="images/rhide_passo_a_passo.gif" BORDER="3" HEIGHT="277"
+WIDTH="676"> </p>
+
+<p align="left">&nbsp;<font FACE="Arial">11- O Rhide possui um bom sistema de HELP, que
+você deve consultar para verificar todas as suas potencialidades. Para acessá-lo, basta
+chamar a opcao Help&nbsp; no menu principal. Veja que o Help tem opções não somente
+quanto ao uso do Rhide, mas também sobre funções da linguagem C. Veja a figura abaixo.</font>
+</p>
+
+<p align="center">&nbsp;<img SRC="images/rhide_help.gif" BORDER="3" HEIGHT="189"
+WIDTH="795"> </p>
+
+<p><font FACE="Arial">&nbsp;Só apresentamos uma introdução ao uso do RHIDE. Com o seu
+uso, você aprenderá muito mais, especialmente se você não tiver medo de consultar o
+HELP! Você também pode <a
+HREF="http://www.tu-chemnitz.de/~sho/rho/rhide-1.4/doc/chap0.html">consultar a
+documentação on-line no site original do RHIDE</a> para maiores detalhes.</font> <br>
+</p>
+
+<hr>
+
+<p><font SIZE="-1" FACE="Arial">Curso de C da Engenharia Elétrica da UFMG - 1996-1999</font>
+<br>
+&nbsp; </p>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Curso de C - Avaliação automática da aula 4</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+
+<p align="left"><font size="3" face="Arial" color="#000080">Auto-avaliação on-line: aula
+4</font> </p>
+
+<hr>
+<script>
+<!--  hide script from obsolete browsers
+
+function makeArray(length)
+ {
+  for (var i=0; i < length; i++)
+   {
+    this[i] = 0;
+   }
+  this.length = length;
+ }
+
+var NumQuestions = 12;   // Change this value for each test var
+
+ArraySize = NumQuestions + 1;
+
+// Add an extra array element so that we don't have to use index 0.  That way
+// each question number is its own index into the array.
+
+var questions = new makeArray(ArraySize);
+
+function zeroit()
+ {
+  for (var i=0; i < ArraySize; i++)
+   {
+    questions[i] = 0;
+   }
+ }
+
+function check()
+ {
+  var NumCorrect = 0;
+  var score = 0;
+
+  for (var i=1; i < ArraySize; i++)
+   {
+    NumCorrect += questions[i];
+   }
+
+  score = 100 * NumCorrect/NumQuestions;
+  document.question.good.value = score;
+ }
+
+// end hiding contents -->
+
+</script>
+
+
+<form NAME="question">
+  <p><br>
+  <font SIZE="+1">Responda as perguntas abaixo, escolhendo a alternativa adequada para cada
+  questão. Ao terminar, aperte o botão <a HREF="#verifica">&quot;Verifica&nbsp; nota&quot;</a>
+  no final do formulário. Você pode fazer quantas tentativas quiser até atingir a nota
+  100. Se quiser recomeçar, basta apertar o botão <a HREF="#verifica">&quot;Limpa&quot;</a>
+  no final do formulário.</font> </p>
+  <p>1- <font SIZE="-1" FACE="Courier New,Courier">if(num) ...;</font>&nbsp;&nbsp; é
+  equivalente a&nbsp;&nbsp;&nbsp; <font SIZE="-1" FACE="Courier New,Courier">if(num!=0)
+  ...;&nbsp;</font> <ol TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1] = 1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falso</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>2- Qual o valor de x após a seguinte seqüência de comandos: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a
+  = 10;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b =
+  20;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x =
+  0;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x =
+  (b &gt; a) ?&nbsp; b : a;</font> <ol TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">0&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">2&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">10</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] =1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">20</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>e.&nbsp;</b></td>
+        <td VALIGN="TOP">40</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>f.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>3- Qual o valor de x após a seqüência de comandos: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a
+  = 1;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b =
+  2;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c =
+  3;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x =
+  0;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x =
+  a &lt; b ? a &lt; c ? a : c : b &lt; c ? b : c;</font> </p>
+  <p>&nbsp;(DICA:&nbsp; antes de tentar resolver, coloque parênteses na expressão acima,
+  indicando a ordem de precedência dos operadores) <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">0&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">1&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">2&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">3</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>4- Os trechos de programa a seguir são equivalentes entre si, sob o ponto de vista do
+  que é impresso: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for (i = 0 ; i &lt; 10; i++) printf(&quot;%d&quot;, i);</font> </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; e</font> </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for (i = 0 ; i &lt; 10; ++i) printf(&quot;%d&quot;, i);</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4] =1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>5- O trecho de programa a seguir é </p>
+  <p>&nbsp;<font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  switch(num)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</font>
+  <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  case 1;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;O numero e 1 &quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  break;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  case 2;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;O numero e 2 &quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  break;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  default;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;O numero e diferente de 1 e 2&quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  break;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font>
+  <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Válido na linguagem C&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não válido na linguagem C&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>6- Sendo <b>num</b> uma variável inteira, o que imprime o trecho de código a seguir? </p>
+  <p>&nbsp;<font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  num = 1;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  switch(num)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</font>
+  <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  case 1:</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;O numero e 1 &quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  case 2:</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;O numero e 2 &quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  default:</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;O numero e diferente de 1 e 2&quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font>
+  <br>
+  &nbsp; <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">O numero e 1&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">O numero e 2</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">O numero e diferente de 1 e 2&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">O numero e 1 O numero e 2&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=1"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">O numero e 1 O numero e 2 O numero e diferente de 1 e 2</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>7-&nbsp; Os dois blocos de código a seguir produzem o mesmo resultado: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for( i = 0&nbsp; ;&nbsp; i &lt; 3 ;&nbsp; i++)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for ( j =0 ; j &lt; 3; j++)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;i+j = %d \n&quot;, i+j);</font> </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">e</font> </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for( i = 0 ,&nbsp; j=0&nbsp; ;&nbsp; i &lt; 3 ;&nbsp; i++)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for (&nbsp;&nbsp; ;&nbsp; j &lt; 3 ;&nbsp; j++)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;i+j = %d \n&quot;, i+j);</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td VALIGN="TOP"><b>a.&nbsp;</b></td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>8- Qual a saída produzida pelo extrato de código a seguir: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int x;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for
+  ( x = 35 ; x &gt; 0 ; x/=3)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;%d &quot; , x) ;</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8] =1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">35 11 3 1&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">11 3 1&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">11 3 1 0&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">35 11 3&nbsp;&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>9- Os extratos de código a seguir são equivalentes entre si: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int x = 10;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  while (--x &gt; 9)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  {</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;%d&quot;, x);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  }</font> </p>
+  <p>e <br>
+  &nbsp;<font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int x = 10;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  do {</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;%d&quot;, x);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  } while(--x &gt; 9);</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>10- Sendo i declarado e inicializado como: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int i = 0;</font> </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os seguintes extratos de código: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  while (i = 5)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</font>
+  <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;%d %d %d \n&quot;, i, i+2, i+4);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  i = 0;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font>
+  </p>
+  <p>e </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  if (i = 5) printf (&quot;%d %d %d \n&quot;, i, i+2, i+4);</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">São idênticos sob o ponto de vista do que imprimem na tela</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não imprimem nada na tela&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Têm sintaxe errada&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Um deles imprime 5, 7 e 9 uma única vez e o outro entra em loop,
+        imprimindo estes valores indefinidamente&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>11- A estrutura do switch abaixo é: </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp; switch (t)</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp; {</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case
+  t &lt; 10:</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Hoje ta' fazendo muito frio&quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  break;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case
+  t &lt; 25:</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;A temperatura está agradavel&quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  break;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  default:</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Hoje ta' quente pra chuchu&quot;);</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp; }</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Válida na linguagem C</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não válida na linguagem C&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>12- O laço for a seguir </p>
+  <p><font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp; int i;</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp; for ( i = 0 ; i &lt;= 5; i++ ,
+  printf(&quot;%d &quot;, i));</font> <br>
+  <font SIZE="-1" FACE="Courier New,Courier">&nbsp;</font> <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Imprime 0 1 2 3 4 5&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não funciona, pois tem sintaxe errada</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Imprime 1 2 3 4 5 6</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Imprime 1 2 3 4 5</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p><a NAME="verifica"></a></p>
+  </ol>
+  <p><input type="button" value="Verifica nota" onclick="check()"><input type="reset"
+  name="resetMe" value="Limpa" onclick="zeroit()"> </p>
+  <p>Sua nota é:&nbsp;<input type="text" name="good" size="4" value="0">em um máximo de
+  100. <br>
+  </p>
+</form>
+
+<p>&nbsp;</p>
+<a HREF="c480.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Tipo void</h3>
+
+<p>Agora vamos ver o único tipo da linguagem C que não detalhamos ainda: o <b>void</b>.
+Em inglês, <b>void</b> quer dizer vazio e é isto mesmo que o <b>void</b> é. Ele nos
+permite fazer funções que não retornam nada e funções que não têm parâmetros!
+Podemos agora escrever o protótipo de uma função que não retorna nada: </p>
+
+<p>&nbsp;<i>void nome_da_função (declaração_de_parâmetros);</i> </p>
+
+<p>&nbsp;Numa função, como a acima, não temos valor de retorno na declaração <b><a
+HREF="c720.html">return</a></b>. Aliás, neste caso, o comando <b><a HREF="c720.html">return</a></b>
+não é necessário na função. </p>
+
+<p>&nbsp;Podemos, também, fazer funções que não têm parâmetros: </p>
+
+<p>&nbsp;<i>tipo_de_retorno nome_da_função (void);</i> </p>
+
+<p>&nbsp;ou, ainda, que não tem parâmetros e não retornam nada: </p>
+
+<p>&nbsp;<i>void nome_da_função (void);</i> </p>
+
+<p>&nbsp;Um exemplo de funções que usam o tipo <b>void</b>: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+void Mensagem (void);
+int main ()
+{
+	Mensagem();
+	printf (&quot;\tDiga de novo:\n&quot;);
+	Mensagem();
+	return 0;
+}
+void Mensagem (void)
+{
+	printf (&quot;Ola! Eu estou vivo.\n&quot;);
+}</pre>
+
+<p>Se quisermos que a função retorne algo, devemos usar a declaração <b><a
+HREF="c720.html">return</a></b>. Se não quisermos, basta declarar a função como tendo
+tipo-de-retorno <b>void</b>. Devemos lembrar agora que a função <b>main()</b> <i>é</i>
+uma função e como tal devemos tratá-la. O compilador acha que a função <b>main()</b>
+deve retornar um inteiro. Isto pode ser interessante se quisermos que o sistema
+operacional receba um valor de retorno da função <b>main()</b>. Se assim o quisermos,
+devemos nos lembrar da seguinte convenção: se o programa retornar zero, significa que
+ele terminou normalmente, e, se o programa retornar um valor diferente de zero, significa
+que o programa teve um término anormal. Se não estivermos interessados neste tipo de
+coisa, basta declarar a função main como retornando <b>void</b>. </p>
+
+<p>&nbsp;As duas funções <b>main()</b> abaixo são válidas: </p>
+
+<p>&nbsp; </p>
+
+<pre>main (void)
+{
+	....
+	return 0;
+}
+
+void main (void)
+{
+	....
+}</pre>
+
+<p>A primeira forma é válida porque, como já vimos,&nbsp; as funções em C têm, por
+padrão, retorno inteiro.. Alguns compiladores reclamarão da segunda forma de main,
+dizendo que main sempre deve retornar um inteiro. Se isto acontecer com o compilador que
+você está utilizando, basta fazer main retornar um inteiro.</p>
+
+<p>&nbsp;</p>
+<a HREF="c730.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c750.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

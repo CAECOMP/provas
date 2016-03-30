@@ -1,0 +1,166 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+</head>
+
+<body TEXT="#000000" LINK="#0000ff" VLINK="#000000" BGCOLOR="#ffffff" ALINK="#0000FF">
+<font SIZE="6">
+
+<p ALIGN="CENTER">CURSO DE C</p>
+</font>
+
+<p ALIGN="CENTER"><img SRC="line.gif" WIDTH="485" HEIGHT="8"></p>
+
+<h3>As Diretivas define e undef</h3>
+
+<p>A diretiva <b>#define</b> tem a seguinte forma geral: </p>
+
+<p>&nbsp;<i>#define nome_da_macro sequência_de_caracteres</i> </p>
+
+<p>&nbsp;Quando você usa esta diretiva, você está dizendo ao compilador para que, toda
+vez que ele encontrar o nome_da_macro no programa a ser compilado, ele deve substituí-lo
+pela sequência_de_caracteres fornecida. Isto é muito útil para deixar o programa mais
+geral. Veja um exemplo: </p>
+
+<pre>#include &lt;stdio.h&gt;
+#define PI 3.1416
+#define VERSAO &quot;2.02&quot;
+int main ()
+{
+	printf (&quot;Programa versao %s&quot;,VERSAO);
+	printf (&quot;O numero pi vale: %f&quot;,PI);
+	return 0;
+}</pre>
+
+<p>Se quisermos mudar o nosso valor de <b>PI</b>, ou da <b>VERSAO</b>, no programa acima,
+basta mexer no início do programa. Isto torna o programa mais flexível. Há quem diga
+que, em um programa, nunca se deve usar constantes como 10, 3.1416, etc., pois estes são
+números que ninguém sabe o que significam (muitas pessoas os chamam de &quot;números
+mágicos&quot;). Ao invés disto, deve-se usar apenas <b>#define</b>s. É uma convenção
+de programação (que deve ser seguida, pois torna o programa mais legível) na linguagem
+C que as macros declaradas em <b>#define</b>s devem ser todas em maiúsculas. </p>
+
+<p>&nbsp;Um outro uso da diretiva #define é o de simplesmente definir uma macro. Neste
+caso usa-se a seguinte forma geral: </p>
+
+<p>&nbsp;<i>#define nome_da_macro</i> </p>
+
+<p>&nbsp;Neste caso o objetivo não é usar a macro no programa (pois ela seria
+substituída por nada), mas, sim, definir uma macro para ser usada como uma espécie de
+flag. Isto quer dizer que estamos definindo um valor como sendo &quot;verdadeiro&quot;
+para depois podermos testá-lo. </p>
+
+<p>Também é possível definir macros com argumentos. Veja o exemplo a seguir: </p>
+
+<pre>
+#define max(A,B) ((A&gt;B) ? (A):(B))
+#define min(A,B) ((A&lt;B) ? (A):(B))
+...
+x = max(i,j);
+y = min(t,r);
+</pre>
+
+<p>Embora pareça uma chamada de função, o uso de <font FACE="Courier New" SIZE="2">max</font>
+(ou <font FACE="Courier New" SIZE="2">min</font>) simplesmente substitui, em tempo de
+compilação, o código especificado. Cada ocorrência de um parâmetro formal (A ou B, na
+definição) será substituído pelo argumento real correspondente. Assim, a linha de
+código:</p>
+<font FACE="Courier New" SIZE="2">
+
+<p>x = max(i,j);</p>
+
+<p></font><font size="3">será substituída pela linha:</p>
+
+<p></font><font FACE="Courier New" SIZE="2">x = ((i)&gt;(j) ? (i):(j));</p>
+
+<p></font>A linha de código:<font FACE="Courier New" SIZE="2"></p>
+
+<p>x = max(p+q,r+s);</p>
+</font>
+
+<p>será substituída pela linha:</p>
+<font FACE="Courier New" SIZE="2">
+
+<p>x = ((p+q)&gt;(r+s) ? (p+q):(r+s));</p>
+</font>
+
+<p>Isto pode ser muito útil. Verifique que as macros <font FACE="Courier New" SIZE="2">max</font>
+e <font FACE="Courier New" SIZE="2">min</font> não possuem especificação de tipo. Logo,
+elas trabalham corretamente para qualquer tipo de dado, enquanto os argumentos passados
+forem coerentes. Mas isto pode trazer também algumas armadilhas. Veja que a linha</p>
+<font FACE="Courier New" SIZE="2">
+
+<p>x = max(p++,r++);</p>
+</font>
+
+<p>será substituída pelo código</p>
+<font FACE="Courier New" SIZE="2">
+
+<p>x = ((p++)&gt;(r++) ? (p++):(r++));</p>
+</font>
+
+<p>e em consequência, incrementará o maior valor duas vezes.</p>
+
+<p>Outra armadilha em macros está relacionada com o uso de parênteses. Seja a macro:</p>
+
+<p><small><font face="Courier New">#define SQR(X) X*X</font></small></p>
+
+<p>Imagine que você utilize esta macro na expressão abaixo:</p>
+
+<p><small><font face="Courier New">y = SQR(A+B);</font></small></p>
+
+<p>Ao fazer isto, a substituição que será efetuada não estará correta. A expressão
+gerada será:</p>
+
+<p><font face="Courier New"><small>y = A+B*A+B;</small></font></p>
+
+<p>que obviamente é diferente de (A+B)*(A+B)&nbsp;&nbsp; !</p>
+
+<p>A solução para este problema é incluir parênteses na definição da macro:</p>
+
+<p><font face="Courier New"><small>#define SQR(X)(X)*(X)</small></font></p>
+
+<p>&nbsp;</p>
+
+<p>Quando você utiliza a diretiva #define nunca deve haver espaços em branco no
+identificador. Por exemplo, a macro:</p>
+
+<p><small><font face="Courier New">#define PRINT (i) printf(&quot; %d \n&quot;, i)</font></small></p>
+
+<p>&nbsp;não funcionará corretamente porque existe um espaço em branco entre PRINT e
+(i). Ao se tirar o espaço, a macro funcionará corretamente e poderá ser utilizada para
+imprimir o número inteiro i, saltando em seguida para a próxima linha.</p>
+
+<p>&nbsp;</p>
+
+<p>A diretiva <b>#undef</b> tem a seguinte forma geral: </p>
+
+<p>&nbsp;<i>#undef nome_da_macro</i> </p>
+
+<p>&nbsp;Ela faz com que a macro que a segue seja apagada da tabela interna que guarda as
+macros.O compilador passa a partir deste ponto a não conhecer mais esta macro. </p>
+
+<hr>
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><big>Veja como você está:&nbsp; Escreva uma macro que retorne 1 se o seu argumento
+for um número ímpar e 0 se for um número par.</big></p>
+
+<hr>
+
+<p ALIGN="CENTER"><a HREF="c820.html"><img SRC="left.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c800.html"><img SRC="up.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c840.html"><img SRC="right.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT="P"></a></p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

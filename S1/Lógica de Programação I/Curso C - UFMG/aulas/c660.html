@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Cuidados a Serem Tomados ao se Usar Ponteiros</h3>
+
+<p>O principal cuidado ao se usar um ponteiro deve ser: saiba sempre <i>para onde</i> o
+ponteiro está apontando. Isto inclui: nunca use um ponteiro que não foi inicializado. Um
+pequeno programa que demonstra como <b><i><font COLOR="#FF0000">não</font></i></b> usar
+um ponteiro: </p>
+
+<p>&nbsp; </p>
+
+<pre>int main () /* Errado - Nao Execute */
+{
+	int x,*p;
+	x=13;
+	*p=x;
+	return(0);
+}</pre>
+
+<p>Este programa compilará e rodará. O que acontecerá? Ninguém sabe. O ponteiro p pode
+estar apontando para qualquer lugar. Você estará gravando o número 13 em um lugar
+desconhecido. Com um número apenas, você provavelmente não vai ver nenhum defeito.
+Agora, se você começar a gravar números em posições aleatórias no seu computador,
+não vai demorar muito para travar o micro (se não acontecer coisa pior). </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Escreva um programa que declare uma matriz 100x100 de inteiros. Você
+deve inicializar a matriz com zeros usando ponteiros para endereçar seus elementos.
+Preencha depois a matriz com os números de 1 a 10000, também usando ponteiros.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c650.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c600.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a><a HREF="c670.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

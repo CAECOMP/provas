@@ -1,0 +1,200 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>Alocação Dinâmica de Vetores e Matrizes</h3>
+
+<ul>
+  <li><a HREF="#cA71">Alocação Dinâmica de Vetores</a></li>
+  <li><a HREF="#cA72">Alocação Dinâmica de Matrizes</a></li>
+</ul>
+
+<hr>
+
+<h4><a NAME="cA71"></a>Alocação Dinâmica de Vetores</h4>
+
+<p>A alocação dinâmica de vetores utiliza os conceitos aprendidos na aula sobre <a
+HREF="c630.html">ponteiros</a> e as <a HREF="ca60.html">funções de alocação dinâmica </a>apresentados.
+Um exemplo de implementação para vetor real é fornecido a seguir: </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+float *Alocar_vetor_real (int n)
+{
+&nbsp; float *v;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* ponteiro para o vetor */
+&nbsp; if (n &lt; 1) {&nbsp; /* verifica parametros recebidos */
+&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Parametro invalido **\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp; return (NULL);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp; /* aloca o vetor */
+&nbsp; v = (float *) calloc (n, sizeof(float));
+&nbsp; if (v == NULL) {
+&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp; return (NULL);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp; return (v);&nbsp;&nbsp;&nbsp; /* retorna o ponteiro para o vetor */
+}
+
+float *Liberar_vetor_real (float *v)
+{
+&nbsp; if (v == NULL) return (NULL);
+&nbsp; free(v);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* libera o vetor */
+&nbsp; return (NULL);&nbsp; /* retorna o ponteiro */
+}
+
+void main (void)
+{
+&nbsp; float *p;
+&nbsp; int a;
+&nbsp; ...&nbsp;&nbsp;&nbsp; /* outros comandos, inclusive a inicializacao de a */
+&nbsp; p = Alocar_vetor_real (a);
+&nbsp; ...&nbsp;&nbsp;&nbsp; /* outros comandos, utilizando p[] normalmente */
+&nbsp; p = Liberar_vetor_real (p);
+}</pre>
+
+<h4><a NAME="cA72"></a>Alocação Dinâmica de Matrizes</h4>
+
+<p>A alocação dinâmica de memória para matrizes é realizada da mesma forma que para
+vetores, com a diferença que teremos um ponteiro apontando para outro ponteiro que aponta
+para o valor final, ou seja é um ponteiro para ponteiro, o que é denominado <i>indireção
+múltipla</i>. A indireção múltipla pode ser levada a qualquer dimensão desejada, mas
+raramente é necessário mais de um ponteiro para um ponteiro. Um exemplo de
+implementação para matriz real bidimensional é fornecido a seguir. A estrutura de dados
+utilizada neste exemplo é composta por um vetor de ponteiros (correspondendo ao primeiro
+índice da matriz), sendo que cada ponteiro aponta para o início de uma linha da matriz.
+Em cada linha existe um vetor alocado dinamicamente, como descrito <a HREF="#cA71">anteriormente
+</a>(compondo o segundo índice da matriz). </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+float **Alocar_matriz_real (int m, int n)
+{
+&nbsp; float **v;&nbsp; /* ponteiro para a matriz */
+&nbsp; int&nbsp;&nbsp; i;&nbsp;&nbsp;&nbsp; /* variavel auxiliar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */
+&nbsp; if (m &lt; 1 || n &lt; 1) { /* verifica parametros recebidos */
+&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Parametro invalido **\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp; return (NULL);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp; /* aloca as linhas da matriz */
+&nbsp; v = (float **) calloc (m, sizeof(float *));	/ Um vetor de m ponteiros para float */
+&nbsp; if (v == NULL) {
+&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp; return (NULL);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp; /* aloca as colunas da matriz */
+&nbsp; for ( i = 0; i &lt; m; i++ ) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v[i] = (float*) calloc (n, sizeof(float));	/* m vetores de n floats */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (v[i] == NULL) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (NULL);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp; return (v); /* retorna o ponteiro para a matriz */
+}
+
+float **Liberar_matriz_real (int m, int n, float **v)
+{
+&nbsp; int&nbsp; i;&nbsp; /* variavel auxiliar */
+&nbsp; if (v == NULL) return (NULL);
+&nbsp; if (m &lt; 1 || n &lt; 1) {&nbsp; /* verifica parametros recebidos */
+&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Parametro invalido **\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp; return (v);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp; for (i=0; i&lt;m; i++) free (v[i]); /* libera as linhas da matriz */
+&nbsp; free (v);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* libera a matriz (vetor de ponteiros) */
+&nbsp; return (NULL); /* retorna um ponteiro nulo */
+}
+
+void main (void)
+{
+&nbsp; float **mat;&nbsp; /* matriz a ser alocada */
+&nbsp; int&nbsp;&nbsp; l, c;&nbsp;&nbsp; /* numero de linhas e colunas da matriz */
+  int i, j;
+&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* outros comandos, inclusive inicializacao para l e c */
+&nbsp; mat = Alocar_matriz_real (l, c);
+
+  for (i = 0; i &lt; l; i++)
+     for ( j = 0; j &lt; c; j++)
+	mat[i][j] = i+j;
+  
+&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* outros comandos utilizando mat[][] normalmente */
+&nbsp; mat = Liberar_matriz_real (l, c, mat);
+&nbsp; ...
+}</pre>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> Faca um programa que multiplique duas
+matrizes. O programa devera' estar&nbsp; estruturado de maneira que: <br>
+1- o usuario forneca as dimensoes das matrizes (teste se as dimensoes sao
+compativeis,&nbsp; isto e', se as matrizes podem ser multiplicadas); <br>
+2- as matrizes sejam alocadas dinamicamente (voce pode usar a funcao vista nesta pagina
+para&nbsp; isto); <br>
+3- as matrizes sejam lidas pelo teclado (faca uma funcao para leitura das matrizes); <br>
+4- as matrizes sejam, entao, multiplicadas (faca uma funcao para a multiplicacao); <br>
+5- a matriz resultante seja apresentada em tela (faca uma funcao para apresentar a matriz
+na tela). </p>
+
+<p>OBS: <br>
+a) Faca, tambem, alocacao dinamica da matriz resultante. <br>
+b) Caso alguém não conheça o procedimento para a multiplicação de matrizes, segue
+aqui alguma orientação. Suponha as matrizes A(mXn) </p>
+
+<p><tt>&nbsp;&nbsp;&nbsp; | a11&nbsp; a12 ... a1n |</tt> <br>
+<tt>A = | a21&nbsp; a22 ... a2n |</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; |&nbsp;
+:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
+<br>
+<tt>&nbsp;&nbsp;&nbsp; | am1&nbsp; am2 ... amn |</tt> </p>
+
+<p>e B(nXt) </p>
+
+<p><tt>&nbsp;&nbsp;&nbsp; | b11&nbsp; b12 ... b1t |</tt> <br>
+<tt>B = | b21&nbsp; b22 ... b2t |</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; |&nbsp;
+:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
+<br>
+<tt>&nbsp;&nbsp;&nbsp; | bn1&nbsp; bn2 ... bnt |</tt> </p>
+
+<p>O elemento ij da matriz C é resultante da multiplicação da linha i de A pela coluna
+j de B. Portanto, a matriz C (mXt) = A*B será da seguinte forma: </p>
+
+<p>C = <br>
+<font SIZE="-2">| a11*b11 +a12*b21 + ... +a1n*bn1&nbsp;&nbsp; a11*b12 +a12*b22 + ... +
+a1n*bn2&nbsp; ...&nbsp;&nbsp; a11+b1t +a12*b2t + ... + a1n*bnt |</font> <br>
+<font SIZE="-2">| a21*b11 +a22*b21 + ... +a2n*bn1&nbsp;&nbsp; a21*b12 +a22*b22 + ... +
+a2n*bn2&nbsp; ...&nbsp;&nbsp; a21+b1t +a22*b2t + ... + a2n*bnt |</font> <br>
+<font SIZE="-2">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|</font> <br>
+<font SIZE="-2">| am1*b11 +am2*b21 +...+amn*bn1&nbsp;&nbsp; am1*b12 +am2*b22 +...+
+amn*bn2&nbsp; ...&nbsp;&nbsp; am1+b1t +am2*b2t +...+amn*bnt |</font> <br>
+&nbsp; </p>
+<a HREF="ca60.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

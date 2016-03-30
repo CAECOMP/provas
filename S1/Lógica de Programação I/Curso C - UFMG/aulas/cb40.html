@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Enumerações</h3>
+
+<p>Numa enumeração podemos dizer ao compilador quais os valores que uma determinada
+variável pode assumir. Sua forma geral é: </p>
+
+<p><i>enum nome_do_tipo_da_enumeração {lista_de_valores} lista_de_variáveis;</i> </p>
+
+<p>Vamos considerar o seguinte exemplo: </p>
+
+<pre>enum dias_da_semana {segunda, terca, quarta, quinta, sexta,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sabado, domingo};</pre>
+
+<p>O programador diz ao compilador que qualquer variável do tipo <b>dias_da_semana</b>
+só pode ter os valores enumerados. Isto quer dizer que poderíamos fazer o seguinte
+programa: </p>
+
+<pre>#include &lt;stdio.h&gt;
+enum dias_da_semana {segunda, terca, quarta, quinta, sexta,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sabado, domingo};
+main (void)
+{
+enum dias_da_semana d1,d2;
+d1=segunda;
+d2=sexta;
+if (d1==d2)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;O dia e o mesmo.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;São dias diferentes.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+return 0;
+}</pre>
+
+<p>Você deve estar se perguntando como é que a enumeração funciona. Simples. O
+compilador pega a lista que você fez de valores e associa, a cada um, um número inteiro.
+Então, ao primeiro da lista, é associado o número zero, o segundo ao número 1 e assim
+por diante. As variáveis declaradas são então variáveis <b>int</b>. </p>
+<a HREF="cb30.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="cb00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb50.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

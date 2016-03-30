@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+</head>
+
+<body TEXT="#000000" LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff" ALINK="#FF0000">
+
+<h2 ALIGN="CENTER">Curso de C</h2>
+
+<h2 ALIGN="CENTER"><img SRC="line.gif" WIDTH="485" HEIGHT="8"></h2>
+
+<h3 ALIGN="CENTER">Lendo e Escrevendo Strings</h3>
+
+<ul>
+  <li><a HREF="#c931">gets</a> </li>
+  <li><a HREF="#c932">puts</a> </li>
+</ul>
+
+<hr>
+
+<h4><a NAME="c931"></a>gets</h4>
+
+<p>Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *gets (char *s);</pre>
+
+<p>Pede ao usuário que entre uma string, que será armazenada na string <b>s</b>. O
+ponteiro que a função retorna é o próprio <b>s</b>. <br>
+<strong>gets</strong> não é uma função segura. Por quê? Simplesmente porque com <strong>gets</strong>
+pode ocorrer um estouro da quantidade de posições que foi especificada na string . Veja
+o exemplo abaixo:</p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; char buffer[10];<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;Entre com o seu nome&quot;);<br>
+&nbsp;&nbsp;&nbsp; gets(buffer);<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;O nome é: %s&quot;, buffer);<br>
+&nbsp;&nbsp;&nbsp; return 0;<br>
+}</font></p>
+
+<p>Se o usuário digitar como entrada:</p>
+
+<p><font face="Courier New">Renato Cardoso Mesquita</font></p>
+
+<p>ou seja, digitar um total de 23 caracteres: 24 posições (incluindo o '\0' ) serão
+utilizadas para armazenar a string. Como a string buffer[] só tem 10 caracteres, os 14
+caracteres adicionais serão colocados na área de memória subsequente à ocupada por
+ela, escrevendo uma região de memória que não está reservada à string. Este efeito é
+conhecido como &quot;estouro de buffer&quot; e pode causar problemas imprevisíveis. Uma
+forma de se evitar este problema é usar a função <a href="c970.html#c975">fgets</a>,
+conforme veremos <a href="c970.html#c975">posteriormente</a></p>
+
+<p>&nbsp;</p>
+
+<h4><a NAME="c932"></a>puts</h4>
+
+<p>Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int puts (char *s);</pre>
+<b>
+
+<p>puts()</b> coloca a string <b>s</b> na tela. </p>
+
+<p>&nbsp;</p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font></p>
+
+<p><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Escreva um programa que
+leia nomes pelo teclado e os imprima na tela. Use as funções puts e gets para a leitura
+e impressão na tela.</p>
+</font>
+
+<hr WIDTH="300">
+<a HREF="c920.html">
+
+<p align="center"><img ALT="Página Anterior" SRC="left.gif" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp; <a HREF="c900.html"><img ALT="Índice da Aula" SRC="up.gif"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp; <a HREF="c940.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

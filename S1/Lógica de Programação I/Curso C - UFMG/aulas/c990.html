@@ -1,0 +1,439 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Auto-avaliação on-line: aula 9</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font COLOR="#000080" FACE="Arial" SIZE="+1">
+
+<p align="center">Auto-avaliação on-line: aula 9</font> <br>
+</p>
+
+<hr align="center">
+<script>
+
+<!--  hide script from obsolete browsers
+
+function makeArray(length)
+ {
+  for (var i=0; i < length; i++)
+   {
+    this[i] = 0;
+   }
+  this.length = length;
+ }
+
+var NumQuestions = 10;   // Change this value for each test var
+
+ArraySize = NumQuestions + 1;
+
+// Add an extra array element so that we don't have to use index 0.  That way
+// each question number is its own index into the array.
+
+var questions = new makeArray(ArraySize);
+
+function zeroit()
+ {
+  for (var i=0; i < ArraySize; i++)
+   {
+    questions[i] = 0;
+   }
+ }
+
+function check()
+ {
+  var NumCorrect = 0;
+  var score = 0;
+
+  for (var i=1; i < ArraySize; i++)
+   {
+    NumCorrect += questions[i];
+   }
+
+  score = 100 * NumCorrect/NumQuestions;
+  document.question.good.value = score;
+ }
+
+// end hiding contents -->
+
+</script>
+
+
+<p align="center">&nbsp; <br>
+</p>
+
+<form NAME="question">
+  <p><br>
+  &nbsp; </p>
+  <p><font SIZE="+1">Responda as perguntas abaixo, escolhendo a alternativa adequada para
+  cada questão. Ao terminar, aperte o botão <a HREF="#verifica">&quot;Verifica&nbsp;
+  nota&quot;</a> no final do formulário. Você pode fazer quantas tentativas quiser até
+  atingir a nota 100. Se quiser recomeçar, basta apertar o botão <a HREF="#verifica">&quot;Limpa&quot;</a>
+  no final do formulário.</font> </p>
+  <p>1- Alguns compiladores indicam que a função <i>gets(string)</i> é uma função
+  &quot;perigosa&quot;. Qual a razão disto? <ol TYPE="1">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">A função não pode ler inteiros</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Se string for um vetor de caracteres com poucas posições, o usuário
+        pode digitar mais caracteres do que a string pode armazenar, causando sérios problemas</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">O usuário pode digitar algo que não seja caracter e o sistema não
+        perceber&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">A função não trabalha bem em conjunto com a função scanf&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>2- : O comando printf(&quot;%d, %u, %p&quot;, i, i, &amp;i);&nbsp; imprimirá: <ol
+  TYPE="1">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">O endereço de i e o valor de i;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">O valor de i, de i sem sinal e um ponteiro para i;</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td><b>c.</b></td>
+        <td>O valor de i, o valor de i e um ponteiro para i</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a2" onclick="questions[2] =1"></td>
+        <td><b>d.</b></td>
+        <td>O valor de i, o valor de i sem sinal e o endereço de i</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td><b>e.</b></td>
+        <td>Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>3- Seja a variável <i>double f;</i> qual seria a forma de se efetuar a leitura de f <ol
+  START="4">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">scanf(&quot;%f&quot;, &amp;f);</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">scanf(&quot;%6f&quot;, &amp;f);&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">scanf(&quot;%lf&quot;, &amp;f);&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">scanf(&quot;%10.6f&quot;, &amp;f);&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>4- O que<b> não </b>se pode especificar com a função fopen? <ol START="4">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">O nome do arquivo a ser aberto;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Que arquivo será aberto, para acrescentar dados&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Que arquivo será aberto, para trabalhar em modo texto</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Qual é o ponteiro para o arquivo&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td><b>e.</b>&nbsp;</td>
+        <td>Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>5- Para ler um caractere por vez de um arquivo, qual das seguintes funções você
+  usaria? <ol START="4">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">getch();</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">getche();</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] =1"></td>
+        <td><b>c.</b></td>
+        <td>getc();</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] =0"></td>
+        <td><b>d.</b></td>
+        <td>fgets();</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td><b>e.</b></td>
+        <td>fread();</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>6- Como todos arquivos precisam ser lidos seqüencialmente, não há como ler dados no
+  meio do arquivo, sem ter feito a leitura desde o seu início. <ol START="4">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falso</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Depende do tipo de arquivo</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Depende do sistema operacional&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>7-&nbsp; Seja o seguinte trecho de programa </p>
+  <p><tt>&nbsp;&nbsp;&nbsp; FILE *fp;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; fp = fopen(&quot;arquivo.txt&quot;, &quot;r+&quot;);</tt> </p>
+  <p>O que está sendo feito? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td VALIGN="TOP"><b>a.&nbsp;</b></td>
+        <td VALIGN="TOP">O arquivo arquivo.tst está sendo aberto em modo texto e somente pode ser
+        lido.</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">O arquivo arquivo.tst está sendo fechado para escrita</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td><b>c.</b>&nbsp;</td>
+        <td>O arquivo arquivo.tst está sendo aberto em modo binário, e pode ser lido ou escrito</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td><b>d.</b>&nbsp;</td>
+        <td>O arquivo arquivo.tst está sendo aberto em modo binário e somente pode ser lido</td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="a7" onclick="questions[7] =1"></td>
+        <td><b>e.</b>&nbsp;</td>
+        <td>O arquivo arquivo.tst está sendo aberto em modo texto e pode ser lido ou escrito</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>8- Qual a afirmativa errada? <ol START="4">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">A função fgets() lê uma string de um arquivo, mas também pode ser
+        utilizada para substituir gets() com segurança</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">fputs() escreve uma string em um arquivo&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">fputs(string, stdprn) imprimirá a string na impressora padrão&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">fseek() pode ser utilizada para procurar um determinado caractere em um
+        arquivo</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>9- Para gravar várias variáveis de tipos diferentes em um arquivo texto, a função
+  mais apropriada é:: <br>
+  &nbsp; <ol START="4">
+    <p>&nbsp; <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">fwrite()&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">fprintf()</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">fputs()</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">fscanf()&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>10- Seja o seguinte programa: </p>
+  <p><tt>#include &lt;stdio.h&gt;</tt> <br>
+  <tt>int main()</tt> <br>
+  <tt>{</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; FILE *fp;</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; fp = fopen(&quot;arquivo.txt&quot;, &quot;r&quot;);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; fprintf(fp, &quot;%d&quot;, 10);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; fclose(fp);</tt> <br>
+  <tt>&nbsp;&nbsp;&nbsp; return(0);</tt> <br>
+  <tt>}</tt> <ol START="4">
+    <p>Qual afirmativa é verdadeira? <br>
+    &nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10] =1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Este código compila sem erros</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Ao final da execução, o arquivo arquivo.txt conterá uma linha com o
+        número 10 impresso nela.</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">A linha #include &lt;stdio.h&gt; não é necessária neste código</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não se deve usar return 0; neste código, pois a função main não e'
+        int</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p><a NAME="verifica"></a></p>
+  <p><input type="button" value="Verifica nota" onclick="check()"><input type="reset"
+  name="resetMe" value="Limpa" onclick="zeroit()"> </p>
+  <p>Sua nota é:&nbsp;<input type="text" name="good" size="4" value="0">em um máximo de
+  100. <br>
+  </p>
+</form>
+<a HREF="c980.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c900.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><font size="-1" face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font> </p>
+</body>
+</html>

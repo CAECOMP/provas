@@ -1,0 +1,107 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+<title>c980</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" HEIGHT="8" WIDTH="485"></h2>
+
+<h3 align="center">Fluxos Padrão</h3>
+
+<ul>
+  <li><a HREF="#c981">fprintf</a></li>
+  <li><a HREF="#c982">fscanf</a></li>
+</ul>
+
+<hr align="center">
+
+<p>Os fluxos padrão em arquivos permitem ao programador ler e escrever em arquivos da
+maneira padrão com a qual o&nbsp; já líamos e escrevíamos na tela. </p>
+
+<h4><a NAME="c981"></a>fprintf</h4>
+
+<p>A função <b>fprintf()</b> funciona como a função <b>printf()</b>. A diferença é
+que a saída de <b>fprintf()</b> é um arquivo e não a tela do computador. Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int fprintf (FILE *fp,char *str,...);</pre>
+
+<p>Como já poderíamos esperar, a única diferença do protótipo de <b>fprintf()</b>
+para o de <b>printf()</b> é a especificação do arquivo destino através do ponteiro de
+arquivo. </p>
+
+<h4><a NAME="c982"></a>fscanf</h4>
+
+<p>A função <b>fscanf()</b> funciona como a função <b>scanf()</b>. A diferença é que
+<b>fscanf()</b> lê de um arquivo e não do teclado do computador. Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int fscanf (FILE *fp,char *str,...);</pre>
+
+<p>Como já poderíamos esperar, a única diferença do protótipo de <b>fscanf()</b> para
+o de <b>scanf()</b> é a especificação do arquivo destino através do ponteiro de
+arquivo. </p>
+
+<p>Talvez a forma mais simples de escrever o programa da página <a HREF="c960.html">c960.html</a>
+seja usando <b>fprintf</b> () e <b>fscanf</b>(). Fica assim: </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE *p;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char str[80],c;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Le um nome para o arquivo a ser aberto: */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;\n\n Entre com um nome para o arquivo:\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gets(str);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!(p = fopen(str,&quot;w&quot;)))&nbsp; /* Caso ocorra algum erro na abertura do arquivo..*/&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* o programa aborta automaticamente */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;Erro! Impossivel abrir o arquivo!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Se nao houve erro, imprime no arquivo, fecha ...*/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(p,&quot;Este e um arquivo chamado:\n%s\n&quot;, str);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose(p);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* abre novamente para a leitura&nbsp; */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = fopen(str,&quot;r&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (!feof(p))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fscanf(p,&quot;%c&quot;,&amp;c);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;%c&quot;,c);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose(p);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(0);
+}</pre>
+
+<p>&nbsp; <br>
+</p>
+
+<hr WIDTH="300" align="center">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p align="center"><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Escreva um
+programa que leia uma lista de nomes e idades de um arquivo texto. Prepare um arquivo para
+ser lido com nomes e idades. Apresente os dados lidos em forma de tabela na tela. Use as
+funções de sua preferência, mas faça pelo menos duas versões do programa usando
+funções de leitura diferentes.</font></p>
+
+<p align="center">&nbsp;<a HREF="c970.html"><img SRC="left.gif" ALT BORDER="0" HEIGHT="34"
+WIDTH="36"></a>&nbsp;<a HREF="c900.html"><img SRC="up.gif" ALT BORDER="0" HEIGHT="34"
+WIDTH="36"></a>&nbsp;<a HREF="c990.html"><img SRC="right.gif" BORDER="0" HEIGHT="34"
+WIDTH="34"></a> </p>
+
+<hr>
+
+<p><font SIZE="-1" FACE="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (Win98; I) [Netscape]">
+   <title>Curso de C</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000FF" vlink="#000000" alink="#0000FF">
+
+<center><font size=+3>CURSO DE C</font>
+<p><img SRC="line.gif" height=8 width=485></center>
+
+<h3>
+Modeladores (Casts)</h3>
+Um modelador &eacute; aplicado a uma express&atilde;o. Ele <i>for&ccedil;a</i>
+a mesma a ser de um tipo especificado. Sua forma geral &eacute;:
+<center>
+<p>&nbsp; <i>(tipo)express&atilde;o</i></center>
+Um exemplo:
+<br>&nbsp;
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int num;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float f;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; num=10;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f=(float)num/7;&nbsp; /* Uso do modelador . For&ccedil;a a transforma&ccedil;&atilde;o de num em um float */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf ("%f",f);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+Se n&atilde;o tiv&eacute;ssemos usado o modelador no exemplo acima o C
+faria uma divis&atilde;o inteira entre 10 e 7. O resultado seria 1 (um)
+e este seria depois convertido para <b>float</b> mas continuaria a ser
+1.0. Com o modelador temos o resultado correto.
+<br>&nbsp;
+<p>
+<hr WIDTH="300">
+<center>
+<p><font size=+1>AUTO AVALIA&Ccedil;&Atilde;O</font></center>
+
+<p><font size=+1>Veja como voc&ecirc; est&aacute;:</font>
+<p><font size=+1>Compile o exemplo acima sem usar o modelador, e verifique
+os resultados. Compile-o novamente usando o modelador e compare a saida
+com os resultados anteriores.</font>
+<br>
+<hr WIDTH="300">
+<center>
+<p><a href="c370.html"><img SRC="left.gif" ALT="Página Anterior" BORDER=0 height=34 width=37></a><a href="c300.html"><img SRC="up.gif" ALT="Índice da Aula" BORDER=0 height=34 width=37></a><a href="c390.html"><img SRC="right.gif" ALT="Próxima Página" BORDER=0 height=34 width=37></a></center>
+
+<hr>
+<p><font face="Arial"><font size=-1>Curso de C da EE/UFMG - 1996 - 2000</font></font>
+</body>
+</html>

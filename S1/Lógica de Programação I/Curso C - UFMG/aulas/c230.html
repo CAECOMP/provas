@@ -1,0 +1,205 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Introdução às Funções</h3>
+
+<ul>
+  <li><a HREF="#c231.html">Argumentos</a></li>
+  <li><a HREF="#c232.html">Retornando valores</a></li>
+  <li><a HREF="#c233.html">Forma geral</a></li>
+</ul>
+
+<hr width="300">
+
+<p>Uma função é um bloco de código de programa que pode ser usado diversas vezes em
+sua execução. O uso de funções permite que o programa fique mais legível, mais bem
+estruturado. Um programa em C consiste, no fundo, de várias funções colocadas juntas. </p>
+
+<p>&nbsp;Abaixo o tipo mais simples de função: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int mensagem ()	/* Funcao simples: so imprime Ola! */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;Ola! &quot;);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	mensagem();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;Eu estou vivo!\n&quot;);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<p>Este programa terá o mesmo resultado que o primeiro exemplo da <a HREF="c220.html">seção
+anterior</a>. O que ele faz é definir uma função <b>mensagem()</b> que coloca uma
+string na tela e retorna 0. Esta função é chamada a partir de <b>main()</b> , que, como
+já vimos, também é uma função. A diferença fundamental entre main e as demais
+funções do problema é que main é uma função especial, cujo diferencial é o fato de
+ser a primeira função a ser executada em um programa. </p>
+
+<p>&nbsp;<a NAME="c231.html"></a> </p>
+
+<h4>Argumentos</h4>
+
+<p>Argumentos são as entradas que a função recebe. É através dos argumentos que
+passamos <em>parâmetros</em> para a função. Já vimos funções com argumentos. As
+funções <b>printf()</b> e <b>scanf()</b> são funções que recebem argumentos. Vamos
+ver um outro exemplo simples de função com argumentos: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int square (int x)	/* Calcula o quadrado de x */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O quadrado e %d&quot;,(x*x));
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	int num;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;Entre com um numero: &quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	scanf (&quot;%d&quot;,&amp;num);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	square(num);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<p>Na definição de <b>square()</b> dizemos que a função receberá um argumento inteiro
+<b>x</b>. Quando fazemos a chamada à função, o inteiro <b>num</b> é passado como
+argumento. Há alguns pontos a observar. Em primeiro lugar temos de satisfazer aos
+requesitos da função quanto ao tipo e à quantidade de argumentos quando a chamamos.
+Apesar de existirem algumas conversões de tipo, que o C faz automaticamente, é
+importante ficar atento. Em segundo lugar, não é importante o nome da variável que se
+passa como argumento, ou seja, a variável <b>num</b>, ao ser passada como argumento para <b>square()</b>
+é copiada para a variável <b>x</b>. Dentro de <b>square()</b> trabalha-se apenas com <b>x</b>.
+Se mudarmos o valor de <b>x</b> dentro de <b>square()</b> o valor de <b>num</b> na
+função <b>main()</b> permanece inalterado. </p>
+
+<p>&nbsp;Vamos dar um exemplo de função de mais de uma variável. Repare que, neste
+caso, os argumentos são separados por vírgula e que deve-se explicitar o tipo de cada um
+dos argumentos, um a um. Note, também, que os argumentos passados para a função não
+necessitam ser todos variáveis porque mesmo sendo constantes serão copiados para a
+variável de entrada da função. </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </pre>
+
+<pre>	int mult (float a, float b,float c)	/* Multiplica 3 numeros */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;%f&quot;,a*b*c);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	float x,y;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	x=23.5;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	y=12.9;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	mult (x,y,3.87);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<h4>Retornando valores</h4>
+
+<p>Muitas vezes é necessário fazer com que uma função retorne um valor. As funções
+que vimos até aqui estavam retornando o número 0. Podemos especificar um tipo de retorno
+indicando-o antes do nome da função. Mas para dizer ao C <i>o que</i> vamos retornar
+precisamos da palavra reservada <b>return</b>. Sabendo disto fica fácil fazer uma
+função para multiplicar dois inteiros e que retorna o resultado da multiplicação.
+Veja: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int prod (int x,int y)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	return (x*y);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	int saida;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	saida=prod (12,7);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;A saida e: %d\n&quot;,saida);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<p>Veja que, como prod retorna o valor de 12 multiplicado por 7, este valor pode ser usado
+em uma expressão qualquer. No programa fizemos a atribuição deste resultado à
+variável saida, que posteriormente foi impressa usando o printf. Uma observação
+adicional: se não especificarmos o tipo de retorno de uma função, o compilador C
+automaticamente suporá que este tipo é inteiro. Porém, não é uma boa prática não se
+especificar o valor de retorno e, neste curso, este valor será sempre especificado.</p>
+
+<p>Com relação à função main, o retorno sempre será inteiro. Normalmente faremos a
+função main retornar um zero quando ela é executada sem qualquer tipo de erro.</p>
+
+<p>Mais um exemplo de função, que agora recebe dois floats e também retorna um float::</p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float prod (float x,float y)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	return (x*y);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	float saida;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	saida=prod (45.2,0.0067);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;A saida e: %f\n&quot;,saida);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	return(0);
+	}</pre>
+
+<h4>Forma geral</h4>
+
+<p>Apresentamos aqui a forma geral de uma função: </p>
+
+<p>&nbsp; 
+
+<ul>
+  <i><p>tipo_de_retorno nome_da_função (lista_de_argumentos)</i> <br>
+  <i>{</i> <br>
+  <i>&nbsp;&nbsp;&nbsp; código_da_função</i> <br>
+  <i>}</i></p>
+</ul>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Escreva uma função que
+some dois inteiros e retorne o valor da soma.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c220.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c200.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c240.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>
