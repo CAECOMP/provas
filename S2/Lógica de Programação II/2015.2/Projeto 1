@@ -1,0 +1,15 @@
+Projeto
+
+Desenvolver um sistema que gerencie um calendário de compromissos. Um compromisso inclui descrição, data, hora de início e hora de término. Por exemplo:
+
+Aula de POO 		17/10/2008 10:00	12:00
+Dentista 		01/11/2008		18:30
+
+Fornecer uma interface com o usuário para inserir compromissos, remover compromissos cancelados e imprimir a lista de compromissos de um dia particular.
+
+Pede-se: 
+- Identificar os objetos necessários, bem como seus atributos e responsabilidades(operações)
+- A modelagem do sistema em diagrama de classes UML.
+- A implementação do sistema.
+- Escrever uma aplicação que use o sistema.
+
