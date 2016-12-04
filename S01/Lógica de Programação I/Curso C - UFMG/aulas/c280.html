@@ -1,0 +1,339 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Curso de C - Avaliação automática da aula 2</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<a HREF="http://www.cpdee.ufmg.br/">
+
+<p align="left"></a><font face="Arial" size="4" color="#000080">Auto-avaliação on-line:
+aulas 1 e 2</font> </p>
+
+<hr>
+<script>
+<!--  hide script from obsolete browsers
+
+function makeArray(length)
+ {
+  for (var i=0; i < length; i++)
+   {
+    this[i] = 0;
+   }
+  this.length = length;
+ }
+
+var NumQuestions = 12;   // Change this value for each test var
+
+ArraySize = NumQuestions + 1;
+
+// Add an extra array element so that we don't have to use index 0.  That way
+// each question number is its own index into the array.
+
+var questions = new makeArray(ArraySize);
+
+function zeroit()
+ {
+  for (var i=0; i < ArraySize; i++)
+   {
+    questions[i] = 0;
+   }
+ }
+
+function check()
+ {
+  var NumCorrect = 0;
+  var score = 0;
+
+  for (var i=1; i < ArraySize; i++)
+   {
+    NumCorrect += questions[i];
+   }
+
+  score = 100 * NumCorrect/NumQuestions;
+  document.question.good.value = score;
+ }
+
+// end hiding contents -->
+
+</script>
+
+
+<p>&nbsp; </p>
+
+<form NAME="question">
+  <p><br>
+  <font SIZE="+1">Responda as perguntas abaixo, escolhendo a alternativa adequada para cada
+  questão. Ao terminar, aperte o botão <a HREF="#verifica">&quot;Verifica&nbsp; nota&quot;</a>
+  no final do formulário. Você pode fazer quantas tentativas quiser até atingir a nota
+  100. Se quiser recomeçar, basta apertar o botão <a HREF="#verifica">&quot;Limpa&quot;</a>
+  no final do formulário.</font> <br>
+  <font SIZE="+1">&nbsp;</font> <ol TYPE="1">
+    <li>A linguagem C tem este nome porque foi a sucessora da linguagem B.</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1] = 1"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>Em C, variáveis com nomes abc e Abc representam a mesma variável .</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2]=1"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>O programa</li>
+  </ol>
+  <ol START="4">
+    <ol TYPE="1">
+      <font SIZE="-1" FACE="Courier New,Courier"><p>#include &lt;stdio.h&gt;</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">main()</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">{</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; int x;</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;
+      scanf(&quot;%d&quot;,&amp;x);</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; printf(&quot;%d&quot;,x);</font>
+      <br>
+      <font SIZE="-1" FACE="Courier New,Courier">}</font> <br>
+      &nbsp;</p>
+    </ol>
+    <p>Lê uma variável pelo teclado e a imprime na tela </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3] = 1"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>A instrução <font SIZE="-1" FACE="Courier New,Courier">#include &lt;stdio.h&gt;</font>&nbsp;
+      no programa anterior é colocada para que possamos utilizar as funções <b>scanf e</b> <b>printf</b></li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4] = 1"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>Os comentários na linguagem C só podem ter uma linha de comprimento</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5]=1"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>Uma string, é uma seqüência de caracteres terminada com um '\0'. Uma string pode ser
+      armazenada em um vetor de caracteres</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6] = 1"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>Sendo i uma variável inteira, a seguinte chamada a scanf é válida:&nbsp;<font
+      FACE="Courier New,Courier"> <font SIZE="-1">scanf(&quot;%d&quot;, i);</font></font></li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7]=1"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <li>O que faz o seguinte programa em C?</li>
+    <ol TYPE="1">
+      <font SIZE="-1" FACE="Courier New,Courier"><p>#include &lt;stdio.h&gt;</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">main()</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">{</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; int i =2;</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; printf (&quot;\n O valor de
+      i = %d &quot;, i);</font> <br>
+      <font SIZE="-1" FACE="Courier New,Courier">}</font></p>
+    </ol>
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Nada&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Imprime: O valor de i = 2&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP">c.&nbsp;</td>
+        <td VALIGN="TOP">Imprime: \n O valor de i = %d&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=1"></td>
+        <td VALIGN="TOP">d.&nbsp;</td>
+        <td VALIGN="TOP">Pula para a próxima linha e imprime: O valor de i = 2&nbsp;</td>
+      </tr>
+    </table>
+    <li>O que é uma função em C?</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Parte de um programa&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Um bloco de código que pode ser utilizado diversas vezes na execução
+        de um programa&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP">c.&nbsp;</td>
+        <td VALIGN="TOP">Uma estrutura da linguagem C que pode ser utilizada para que um programa
+        fique mais organizado&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP">d.&nbsp;</td>
+        <td VALIGN="TOP">Um bloco de código que pode receber parâmetros, processá-los e
+        retornar alguma coisa&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=1"></td>
+        <td VALIGN="TOP">e.&nbsp;</td>
+        <td VALIGN="TOP">Todas opções acima&nbsp;</td>
+      </tr>
+    </table>
+    <li>O comando printf (&quot;%s%d%%&quot;,&quot;Juros de &quot;,10); imprime:</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10] = 1"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Juros de 10%&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">%s%d%% Juros de 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP">c.&nbsp;</td>
+        <td VALIGN="TOP">% Juros de 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP">d.&nbsp;</td>
+        <td VALIGN="TOP">10 Juros de&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP">e.&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <li>O laço for de uma única instrucao termina com:</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Virgula&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">Chave de abertura&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP">c.&nbsp;</td>
+        <td VALIGN="TOP">Chave de fechamento&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=1"></td>
+        <td VALIGN="TOP">d.&nbsp;</td>
+        <td VALIGN="TOP">Ponto e virgula&nbsp;</td>
+      </tr>
+    </table>
+    <li>A expressão de inicialização de um laco for</li>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12] = 0"></td>
+        <td VALIGN="TOP">a.&nbsp;</td>
+        <td VALIGN="TOP">Nunca é executada;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP">b.&nbsp;</td>
+        <td VALIGN="TOP">É executada uma única vez a cada iteração&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP">c.&nbsp;</td>
+        <td VALIGN="TOP">É executada enquanto o laço não termina&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=1"></td>
+        <td VALIGN="TOP">d.&nbsp;</td>
+        <td VALIGN="TOP">É executada uma vez antes do laço ser iniciado&nbsp;</td>
+      </tr>
+    </table>
+    <p><a NAME="verifica"></a></p>
+  </ol>
+  <p><input type="button" value="Verifica nota" onclick="check()"><input type="reset"
+  name="resetMe" value="Limpa" onclick="zeroit()"> </p>
+  <p>Sua nota é:&nbsp;<input type="text" name="good" size="4" value="0">em um máximo de
+  100. <br>
+  </p>
+</form>
+<a HREF="c270.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c200.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

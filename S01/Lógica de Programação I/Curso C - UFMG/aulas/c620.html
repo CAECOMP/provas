@@ -1,0 +1,227 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Declarando e Utilizando Ponteiros</h3>
+
+<p>Para declarar um ponteiro temos a seguinte forma geral: </p>
+
+<p>&nbsp;<i>tipo_do_ponteiro *nome_da_variável;</i> </p>
+
+<p>&nbsp;É o asterisco (<b>*</b>) que faz o compilador saber que aquela variável não
+vai guardar um valor mas sim um endereço para aquele tipo especificado. Vamos ver
+exemplos de declarações: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *pt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *temp,*pt2;</pre>
+
+<p>O primeiro exemplo declara um ponteiro para um inteiro. O segundo declara dois
+ponteiros para caracteres. Eles ainda não foram inicializados (como toda variável do C
+que é apenas declarada). Isto significa que eles apontam para um lugar indefinido. Este
+lugar pode estar, por exemplo, na porção da memória reservada ao sistema operacional do
+computador. Usar o ponteiro nestas circunstânicias pode levar a um travamento do micro,
+ou a algo pior. <i>O ponteiro deve ser inicializado (apontado para algum lugar conhecido)
+antes de ser usado!</i> Isto é de suma importância! </p>
+
+<p>&nbsp;Para atribuir um valor a um ponteiro recém-criado poderíamos igualá-lo a um
+valor de memória. Mas, como saber a posição na memória de uma variável do nosso
+programa? Seria muito difícil saber o endereço de cada variável que usamos, mesmo
+porque estes endereços são determinados pelo compilador na hora da compilação e
+realocados na execução. Podemos então deixar que o compilador faça este trabalho por
+nós. Para saber o endereço de uma variável basta usar o operador <b>&amp;</b>. Veja o
+exemplo: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count=10;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *pt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pt=&amp;count;</pre>
+
+<p>Criamos um inteiro <b>count</b> com o valor 10 e um apontador para um inteiro <b>pt</b>.
+A expressão <b>&amp;count</b> nos dá o endereço de count, o qual armazenamos em <b>pt</b>.
+Simples, não é? Repare que <i>não</i> alteramos o valor de <b>count</b>, que continua
+valendo 10. </p>
+
+<p>&nbsp;Como nós colocamos um endereço em <b>pt</b>, ele está agora
+&quot;liberado&quot; para ser usado. Podemos, por exemplo, alterar o valor de <b>count</b>
+usando <b>pt</b>. Para tanto vamos usar o operador &quot;inverso&quot; do operador <b>&amp;</b>.
+É o operador <b>*</b>. No exemplo acima, uma vez que fizemos <b>pt=&amp;count</b> a
+expressão <b>*pt</b> é equivalente ao próprio <b>count</b>. Isto significa que, se
+quisermos mudar o valor de count para 12, basta fazer <b>*pt=12</b>. </p>
+
+<p>&nbsp;Vamos fazer uma pausa e voltar à nossa analogia para ver o que está
+acontecendo. </p>
+
+<p>&nbsp;Digamos que exista uma firma. Ela é como uma variável que já foi declarada.
+Você tem um papel em branco onde vai anotar o endereço da firma. O papel é um ponteiro
+do tipo firma. Você então liga para a firma e pede o seu endereço, o qual você vai
+anotar no papel. Isto é equivalente, no C, a associar o papel à firma com o operador <b>&amp;</b>.
+Ou seja, o operador <b>&amp;</b> aplicado à firma é equivalente a você ligar para a
+mesma e pedir o endereço. Uma vez de posse do endereço no papel você poderia, por
+exemplo, fazer uma visita à firma. No C você faz uma visita à firma aplicando o
+operador <b>*</b> ao papel. Uma vez dentro da firma você pode copiar seu conteúdo ou
+modificá-lo. </p>
+
+<p>&nbsp;Uma observação importante: apesar do símbolo ser o mesmo, o operador <b>*</b>
+(multiplicação) não é o mesmo operador que o <b>*</b> (referência de ponteiros). Para
+começar o primeiro é binário, e o segundo é unário pré-fixado. </p>
+
+<p>&nbsp;Aqui vão dois exemplos de usos simples de ponteiros: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num,valor;
+	int *p;
+	num=55;
+	p=&amp;num;&nbsp;&nbsp;&nbsp;&nbsp; /* Pega o endereco de num */
+	valor=*p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Valor e igualado a num de uma maneira indireta */
+	printf (&quot;\n\n%d\n&quot;,valor);
+	printf (&quot;Endereco para onde o ponteiro aponta: %p\n&quot;,p);
+	printf (&quot;Valor da variavel apontada: %d\n&quot;,*p);
+	return(0);
+}
+
+#include &lt;stdio.h&gt;
+int main ()
+{
+	int num,*p;
+	num=55;
+	p=&amp;num;&nbsp;&nbsp;&nbsp;&nbsp; /* Pega o endereco de num */
+	printf (&quot;\nValor inicial: %d\n&quot;,num);
+	*p=100; /* Muda o valor de num de uma maneira indireta */
+	printf (&quot;\nValor final: %d\n&quot;,num);
+	return(0);
+}</pre>
+
+<p>Nos exemplos acima vemos um primeiro exemplo do funcionamento dos ponteiros. No
+primeiro exemplo, o código <b>%p</b> usado na função <b>printf()</b> indica à função
+que ela deve imprimir um endereço. </p>
+
+<p>&nbsp;Podemos fazer algumas operações aritméticas com ponteiros. A primeira, e mais
+simples, é igualar dois ponteiros. Se temos dois ponteiros <b>p1</b> e <b>p2</b> podemos
+igualá-los fazendo <b>p1=p2</b>. Repare que estamos fazendo com que <b>p1</b> aponte para
+o mesmo lugar que <b>p2</b>. Se quisermos que a variável apontada por <b>p1</b> tenha o
+mesmo conteúdo da variável apontada por <b>p2</b> devemos fazer <b>*p1=*p2</b>.
+Basicamente, depois que se aprende a usar os dois operadores (<b>&amp;</b> e <b>*</b>)
+fica fácil entender operações com ponteiros. </p>
+
+<p>&nbsp;As próximas operações, também muito usadas, são o incremento e o decremento.
+Quando incrementamos um ponteiro ele passa a apontar para o próximo valor do mesmo tipo
+para o qual o ponteiro aponta. Isto é, se temos um ponteiro para um inteiro e o
+incrementamos ele passa a apontar para o próximo inteiro. Esta é mais uma razão pela
+qual o compilador precisa saber o tipo de um ponteiro: se você incrementa um ponteiro <b>char*</b>
+ele anda 1 byte na memória e se você incrementa um ponteiro <b>double*</b> ele anda 8
+bytes na memória. O decremento funciona semelhantemente. Supondo que <b>p</b> é um
+ponteiro, as operações são escritas como: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p--;</pre>
+
+<p>Mais uma vez insisto. Estamos falando de operações com <i>ponteiros</i> e não de
+operações com o conteúdo das variáveis para as quais eles apontam. Por exemplo, para
+incrementar o conteúdo da variável apontada pelo ponteiro <b>p</b>, faz-se: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*p)++;</pre>
+
+<p>Outras operações aritméticas úteis são a soma e subtração de inteiros com
+ponteiros. Vamos supor que você queira incrementar um ponteiro de 15. Basta fazer: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p=p+15;&nbsp;&nbsp; ou&nbsp;&nbsp; p+=15;</pre>
+
+<p>E se você quiser usar o conteúdo do ponteiro 15 posições adiante: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *(p+15);</pre>
+
+<p>A subtração funciona da mesma maneira. Uma outra operação, às vezes útil, é a
+comparação entre dois ponteiros. Mas que informação recebemos quando comparamos dois
+ponteiros? Bem, em primeiro lugar, podemos saber se dois ponteiros são iguais ou
+diferentes (<b>==</b> e <b>!=</b>). No caso de operações do tipo <b>&gt;</b>, <b>&lt;</b>,
+<b>&gt;=</b> e <b>&lt;=</b> estamos comparando qual ponteiro aponta para uma posição
+mais alta <i>na memória</i>. Então uma comparação entre ponteiros pode nos dizer qual
+dos dois está &quot;mais adiante&quot; na memória. A comparação entre dois ponteiros
+se escreve como a comparação entre outras duas variáveis quaisquer: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p1&gt;p2</pre>
+
+<p>Há entretanto operações que você <i>não</i> pode efetuar num ponteiro. Você não
+pode dividir ou multiplicar ponteiros, adicionar dois ponteiros, adicionar ou subtrair <a
+HREF="c320.html"><b>float</b>s</a> ou <a HREF="c320.html"><b>double</b>s</a> de ponteiros.
+</p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">a) Explique a diferença entre</font> </p>
+
+<pre><font SIZE="+1">&nbsp;p++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*p)++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *(p++);</font></pre>
+
+<ul>
+  <li><font SIZE="+1">O que quer dizer *(p+10);?</font></li>
+  <li><font SIZE="+1">Explique o que você entendeu da comparação entre ponteiros</font></li>
+</ul>
+
+<p><big>b) Qual o valor de y no final do programa? Tente primeiro descobrir e depois
+verifique no computador o resultado. A seguir, escreva um /* comentário */ em cada
+comando de atribuição explicando o que ele faz e o valor da variável à esquerda do '='
+após sua execução. <br>
+</big><br>
+<font face="Courier New">int main() <br>
+{ <br>
+&nbsp;&nbsp;&nbsp; int y, *p, x; <br>
+&nbsp;&nbsp;&nbsp; y = 0; <br>
+&nbsp;&nbsp;&nbsp; p = &amp;y; <br>
+&nbsp;&nbsp;&nbsp; x = *p; <br>
+&nbsp;&nbsp;&nbsp; x = 4; <br>
+&nbsp;&nbsp;&nbsp; (*p)++; <br>
+&nbsp;&nbsp;&nbsp; x--; <br>
+&nbsp;&nbsp;&nbsp; (*p) += x; <br>
+&nbsp;&nbsp;&nbsp; printf (&quot;y = %d\n&quot;, y); <br>
+&nbsp;&nbsp;&nbsp; return(0);<br>
+} </font><br>
+<br>
+</p>
+
+<hr WIDTH="300">
+<a HREF="c610.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c600.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c630.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

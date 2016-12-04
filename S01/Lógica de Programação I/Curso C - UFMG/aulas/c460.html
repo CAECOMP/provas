@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Comando break</h3>
+
+<p>Nós já vimos dois usos para o comando <b>break: </b>interrompendo os comandos <b><a
+HREF="c420.html">switch</a></b> e <b><a HREF="c430.html">for</a></b>. Na verdade, estes
+são os dois usos do comando <b>break</b>: ele pode quebrar a execução de um comando
+(como no caso do <b>switch</b>) ou interromper a execução de <i>qualquer</i> loop (como
+no caso do <b>for</b>, do <b>while</b> ou do <b>do while</b>). O <b>break</b> faz com que
+a execução do programa continue na primeira linha seguinte ao loop ou&nbsp; bloco que
+está sendo interrompido. </p>
+<font SIZE="2">
+
+<p></font><font size="3">Observe que um break causará uma saída<u> somente do laço mais
+interno</u>. Por exemplo:</p>
+
+<pre></font><font size="4">for(t=0; t&lt;100; ++t)
+{
+	count=1;
+	for(;;)
+	{
+		printf(&quot;%d&quot;, count);
+		count++;
+		if(count==10) break;
+	}
+}</pre>
+</font><font size="3">
+
+<p ALIGN="JUSTIFY">O código acima imprimirá os números de 1 a 10 cem vezes na tela.
+Toda vez que o break é encontrado, o controle é devolvido para o laço for externo.</p>
+
+<p ALIGN="JUSTIFY">Outra observaçao é o fato que um break usado dentro de uma
+declaraçao switch afetará somente os dados relacionados com o switch e nao qualquer
+outro laço em que o switch estiver.</font></p>
+
+<p>&nbsp; </p>
+<a HREF="c450.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c470.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

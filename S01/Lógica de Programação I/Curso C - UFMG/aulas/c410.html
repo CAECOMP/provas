@@ -1,0 +1,270 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<p align="center"><a NAME="c410.html"></a> </p>
+
+<h3>O Comando if</h3>
+
+<ul>
+  <li><a HREF="#c411.html">O else</a></li>
+  <li><a HREF="#c412.html">O if-else-if</a></li>
+  <li><a HREF="#c413.html">A expressão condicional</a></li>
+  <li><a HREF="#c414.html">ifs aninhados</a></li>
+  <li><a HREF="#c415.html">O operador ?</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p>Já introduzimos o comando <b>if</b>. Sua forma geral é: </p>
+
+<p>&nbsp;<i>if (condição) declaração;</i> </p>
+
+<p>&nbsp;A expressão, na condição, será avaliada. Se ela for zero, a declaração não
+será executada. Se a condição for diferente de zero a declaração será executada.
+Aqui reapresentamos o exemplo de um uso do comando <b>if</b>: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num;
+	printf (&quot;Digite um numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	if (num&gt;10)
+&nbsp;&nbsp; 		printf (&quot;\n\nO numero e maior que 10&quot;);
+	if (num==10)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nVoce acertou!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O numero e igual a 10.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	if (num&lt;10)
+&nbsp;&nbsp; 		printf (&quot;\n\nO numero e menor que 10&quot;);
+	return(0);
+}</pre>
+
+<h4>O else</h4>
+
+<p>Podemos pensar no comando <b>else</b> como sendo um complemento do comando <b><a
+HREF="#c410.html">if</a></b>. O comando <b><a HREF="#c410.html">if</a></b> completo tem a
+seguinte forma geral: </p>
+
+<p>&nbsp;<i>if (condição) declaração_1;</i> <br>
+<i>else declaração_2;</i> </p>
+
+<p>&nbsp;A expressão da condição será avaliada. Se ela for diferente de zero a
+declaração 1 será executada. Se for zero a declaração 2 será executada. É
+importante nunca esquecer que, quando usamos a estrutura <b>if-else</b>, estamos
+garantindo que uma das duas declarações será executada. Nunca serão executadas as duas
+ou nenhuma delas. Abaixo está um exemplo do uso do <b>if-else</b> que deve funcionar como
+o programa da <a HREF="#c410.html">seção anterior</a>. </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num;
+	printf (&quot;Digite um numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	if (num==10)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		printf (&quot;\n\nVoce acertou!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		printf (&quot;O numero e igual a 10.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	}
+	else 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		printf (&quot;\n\nVoce errou!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 		printf (&quot;O numero e diferente de 10.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	}
+	return(0);
+}</pre>
+
+<h4>O if-else-if</h4>
+
+<p>A estrutura <b>if-else-if</b> é apenas uma extensão da estrutura <b><a
+HREF="#c411.html">if-else</a></b>. Sua forma geral pode ser escrita como sendo: </p>
+
+<p>&nbsp;<i>if (condição_1) declaração_1;</i> <br>
+<i>else if (condição_2) declaração_2;</i> <br>
+<i>else if (condição_3) declaração_3;</i> <br>
+<i>.</i> <br>
+<i>.</i> <br>
+<i>.</i> <br>
+<i>else if (condição_n) declaração_n;</i> <br>
+<i>else declaração_default;</i> </p>
+
+<p>&nbsp;A estrutura acima funciona da seguinte maneira: o programa começa a testar as
+condições começando pela 1 e continua a testar até que ele ache uma expressão cujo
+resultado dê diferente de zero. Neste caso ele executa a declaração correspondente. Só
+uma declaração será executada, ou seja, só será executada a declaração equivalente
+à <i>primeira</i> condição que der diferente de zero. A última declaração (default)
+é a que será executada no caso de todas as condições darem zero e é opcional. Um
+exemplo da estrutura acima: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num;
+	printf (&quot;Digite um numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	if (num&gt;10)
+&nbsp;&nbsp;&nbsp;&nbsp; 		printf (&quot;\n\nO numero e maior que 10&quot;);
+	else if (num==10)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nVoce acertou!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O numero e igual a 10.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; 	else if (num&lt;10)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;\n\nO numero e menor que 10&quot;);
+	return(0);
+}</pre>
+
+<h4>A expressão condicional</h4>
+
+<p>Quando o compilador avalia uma condição, ele quer um valor de retorno para poder
+tomar a decisão. Mas esta expressão não necessita ser uma expressão no sentido
+convencional. Uma variável sozinha pode ser uma &quot;expressão&quot; e esta retorna o
+seu próprio valor. Isto quer dizer que teremos as seguintes expressões: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int num;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (num!=0) ....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (num==0) ....
+		for (i = 0; string[i] != '\0'; i++)</pre>
+
+<p>equivalem a </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int num;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (num) ....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!num) ....
+		for (i = 0; string[i]; i++)</pre>
+
+<p>Isto quer dizer que podemos simplificar algumas expressões simples. </p>
+
+<p>&nbsp;<a NAME="c414.html"></a> </p>
+
+<h4>ifs aninhados</h4>
+
+<p>O <b><a HREF="#c410.html">if</a></b> aninhado é simplesmente um <b><a
+HREF="#c410.html">if</a></b> dentro da declaração de um outro <b><a HREF="#c410.html">if</a></b>
+externo. O único cuidado que devemos ter é o de saber exatamente a qual <b><a
+HREF="#c410.html">if</a></b> um determinado <b><a HREF="#c410.html">else</a></b> está
+ligado. Vejamos um exemplo: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num;
+	printf (&quot;Digite um numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	if (num==10)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nVoce acertou!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O numero e igual a 10.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	if (num&gt;10)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O numero e maior que 10.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O numero e menor que 10.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	return(0);
+}</pre>
+
+<h3><a NAME="c415.html"></a><font SIZE="+0">O Operador ?</font></h3>
+
+<p>Uma expressão como: </p>
+
+<pre>if (a&gt;0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b=-150;
+else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b=150;</pre>
+
+<p>pode ser simplificada usando-se o operador <b>?</b> da seguinte maneira: </p>
+
+<pre>b=a&gt;0?-150:150;</pre>
+
+<p>De uma maneira geral expressões do tipo: 
+
+<dl>
+  <dt><i>if (condição)</i></dt>
+  <dd><i>expressão_1;</i></dd>
+  <dt><i>else</i></dt>
+  <dd><i>expressão_2;</i></dd>
+</dl>
+
+<p>podem ser substituídas por: </p>
+
+<p><i>condição?expressão_1:expressão_2;</i> </p>
+
+<p>O operador <b>?</b> é limitado (não atende a uma gama muito grande de casos) mas pode
+ser usado para simplificar expressões complicadas. Uma aplicação interessante é a do
+contador circular. Veja o exemplo: </p>
+
+<pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int index = 0, contador;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char letras[5] = &quot;Joao&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (contador=0; contador &lt; 1000; contador++)
+     { 
+	printf(&quot;\n%c&quot;,letras[index]);
+	(index==3) ? index=0: ++index; 
+     }
+} </pre>
+
+<p>O nome Joao é escrito na tela verticalmente até a variável contador determinar o
+término do programa. Enquanto isto a variável index assume os valores 0, 1, 2, 3, , 0,
+1, ... progressivamente. </p>
+
+<hr WIDTH="300">
+<font SIZE="+1"><div align="center"><center>
+
+<pre>AUTO-AVALIAÇÃO</font>
+</pre>
+</center></div>
+
+<p><font SIZE="+1">Veja como você está:</font></p>
+
+<p><font SIZE="+1">Altere o último exemplo para que ele escreva cada letra 5 vezes
+seguidas. Para isto, use um 'if' para testar se o contador é divisível por cinco
+(utilize o operador %) e só então realizar a atualização em index. </font></p>
+
+<hr WIDTH="300">
+<a HREF="c400.html"><div align="center"><center>
+
+<pre><img ALT="Índice da Aula" SRC="up.gif" BORDER="0" HEIGHT="34" WIDTH="37"></a><a
+HREF="c420.html"><img SRC="right.gif" ALT="Próxima página" BORDER="0" HEIGHT="34"
+WIDTH="37"></a></pre>
+</center></div>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

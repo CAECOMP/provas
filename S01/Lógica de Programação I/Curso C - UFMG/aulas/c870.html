@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+</head>
+
+<body TEXT="#000000" LINK="#0000ff" VLINK="#000000" BGCOLOR="#ffffff" ALINK="#0000FF">
+<font SIZE="6">
+
+<p ALIGN="CENTER">CURSO DE C</p>
+</font>
+
+<p ALIGN="CENTER"><img SRC="line.gif" WIDTH="485" HEIGHT="8"></p>
+
+<h3>A Diretiva else</h3>
+
+<p>A diretiva <b>#else</b> tem a seguinte forma geral: </p>
+
+<p>&nbsp; <i>
+
+<dl>
+  <dt>#if expressão_constante</dt>
+  <dd>sequência_de_declarações</dd>
+  <dt>#else</dt>
+  <dd>sequência_de_declarações</dd>
+  <dt>#endif</dt>
+</dl>
+</i>
+
+<p>&nbsp; Ela funciona como seu correspondente, o comando <a HREF="c410.html"><b>else</b></a>.
+</p>
+
+<p>Imagine que você esteja trabalhando em um sistema, e deseje que todo o código possa
+ser compilado em duas diferentes plataformas (i.e. Unix e Dos). Para obter isto, você
+&quot;encapsula&quot; toda a parte de entrada e saída em arquivos separados, que serão
+carregados de acordo com o header file carregado. Isto pode ser facilmente implementado da
+seguinte forma: </p>
+
+<pre>
+#define SISTEMA DOS
+...
+/*linhas de codigo..*/
+...
+#if SISTEMA == DOS
+  #define CABECALHO &quot;dos_io.h&quot;
+#else
+  #define CABECALHO &quot;unix_io.h&quot;
+#endif
+#include CABECALHO</pre>
+
+<p ALIGN="CENTER"><a HREF="c860.html"><img SRC="left.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c800.html"><img SRC="up.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c880.html"><img SRC="right.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT="P"></a></p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>
