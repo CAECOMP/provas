@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>O Comando while</h3>
+
+<p>O comando <b>while</b> tem a seguinte forma geral: </p>
+
+<p>&nbsp;<i>while (condição) declaração;</i> </p>
+
+<p>&nbsp;Assim como fizemos para o comando <strong>for</strong>, vamos tentar mostrar como
+o <b>while</b> funciona fazendo uma analogia. Então o <b>while</b> seria equivalente a: </p>
+
+<p>&nbsp;<i>if (condição)</i> 
+
+<dl>
+  <dd><i>{</i></dd>
+  <dd><br>
+    <i>declaração;</i> <br>
+    <i>&quot;Volte para o comando if&quot;</i> <br>
+    <i>}</i> <p>&nbsp;</p>
+  </dd>
+</dl>
+
+<p>Podemos ver que a estrutura <b>while</b> testa uma condição. Se esta for verdadeira a
+declaração é executada e faz-se o teste novamente, e assim por diante. Assim como no
+caso do <b><a HREF="c430.html">for</a></b>, podemos fazer um loop infinito. Para tanto
+basta colocar uma expressão eternamente verdadeira na condição. Pode-se também omitir
+a declaração e fazer um loop sem conteúdo. Vamos ver um exemplo do uso do <b>while</b>.
+&nbsp; O programa abaixo é executado enquanto i for menor que 100. Veja que ele seria
+implementado mais naturalmente com um for ...</p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int i = 0;
+	while ( i &lt; 100)	
+	{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	printf(&quot; %d&quot;, i);
+		i++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	}
+	return(0);
+}</pre>
+
+<p>O programa abaixo espera o usuário digitar a tecla 'q' e só depois finaliza: &nbsp; </p>
+
+<pre>
+#include &lt;stdio.h&gt;
+int main ()
+{
+	char Ch;
+	Ch='\0';
+	while (Ch!='q') 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	scanf(&quot;%c&quot;, &amp;Ch);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	return(0);
+}</pre>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</p>
+
+<p>Refaça o programa da página anterior. Use o comando <i>while</i> para fechar o loop. </p>
+
+<hr WIDTH="300">
+<a HREF="c430.html">
+
+<p align="center"><img ALT="Página Anterior" SRC="left.gif" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img ALT="Índice da Aula" SRC="up.gif"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c450.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+</font>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

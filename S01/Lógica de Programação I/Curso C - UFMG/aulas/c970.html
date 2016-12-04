@@ -1,0 +1,325 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+<meta NAME="Template" CONTENT="C:\ARQUIVOS DE PROGRAMAS\MICROSOFT OFFICE\OFFICE\html.dot">
+</head>
+
+<body TEXT="#000000" LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff" ALINK="#FF0000">
+
+<h2 ALIGN="CENTER">Curso de C</h2>
+
+<p ALIGN="CENTER"><img SRC="line.gif" WIDTH="485" HEIGHT="8"></p>
+
+<h3 align="center">Outros Comandos de Acesso a Arquivos</h3>
+
+<ul>
+  <li><a href="#c973">arquivos pré-definidos</a></li>
+  <li><a HREF="#c975">fgets</a> </li>
+  <li><a HREF="#c976">fputs</a> </li>
+  <li><a HREF="#c971">ferror e perror</a> </li>
+  <li><a HREF="#c977">fread</a> </li>
+  <li><a HREF="#c978">fwrite</a> </li>
+  <li><a HREF="#c979">fseek</a> </li>
+  <li><a HREF="#c972">rewind</a> </li>
+  <li><a HREF="#c97A">remove</a> </li>
+</ul>
+
+<hr>
+
+<h4><a NAME="c973"></a>Arquivos pré-definidos</h4>
+
+<p>Quando se começa a execução de um programa, o sistema automaticamente abre alguns
+arquivos pré-definidos: 
+
+<ul>
+  <li><strong>stdin: </strong>dispositivo de entrada padrão (geralmente o teclado)</li>
+  <li><strong>stdout: </strong>dispositivo de saída padrão (geralmente o vídeo)</li>
+  <li><strong>stderr:</strong> dispositivo de saída de erro padrão (geralmente o vídeo)</li>
+  <li><strong>stdaux:</strong> dispositivo de saída auxiliar (em muitos sistemas, associado
+    à porta serial)</li>
+  <li><strong>stdprn : </strong>dispositivo de impressão padrão (em muitos sistemas,
+    associado à porta paralela)</li>
+</ul>
+
+<p>Cada uma destas constantes pode ser utilizada como um ponteiro para FILE, para acessar
+os periféricos associados a eles. Desta maneira, pode-se, por exemplo, usar:</p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ch =getc(stdin);</font></p>
+
+<p>para efetuar a leitura de um caracter a partir do teclado, ou :</p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+putc(ch, stdout);</font></p>
+
+<p>para imprimí-lo na tela.</p>
+
+<h4><a NAME="c975"></a>fgets</h4>
+
+<p>Para se ler uma string num arquivo podemos usar <b>fgets()</b> cujo protótipo é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *fgets (char *str, int tamanho,FILE *fp);</pre>
+
+<p>A função recebe 3 argumentos: a string a ser lida, o limite máximo de caracteres a
+serem lidos e o ponteiro para FILE, que está associado ao arquivo de onde a string será
+lida. A função lê a string até que um caracter de nova linha seja lido ou <em>tamanho-1</em>
+caracteres tenham sido lidos. Se o caracter de nova linha ('\n') for lido, ele fará parte
+da string, o que não acontecia com gets. A string resultante sempre terminará com '\0'
+(por isto somente <em>tamanho-1</em> caracteres, no máximo, serão lidos).</p>
+
+<p>A função fgets é semelhante à função <a href="c930.html"><strong>gets()</strong></a>,
+porém, além dela poder fazer a leitura a partir de um arquivo de dados&nbsp; e incluir o
+caracter de nova linha na string, ela ainda especifica o tamanho máximo da string de
+entrada. Como vimos, a função <a href="c930.html">gets</a> não tinha este controle, o
+que poderia acarretar erros de &quot;estouro de buffer&quot;.&nbsp; Portanto, levando em
+conta que o ponteiro fp pode ser substituído por stdin, como vimos <a href="#c973">acima</a>,
+uma alternativa ao uso de gets é usar a seguinte construção:</p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; fgets (str, tamanho, stdin);</font></p>
+
+<p>onde str e' a string que se está lendo e tamanho deve ser igual ao tamanho alocado
+para a string subtraído de 1, por causa do '\0'.</p>
+
+<h4><a NAME="c976"></a>fputs</h4>
+
+<p>Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *fputs (char *str,FILE *fp);</pre>
+
+<p>Escreve uma string num arquivo. </p>
+
+<p>&nbsp;</p>
+
+<h4><a NAME="c971"></a>ferror e perror</h4>
+
+<p>Protótipo de ferror: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ferror (FILE *fp);</pre>
+
+<p>A função retorna zero, se nenhum erro ocorreu e um número diferente de zero se algum
+erro ocorreu durante o acesso ao arquivo.</p>
+
+<p><b>ferror()</b> se torna muito útil quando queremos verificar se cada acesso a um
+arquivo teve sucesso, de modo que consigamos garantir a integridade dos nossos dados. Na
+maioria dos casos, se um arquivo pode ser aberto, ele pode ser lido ou gravado. Porém,
+existem situações em que isto não ocorre. Por exemplo, pode acabar o espaço em disco
+enquanto gravamos, ou o disco pode estar com problemas e não conseguimos ler, etc. </p>
+
+<p>Uma função que pode ser usada em conjunto com <strong>ferror() </strong>é a função
+<strong>perror()</strong> (print error), cujo argumento é uma string que normalmente
+indica em que parte do programa o problema ocorreu. </p>
+
+<p>No exemplo a seguir, fazemos uso de<strong> ferror,</strong> <strong>perror e fputs</strong></p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; FILE *pf;<br>
+&nbsp;&nbsp;&nbsp; char string[100];<br>
+&nbsp;&nbsp;&nbsp; if((pf = fopen(&quot;arquivo.txt&quot;,&quot;w&quot;)) ==NULL) <br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;\nNao consigo abrir o arquivo !
+&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(1);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; do <br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;\nDigite uma nova string. Para
+terminar, digite &lt;enter&gt;: &quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gets(string);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fputs(string, pf);<big><br>
+</big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putc('\n', pf);<big><br>
+</big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(ferror(pf))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; perror(&quot;Erro na
+gravacao&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose(pf);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; } while (strlen(string) &gt; 0);<br>
+&nbsp;&nbsp;&nbsp; fclose(pf);<br>
+}</font></p>
+
+<h4><a NAME="c977"></a>fread</h4>
+
+<p>Podemos escrever e ler blocos de dados. Para tanto, temos as funções <b>fread()</b> e
+<b>fwrite()</b>. O protótipo de <b>fread()</b> é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned fread (void *buffer, int numero_de_bytes, int count, FILE *fp);</pre>
+
+<p>O <em>buffer</em> é a região de memória na qual serão armazenados os dados lidos. O
+<em>número de bytes</em> é o tamanho da unidade a ser lida. <em>count</em> indica
+quantas unidades devem ser lidas. Isto significa que o número total de bytes lidos é: </p>
+<i>
+
+<p>numero_de_bytes*count</i> </p>
+
+<p>A função retorna o número de unidades efetivamente lidas. Este número pode ser
+menor que <em>count</em> quando o fim do arquivo for encontrado ou ocorrer algum erro. </p>
+
+<p>Quando o arquivo for aberto para dados binários, fread pode ler qualquer tipo de
+dados.</p>
+
+<h4><a NAME="c978"></a>fwrite</h4>
+
+<p>A função <b>fwrite()</b> funciona como a sua companheira <b>fread()</b>, porém
+escrevendo no arquivo. Seu protótipo é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned fwrite(void *buffer,int numero_de_bytes,int count,FILE *fp);</pre>
+
+<p>A função retorna o número de itens escritos. Este valor será igual a count a menos
+que ocorra algum erro.</p>
+
+<p>O exemplo abaixo ilustra o uso de <strong>fwrite</strong> e <strong>fread</strong> para
+gravar e posteriormente ler uma variável float em um arquivo binário.</p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+int main()<br>
+{<br>
+FILE *pf;<br>
+float pi = 3.1415;<br>
+float pilido;<br>
+if((pf = fopen(&quot;arquivo.bin&quot;, &quot;wb&quot;)) == NULL) /* Abre arquivo binário
+para escrita */<br>
+{<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;Erro na abertura do arquivo&quot;);<br>
+&nbsp;&nbsp;&nbsp; exit(1);<br>
+}<br>
+if(fwrite(&amp;pi, sizeof(float), 1,pf) != 1)&nbsp;&nbsp;&nbsp;&nbsp; /* Escreve a
+variável pi */<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;Erro na escrita do arquivo&quot;);<br>
+fclose(pf);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* Fecha o arquivo */<br>
+if((pf = fopen(&quot;arquivo.bin&quot;, &quot;rb&quot;)) == NULL) /* Abre o arquivo
+novamente para leitura */<br>
+{<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;Erro na abertura do arquivo&quot;);<br>
+&nbsp;&nbsp;&nbsp; exit(1);<br>
+}<br>
+if(fread(&amp;pilido, sizeof(float), 1,pf) != 1)&nbsp; /* Le em pilido o valor da
+variável armazenada anteriormente */<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;Erro na leitura do arquivo&quot;);<br>
+printf(&quot;\nO valor de PI, lido do arquivo e': %f&quot;, pilido);<br>
+fclose(pf);<big><br>
+</big>return(0);<br>
+}</font></p>
+
+<p>Note-se o uso do operador sizeof, que retorna o tamanho em bytes da variável ou do
+tipo de dados.</p>
+
+<h4><a NAME="c979"></a>fseek</h4>
+
+<p>Para se fazer procuras e acessos randômicos em arquivos usa-se a função <b>fseek()</b>.
+Esta move a posição corrente de leitura ou escrita no arquivo de um valor especificado,
+a partir de um ponto especificado. Seu protótipo é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int fseek (FILE *fp,long numbytes,int origem);</pre>
+
+<p>O parâmetro <em>origem</em> determina a partir de onde os <em>numbytes</em> de
+movimentação serão contados. Os valores possíveis são definidos por macros em <strong>stdio.h</strong>
+e são: <br>
+&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="1" width="371">
+  <tr>
+    <td VALIGN="MIDDLE" width="99"><p ALIGN="CENTER"><b>Nome</b></td>
+    <td VALIGN="MIDDLE" width="47"><b><p ALIGN="CENTER">Valor</b></td>
+    <td VALIGN="MIDDLE" width="207"><b><p ALIGN="CENTER">Significado</b></td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE" width="99">SEEK_SET</td>
+    <td VALIGN="MIDDLE" width="47">0</td>
+    <td VALIGN="MIDDLE" width="207">Início do arquivo</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE" width="99">SEEK_CUR</td>
+    <td VALIGN="MIDDLE" width="47">1</td>
+    <td VALIGN="MIDDLE" width="207">Ponto corrente no arquivo</td>
+  </tr>
+  <tr>
+    <td VALIGN="MIDDLE" width="99">SEEK_END</td>
+    <td VALIGN="MIDDLE" width="47">2</td>
+    <td VALIGN="MIDDLE" width="207">Fim do arquivo</td>
+  </tr>
+</table>
+</center></div>
+
+<p ALIGN="left">Tendo-se definido a partir de onde irá se contar, numbytes determina
+quantos bytes de deslocamento serão dados na posição atual. </p>
+
+<p ALIGN="left">&nbsp;</p>
+
+<h4><a NAME="c972"></a>rewind</h4>
+
+<p>A função <b>rewind()</b> de protótipo </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void rewind (FILE *fp);</pre>
+
+<p>retorna a posição corrente do arquivo para o início. </p>
+
+<h4><a NAME="c97A"></a>remove</h4>
+
+<p>Protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int remove (char *nome_do_arquivo);</pre>
+
+<p>Apaga um arquivo especificado. </p>
+
+<p>O exercício da página anterior poderia ser reescrito usando-se, por exemplo, <b>fgets</b>()
+e <b>fputs</b>(), ou <b>fwrite</b>() e <b>fread</b>(). A seguir apresentamos uma segunda
+versão que se usa das funções <b>fgets</b>() e <b>fputs</b>(), e que acrescenta algumas
+inovações.</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+int main()
+{
+	FILE *p;
+	char str[30], frase[] = &quot;Este e um arquivo chamado: &quot;, resposta[80];
+	int i;
+
+	/* Le um nome para o arquivo a ser aberto: */
+	printf(&quot;\n\n Entre com um nome para o arquivo:\n&quot;);
+	fgets(str,29,stdin);					/* Usa fgets como se fosse gets */
+	for(i=0; str[i]; i++) if(str[i]=='\n') str[i]=0;	/* Elimina o \n da string lida */
+	if (!(p = fopen(str,&quot;w&quot;)))  				/* Caso ocorra algum erro na abertura do arquivo..*/ 
+  	{                         				/* o programa aborta automaticamente */
+  		printf(&quot;Erro! Impossivel abrir o arquivo!\n&quot;);
+  		exit(1);
+  	}
+	/* Se nao houve erro, imprime no arquivo, e o fecha ...*/
+	fputs(frase, p);
+	fputs(str,p);
+  	fclose(p);
+
+	/* abre novamente e le */
+	p = fopen(str,&quot;r&quot;);
+	fgets(resposta, 79, p);
+	printf(&quot;\n\n%s\n&quot;, resposta);
+	fclose(p);			/* Fecha o arquivo */
+	remove(str);			/* Apaga o arquivo */<big>
+</big>	return(0);
+}</pre>
+
+<p ALIGN="CENTER"><a HREF="c960.html"><img SRC="left.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c900.html"><img SRC="up.gif" BORDER="0" WIDTH="36"
+HEIGHT="34" ALT></a>&nbsp; <a HREF="c980.html"><img SRC="right.gif" BORDER="0" WIDTH="36"
+HEIGHT="34"></a></p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

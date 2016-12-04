@@ -1,0 +1,29 @@
+ 0  10 82   STA 82
+ 2  20 80   LDA 80
+ 4  10 83   STA 83
+ 6  A0 21   JZ  21
+ 8  20 82   LDA 82
+ A  30 81   ADD 81
+ C  10 82   STA 82
+ E  20 83   LDA 83
+10  30 84   ADD 84
+12  80  4   JMP 4
+14  F0      HLT
+15   0      NOP
+16   0      NOP
+17   0      NOP
+18   0      NOP
+19   0      NOP
+1A   0      NOP
+1B   0      NOP
+1C   0      NOP
+1D   0      NOP
+1E   0      NOP
+1F   0      NOP
+20   0      NOP
+
+80  20     
+81   7     
+82  E0     
+83   0     
+84  FF     
