@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> <a NAME="c370.html"></a>
+</p>
+
+<h3>Expressões</h3>
+
+<ul>
+  <li><a HREF="#c371.html">Conversão de tipos em expressões</a></li>
+  <li><font size="3"><a HREF="#c372.html">Expressões que Podem ser Abreviadas</a></font></li>
+  <li><font size="3"><a HREF="#c374.html">Encadeando expressões: o operador ,</a></font></li>
+  <li><font size="3"><a HREF="#c373.html">Tabela de Precedências do C</a></font></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p>Expressões são combinações de variáveis, constantes e operadores. Quando montamos
+expressões temos que levar em consideração a ordem com que os operadores são
+executados, conforme <a HREF="#c373.html">a tabela de precedências da linguagem C.</a> </p>
+
+<p>Exemplos de expressões: </p>
+
+<p>Anos=Dias/365.25; <br>
+i = i+3; <br>
+c= a*b + d/e; <br>
+c= a*(b+d)/e; </p>
+
+<h4>&nbsp;<a NAME="c371.html"></a>Conversão de tipos em expressões</h4>
+
+<p>Quando o C avalia expressões onde temos variáveis de tipos diferentes o compilador
+verifica se as conversões são possíveis. Se não são, ele não compilará o programa,
+dando uma mensagem de erro. Se as conversões forem possíveis ele as faz, seguindo as
+regras abaixo: </p>
+
+<p>&nbsp; 
+
+<ol>
+  <li>Todos os <b>char</b>s e <b>short int</b>s são convertidos para <b>int</b>s. Todos os <b>float</b>s
+    são convertidos para <b>double</b>s.</li>
+  <li>Para pares de operandos de tipos diferentes: se um deles é <b>long double</b> o outro
+    é convertido para <b>long double</b>; se um deles é <b>double</b> o outro é convertido
+    para <b>double</b>; se um é <b>long</b> o outro é convertido para <b>long</b>; se um é <b>unsigned</b>
+    o outro é convertido para <b>unsigned</b>.</li>
+</ol>
+
+<h3><a NAME="c372.html"></a><font SIZE="+0">Expressões que Podem ser Abreviadas</font></h3>
+
+<p align="left">O C admite as seguintes equivalências, que podem ser usadas para
+simplificar expressões ou para facilitar o entendimento de um programa: <br>
+&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr ALIGN="LEFT">
+    <th>Expressão Original</th>
+    <th>Expressão Equivalente</th>
+  </tr>
+  <tr>
+    <td>x=x+k;</td>
+    <td>x+=k;</td>
+  </tr>
+  <tr>
+    <td>x=x-k;</td>
+    <td>x-=k;</td>
+  </tr>
+  <tr>
+    <td>x=x*k;</td>
+    <td>x*=k;</td>
+  </tr>
+  <tr>
+    <td>x=x/k;</td>
+    <td>x/=k;</td>
+  </tr>
+  <tr>
+    <td>x=x&gt;&gt;k;</td>
+    <td>x&gt;&gt;=k;</td>
+  </tr>
+  <tr>
+    <td>x=x&lt;&lt;k;</td>
+    <td>x&lt;&lt;=k;</td>
+  </tr>
+  <tr>
+    <td>x=x&amp;k;</td>
+    <td>x&amp;=k;</td>
+  </tr>
+  <tr>
+    <td COLSPAN="2">etc...</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp; </p>
+
+<h3><a NAME="c374.html"></a><font SIZE="+0">Encadeando expressões: o operador ,</font></h3>
+
+<p>O operador <b>,</b> determina uma lista de expressões que devem ser executadas
+sequencialmente. Em síntese, a vírgula diz ao compilador: execute as duas expressões
+separadas pela vírgula, em seqüência.&nbsp; O valor retornado por uma expressão com o
+operador , é sempre dado pela expressão mais à direita. No exemplo abaixo: </p>
+
+<pre>x=(y=2,y+3);</pre>
+
+<p>o valor 2 vai ser atribuído a <strong>y</strong>, se somará 3 a <strong>y</strong> e
+o retorno (5) será atribuído à variável <b>x</b> . Pode-se encadear quantos operadores
+,&nbsp; forem necessários. </p>
+
+<p>O exemplo a seguir mostra um outro uso para o operador , dentro de um&nbsp; for:<font
+SIZE="2"></p>
+
+<pre></font><font size="4">#include&lt;stdio.h&gt;
+int main()
+{
+    int x, y;
+    for(x=0 , y=0 ;  x+y &lt; 100 ; ++x , y++)  /* Duas variáveis de controle: x e y . Foi atribuído o valor zero a cada uma delas na inicialização do for e ambas são incrementadas na parte de incremento do for */
+    printf(&quot;\n%d &quot;, x+y);  /* o programa imprimirá os números pares de 2 a 98 */
+}</font><font
+SIZE="2"></pre>
+</font>
+
+<p><br>
+&nbsp; </p>
+
+<h3><a NAME="c373.html"></a><font SIZE="+0">Tabela de Precedências do C</font></h3>
+
+<p>&nbsp;Esta é a tabela de precedência dos operadores em C. Alguns (poucos) operadores
+ainda não foram estudados, e serão apresentados em aulas posteriores. <br>
+&nbsp; </p>
+
+<table BORDER="0" WIDTH="58%">
+  <tr ALIGN="LEFT">
+    <td>Maior precedência</td>
+    <td>() [] -&gt;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>! ~ ++ -- . -(unário) (cast) *(unário) &amp;(unário) sizeof</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>* / %</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>+ -</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>&lt;&lt;&nbsp; &gt;&gt;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>&lt;&lt;=&nbsp; &gt;&gt;=</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>== !=</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>&amp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>^</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>&amp;&amp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>||</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>?</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>=&nbsp; +=&nbsp; -=&nbsp; *=&nbsp; /=</td>
+  </tr>
+  <tr>
+    <td>Menor precedência</td>
+    <td>,</td>
+  </tr>
+</table>
+<b>
+
+<p>Uma dica aos iniciantes:</b> Você não precisa saber toda a tabela de precedências de
+cor. É útil que você conheça as principais relações, mas é aconselhável que ao
+escrever o seu código, você tente isolar as expressões com parênteses, para tornar o
+seu programa mais legível. </p>
+<a HREF="c360.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c300.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c380.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

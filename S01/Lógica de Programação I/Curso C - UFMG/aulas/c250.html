@@ -1,0 +1,213 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Introdução a Alguns Comandos de Controle de Fluxo</h3>
+
+<ul>
+  <li><a HREF="#c251.html">if</a></li>
+  <li><a HREF="#c252.html">for</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p>Os comandos de controle de fluxo são aqueles que permitem ao programador alterar a
+sequência de execução do programa. Vamos dar uma breve introdução a dois comandos de
+controle de fluxo. Outros comandos serão estudados posteriormente. </p>
+
+<p>&nbsp;<a NAME="c251.html"></a> </p>
+
+<h4>if</h4>
+
+<p>O comando <b>if</b> representa uma tomada de decisão do tipo &quot;SE isto ENTÃO
+aquilo&quot;. A sua forma geral é: </p>
+
+<p>&nbsp;<i>if (condição) declaração;</i> </p>
+
+<p>&nbsp;A condição do comando <b>if</b> é uma expressão que será avaliada. Se o
+resultado for zero a declaração não será executada. Se o resultado for qualquer coisa
+diferente de zero a declaração será executada. A declaração pode ser um bloco de
+código ou apenas um comando. É interessante notar que, no caso da declaração ser um
+bloco de código, não é necessário (e nem permitido) o uso do <b>;</b> no final do
+bloco. Isto é uma regra geral para blocos de código. Abaixo apresentamos um exemplo: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int num;
+	printf (&quot;Digite um numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	if (num&gt;10) printf (&quot;\n\nO numero e maior que 10&quot;);
+	if (num==10)
+	{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nVoce acertou!\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;O numero e igual a 10.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	if (num&lt;10) printf (&quot;\n\nO numero e menor que 10&quot;);
+	return (0);
+}</pre>
+
+<p>No programa acima a expressão <b>num&gt;10</b> é avaliada e retorna um valor
+diferente de zero, se verdadeira, e zero, se falsa. No exemplo, se num for maior que 10,
+será impressa a frase: &quot;O número e maior que 10&quot;.&nbsp; Repare que, se o
+número for igual a 10, estamos executando dois comandos. Para que isto fosse possível,
+tivemos que agrupa-los em um bloco que se inicia logo após a comparação e termina após
+o segundo printf. Repare também que quando queremos testar igualdades usamos o operador <b>==</b>
+e não <b>=</b>. Isto&nbsp; porque o operador <b>=</b> representa <i>apenas</i> uma
+atribuição. Pode parecer estranho à primeira vista, mas se escrevêssemos </p>
+
+<p>&nbsp; </p>
+
+<pre>if (num=10) ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Isto esta errado */</pre>
+
+<p>o compilador iria <i>atribuir</i> o valor 10 à variável <b>num</b> e a expressão <b>num=10</b>
+iria retornar 10, fazendo com que o nosso valor de <b>num</b> fosse modificado e fazendo
+com que a declaração fosse executada sempre. Este problema gera erros frequentes entre
+iniciantes e, portanto, muita atenção deve ser tomada. </p>
+
+<p>&nbsp;Os operadores de comparação são: <b>== </b>(igual)<b>,&nbsp; != </b>(diferente
+de),<b> &gt; </b>(maior que)<b>,&nbsp; &lt; </b>(menor que)<b>,&nbsp; &gt;= </b>(maior ou
+igual<b>), &lt;= </b>(menor ou igual)<b>.</b> </p>
+
+<p>&nbsp;<a NAME="c252.html"></a> </p>
+
+<h4>for</h4>
+
+<p>O loop (laço) <b>for</b> é usado para repetir um comando, ou bloco de comandos,
+diversas vezes, de maneira que se possa ter um bom controle sobre o loop. Sua forma geral
+é: </p>
+
+<p>&nbsp;<i>for (inicialização;condição;incremento) declaração;</i> </p>
+
+<p>&nbsp;A declaração no comando for também pode ser um bloco ({ } ) e neste caso o <b><font
+SIZE="+1">;</font></b> é omitido. O melhor modo de se entender o loop <b>for</b> é ver
+de que maneira ele funciona &quot;por dentro&quot;. O loop <b>for</b> é equivalente a se
+fazer o seguinte: </p>
+
+<p>&nbsp; 
+
+<dl>
+  <dt><i>inicialização;</i></dt>
+  <dt><i>if (condição)</i></dt>
+  <dd><i>{</i></dd>
+  <dd><i>declaração;</i></dd>
+  <dd><i>incremento;</i></dd>
+  <dd><i>&quot;Volte para o comando if&quot;</i></dd>
+  <dd><i>}</i></dd>
+  <p>&nbsp;</p>
+</dl>
+
+<p>Podemos ver que o <b>for</b> executa a inicialização incondicionalmente e testa a
+condição. Se a condição for falsa ele não faz mais nada. Se a condição for
+verdadeira ele executa a declaração, o incremento e volta a testar a condição. Ele
+fica repetindo estas operações até que a condição seja falsa. Abaixo vemos um
+programa que coloca os primeiros 100 números na tela: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int count;
+	for (count=1;count&lt;=100;count=count+1) printf (&quot;%d &quot;,count);
+	return(0);
+}</pre>
+
+<p>Outro exemplo interessante é mostrado a seguir: o programa lê uma string e conta
+quantos dos caracteres desta string são iguais à letra 'c' </p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+int main ()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; char string[100];&nbsp;&nbsp;&nbsp;&nbsp; /* String, ate' 99 caracteres
+*/ <br>
+&nbsp;&nbsp;&nbsp; int i, cont; <br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\n\nDigite uma frase: &quot;); <br>
+&nbsp;&nbsp;&nbsp; gets(string); /* Le a string */ <br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\n\nFrase digitada:\n%s&quot;, string);<br>
+&nbsp;&nbsp;&nbsp; cont = 0; <br>
+&nbsp;&nbsp;&nbsp; for (i=0; string[i] != '\0'; i=i+1) <br>
+&nbsp;&nbsp;&nbsp; { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ( string[i] == 'c' )
+&nbsp;&nbsp;&nbsp;&nbsp; /* Se for a letra 'c' */ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cont = cont +1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Incrementa o contador de caracteres */
+<br>
+&nbsp;&nbsp;&nbsp; } <br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\nNumero de caracteres c = %d&quot;, cont);<br>
+&nbsp;&nbsp;&nbsp; return(0); <br>
+} <br>
+</font></p>
+
+<p>Note o teste que está sendo feito no for: o caractere armazenado em string[i] é
+comparado com '\0' (caractere final da string). Caso o caractere seja diferente de '\0', a
+condição é verdadeira e o bloco do for é executado. Dentro do bloco existe um if que
+testa se o caractere é igual a 'c'. Caso seja, o contador de caracteres c é
+incrementado.</p>
+
+<p>&nbsp;</p>
+
+<p>Mais um exemplo, agora envolvendo caracteres:</p>
+<font SIZE="2">
+
+<pre></font><font size="4">/* Este programa imprime o alfabeto: letras maiúsculas  */
+ 
+#include &lt;stdio.h&gt;
+int main()
+{
+    char letra;
+    for(letra = 'A' ; letra &lt;= 'Z' ; letra =letra+1)
+    printf(&quot;%c &quot;, letra);
+}</font><font
+SIZE="2"></pre>
+</font>
+
+<p>Este programa funciona porque as letras maiúsculas de A a Z possuem código inteiro
+sequencial.</p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">a) Explique porque está <b>errado</b> fazer</font> </p>
+
+<pre><font SIZE="+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (num=10) ...</font></pre>
+<font SIZE="+1">
+
+<p>O que irá acontecer?</font></p>
+
+<p>b)&nbsp; <font SIZE="+1">Escreva um programa que coloque os números de 1 a 100 na tela
+na ordem inversa (começando em 100 e terminando em 1).</font> </p>
+
+<p><big>c) Escreva um programa que leia uma string, conte quantos caracteres desta string
+são iguais a 'a' e substitua os que forem iguais a 'a' por 'b'. O programa deve imprimir
+o número de caracteres modificados e a string modificada.</big></p>
+
+<hr WIDTH="300">
+<a HREF="c240.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c200.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c260.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>
