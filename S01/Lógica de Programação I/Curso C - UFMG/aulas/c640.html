@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Inicializando Ponteiros</h3>
+
+<p>Podemos inicializar ponteiros. Vamos ver um caso interessante dessa inicialização de
+ponteiros com strings. </p>
+
+<p>&nbsp;Precisamos, para isto, entender como o C trata as strings constantes. Toda string
+que o programador insere no programa é colocada num banco de strings que o compilador
+cria. No local onde está uma string no programa, o compilador coloca o endereço do
+início daquela string (que está no banco de strings). É por isto que podemos usar <b><a
+HREF="c520.html#c522.html">strcpy()</a></b> do seguinte modo: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcpy (string,&quot;String constante.&quot;);</pre>
+<b><a HREF="c520.html#c522.html">
+
+<p>strcpy()</a></b> pede dois parâmetros do tipo <b>char*</b>. Como o compilador
+substitui a string <b>&quot;String constante.&quot;</b> pelo seu endereço no banco de
+strings, tudo está bem para a função <b><a HREF="c520.html#c522.html">strcpy()</a></b>.
+</p>
+
+<p>&nbsp;O que isto tem a ver com a inicialização de ponteiros? É que, para uma string
+que vamos usar várias vezes, podemos fazer: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str1=&quot;String constante.&quot;;</pre>
+
+<p>Aí poderíamos, em todo lugar que precisarmos da string, usar a variável <b>str1</b>.
+Devemos apenas tomar cuidado ao usar este ponteiro. Se o alterarmos vamos perder a string.
+Se o usarmos para alterar a string podemos facilmente corromper o banco de strings que o
+compilador criou. </p>
+
+<p>&nbsp;Mais uma vez fica o aviso: ponteiros são poderosos mas, se usados com descuido,
+podem ser uma ótima fonte de dores de cabeça. </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Escreva a função</font> </p>
+
+<pre><font SIZE="+1">int strend(char *s, char *t)</font></pre>
+<font SIZE="+1">
+
+<p>que retorna 1 (um) se a cadeia de caracteres <b>t </b>ocorrer no final da cadeia <b>s</b>,
+e 0 (zero) caso contrário.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c630.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c600.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c650.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

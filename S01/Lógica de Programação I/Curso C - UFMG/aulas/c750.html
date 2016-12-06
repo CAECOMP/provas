@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Arquivos-Cabeçalhos</h3>
+
+<p>Arquivos-cabeçalhos são aqueles que temos mandado o compilador incluir no início de
+nossos exemplos e que sempre terminam em <b>.h</b>. A extensão <strong>.h</strong> vem de
+<strong>header</strong> (cabeçalho em inglês). Já vimos exemplos como <b>stdio.h</b>, <b>conio.h</b>,
+<b>string.h</b>. Estes arquivos, na verdade, não possuem os códigos completos das
+funções. Eles só contêm <i>protótipos</i> de funções. É o que basta. O compilador
+lê estes protótipos e, baseado nas informações lá contidas, gera o código correto. O
+corpo das funções cujos protótipos estão no arquivo-cabeçalho, no caso das funções
+do próprio C, já estão compiladas e normalmente são incluídas no programa no instante
+da &quot;linkagem&quot;. Este é o instante em que todas as referências a funções cujos
+códigos não estão nos nossos arquivos fontes são resolvidas, buscando este código nos
+arquivos de bibliotecas. </p>
+
+<p>&nbsp;Se você criar algumas funções que queira aproveitar em vários programas
+futuros, ou módulos de programas, você pode escrever arquivos-cabeçalhos e incluí-los
+também. </p>
+
+<p>Suponha que a função 'int EPar(int a)', do segundo exemplo da página <a
+HREF="c720.html">c720.html</a> seja importante em vários programas, e desejemos
+declará-la num módulo separado. No arquivo de cabeçalho chamado por exemplo de
+'funcao.h' teremos a seguinte declaração: </p>
+
+<pre>int EPar(int a);</pre>
+
+<p>O código da função será escrito num arquivo a parte. Vamos chamá-lo de 'funcao.c'.
+Neste arquivo teremos a definição da função: </p>
+
+<pre>int EPar (int a)
+{
+if (a%2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Verifica se a e divisivel por dois */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;
+else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 1;
+}</pre>
+
+<p>Por fim, no arquivo do programa principal teremos o programa principal. Vamos chamar
+este arquivo aqui de 'princip.c'. </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &quot;funcao.h&quot;&nbsp;&nbsp;&nbsp;
+void main ()
+{
+	int num;
+	printf (&quot;Entre com numero: &quot;);
+	scanf (&quot;%d&quot;,&amp;num);
+	if (EPar(num))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nO numero e par.\n&quot;);
+	else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nO numero e impar.\n&quot;);
+}</pre>
+
+<p>Este programa poderia ser compilado usando a seguinte linha de comando para o gcc: </p>
+
+<pre>gcc princip.c funcao.c -o saida</pre>
+
+<p>onde 'saida' seria o arquivo executável gerado. </p>
+
+<p>Para gerar o executável deste programa no <a HREF="../rhide.html">Rhide</a> você deve
+criar um projeto, com a opção Project -&gt; Open. Digitar um nome para o seu projeto
+(por exemplo saida). Ao apertar OK, o Rhide criará uma janela de projeto, onde você
+deverá adicionar os arquivos que serão usados para compor o seu executável. Para isto,
+você deve apertar a tecla &lt;Insert&gt; e em seguida escolher os arquivos princip.c e
+funcao.c . Daí, é só mandar compilar o projeto, com a opção Compile -&gt; Make. Se
+não der erro, pode executar! <br>
+</p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</font> <br>
+<font SIZE="+1">&nbsp; Escreva um programa que faça uso da função EDivisivel(int a, int
+b), criada na página <a HREF="c720.html">c720.html</a>. Organize o seu programa em três
+arquivos: o arquivo prog.c , conterá o programa principal; o arquivo func.c conterá a
+função; o arquivo func.h conterá o protótipo da função. Compile os arquivos e gere o
+executável a partir deles.</font> </p>
+
+<hr WIDTH="300">
+
+<p>&nbsp;</p>
+<a HREF="c740.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c760.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

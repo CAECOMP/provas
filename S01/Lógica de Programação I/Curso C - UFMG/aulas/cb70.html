@@ -1,0 +1,219 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>Uma aplicação de structs: as listas simplesmente encadeadas</h3>
+
+<p>Várias estruturas de dados complexas podem ser criadas utilizando simultaneamente
+structs e ponteiros. Uma destas estruturas é a lista encadeada. Uma lista encadeada é
+uma seqüência de structs, que são os <strong>nós</strong> da lista, ligados entre si
+através de ponteiros. Esta seqüência pode ser acessada através de um ponteiro para o
+primeiro nó, que é a cabeça da lista. Cada nó contém um ponteiro que aponta para a
+struct que é a sua sucessora na lista. O ponteiro da última struct da lista aponta para
+NULL, indicando que se chegou ao final da lista. Esta estrutura de dados é criada
+dinamicamente na memória (utiliza-se malloc() e free()), de modo que se torna simples
+introduzir nós nela, retirar nós, ordenar os nós, etc. Não vamos entrar em detalhes
+sobre todos os algoritmos que poderíamos criar em uma lista encadeada, pois isto
+geralmente é feito em cursos de algoritmos e estruturas de dados, não se incluindo no
+escopo deste curso. Aqui, veremos somente formas de se criar uma lista encadeada em C e
+também maneiras simples de percorrer esta lista.</p>
+
+<p>Supondo que queiramos criar uma lista encadeada para armazenar os produtos disponíveis
+em uma loja. Poderíamos criar um nó desta lista usando a seguinte struct:</p>
+
+<p><font face="Courier New">struct Produto {<br>
+&nbsp;&nbsp;&nbsp; int codigo; /* Codigo do produto */<br>
+&nbsp;&nbsp;&nbsp; double preco; /* Preco do produto */<br>
+&nbsp;&nbsp;&nbsp; struct Produto *proximo;&nbsp;&nbsp;&nbsp; /* Proximo elemento da lista
+encadeada de Produtos */<br>
+};</font></p>
+
+<p><font face="Times New Roman">Note que esta struct possui, além dos campos de dados
+codigo e preco, um campo adicional que é um ponteiro para uma struct do tipo Produto. É
+este campo que será utilizado para apontar para o próximo nó da lista encadeada. O
+programa a seguir faz uso desta struct, através de um novo tipo criado por um typedef,
+para criar uma lista de produtos de uma loja:<br>
+</font></p>
+
+<p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+<br>
+/* Estrutura que será usada para criar os nós da lista */<br>
+<br>
+typedef struct tipo_produto {<br>
+&nbsp;&nbsp;&nbsp; int codigo;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* Codigo do produto */<br>
+&nbsp;&nbsp;&nbsp; double preco;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
+Preco do produto */<br>
+&nbsp;&nbsp;&nbsp; struct tipo_produto *proximo;&nbsp;&nbsp;&nbsp; /* Proximo elemento da
+lista encadeada de Produtos */<br>
+}&nbsp; TProduto;<br>
+<br>
+/* Prototipos das funcoes para inserir e listar produtos */<br>
+<br>
+void inserir(TProduto **cabeca);<br>
+void listar (TProduto *cabeca);<br>
+<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; TProduto *cabeca = NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
+Ponteiro para a cabeca da lista */<br>
+&nbsp;&nbsp;&nbsp; TProduto *noatual;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Ponteiro
+a ser usado para percorrer a lista no momento de desalocar seus elementos*/<br>
+&nbsp;&nbsp;&nbsp; char q;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* Caractere para receber a opcao do usuario */<br>
+&nbsp;&nbsp;&nbsp; do {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;\n\nOpcoes: \nI -&gt; para inserir
+novo produto;\nL -&gt; para listar os produtos; \nS -&gt; para sair \n:&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scanf(&quot;%c&quot;, &amp;q);
+&nbsp;&nbsp;&nbsp; /* Le a opcao do usuario */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch(q) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 'i': case 'I':
+inserir(&amp;cabeca); break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 'l': case 'L':
+listar(cabeca); break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 's': case 'S':
+break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default:
+printf(&quot;\n\n Opcao nao valida&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fflush(stdin);&nbsp;&nbsp;&nbsp; /* Limpa o
+buffer de entrada */<br>
+&nbsp;&nbsp;&nbsp; } while ((q != 's') &amp;&amp; (q != 'S') );<br>
+<br>
+/* Desaloca a memoria alocada para os elementos da lista */<br>
+<br>
+&nbsp;&nbsp;&nbsp; noatual = cabeca;<br>
+&nbsp;&nbsp;&nbsp; while (noatual != NULL)<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cabeca = noatual-&gt;proximo;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; free(noatual);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noatual = cabeca;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+</font></p>
+
+<p><font face="Courier New">/* Lista todos os elementos presentes na lista encadeada */</font></p>
+
+<p><font face="Courier New"><br>
+void listar (TProduto *noatual)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; int i=0;<br>
+&nbsp;&nbsp;&nbsp; while( noatual != NULL)&nbsp;&nbsp;&nbsp; /* Enquanto nao chega no fim
+da lista */<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;\n\nProduto numero %d\nCodigo: %d
+\nPreco:R$%.2lf&quot;, i, noatual-&gt;codigo, noatual-&gt;preco);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noatual = noatual-&gt;proximo;
+&nbsp;&nbsp;&nbsp; /* Faz noatual apontar para o proximo no */<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+</font></p>
+
+<p><font face="Courier New">/* Funcao para inserir um novo no, ao final da lista */</font></p>
+
+<p><font face="Courier New"><br>
+void inserir (TProduto **cabeca)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; TProduto *noatual, *novono;<br>
+&nbsp;&nbsp;&nbsp; int cod;<br>
+&nbsp;&nbsp;&nbsp; double preco;<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\n Codigo do novo produto: &quot;);<br>
+&nbsp;&nbsp;&nbsp; scanf(&quot;%d&quot;, &amp;cod);<br>
+&nbsp;&nbsp;&nbsp; printf(&quot;\n Preco do produto:R$&quot;);<br>
+&nbsp;&nbsp;&nbsp; scanf(&quot;%lf&quot;, &amp;preco);<br>
+&nbsp;&nbsp;&nbsp; if (*cabeca == NULL)&nbsp;&nbsp;&nbsp; /* Se ainda nao existe nenhum
+produto na lista */<br>
+&nbsp;&nbsp;&nbsp; {<br>
+/* cria o no cabeca */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *cabeca = (TProduto *)
+malloc(sizeof(TProduto));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*cabeca)-&gt;codigo = cod;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*cabeca)-&gt;preco = preco;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*cabeca)-&gt;proximo = NULL;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; else<br>
+&nbsp;&nbsp;&nbsp; {<br>
+/* Se ja existem elementos na lista, deve percorre-la ate' o seu final e inserir o novo
+elemento */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noatual = *cabeca;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while(noatual-&gt;proximo != NULL)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noatual =
+noatual-&gt;proximo;&nbsp;&nbsp;&nbsp; /* Ao final do while, noatual aponta para o ultimo
+no */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; novono = (TProduto *)
+malloc(sizeof(TProduto));/* Aloca memoria para o novo no */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; novono-&gt;codigo = cod;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; novono-&gt;preco = preco;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; novono-&gt;proximo = NULL;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noatual-&gt;proximo = novono;
+&nbsp;&nbsp;&nbsp; /* Faz o ultimo no apontar para o novo no */<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}</font></p>
+
+<p>É interessante notar que, no programa anterior não existe limite para o número de
+produtos que se vai armazenar na lista. Toda vez que for necessário criar um novo
+produto, memória para ele será alocada e ele será criado no final da lista. Note que a
+função inserir recebe o endereço do ponteiro cabeça da lista. Qual a razão disto? A
+razão é que o endereço para o qual a cabeça da lista aponta poderá ser modificado
+caso se esteja inserindo o primeiro elemento na lista. Tente entender todos os passos
+deste programa, pois ele possui várias das características presentes em programas que
+manipulam listas encadeadas. Também é importante notar que várias outras estruturas de
+dados complexas podem ser criadas com structs contendo ponteiros que apontam para outras
+structs.</p>
+
+<p>&nbsp;</p>
+
+<hr width="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><big>Crie uma struct para descrever restaurantes. Os campos devem armazenar o nome do
+restaurante, o endereço, o tipo de comida (brasileira, chinesa, francesa, italiana,
+japonesa, etc) e uma nota para a cozinha (entre 0 e 5). Crie uma lista encadeada com esta
+struct e escreva um programa que:</big></p>
+
+<p><big>a) Insira um novo restaurante na lista;</big></p>
+
+<p><big>b) Leia uma lista de restaurantes a partir de um arquivo;</big></p>
+
+<p><big>c) Grave a lista de restaurantes para um arquivo;</big></p>
+
+<p><big>d) Liste todos os restaurantes na tela;</big></p>
+
+<p><big>e) Liste os restaurantes com cozinha com nota superior a um determinado valor,
+determinado pelo usuário;</big></p>
+
+<p><big>f) Liste todos os restaurantes com determinado tipo de comida, determinado pelo
+usuário.</big></p>
+
+<p>&nbsp;</p>
+
+<hr width="300">
+<a HREF="cb50.html">
+
+<p align="center"></a><a HREF="cb60.html"><img SRC="left.gif" ALT="Página Anterior"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb00.html"><img SRC="up.gif"
+ALT="Índice da Aula" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cfinal.html"><img
+SRC="right.gif" ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

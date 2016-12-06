@@ -1,0 +1,485 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Author" CONTENT="Renato Cardoso Mesquita">
+<title>Curso de C - Avaliação automática da aula 3</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+
+<p align="left"><font size="4" face="Arial" color="#000080">Auto-avaliação on-line: aula
+3</font> </p>
+<script>
+<!--  hide script from obsolete browsers
+
+function makeArray(length)
+ {
+  for (var i=0; i < length; i++)
+   {
+    this[i] = 0;
+   }
+  this.length = length;
+ }
+
+var NumQuestions = 12;   // Change this value for each test var
+
+ArraySize = NumQuestions + 1;
+
+// Add an extra array element so that we don't have to use index 0.  That way
+// each question number is its own index into the array.
+
+var questions = new makeArray(ArraySize);
+
+function zeroit()
+ {
+  for (var i=0; i < ArraySize; i++)
+   {
+    questions[i] = 0;
+   }
+ }
+
+function check()
+ {
+  var NumCorrect = 0;
+  var score = 0;
+
+  for (var i=1; i < ArraySize; i++)
+   {
+    NumCorrect += questions[i];
+   }
+
+  score = 100 * NumCorrect/NumQuestions;
+  document.question.good.value = score;
+ }
+
+// end hiding contents -->
+
+</script>
+
+
+<hr>
+
+<form NAME="question">
+  <p><br>
+  <font SIZE="+1">Responda as perguntas abaixo, escolhendo a alternativa adequada para cada
+  questão. Ao terminar, aperte o botão <a HREF="#verifica">&quot;Verifica&nbsp; nota&quot;</a>
+  no final do formulário. Você pode fazer quantas tentativas quiser até atingir a nota
+  100. Se quiser recomeçar, basta apertar o botão <a HREF="#verifica">&quot;Limpa&quot;</a>
+  no final do formulário.</font> </p>
+  <p>1- Escolha a opção que inclui somente nomes válidos para variáveis na linguagem C. <ol
+  TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1] = 1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">If,&nbsp; a_b_2,&nbsp; H789,&nbsp; _yes&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">i,&nbsp; j,&nbsp; int,&nbsp; obs</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">9xy,&nbsp; a36,&nbsp; x*y, --j</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">2_ou_1,&nbsp; \fim,&nbsp; *h, j&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a1" onclick="questions[1]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>2- Qual das instruções abaixo está errada? <ol TYPE="1">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">int i;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">long float x;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">long double y;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">long ijk;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>e.&nbsp;</b></td>
+        <td VALIGN="TOP">short int a;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a2" onclick="questions[2] = 0"></td>
+        <td VALIGN="TOP"><b>f.</b>&nbsp;</td>
+        <td VALIGN="TOP">unsigned b;&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>3- Em um compilador para um hardware de 16 bits uma variável double ocupa o mesmo
+  espaço que _____ variáveis do tipo char <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Uma&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Duas&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Quatro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Oito&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a3" onclick="questions[3]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Dezesseis&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>4- Qual o trecho de programa que inicializa a variável z? <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">float z , z1=10.;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">float z; z = 10;&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=1"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">float z = 10;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a4" onclick="questions[4]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">z = 10;&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>5- O trecho de programa a seguir é </p>
+  <p>&nbsp;<font SIZE="-1" FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </font><font FACE="Courier New,Courier" size="3">main()</font><big><br>
+  </big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  char condicao;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  condicao = 'D';</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int i = 1;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</font><big><br>
+  </big><ol START="4">
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Válido na linguagem C&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a5" onclick="questions[5]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Não válido na linguagem C&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>6- 0101 é uma constante __________&nbsp; na linguagem C. <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6] =0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Binária&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Hexadecimal</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Inteira&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Octal&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a6" onclick="questions[6]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Ponto Flutuante&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>7-&nbsp; Em C, &quot;t&quot; e 't' representam a mesma constante. <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7] = 0"></td>
+        <td VALIGN="TOP"><b>a.&nbsp;</b></td>
+        <td VALIGN="TOP">Verdadeiro&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a7" onclick="questions[7]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falso&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>8- Diga o resultado das variáveis x, y e z depois da seguinte sequência de
+  operações: </p>
+  <p><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int x,y,z;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  x=y=10;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  z=++x;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  x=-x;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  y++;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  x=x+y-(z--);</font><ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = 11, y = 11, z = 11&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=1"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = -11, y = 11, z = 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = -10, y = 11, z = 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = -10, y = 10, z = 10&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a8" onclick="questions[8]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>9- Diga o resultado das variáveis x,&nbsp; y e z depois da seguinte sequência de
+  operações: </p>
+  <p><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int x,y;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int a = 14, b = 3;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  float z;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  x = a/b;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  y = a%b;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  z = y/x;</font><ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = 4.66666, y = 2, z = 0.4286&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = 5, y =2, z= 0.4&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = 5, y = 2, z = 0.&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = 4, y = 2, z = 0.5&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=1"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">x = 4, y =2, z = 0.&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a9" onclick="questions[9]=0"></td>
+        <td VALIGN="TOP"><b>f.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>10- A operação lógica&nbsp;&nbsp; <font FACE="Courier New,Courier">(-5 ||
+  0)&amp;&amp;(3 &gt;= 2)&amp;&amp;(1 != 0)||(3 &lt; 0)</font> é: <ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10] = 1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">Verdadeira</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">Falsa&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">Inválida, pois sua sintaxe está errada.&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nem Verdadeira nem Falsa&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a10" onclick="questions[10]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>11- Quais os valores de a, b e c após a execução do código abaixo? </p>
+  <p><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp; int a = 10, b = 20,
+  c;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp;&nbsp;&nbsp; c =
+  a+++b;</font><ol START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11] =1"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 11, b = 20, c =30</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 10 , b = 21, c = 31&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 11, b = 20, c = 31</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">a = 10, b = 21, c = 30&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a11" onclick="questions[11]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </ol>
+  <p>12- Qual o valor das variáveis v, x, y e z após a execução do seguinte trecho de
+  código </p>
+  <p><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp; int v = 0, x = 1, y = 2, z = 3;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp; v += x+y;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp; x *= y = z + 1;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp; z %= v + v + v;</font><big><big><big><br>
+  </big></big></big><font FACE="Courier New,Courier" size="3">&nbsp;&nbsp; v += x += y += 2;</font><ol
+  START="4">
+    <p>&nbsp; </p>
+    <table BORDER="0" CELLPADDING="2" CLASS="Answer">
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12] = 0"></td>
+        <td VALIGN="TOP"><b>a.</b>&nbsp;</td>
+        <td VALIGN="TOP">v=11, x=8, y=6, z=3&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>b.</b>&nbsp;</td>
+        <td VALIGN="TOP">v=0, x=1, y=2, z=3&nbsp;</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>c.</b>&nbsp;</td>
+        <td VALIGN="TOP">v=10, x=7, y=6, z=3</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=1"></td>
+        <td VALIGN="TOP"><b>d.</b>&nbsp;</td>
+        <td VALIGN="TOP">v=13, x=10, y=6, z=3</td>
+      </tr>
+      <tr>
+        <td VALIGN="TOP"><input type="radio" name="a12" onclick="questions[12]=0"></td>
+        <td VALIGN="TOP"><b>e.</b>&nbsp;</td>
+        <td VALIGN="TOP">Nenhuma das opções anteriores</td>
+      </tr>
+    </table>
+    <p><a NAME="verifica"></a></p>
+  </ol>
+  <p><input type="button" value="Verifica nota" onclick="check()"><input type="reset"
+  name="resetMe" value="Limpa" onclick="zeroit()"> </p>
+  <p>Sua nota é:&nbsp;<input type="text" name="good" size="4" value="0">em um máximo de
+  100. <br>
+  </p>
+</form>
+
+<p>&nbsp;</p>
+<a HREF="c380.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c300.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

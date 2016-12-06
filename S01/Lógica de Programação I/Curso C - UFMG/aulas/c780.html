@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Vetores como Argumentos de Funções</h3>
+
+<p>Quando vamos passar um vetor como argumento de uma função, podemos declarar a
+função de três maneiras equivalentes. Seja o vetor: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int matrx [50];</pre>
+
+<p>e que queiramos passá-la como argumento de uma função <b>func()</b>. Podemos
+declarar <b>func()</b> das três maneiras seguintes: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void func (int matrx[50]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void func (int matrx[]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void func (int *matrx);</pre>
+
+<p>Nos três casos, teremos dentro de <b>func()</b> um <b>int*</b> chamado <b>matrx</b>.
+Ao passarmos um vetor para uma função, na realidade estamos passando um ponteiro. Neste
+ponteiro é armazenado o endereço do primeiro elemento do vetor. Isto significa que&nbsp;
+não é feita uma cópia, elemento a elemento do vetor. Isto faz com que possamos alterar
+o valor dos elementos do vetor dentro da função. </p>
+
+<p>Um exemplo disto <a HREF="c630.html#c633.html">já foi visto</a> quando implementamos a
+função <b>StrCpy()</b>. <br>
+</p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> <br>
+<font SIZE="+1">&nbsp; Escreva um programa que leia um vetor de inteiros pelo teclado e o</font>
+<font SIZE="+1">apresente na tela. Crie uma função (void levetor(int *vet, int
+dimensao)) para fazer a leitura do vetor.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c770.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c790.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

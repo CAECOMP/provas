@@ -1,0 +1,58 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=C:\PIC18_Detalhado\Cap13\Exemplo13.6\Firmware\exemplo_13_6.o
+Folder=Intermediary
+DeviceName=PIC18F4520
+LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
+LanguageToolID={E56A1C86-9D32-4DF6-8C34-FE0388B1B644}
+LanguageToolLocation=C:\MCC18\bin\mcc18.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\MCC18\h||$(LIBDIR)|C:\MCC18\lib||$(LKRDIR)||
+SOLK=<src>|exemplo_13_6.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4520i.lkr||
+SuiteArgsString=
+ToolArgsString=-k
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_ICD2=1
+[File001]
+Location=C:\PIC18_Detalhado\Cap13\Exemplo13.6\Firmware\exemplo_13_6.cof
+Folder=Output
+DeviceName=PIC18F4520
+LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\MCC18\bin\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\MCC18\h||$(LIBDIR)|C:\MCC18\lib||$(LKRDIR)||
+SOLK=<src>|exemplo_13_6.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4520i.lkr||
+SuiteArgsString=
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(BINDIR_)$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_ICD2=1 /z__ICD2RAM=1
+[File002]
+Location=C:\PIC18_Detalhado\Cap13\Exemplo13.6\Firmware\exemplo_13_6.hex
+Folder=Output
+DeviceName=PIC18F4520
+LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\MCC18\bin\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\MCC18\h||$(LIBDIR)|C:\MCC18\lib||$(LKRDIR)||
+SOLK=<src>|exemplo_13_6.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4520i.lkr||
+SuiteArgsString=
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(BINDIR_)$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_ICD2=1 /z__ICD2RAM=1
+[File003]
+Location=C:\PIC18_Detalhado\Cap13\Exemplo13.6\Firmware\exemplo_13_6.map
+Folder=Output
+DeviceName=PIC18F4520
+LanguageToolSuiteID={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
+LanguageToolID={96C98149-AA1B-4CF9-B967-FAE79CAB663C}
+LanguageToolLocation=C:\MCC18\bin\mplink.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|C:\MCC18\h||$(LIBDIR)|C:\MCC18\lib||$(LKRDIR)||
+SOLK=<src>|exemplo_13_6.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4520i.lkr||
+SuiteArgsString=
+ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(BINDIR_)$(TARGETBASE).cof"
+TraceCmdString=
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_ICD2=1 /z__ICD2RAM=1
+[TOOL_LOC_STAMPS]
+tool_loc{96C98149-AA1B-4CF9-B967-FAE79CAB663C}=C:\MCC18\bin\mplink.exe
+tool_loc{E56A1C86-9D32-4DF6-8C34-FE0388B1B644}=C:\MCC18\bin\mcc18.exe
