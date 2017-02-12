@@ -88,7 +88,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 7         :                
 SDE                          : A17       : output : 2.5 V             :         : 7         : Y              
 SDF                          : A18       : output : 2.5 V             :         : 7         : Y              
-MDG                          : A19       : output : 2.5 V             :         : 7         : N              
+MDF                          : A19       : output : 2.5 V             :         : 7         : N              
 MUB                          : A20       : output : 2.5 V             :         : 7         : Y              
 MUD                          : A21       : output : 2.5 V             :         : 6         : Y              
 GND                          : A22       : gnd    :                   :         :           :                
@@ -176,7 +176,7 @@ SUC                          : C15       : output : 2.5 V             :         
 SUD                          : C16       : output : 2.5 V             :         : 7         : Y              
 SUG                          : C17       : output : 2.5 V             :         : 7         : Y              
 SDA                          : C18       : output : 2.5 V             :         : 7         : Y              
-MDA                          : C19       : output : 2.5 V             :         : 7         : N              
+MDG                          : C19       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 6         :                
 MUF                          : C22       : output : 2.5 V             :         : 6         : Y              
@@ -194,7 +194,7 @@ GND                          : D11       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7         :                
-MDD                          : D15       : output : 2.5 V             :         : 7         : N              
+MDB                          : D15       : output : 2.5 V             :         : 7         : N              
 GND                          : D16       : gnd    :                   :         :           :                
 SUF                          : D17       : output : 2.5 V             :         : 7         : Y              
 SDB                          : D18       : output : 2.5 V             :         : 6         : Y              
@@ -238,8 +238,8 @@ VCCIO8                       : F11       : power  :                   : 2.5V    
 VCCIO7                       : F12       : power  :                   : 2.5V    : 7         :                
 GND                          : F13       : gnd    :                   :         :           :                
 VCCIO7                       : F14       : power  :                   : 2.5V    : 7         :                
-MDB                          : F15       : output : 2.5 V             :         : 7         : N              
-MDC                          : F16       : output : 2.5 V             :         : 7         : N              
+MDC                          : F15       : output : 2.5 V             :         : 7         : N              
+MDA                          : F16       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 6         :                
@@ -284,7 +284,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
 VCCA2                        : H15       : power  :                   : 2.5V    :           :                
 VCCIO6                       : H16       : power  :                   : 2.5V    : 6         :                
-MDF                          : H17       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 6         :                
@@ -302,7 +302,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : J10       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J11       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J12       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J13       :        :                   :         : 7         :                
+MDD                          : J13       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 6         :                
 GND                          : J16       : gnd    :                   :         :           :                
