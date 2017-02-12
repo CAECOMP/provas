@@ -88,4 +88,20 @@ set_location_assignment PIN_C19 -to MDD
 set_location_assignment PIN_C20 -to MDE
 set_location_assignment PIN_D19 -to MDF
 set_location_assignment PIN_E17 -to MDG
+set_location_assignment PIN_F18 -to HUA
+set_location_assignment PIN_E20 -to HUB
+set_location_assignment PIN_E19 -to HUC
+set_location_assignment PIN_J18 -to HUD
+set_location_assignment PIN_H19 -to HUE
+set_location_assignment PIN_F19 -to HUF
+set_location_assignment PIN_F20 -to HUG
+set_location_assignment PIN_J20 -to HDA
+set_location_assignment PIN_K20 -to HDB
+set_location_assignment PIN_L18 -to HDC
+set_location_assignment PIN_N18 -to HDD
+set_location_assignment PIN_M20 -to HDE
+set_location_assignment PIN_N19 -to HDF
+set_location_assignment PIN_N20 -to HDG
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

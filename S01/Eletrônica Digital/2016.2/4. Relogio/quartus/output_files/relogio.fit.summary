@@ -1,15 +1,15 @@
-Fitter Status : Successful - Sun Feb 12 11:57:42 2017
+Fitter Status : Successful - Sun Feb 12 12:39:37 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : relogio
 Top-level Entity Name : relogio
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 91 / 49,760 ( < 1 % )
-    Total combinational functions : 91 / 49,760 ( < 1 % )
-    Dedicated logic registers : 44 / 49,760 ( < 1 % )
-Total registers : 44
-Total pins : 31 / 360 ( 9 % )
+Total logic elements : 117 / 49,760 ( < 1 % )
+    Total combinational functions : 117 / 49,760 ( < 1 % )
+    Dedicated logic registers : 52 / 49,760 ( < 1 % )
+Total registers : 52
+Total pins : 45 / 360 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

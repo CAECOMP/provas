@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Sun Feb 12 11:57:33 2017
+Sun Feb 12 12:39:27 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -43,16 +43,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 12 11:57:33 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sun Feb 12 12:39:27 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; relogio                                     ;
 ; Top-level Entity Name              ; relogio                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 90                                          ;
-;     Total combinational functions  ; 90                                          ;
-;     Dedicated logic registers      ; 44                                          ;
-; Total registers                    ; 44                                          ;
-; Total pins                         ; 31                                          ;
+; Total logic elements               ; 116                                         ;
+;     Total combinational functions  ; 116                                         ;
+;     Dedicated logic registers      ; 52                                          ;
+; Total registers                    ; 52                                          ;
+; Total pins                         ; 45                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -185,30 +185,30 @@ agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 90       ;
+; Estimated Total logic elements              ; 116      ;
 ;                                             ;          ;
-; Total combinational functions               ; 90       ;
+; Total combinational functions               ; 116      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 50       ;
-;     -- 3 input functions                    ; 30       ;
-;     -- <=2 input functions                  ; 10       ;
+;     -- 4 input functions                    ; 65       ;
+;     -- 3 input functions                    ; 38       ;
+;     -- <=2 input functions                  ; 13       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 90       ;
+;     -- normal mode                          ; 116      ;
 ;     -- arithmetic mode                      ; 0        ;
 ;                                             ;          ;
-; Total registers                             ; 44       ;
-;     -- Dedicated logic registers            ; 44       ;
+; Total registers                             ; 52       ;
+;     -- Dedicated logic registers            ; 52       ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
-; I/O pins                                    ; 31       ;
+; I/O pins                                    ; 45       ;
 ;                                             ;          ;
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; CK~input ;
 ; Maximum fan-out                             ; 28       ;
-; Total fan-out                               ; 463      ;
-; Average fan-out                             ; 2.36     ;
+; Total fan-out                               ; 605      ;
+; Average fan-out                             ; 2.34     ;
 +---------------------------------------------+----------+
 
 
@@ -217,17 +217,23 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                     ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+---------------+--------------+
-; |relogio                   ; 90 (0)              ; 44 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 31   ; 0            ; 0          ; |relogio                                ; relogio       ; work         ;
+; |relogio                   ; 116 (0)             ; 52 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 45   ; 0            ; 0          ; |relogio                                ; relogio       ; work         ;
+;    |7400:inst8|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7400:inst8                     ; 7400          ; work         ;
+;    |7411:inst1|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7411:inst1                     ; 7411          ; work         ;
 ;    |7411:inst5|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7411:inst5                     ; 7411          ; work         ;
 ;    |74153m:inst21|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74153m:inst21                  ; 74153m        ; work         ;
 ;    |74160:inst14|          ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst14                   ; 74160         ; work         ;
 ;    |74160:inst16|          ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst16                   ; 74160         ; work         ;
 ;    |74160:inst23|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst23                   ; 74160         ; work         ;
-;    |74160:inst24|          ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst24                   ; 74160         ; work         ;
+;    |74160:inst24|          ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst24                   ; 74160         ; work         ;
+;    |74160:inst2|           ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst2                    ; 74160         ; work         ;
+;    |74160:inst3|           ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst3                    ; 74160         ; work         ;
 ;    |7447:inst18|           ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst18                    ; 7447          ; work         ;
 ;    |7447:inst19|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst19                    ; 7447          ; work         ;
 ;    |7447:inst25|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst25                    ; 7447          ; work         ;
 ;    |7447:inst26|           ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst26                    ; 7447          ; work         ;
+;    |7447:inst4|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst4                     ; 7447          ; work         ;
+;    |7447:inst7|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst7                     ; 7447          ; work         ;
 ;    |divisor_clock:inst|    ; 37 (0)              ; 28 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|divisor_clock:inst             ; divisor_clock ; work         ;
 ;       |74160:inst2|        ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|divisor_clock:inst|74160:inst2 ; 74160         ; work         ;
 ;       |74160:inst3|        ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|divisor_clock:inst|74160:inst3 ; 74160         ; work         ;
@@ -245,10 +251,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 44    ;
+; Total registers                              ; 52    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -260,19 +266,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 31                          ;
-; cycloneiii_ff         ; 44                          ;
-;     CLR               ; 8                           ;
+; boundary_port         ; 45                          ;
+; cycloneiii_ff         ; 52                          ;
+;     CLR               ; 16                          ;
 ;     plain             ; 36                          ;
-; cycloneiii_lcell_comb ; 90                          ;
-;     normal            ; 90                          ;
+; cycloneiii_lcell_comb ; 116                         ;
+;     normal            ; 116                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 50                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.01                        ;
+; Average LUT depth     ; 2.05                        ;
 +-----------------------+-----------------------------+
 
 
@@ -291,7 +297,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sun Feb 12 11:57:22 2017
+    Info: Processing started: Sun Feb 12 12:39:17 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -317,14 +323,14 @@ Warning (19016): Clock multiplexers are found and protected
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 121 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 161 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 90 logic cells
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 116 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 626 megabytes
-    Info: Processing ended: Sun Feb 12 11:57:33 2017
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 625 megabytes
+    Info: Processing ended: Sun Feb 12 12:39:27 2017
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
 
 
