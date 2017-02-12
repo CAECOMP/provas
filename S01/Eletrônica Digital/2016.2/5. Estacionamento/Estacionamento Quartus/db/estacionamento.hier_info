@@ -1,0 +1,81 @@
+|estacionamento
+Q2 <= 74112o:inst.1Q
+CK => 74112o:inst2.1CLK
+CK => 74112o:inst3.1CLK
+CK => 74112o:inst.1K
+SA => inst19.IN0
+SA => inst34.IN0
+SA => inst26.IN0
+SA => inst21.IN1
+SA => inst11.IN0
+SA => inst31.IN1
+SB => inst14.IN2
+SB => inst17.IN0
+SB => inst21.IN0
+SB => inst25.IN0
+SB => inst10.IN0
+SB => inst12.IN0
+SB => inst31.IN0
+Q0 <= 74112o:inst3.1Q
+Q1 <= 74112o:inst2.1Q
+EA <= 7447:inst27.OA
+EB <= 7447:inst27.OB
+EC <= 7447:inst27.OC
+ED <= 7447:inst27.OD
+EE <= 7447:inst27.OE
+EF <= 7447:inst27.OF
+EG <= 7447:inst27.OG
+
+
+|estacionamento|74112o:inst
+1QN <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1PRN => 8.PRESET
+1CLRN => 8.ACLR
+1K => 8.IN0
+1J => 8.IN1
+1CLK => 23.IN0
+1Q <= 8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|estacionamento|74112o:inst2
+1QN <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1PRN => 8.PRESET
+1CLRN => 8.ACLR
+1K => 8.IN0
+1J => 8.IN1
+1CLK => 23.IN0
+1Q <= 8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|estacionamento|74112o:inst3
+1QN <= 6.DB_MAX_OUTPUT_PORT_TYPE
+1PRN => 8.PRESET
+1CLRN => 8.ACLR
+1K => 8.IN0
+1J => 8.IN1
+1CLK => 23.IN0
+1Q <= 8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|estacionamento|7447:inst27
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
+
+

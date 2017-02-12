@@ -1,0 +1,8 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : []
+		}
+	]
+}
