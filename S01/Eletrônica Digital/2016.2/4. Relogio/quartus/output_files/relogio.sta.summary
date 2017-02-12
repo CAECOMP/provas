@@ -3,15 +3,15 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CK'
-Slack : -1.710
-TNS   : -33.685
+Slack : -1.929
+TNS   : -30.397
 
 Type  : Slow 1200mV 85C Model Setup 'B1'
-Slack : -0.761
-TNS   : -7.845
+Slack : -1.082
+TNS   : -8.688
 
 Type  : Slow 1200mV 85C Model Hold 'CK'
-Slack : 0.330
+Slack : 0.237
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'B1'
@@ -19,11 +19,11 @@ Slack : 0.348
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'B1'
-Slack : -0.938
-TNS   : -3.752
+Slack : -0.929
+TNS   : -3.716
 
 Type  : Slow 1200mV 85C Model Removal 'B1'
-Slack : 1.299
+Slack : 1.276
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CK'
@@ -35,15 +35,15 @@ Slack : -3.000
 TNS   : -25.448
 
 Type  : Slow 1200mV 0C Model Setup 'CK'
-Slack : -1.453
-TNS   : -28.126
+Slack : -1.655
+TNS   : -25.083
 
 Type  : Slow 1200mV 0C Model Setup 'B1'
-Slack : -0.610
-TNS   : -5.903
+Slack : -0.891
+TNS   : -6.528
 
 Type  : Slow 1200mV 0C Model Hold 'CK'
-Slack : 0.294
+Slack : 0.230
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'B1'
@@ -51,11 +51,11 @@ Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'B1'
-Slack : -0.767
-TNS   : -3.068
+Slack : -0.756
+TNS   : -3.024
 
 Type  : Slow 1200mV 0C Model Removal 'B1'
-Slack : 1.192
+Slack : 1.169
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CK'
@@ -67,15 +67,15 @@ Slack : -3.000
 TNS   : -25.448
 
 Type  : Fast 1200mV 0C Model Setup 'CK'
-Slack : -0.162
-TNS   : -1.549
+Slack : -0.288
+TNS   : -1.426
 
 Type  : Fast 1200mV 0C Model Setup 'B1'
-Slack : 0.255
+Slack : 0.101
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CK'
-Slack : 0.144
+Slack : 0.018
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'B1'
@@ -83,19 +83,19 @@ Slack : 0.152
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'B1'
-Slack : 0.151
+Slack : 0.158
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'B1'
-Slack : 0.557
+Slack : 0.546
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CK'
 Slack : -3.000
-TNS   : -31.777
+TNS   : -31.726
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'B1'
 Slack : -3.000
-TNS   : -24.218
+TNS   : -21.882
 
 ------------------------------------------------------------

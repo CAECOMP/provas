@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Sun Feb 12 10:40:23 2017
+Sun Feb 12 11:01:17 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 12 10:40:23 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sun Feb 12 11:01:17 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; relogio                                     ;
 ; Top-level Entity Name              ; relogio                                     ;
@@ -176,6 +176,7 @@ agreement for further details.
 ; 74160.bdf                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74160.bdf                    ;         ;
 ; 74153m.bdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74153m.bdf                   ;         ;
 ; 7400.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7400.bdf                     ;         ;
+; 7404.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7404.bdf                     ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
@@ -289,7 +290,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sun Feb 12 10:40:12 2017
+    Info: Processing started: Sun Feb 12 11:01:06 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -307,6 +308,8 @@ Info (12130): Elaborated megafunction instantiation "74153M:inst21"
 Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:inst"
 Info (12128): Elaborating entity "7400" for hierarchy "7400:inst17"
 Info (12130): Elaborated megafunction instantiation "7400:inst17"
+Info (12128): Elaborating entity "7404" for hierarchy "7404:inst1"
+Info (12130): Elaborated megafunction instantiation "7404:inst1"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer 74153m:inst21|9~0
 Info (286030): Timing-Driven Synthesis is running
@@ -317,9 +320,9 @@ Info (21057): Implemented 119 device resources after synthesis - the final resou
     Info (21059): Implemented 28 output pins
     Info (21061): Implemented 88 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 625 megabytes
-    Info: Processing ended: Sun Feb 12 10:40:23 2017
+    Info: Peak virtual memory: 624 megabytes
+    Info: Processing ended: Sun Feb 12 11:01:17 2017
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:25
 
 
