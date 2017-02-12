@@ -116,6 +116,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "HUA",
+					"strict" : false
+				},
+				{
+					"name" : "HUB",
+					"strict" : false
+				},
+				{
+					"name" : "HUC",
+					"strict" : false
+				},
+				{
+					"name" : "HUD",
+					"strict" : false
+				},
+				{
+					"name" : "HUE",
+					"strict" : false
+				},
+				{
+					"name" : "HUF",
+					"strict" : false
+				},
+				{
+					"name" : "HUG",
+					"strict" : false
+				},
+				{
+					"name" : "HDB",
+					"strict" : false
+				},
+				{
+					"name" : "HDC",
+					"strict" : false
+				},
+				{
+					"name" : "HDD",
+					"strict" : false
+				},
+				{
+					"name" : "HDE",
+					"strict" : false
+				},
+				{
+					"name" : "HDF",
+					"strict" : false
+				},
+				{
+					"name" : "HDG",
+					"strict" : false
+				},
+				{
+					"name" : "HDA",
+					"strict" : false
+				},
+				{
 					"name" : "B1",
 					"strict" : false
 				},
