@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Sun Feb 12 11:01:17 2017
+Sun Feb 12 11:57:33 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 12 11:01:17 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sun Feb 12 11:57:33 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; relogio                                     ;
 ; Top-level Entity Name              ; relogio                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 88                                          ;
-;     Total combinational functions  ; 88                                          ;
+; Total logic elements               ; 90                                          ;
+;     Total combinational functions  ; 90                                          ;
 ;     Dedicated logic registers      ; 44                                          ;
 ; Total registers                    ; 44                                          ;
 ; Total pins                         ; 31                                          ;
@@ -176,7 +176,7 @@ agreement for further details.
 ; 74160.bdf                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74160.bdf                    ;         ;
 ; 74153m.bdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74153m.bdf                   ;         ;
 ; 7400.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7400.bdf                     ;         ;
-; 7404.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7404.bdf                     ;         ;
+; 7411.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7411.bdf                     ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
@@ -185,16 +185,16 @@ agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 88       ;
+; Estimated Total logic elements              ; 90       ;
 ;                                             ;          ;
-; Total combinational functions               ; 88       ;
+; Total combinational functions               ; 90       ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 47       ;
-;     -- 3 input functions                    ; 32       ;
-;     -- <=2 input functions                  ; 9        ;
+;     -- 4 input functions                    ; 50       ;
+;     -- 3 input functions                    ; 30       ;
+;     -- <=2 input functions                  ; 10       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 88       ;
+;     -- normal mode                          ; 90       ;
 ;     -- arithmetic mode                      ; 0        ;
 ;                                             ;          ;
 ; Total registers                             ; 44       ;
@@ -207,8 +207,8 @@ agreement for further details.
 ;                                             ;          ;
 ; Maximum fan-out node                        ; CK~input ;
 ; Maximum fan-out                             ; 28       ;
-; Total fan-out                               ; 451      ;
-; Average fan-out                             ; 2.32     ;
+; Total fan-out                               ; 463      ;
+; Average fan-out                             ; 2.36     ;
 +---------------------------------------------+----------+
 
 
@@ -217,16 +217,17 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                     ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+---------------+--------------+
-; |relogio                   ; 88 (0)              ; 44 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 31   ; 0            ; 0          ; |relogio                                ; relogio       ; work         ;
+; |relogio                   ; 90 (0)              ; 44 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 31   ; 0            ; 0          ; |relogio                                ; relogio       ; work         ;
+;    |7411:inst5|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7411:inst5                     ; 7411          ; work         ;
 ;    |74153m:inst21|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74153m:inst21                  ; 74153m        ; work         ;
 ;    |74160:inst14|          ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst14                   ; 74160         ; work         ;
-;    |74160:inst16|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst16                   ; 74160         ; work         ;
-;    |74160:inst23|          ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst23                   ; 74160         ; work         ;
-;    |74160:inst24|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst24                   ; 74160         ; work         ;
+;    |74160:inst16|          ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst16                   ; 74160         ; work         ;
+;    |74160:inst23|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst23                   ; 74160         ; work         ;
+;    |74160:inst24|          ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|74160:inst24                   ; 74160         ; work         ;
 ;    |7447:inst18|           ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst18                    ; 7447          ; work         ;
 ;    |7447:inst19|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst19                    ; 7447          ; work         ;
 ;    |7447:inst25|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst25                    ; 7447          ; work         ;
-;    |7447:inst26|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst26                    ; 7447          ; work         ;
+;    |7447:inst26|           ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|7447:inst26                    ; 7447          ; work         ;
 ;    |divisor_clock:inst|    ; 37 (0)              ; 28 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|divisor_clock:inst             ; divisor_clock ; work         ;
 ;       |74160:inst2|        ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|divisor_clock:inst|74160:inst2 ; 74160         ; work         ;
 ;       |74160:inst3|        ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |relogio|divisor_clock:inst|74160:inst3 ; 74160         ; work         ;
@@ -247,7 +248,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total registers                              ; 44    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -261,17 +262,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; boundary_port         ; 31                          ;
 ; cycloneiii_ff         ; 44                          ;
-;     CLR               ; 4                           ;
-;     plain             ; 40                          ;
-; cycloneiii_lcell_comb ; 88                          ;
-;     normal            ; 88                          ;
+;     CLR               ; 8                           ;
+;     plain             ; 36                          ;
+; cycloneiii_lcell_comb ; 90                          ;
+;     normal            ; 90                          ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 32                          ;
-;         4 data inputs ; 47                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 50                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.95                        ;
+; Average LUT depth     ; 2.01                        ;
 +-----------------------+-----------------------------+
 
 
@@ -290,7 +291,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sun Feb 12 11:01:06 2017
+    Info: Processing started: Sun Feb 12 11:57:22 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -299,6 +300,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file divisor
 Info (12021): Found 1 design units, including 1 entities, in source file relogio.bdf
     Info (12023): Found entity 1: relogio
 Info (12127): Elaborating entity "relogio" for the top level hierarchy
+Warning (275011): Block or symbol "7447" of instance "inst18" overlaps another block or symbol
 Info (12128): Elaborating entity "7447" for hierarchy "7447:inst19"
 Info (12130): Elaborated megafunction instantiation "7447:inst19"
 Info (12128): Elaborating entity "74160" for hierarchy "74160:inst14"
@@ -308,21 +310,21 @@ Info (12130): Elaborated megafunction instantiation "74153M:inst21"
 Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:inst"
 Info (12128): Elaborating entity "7400" for hierarchy "7400:inst17"
 Info (12130): Elaborated megafunction instantiation "7400:inst17"
-Info (12128): Elaborating entity "7404" for hierarchy "7404:inst1"
-Info (12130): Elaborated megafunction instantiation "7404:inst1"
+Info (12128): Elaborating entity "7411" for hierarchy "7411:inst5"
+Info (12130): Elaborated megafunction instantiation "7411:inst5"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer 74153m:inst21|9~0
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 119 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 121 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 88 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 624 megabytes
-    Info: Processing ended: Sun Feb 12 11:01:17 2017
+    Info (21061): Implemented 90 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 626 megabytes
+    Info: Processing ended: Sun Feb 12 11:57:33 2017
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:24
 
 
