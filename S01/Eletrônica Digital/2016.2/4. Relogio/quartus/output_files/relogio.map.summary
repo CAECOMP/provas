@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sun Feb 12 10:40:23 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : relogio
+Top-level Entity Name : relogio
+Family : MAX 10
+Total logic elements : 88
+    Total combinational functions : 88
+    Dedicated logic registers : 44
+Total registers : 44
+Total pins : 31
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

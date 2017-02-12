@@ -1,0 +1,133 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SUA",
+					"strict" : false
+				},
+				{
+					"name" : "SUB",
+					"strict" : false
+				},
+				{
+					"name" : "SUC",
+					"strict" : false
+				},
+				{
+					"name" : "SUD",
+					"strict" : false
+				},
+				{
+					"name" : "SUE",
+					"strict" : false
+				},
+				{
+					"name" : "SUF",
+					"strict" : false
+				},
+				{
+					"name" : "SUG",
+					"strict" : false
+				},
+				{
+					"name" : "SDA",
+					"strict" : false
+				},
+				{
+					"name" : "SDB",
+					"strict" : false
+				},
+				{
+					"name" : "SDC",
+					"strict" : false
+				},
+				{
+					"name" : "SDD",
+					"strict" : false
+				},
+				{
+					"name" : "SDE",
+					"strict" : false
+				},
+				{
+					"name" : "SDF",
+					"strict" : false
+				},
+				{
+					"name" : "SDG",
+					"strict" : false
+				},
+				{
+					"name" : "MUA",
+					"strict" : false
+				},
+				{
+					"name" : "MUB",
+					"strict" : false
+				},
+				{
+					"name" : "MUC",
+					"strict" : false
+				},
+				{
+					"name" : "MUD",
+					"strict" : false
+				},
+				{
+					"name" : "MUE",
+					"strict" : false
+				},
+				{
+					"name" : "MUF",
+					"strict" : false
+				},
+				{
+					"name" : "MUG",
+					"strict" : false
+				},
+				{
+					"name" : "MDA",
+					"strict" : false
+				},
+				{
+					"name" : "MDB",
+					"strict" : false
+				},
+				{
+					"name" : "MDC",
+					"strict" : false
+				},
+				{
+					"name" : "MDD",
+					"strict" : false
+				},
+				{
+					"name" : "MDE",
+					"strict" : false
+				},
+				{
+					"name" : "MDF",
+					"strict" : false
+				},
+				{
+					"name" : "MDG",
+					"strict" : false
+				},
+				{
+					"name" : "B1",
+					"strict" : false
+				},
+				{
+					"name" : "B2",
+					"strict" : false
+				},
+				{
+					"name" : "CK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
