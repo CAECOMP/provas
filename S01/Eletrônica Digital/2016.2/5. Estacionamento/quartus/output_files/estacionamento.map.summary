@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sun Feb 12 17:16:20 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : estacionamento
+Top-level Entity Name : estacionamento
+Family : MAX 10
+Total logic elements : 66
+    Total combinational functions : 66
+    Dedicated logic registers : 38
+Total registers : 38
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
