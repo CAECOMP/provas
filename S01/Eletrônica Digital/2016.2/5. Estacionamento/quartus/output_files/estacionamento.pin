@@ -76,7 +76,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
-R                            : A7        : input  : 2.5 V             :         : 7         : Y              
+SB                           : A7        : input  : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
@@ -143,7 +143,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
 GND                          : B6        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B8        :        :                   :         : 7         :                
+SA                           : B8        : input  : 2.5 V             :         : 7         : Y              
 GND                          : B9        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B10       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B11       :        :                   :         : 7         :                
@@ -167,8 +167,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 7         :                
-SA                           : C10       : input  : 2.5 V             :         : 7         : Y              
-SB                           : C11       : input  : 2.5 V             :         : 7         : Y              
+R                            : C10       : input  : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C11       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 7         :                
 UA                           : C14       : output : 2.5 V             :         : 7         : Y              
