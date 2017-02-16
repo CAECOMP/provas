@@ -67,12 +67,12 @@ set_location_assignment PIN_B16 -to DD
 set_location_assignment PIN_A17 -to DE
 set_location_assignment PIN_A18 -to DF
 set_location_assignment PIN_B17 -to DG
-set_location_assignment PIN_A7 -to R
+set_location_assignment PIN_C10 -to R
 set_global_assignment -name CDF_FILE output_files/Chain3.cdf
 set_global_assignment -name BDF_FILE output_files/estado.bdf
 set_global_assignment -name BDF_FILE estado_estacionamento.bdf
-set_location_assignment PIN_C10 -to SA
-set_location_assignment PIN_C11 -to SB
+set_location_assignment PIN_B8 -to SA
+set_location_assignment PIN_A7 -to SB
 set_location_assignment PIN_J20 -to EA
 set_location_assignment PIN_K20 -to EB
 set_location_assignment PIN_L18 -to EC
@@ -80,5 +80,5 @@ set_location_assignment PIN_N18 -to ED
 set_location_assignment PIN_M20 -to EE
 set_location_assignment PIN_N19 -to EF
 set_location_assignment PIN_N20 -to EG
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name CDF_FILE output_files/Chain4.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

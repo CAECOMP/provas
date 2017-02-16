@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for estacionamento
-Sun Feb 12 17:16:36 2017
+Wed Feb 15 01:48:00 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -97,7 +97,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.9%      ;
+;     Processors 2-4         ;   1.1%      ;
 +----------------------------+-------------+
 
 
@@ -116,8 +116,8 @@ agreement for further details.
 +------------+-----------------+-----------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                        ; Note                                           ;
 +------------+-----------------+-----------------------------------+------------------------------------------------+
-; 226.81 MHz ; 226.81 MHz      ; CKCN                              ;                                                ;
-; 650.62 MHz ; 416.15 MHz      ; divisor_clock:inst3|74160:inst8|9 ; limit due to minimum period restriction (tmin) ;
+; 226.96 MHz ; 226.96 MHz      ; CKCN                              ;                                                ;
+; 639.39 MHz ; 416.15 MHz      ; divisor_clock:inst3|74160:inst8|9 ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+-----------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -127,8 +127,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------+--------+---------------+
 ; Clock                             ; Slack  ; End Point TNS ;
 +-----------------------------------+--------+---------------+
-; CKCN                              ; -3.409 ; -32.473       ;
-; divisor_clock:inst3|74160:inst8|9 ; -0.537 ; -3.125        ;
+; CKCN                              ; -3.406 ; -32.743       ;
+; divisor_clock:inst3|74160:inst8|9 ; -0.564 ; -3.167        ;
 +-----------------------------------+--------+---------------+
 
 
@@ -175,8 +175,8 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                        ; Note                                           ;
 +------------+-----------------+-----------------------------------+------------------------------------------------+
-; 248.02 MHz ; 248.02 MHz      ; CKCN                              ;                                                ;
-; 712.76 MHz ; 416.15 MHz      ; divisor_clock:inst3|74160:inst8|9 ; limit due to minimum period restriction (tmin) ;
+; 248.26 MHz ; 248.26 MHz      ; CKCN                              ;                                                ;
+; 702.74 MHz ; 416.15 MHz      ; divisor_clock:inst3|74160:inst8|9 ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+-----------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -186,8 +186,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------+--------+---------------+
 ; Clock                             ; Slack  ; End Point TNS ;
 +-----------------------------------+--------+---------------+
-; CKCN                              ; -3.032 ; -26.942       ;
-; divisor_clock:inst3|74160:inst8|9 ; -0.403 ; -2.214        ;
+; CKCN                              ; -3.028 ; -27.147       ;
+; divisor_clock:inst3|74160:inst8|9 ; -0.423 ; -2.256        ;
 +-----------------------------------+--------+---------------+
 
 
@@ -234,8 +234,8 @@ No synchronizer chains to report.
 +-----------------------------------+--------+---------------+
 ; Clock                             ; Slack  ; End Point TNS ;
 +-----------------------------------+--------+---------------+
-; CKCN                              ; -1.100 ; -2.698        ;
-; divisor_clock:inst3|74160:inst8|9 ; 0.350  ; 0.000         ;
+; CKCN                              ; -1.100 ; -2.689        ;
+; divisor_clock:inst3|74160:inst8|9 ; 0.338  ; 0.000         ;
 +-----------------------------------+--------+---------------+
 
 
@@ -282,12 +282,12 @@ No synchronizer chains to report.
 +------------------------------------+---------+-------+----------+---------+---------------------+
 ; Clock                              ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack                   ; -3.409  ; 0.151 ; N/A      ; N/A     ; -3.000              ;
-;  CKCN                              ; -3.409  ; 0.152 ; N/A      ; N/A     ; -3.000              ;
-;  divisor_clock:inst3|74160:inst8|9 ; -0.537  ; 0.151 ; N/A      ; N/A     ; -1.403              ;
-; Design-wide TNS                    ; -35.598 ; 0.0   ; 0.0      ; 0.0     ; -56.314             ;
-;  CKCN                              ; -32.473 ; 0.000 ; N/A      ; N/A     ; -42.284             ;
-;  divisor_clock:inst3|74160:inst8|9 ; -3.125  ; 0.000 ; N/A      ; N/A     ; -14.030             ;
+; Worst-case Slack                   ; -3.406  ; 0.151 ; N/A      ; N/A     ; -3.000              ;
+;  CKCN                              ; -3.406  ; 0.152 ; N/A      ; N/A     ; -3.000              ;
+;  divisor_clock:inst3|74160:inst8|9 ; -0.564  ; 0.151 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS                    ; -35.91  ; 0.0   ; 0.0      ; 0.0     ; -56.314             ;
+;  CKCN                              ; -32.743 ; 0.000 ; N/A      ; N/A     ; -42.284             ;
+;  divisor_clock:inst3|74160:inst8|9 ; -3.167  ; 0.000 ; N/A      ; N/A     ; -14.030             ;
 +------------------------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -576,7 +576,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sun Feb 12 17:16:34 2017
+    Info: Processing started: Wed Feb 15 01:47:58 2017
 Info: Command: quartus_sta estacionamento -c estacionamento
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -594,11 +594,11 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.409
+Info (332146): Worst-case setup slack is -3.406
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.409             -32.473 CKCN 
-    Info (332119):    -0.537              -3.125 divisor_clock:inst3|74160:inst8|9 
+    Info (332119):    -3.406             -32.743 CKCN 
+    Info (332119):    -0.564              -3.167 divisor_clock:inst3|74160:inst8|9 
 Info (332146): Worst-case hold slack is 0.347
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -616,11 +616,11 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.032
+Info (332146): Worst-case setup slack is -3.028
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.032             -26.942 CKCN 
-    Info (332119):    -0.403              -2.214 divisor_clock:inst3|74160:inst8|9 
+    Info (332119):    -3.028             -27.147 CKCN 
+    Info (332119):    -0.423              -2.256 divisor_clock:inst3|74160:inst8|9 
 Info (332146): Worst-case hold slack is 0.311
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -639,8 +639,8 @@ Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case setup slack is -1.100
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.100              -2.698 CKCN 
-    Info (332119):     0.350               0.000 divisor_clock:inst3|74160:inst8|9 
+    Info (332119):    -1.100              -2.689 CKCN 
+    Info (332119):     0.338               0.000 divisor_clock:inst3|74160:inst8|9 
 Info (332146): Worst-case hold slack is 0.151
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -656,8 +656,8 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 676 megabytes
-    Info: Processing ended: Sun Feb 12 17:16:36 2017
+    Info: Peak virtual memory: 669 megabytes
+    Info: Processing ended: Wed Feb 15 01:48:00 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

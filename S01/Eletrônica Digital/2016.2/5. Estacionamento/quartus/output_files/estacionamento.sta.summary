@@ -3,12 +3,12 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CKCN'
-Slack : -3.409
-TNS   : -32.473
+Slack : -3.406
+TNS   : -32.743
 
 Type  : Slow 1200mV 85C Model Setup 'divisor_clock:inst3|74160:inst8|9'
-Slack : -0.537
-TNS   : -3.125
+Slack : -0.564
+TNS   : -3.167
 
 Type  : Slow 1200mV 85C Model Hold 'CKCN'
 Slack : 0.347
@@ -27,12 +27,12 @@ Slack : -1.403
 TNS   : -14.030
 
 Type  : Slow 1200mV 0C Model Setup 'CKCN'
-Slack : -3.032
-TNS   : -26.942
+Slack : -3.028
+TNS   : -27.147
 
 Type  : Slow 1200mV 0C Model Setup 'divisor_clock:inst3|74160:inst8|9'
-Slack : -0.403
-TNS   : -2.214
+Slack : -0.423
+TNS   : -2.256
 
 Type  : Slow 1200mV 0C Model Hold 'CKCN'
 Slack : 0.311
@@ -52,10 +52,10 @@ TNS   : -14.030
 
 Type  : Fast 1200mV 0C Model Setup 'CKCN'
 Slack : -1.100
-TNS   : -2.698
+TNS   : -2.689
 
 Type  : Fast 1200mV 0C Model Setup 'divisor_clock:inst3|74160:inst8|9'
-Slack : 0.350
+Slack : 0.338
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'divisor_clock:inst3|74160:inst8|9'

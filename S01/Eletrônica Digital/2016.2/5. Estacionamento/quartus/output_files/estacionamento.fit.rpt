@@ -1,5 +1,5 @@
 Fitter report for estacionamento
-Sun Feb 12 17:16:28 2017
+Wed Feb 15 01:47:53 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Feb 12 17:16:28 2017       ;
+; Fitter Status                      ; Successful - Wed Feb 15 01:47:53 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; estacionamento                              ;
 ; Top-level Entity Name              ; estacionamento                              ;
@@ -229,7 +229,7 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ;     -- Dedicated logic registers            ; 38 / 49,760 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )     ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 8 / 3,110 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 7 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 25 / 360 ( 7 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
@@ -250,7 +250,7 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.4% / 0.5% / 0.3%    ;
+; Peak interconnect usage (total/H/V)         ; 0.5% / 0.7% / 0.4%    ;
 ; Maximum fan-out                             ; 28                    ;
 ; Highest non-global fan-out                  ; 17                    ;
 ; Total fan-out                               ; 362                   ;
@@ -286,7 +286,7 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ;     -- Dedicated logic registers            ; 38 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 8 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 7 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 25                   ; 0                              ;
@@ -338,9 +338,9 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; CKCN ; N5    ; 2        ; 0            ; 23           ; 21           ; 28                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; R    ; A7    ; 7        ; 49           ; 54           ; 28           ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SA   ; C10   ; 7        ; 51           ; 54           ; 28           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SB   ; C11   ; 7        ; 51           ; 54           ; 21           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; R    ; C10   ; 7        ; 51           ; 54           ; 28           ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SA   ; B8    ; 7        ; 46           ; 54           ; 28           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SB   ; A7    ; 7        ; 49           ; 54           ; 28           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -417,7 +417,7 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ; A4       ; 475        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A5       ; 473        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A6       ; 471        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; A7       ; 445        ; 7        ; R                                              ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A7       ; 445        ; 7        ; SB                                             ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; A8       ; 447        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A9       ; 449        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A10      ; 439        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -484,7 +484,7 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ; B5       ; 485        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; B6       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; B7       ; 469        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; B8       ; 451        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; B8       ; 451        ; 7        ; SA                                             ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B9       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; B10      ; 448        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; B11      ; 443        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -508,8 +508,8 @@ The pin-out file can be found in C:/projetos/provas/S01/Eletrônica Digital/2016.
 ; C7       ; 467        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C8       ; 465        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C9       ; 450        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; C10      ; 442        ; 7        ; SA                                             ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C11      ; 440        ; 7        ; SB                                             ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
+; C10      ; 442        ; 7        ; R                                              ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
+; C11      ; 440        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C12      ; 436        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C13      ; 426        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C14      ; 424        ; 7        ; UA                                             ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -987,7 +987,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; EG   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; R    ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; SB   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SA   ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; SA   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; CKCN ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -1010,8 +1010,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - estado_estacionamento:inst5|74112o:inst3|8~0 ; 0                 ; 6       ;
 ;      - estado_estacionamento:inst5|74112o:inst4|8~0 ; 0                 ; 6       ;
 ; SA                                                  ;                   ;         ;
-;      - estado_estacionamento:inst5|74112o:inst3|8~0 ; 1                 ; 6       ;
-;      - estado_estacionamento:inst5|74112o:inst4|8~0 ; 1                 ; 6       ;
+;      - estado_estacionamento:inst5|74112o:inst3|8~0 ; 0                 ; 6       ;
+;      - estado_estacionamento:inst5|74112o:inst4|8~0 ; 0                 ; 6       ;
 ; CKCN                                                ;                   ;         ;
 +-----------------------------------------------------+-------------------+---------+
 
@@ -1022,8 +1022,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                              ; Location      ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------+---------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CKCN                              ; PIN_N5        ; 28      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; R                                 ; PIN_A7        ; 8       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; divisor_clock:inst3|74160:inst8|9 ; FF_X44_Y53_N3 ; 10      ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; R                                 ; PIN_C10       ; 8       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; divisor_clock:inst3|74160:inst8|9 ; FF_X44_Y53_N3 ; 10      ; Clock        ; yes    ; Global Clock         ; GCLK11           ; --                        ;
 +-----------------------------------+---------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1033,7 +1033,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                              ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; CKCN                              ; PIN_N5        ; 28      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
-; divisor_clock:inst3|74160:inst8|9 ; FF_X44_Y53_N3 ; 10      ; 0                                    ; Global Clock         ; GCLK10           ; --                        ;
+; divisor_clock:inst3|74160:inst8|9 ; FF_X44_Y53_N3 ; 10      ; 0                                    ; Global Clock         ; GCLK11           ; --                        ;
 +-----------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1042,14 +1042,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 58 / 148,641 ( < 1 % ) ;
+; Block interconnects   ; 62 / 148,641 ( < 1 % ) ;
 ; C16 interconnects     ; 4 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 40 / 106,704 ( < 1 % ) ;
-; Direct links          ; 23 / 148,641 ( < 1 % ) ;
+; C4 interconnects      ; 41 / 106,704 ( < 1 % ) ;
+; Direct links          ; 27 / 148,641 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )        ;
 ; Local interconnects   ; 39 / 49,760 ( < 1 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )        ;
-; R24 interconnects     ; 5 / 5,406 ( < 1 % )    ;
+; R24 interconnects     ; 7 / 5,406 ( < 1 % )    ;
 ; R4 interconnects      ; 31 / 147,764 ( < 1 % ) ;
 +-----------------------+------------------------+
 
@@ -1057,15 +1057,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 8.50) ; Number of LABs  (Total = 8) ;
+; Number of Logic Elements  (Average = 9.71) ; Number of LABs  (Total = 7) ;
 +--------------------------------------------+-----------------------------+
-; 1                                          ; 2                           ;
+; 1                                          ; 1                           ;
 ; 2                                          ; 0                           ;
 ; 3                                          ; 0                           ;
 ; 4                                          ; 0                           ;
 ; 5                                          ; 0                           ;
-; 6                                          ; 2                           ;
-; 7                                          ; 0                           ;
+; 6                                          ; 1                           ;
+; 7                                          ; 1                           ;
 ; 8                                          ; 0                           ;
 ; 9                                          ; 0                           ;
 ; 10                                         ; 0                           ;
@@ -1081,7 +1081,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.75) ; Number of LABs  (Total = 8) ;
+; LAB-wide Signals  (Average = 0.86) ; Number of LABs  (Total = 7) ;
 +------------------------------------+-----------------------------+
 ; 1 Async. clear                     ; 1                           ;
 ; 1 Clock                            ; 5                           ;
@@ -1091,16 +1091,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 13.25) ; Number of LABs  (Total = 8) ;
+; Number of Signals Sourced  (Average = 15.14) ; Number of LABs  (Total = 7) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
-; 1                                            ; 2                           ;
+; 1                                            ; 1                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
-; 6                                            ; 1                           ;
-; 7                                            ; 0                           ;
+; 6                                            ; 0                           ;
+; 7                                            ; 1                           ;
 ; 8                                            ; 1                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
@@ -1128,36 +1128,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 4.00) ; Number of LABs  (Total = 8) ;
+; Number of Signals Sourced Out  (Average = 4.71) ; Number of LABs  (Total = 7) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 3                           ;
+; 1                                               ; 2                           ;
 ; 2                                               ; 2                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
 ; 5                                               ; 1                           ;
-; 6                                               ; 1                           ;
-; 7                                               ; 0                           ;
+; 6                                               ; 0                           ;
+; 7                                               ; 1                           ;
 ; 8                                               ; 0                           ;
 ; 9                                               ; 0                           ;
 ; 10                                              ; 0                           ;
 ; 11                                              ; 0                           ;
 ; 12                                              ; 0                           ;
 ; 13                                              ; 0                           ;
-; 14                                              ; 1                           ;
+; 14                                              ; 0                           ;
+; 15                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 2.38) ; Number of LABs  (Total = 8) ;
+; Number of Distinct Inputs  (Average = 2.86) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 3                           ;
-; 3                                           ; 3                           ;
-; 4                                           ; 1                           ;
+; 3                                           ; 2                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1384,8 +1389,8 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y44 to location X78_Y54
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.10 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
+Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1393,8 +1398,8 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/projetos/provas/S01/Eletrônica Digital/2016.2/5. Estacionamento/quartus/output_files/estacionamento.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1440 megabytes
-    Info: Processing ended: Sun Feb 12 17:16:29 2017
+    Info: Peak virtual memory: 1443 megabytes
+    Info: Processing ended: Wed Feb 15 01:47:53 2017
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:11
 

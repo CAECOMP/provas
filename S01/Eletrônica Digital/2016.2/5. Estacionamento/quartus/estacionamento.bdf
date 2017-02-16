@@ -72,7 +72,7 @@ agreement for further details.
 	(input)
 	(rect -64 224 104 240)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SA" (rect 5 0 21 12)(font "Arial" ))
+	(text "SA" (rect 5 0 20 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
