@@ -1,0 +1,18 @@
+Fitter Status : Successful - Fri Feb 24 01:13:58 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : estacionamento
+Top-level Entity Name : estacionamento
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 45 / 49,760 ( < 1 % )
+    Total combinational functions : 43 / 49,760 ( < 1 % )
+    Dedicated logic registers : 30 / 49,760 ( < 1 % )
+Total registers : 30
+Total pins : 10 / 360 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
