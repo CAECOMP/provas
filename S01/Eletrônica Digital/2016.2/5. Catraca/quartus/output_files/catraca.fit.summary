@@ -1,0 +1,18 @@
+Fitter Status : Successful - Mon Feb 27 14:48:54 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : catraca
+Top-level Entity Name : catraca
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 38 / 49,760 ( < 1 % )
+    Total combinational functions : 38 / 49,760 ( < 1 % )
+    Dedicated logic registers : 11 / 49,760 ( < 1 % )
+Total registers : 11
+Total pins : 24 / 360 ( 7 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
