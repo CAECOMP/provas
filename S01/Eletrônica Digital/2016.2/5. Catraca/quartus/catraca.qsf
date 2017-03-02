@@ -76,4 +76,16 @@ set_location_assignment PIN_J18 -to GUD
 set_location_assignment PIN_H19 -to GUE
 set_location_assignment PIN_F19 -to GUF
 set_location_assignment PIN_F20 -to GUG
+set_global_assignment -name BDF_FILE conta_giro.bdf
+set_location_assignment PIN_C18 -to ODA
+set_location_assignment PIN_D18 -to ODB
+set_location_assignment PIN_E18 -to ODC
+set_location_assignment PIN_B16 -to ODD
+set_location_assignment PIN_A17 -to ODE
+set_location_assignment PIN_A18 -to ODF
+set_location_assignment PIN_B17 -to ODG
+set_location_assignment PIN_V10 -to GH
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GH
+set_location_assignment PIN_W10 -to GA
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GA
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

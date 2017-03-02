@@ -88,6 +88,42 @@
 					"strict" : false
 				},
 				{
+					"name" : "ODA",
+					"strict" : false
+				},
+				{
+					"name" : "ODB",
+					"strict" : false
+				},
+				{
+					"name" : "ODC",
+					"strict" : false
+				},
+				{
+					"name" : "ODD",
+					"strict" : false
+				},
+				{
+					"name" : "ODE",
+					"strict" : false
+				},
+				{
+					"name" : "ODF",
+					"strict" : false
+				},
+				{
+					"name" : "ODG",
+					"strict" : false
+				},
+				{
+					"name" : "GH",
+					"strict" : false
+				},
+				{
+					"name" : "GA",
+					"strict" : false
+				},
+				{
 					"name" : "SB",
 					"strict" : false
 				},

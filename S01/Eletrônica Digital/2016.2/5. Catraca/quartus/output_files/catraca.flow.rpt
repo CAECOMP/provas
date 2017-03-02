@@ -1,5 +1,5 @@
 Flow report for catraca
-Mon Feb 27 14:49:02 2017
+Thu Mar 02 00:26:20 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Feb 27 14:48:59 2017       ;
+; Flow Status                        ; Successful - Thu Mar 02 00:26:17 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; catraca                                     ;
 ; Top-level Entity Name              ; catraca                                     ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 38 / 49,760 ( < 1 % )                       ;
-;     Total combinational functions  ; 38 / 49,760 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 11 / 49,760 ( < 1 % )                       ;
-; Total registers                    ; 11                                          ;
-; Total pins                         ; 24 / 360 ( 7 % )                            ;
+; Total logic elements               ; 63 / 49,760 ( < 1 % )                       ;
+;     Total combinational functions  ; 60 / 49,760 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 22 / 49,760 ( < 1 % )                       ;
+; Total registers                    ; 22                                          ;
+; Total pins                         ; 33 / 360 ( 9 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
@@ -67,7 +67,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/27/2017 14:48:35 ;
+; Start date & time ; 03/02/2017 00:25:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; catraca             ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 1099501585505.148821771506992          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 1099501585505.148842515302688          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -93,11 +93,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 624 MB              ; 00:00:25                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 1449 MB             ; 00:00:11                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 540 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 672 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:42                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 640 MB              ; 00:00:24                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 1444 MB             ; 00:00:11                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 538 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 676 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
