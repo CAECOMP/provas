@@ -1,5 +1,5 @@
 Analysis & Synthesis report for catraca
-Mon Feb 27 14:48:45 2017
+Thu Mar 02 00:26:04 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -43,16 +43,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 27 14:48:45 2017       ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 02 00:26:04 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; catraca                                     ;
 ; Top-level Entity Name              ; catraca                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 37                                          ;
-;     Total combinational functions  ; 37                                          ;
-;     Dedicated logic registers      ; 11                                          ;
-; Total registers                    ; 11                                          ;
-; Total pins                         ; 24                                          ;
+; Total logic elements               ; 59                                          ;
+;     Total combinational functions  ; 59                                          ;
+;     Dedicated logic registers      ; 22                                          ;
+; Total registers                    ; 22                                          ;
+; Total pins                         ; 33                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -161,7 +161,8 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -170,65 +171,75 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                          ; Library ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
-; controle_giro.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/projetos/provas/S01/Eletrônica Digital/2016.2/6. Catraca/quartus/controle_giro.bdf ;         ;
-; catraca.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/projetos/provas/S01/Eletrônica Digital/2016.2/6. Catraca/quartus/catraca.bdf       ;         ;
+; controle_giro.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/projetos/provas/S01/Eletrônica Digital/2016.2/5. Catraca/quartus/controle_giro.bdf ;         ;
+; catraca.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/projetos/provas/S01/Eletrônica Digital/2016.2/5. Catraca/quartus/catraca.bdf       ;         ;
+; conta_giro.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/projetos/provas/S01/Eletrônica Digital/2016.2/5. Catraca/quartus/conta_giro.bdf    ;         ;
 ; 7447.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7447.bdf                     ;         ;
-; 7473.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7473.bdf                     ;         ;
+; 74160.bdf                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74160.bdf                    ;         ;
 ; 7408.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7408.bdf                     ;         ;
 ; 7404.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7404.bdf                     ;         ;
 ; 7432.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7432.bdf                     ;         ;
-; 74160.bdf                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74160.bdf                    ;         ;
+; 7473.bdf                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/7473.bdf                     ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                           ;
-+---------------------------------------------+-------------------------+
-; Resource                                    ; Usage                   ;
-+---------------------------------------------+-------------------------+
-; Estimated Total logic elements              ; 37                      ;
-;                                             ;                         ;
-; Total combinational functions               ; 37                      ;
-; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 15                      ;
-;     -- 3 input functions                    ; 18                      ;
-;     -- <=2 input functions                  ; 4                       ;
-;                                             ;                         ;
-; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 37                      ;
-;     -- arithmetic mode                      ; 0                       ;
-;                                             ;                         ;
-; Total registers                             ; 11                      ;
-;     -- Dedicated logic registers            ; 11                      ;
-;     -- I/O registers                        ; 0                       ;
-;                                             ;                         ;
-; I/O pins                                    ; 24                      ;
-;                                             ;                         ;
-; Embedded Multiplier 9-bit elements          ; 0                       ;
-;                                             ;                         ;
-; Maximum fan-out node                        ; 74160:contadorUnidade|6 ;
-; Maximum fan-out                             ; 13                      ;
-; Total fan-out                               ; 188                     ;
-; Average fan-out                             ; 1.96                    ;
-+---------------------------------------------+-------------------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 59            ;
+;                                             ;               ;
+; Total combinational functions               ; 59            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 30            ;
+;     -- 3 input functions                    ; 22            ;
+;     -- <=2 input functions                  ; 7             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 59            ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 22            ;
+;     -- Dedicated logic registers            ; 22            ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 33            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; 74160:inst3|6 ;
+; Maximum fan-out                             ; 13            ;
+; Total fan-out                               ; 305           ;
+; Average fan-out                             ; 2.07          ;
++---------------------------------------------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                       ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+---------------+--------------+
-; |catraca                   ; 37 (0)              ; 11 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 24   ; 0            ; 0          ; |catraca                                  ; catraca       ; work         ;
-;    |74160:contadorDezena|  ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|74160:contadorDezena             ; 74160         ; work         ;
-;    |74160:contadorUnidade| ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|74160:contadorUnidade            ; 74160         ; work         ;
-;    |7447:inst12|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst12                      ; 7447          ; work         ;
-;    |7447:inst13|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst13                      ; 7447          ; work         ;
-;    |7447:inst2|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst2                       ; 7447          ; work         ;
-;    |7473:inst8|            ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7473:inst8                       ; 7473          ; work         ;
-;    |7473:inst|             ; 4 (4)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7473:inst                        ; 7473          ; work         ;
-;    |controle_giro:inst10|  ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|controle_giro:inst10             ; controle_giro ; work         ;
-;       |7432:inst34|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|controle_giro:inst10|7432:inst34 ; 7432          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+---------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                        ; Entity Name   ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------+---------------+--------------+
+; |catraca                     ; 59 (0)              ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 33   ; 0            ; 0          ; |catraca                                                   ; catraca       ; work         ;
+;    |74160:contadorDezena|    ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|74160:contadorDezena                              ; 74160         ; work         ;
+;    |74160:contadorUnidade|   ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|74160:contadorUnidade                             ; 74160         ; work         ;
+;    |74160:inst3|             ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|74160:inst3                                       ; 74160         ; work         ;
+;    |74160:inst5|             ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|74160:inst5                                       ; 74160         ; work         ;
+;    |7447:inst12|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst12                                       ; 7447          ; work         ;
+;    |7447:inst13|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst13                                       ; 7447          ; work         ;
+;    |7447:inst1|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst1                                        ; 7447          ; work         ;
+;    |7447:inst2|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|7447:inst2                                        ; 7447          ; work         ;
+;    |conta_giro:inst6|        ; 7 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst6                                  ; conta_giro    ; work         ;
+;       |7473:inst8|           ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst6|7473:inst8                       ; 7473          ; work         ;
+;       |7473:inst|            ; 4 (4)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst6|7473:inst                        ; 7473          ; work         ;
+;       |controle_giro:inst10| ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst6|controle_giro:inst10             ; controle_giro ; work         ;
+;          |7432:inst34|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst6|controle_giro:inst10|7432:inst34 ; 7432          ; work         ;
+;    |conta_giro:inst|         ; 6 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst                                   ; conta_giro    ; work         ;
+;       |7473:inst8|           ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst|7473:inst8                        ; 7473          ; work         ;
+;       |7473:inst|            ; 3 (3)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst|7473:inst                         ; 7473          ; work         ;
+;       |controle_giro:inst10| ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst|controle_giro:inst10              ; controle_giro ; work         ;
+;          |7432:inst34|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |catraca|conta_giro:inst|controle_giro:inst10|7432:inst34  ; 7432          ; work         ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -237,7 +248,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 11    ;
+; Total registers                              ; 22    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -252,18 +263,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 24                          ;
-; cycloneiii_ff         ; 11                          ;
-;     plain             ; 11                          ;
-; cycloneiii_lcell_comb ; 37                          ;
-;     normal            ; 37                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 18                          ;
-;         4 data inputs ; 15                          ;
+; boundary_port         ; 33                          ;
+; cycloneiii_ff         ; 22                          ;
+;     plain             ; 22                          ;
+; cycloneiii_lcell_comb ; 59                          ;
+;     normal            ; 59                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 30                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.31                        ;
+; Average LUT depth     ; 1.36                        ;
 +-----------------------+-----------------------------+
 
 
@@ -282,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Mon Feb 27 14:48:34 2017
+    Info: Processing started: Thu Mar 02 00:25:53 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off catraca -c catraca
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -290,31 +301,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: controle_giro
 Info (12021): Found 1 design units, including 1 entities, in source file catraca.bdf
     Info (12023): Found entity 1: catraca
+Info (12021): Found 1 design units, including 1 entities, in source file conta_giro.bdf
+    Info (12023): Found entity 1: conta_giro
 Info (12127): Elaborating entity "catraca" for the top level hierarchy
 Info (12128): Elaborating entity "7447" for hierarchy "7447:inst2"
 Info (12130): Elaborated megafunction instantiation "7447:inst2"
-Info (12128): Elaborating entity "7473" for hierarchy "7473:inst"
-Info (12130): Elaborated megafunction instantiation "7473:inst"
-Info (12128): Elaborating entity "controle_giro" for hierarchy "controle_giro:inst10"
-Info (12128): Elaborating entity "7408" for hierarchy "controle_giro:inst10|7408:inst3"
-Info (12130): Elaborated megafunction instantiation "controle_giro:inst10|7408:inst3"
-Info (12128): Elaborating entity "7404" for hierarchy "controle_giro:inst10|7404:inst2"
-Info (12130): Elaborated megafunction instantiation "controle_giro:inst10|7404:inst2"
-Info (12128): Elaborating entity "7432" for hierarchy "controle_giro:inst10|7432:inst13"
-Info (12130): Elaborated megafunction instantiation "controle_giro:inst10|7432:inst13"
-Info (12128): Elaborating entity "74160" for hierarchy "74160:contadorUnidade"
-Info (12130): Elaborated megafunction instantiation "74160:contadorUnidade"
+Info (12128): Elaborating entity "74160" for hierarchy "74160:inst3"
+Info (12130): Elaborated megafunction instantiation "74160:inst3"
+Info (12128): Elaborating entity "conta_giro" for hierarchy "conta_giro:inst6"
+Info (12128): Elaborating entity "controle_giro" for hierarchy "conta_giro:inst6|controle_giro:inst10"
+Info (12128): Elaborating entity "7408" for hierarchy "conta_giro:inst6|controle_giro:inst10|7408:inst3"
+Info (12130): Elaborated megafunction instantiation "conta_giro:inst6|controle_giro:inst10|7408:inst3"
+Info (12128): Elaborating entity "7404" for hierarchy "conta_giro:inst6|controle_giro:inst10|7404:inst2"
+Info (12130): Elaborated megafunction instantiation "conta_giro:inst6|controle_giro:inst10|7404:inst2"
+Info (12128): Elaborating entity "7432" for hierarchy "conta_giro:inst6|controle_giro:inst10|7432:inst13"
+Info (12130): Elaborated megafunction instantiation "conta_giro:inst6|controle_giro:inst10|7432:inst13"
+Info (12128): Elaborating entity "7473" for hierarchy "conta_giro:inst6|7473:inst8"
+Info (12130): Elaborated megafunction instantiation "conta_giro:inst6|7473:inst8"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 92 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 21 output pins
-    Info (21061): Implemented 37 logic cells
+    Info (21059): Implemented 30 output pins
+    Info (21061): Implemented 59 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 624 megabytes
-    Info: Processing ended: Mon Feb 27 14:48:45 2017
+    Info: Peak virtual memory: 640 megabytes
+    Info: Processing ended: Thu Mar 02 00:26:04 2017
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:24
 
 
