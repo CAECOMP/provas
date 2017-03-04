@@ -1,0 +1,57 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  max10
+Quartus root          :  c:/intelfpga_lite/16.1/quartus/bin64/
+Quartus sim root      :  c:/intelfpga_lite/16.1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim
+Simulation Language   :  verilog
+Simulation Mode       :  GUI
+Sim Output File       :  relogio.vo
+Sim SDF file          :  relogio__verilog.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim software
+Sourced NativeLink script c:/intelfpga_lite/16.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Error: Can't launch the ModelSim software -- the path to the location of the executables for the ModelSim software were not specified or the executables were not found at specified path.
+Error: You can specify the path in the EDA Tool Options page of the Options dialog box or using the Tcl command set_user_option.
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  issued_nl_message
+Nativelink TCL script failed with errorInfo:  Can't launch the ModelSim software -- the path to the location of the executables for the ModelSim software were not specified or the executables were not found at specified path.
+    while executing
+"error "$emsg" "" "issued_nl_message" "
+    (procedure "launch_sim" line 84)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+                set savedCode $::errorCode
+                set savedInfo $::errorInfo
+                error $result $..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+            set status 1
+            if [ info exists ::errorCode ] {
+                set save..."
+    (procedure "run_sim" line 74)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+            set savedCode $::errorCode
+            set savedInfo $::errorInfo
+            error "$result" $savedInfo ..."
+    (procedure "run_eda_simulation_tool" line 334)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"
