@@ -1,0 +1,86 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 200 176)
+	(text "divisor_clock" (rect 5 0 81 19)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CK10MHZ" (rect 0 0 61 19)(font "Intel Clear" (font_size 8)))
+		(text "CK10MHZ" (rect 21 27 82 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "CK1MHZ" (rect 0 0 53 19)(font "Intel Clear" (font_size 8)))
+		(text "CK1MHZ" (rect 110 27 163 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 32)(pt 168 32))
+	)
+	(port
+		(pt 184 48)
+		(output)
+		(text "CK100KHZ" (rect 0 0 67 19)(font "Intel Clear" (font_size 8)))
+		(text "CK100KHZ" (rect 96 43 163 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 48)(pt 168 48))
+	)
+	(port
+		(pt 184 64)
+		(output)
+		(text "CK10KHZ" (rect 0 0 59 19)(font "Intel Clear" (font_size 8)))
+		(text "CK10KHZ" (rect 104 59 163 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 64)(pt 168 64))
+	)
+	(port
+		(pt 184 80)
+		(output)
+		(text "CK1KHZ" (rect 0 0 50 19)(font "Intel Clear" (font_size 8)))
+		(text "CK1KHZ" (rect 113 75 163 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 80)(pt 168 80))
+	)
+	(port
+		(pt 184 96)
+		(output)
+		(text "CK100HZ" (rect 0 0 59 19)(font "Intel Clear" (font_size 8)))
+		(text "CK100HZ" (rect 104 91 163 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 96)(pt 168 96))
+	)
+	(port
+		(pt 184 112)
+		(output)
+		(text "CK10HZ" (rect 0 0 50 19)(font "Intel Clear" (font_size 8)))
+		(text "CK10HZ" (rect 113 107 163 126)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 112)(pt 168 112))
+	)
+	(port
+		(pt 184 128)
+		(output)
+		(text "CK1HZ" (rect 0 0 42 19)(font "Intel Clear" (font_size 8)))
+		(text "CK1HZ" (rect 121 123 163 142)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 128)(pt 168 128))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 144))
+	)
+)
