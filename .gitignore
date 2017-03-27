@@ -1,2 +1,5 @@
 *.PWI
 *.DBK
+
+.DS_Store
+
