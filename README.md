@@ -4,7 +4,12 @@ Repositório com as provas, slides e outros materais do curso de Engenharia da C
 
 # Como contribuir
 
-Você pode contribuir enviando foto com de sua prova, slides e trabalhos.
+Você pode contribuir enviando:
+* Provas
+* Conteúdo Extra
+* Slides
+* Trabalhos
+* Anotações e áudios
 
 ## Organização do repositório
 
