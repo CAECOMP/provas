@@ -37,21 +37,24 @@ Materais que tendem a ser repetidos por vários semestres diferentes, como slide
 # Como enviar os arquivos
 
 1. Faça um fork do repositório.
-    Para isso, basta clicar no botão ![alt text](https://github.com/CAECOMP/provas/src/images/fork.png "Fork Image") que se localiza no canto superior direito da página do repositório.
+    Para isso, basta clicar no botão 
+    ![Fork Image](https://github.com/jullynobre/provas/tree/master/src/images/fork.png) 
+    que se localiza no canto superior direito da página do repositório.
     
     Agora você provavelmente deve ter um repositório muito semelhante a:
-    ![alt text](https://github.com/CAECOMP/provas/src/images/fork.png "Fork Image")
+    ![Repo Image](https://github.com/jullynobre/provas/tree/master/src/images/repo.png)
 
 2. Adicionar os novos aquivos ao repositório (fork).
     A forma mais siples de fazer isso é simplesmente arrastar os novos aquivos para o seu repositório ou clicar no botão upload files que fica no header.
 
 3. Commit
     Basta colcocar uma mensagem com os arquivos que foram adicionados e clicar em commit changes.
-    ![alt text](https://github.com/CAECOMP/provas/src/images/commit.png "Commit Image")
+    ![Commit Image](https://github.com/jullynobre/provas/tree/master/src/images/commit.png)
     
 4. Pull request
-    Clique no botão pull request do seu repositório: ![alt text](https://github.com/CAECOMP/provas/src/images/pull-request.png "Pull Request Image")
+    Clique no botão pull request do seu repositório: 
+    ![Pull Request Image](https://github.com/jullynobre/provas/tree/master/src/images/pull-request.png)
     Deve aparecer uma tela semelhante a esta: 
-    ![alt text](https://github.com/CAECOMP/provas/src/images/pull-request-screen.png "Pull request screen Image")
+    ![Pull request screen Image](https://github.com/jullynobre/provas/tree/master/src/images/pull-request-screen.png)
     Agora é só clicar em Create pull request e pronto!
 
