@@ -2,8 +2,6 @@
 
 Repositório com as provas, slides e outros materais do curso de Engenharia da Computação do IFCE, campus Fortaleza. O objetivo desse repositório é fornecer material de apoio para os estudantes.
 
-# Como contribuir
-
 Você pode contribuir enviando:
 * Provas
 * Conteúdo Extra
@@ -11,7 +9,7 @@ Você pode contribuir enviando:
 * Trabalhos
 * Anotações e áudios
 
-## Organização do repositório
+# Organização do repositório
 
 A raiz do repositório deve conter apenas pasta o nome da cadeira. Dentro desta pasta, deve conter apenas outras pastas.
 
@@ -35,3 +33,28 @@ Materais que tendem a ser repetidos por vários semestres diferentes, como slide
 │       ├── Endereçamento IP.pdf
 │       ├── Modelo OSI.pdf
 ```
+
+# Como enviar os arquivos
+
+1. Faça um fork do repositório.
+    Para isso, basta clicar no botão 
+    ![Fork Image](https://github.com/jullynobre/provas/tree/master/src/images/fork.jpg) 
+    que se localiza no canto superior direito da página do repositório.
+    
+    Agora você provavelmente deve ter um repositório muito semelhante a:
+    ![Repo Image](https://github.com/jullynobre/provas/tree/master/src/images/repo.jpg)
+
+2. Adicionar os novos aquivos ao repositório (fork).
+    A forma mais siples de fazer isso é simplesmente arrastar os novos aquivos para o seu repositório ou clicar no botão upload files que fica no header.
+
+3. Commit
+    Basta colcocar uma mensagem com os arquivos que foram adicionados e clicar em commit changes.
+    ![Commit Image](https://github.com/jullynobre/provas/tree/master/src/images/commit.jpg)
+    
+4. Pull request
+    Clique no botão pull request do seu repositório: 
+    ![Pull Request Image](https://github.com/jullynobre/provas/tree/master/src/images/pull-request.jpg)
+    Deve aparecer uma tela semelhante a esta: 
+    ![Pull request screen Image](https://github.com/jullynobre/provas/tree/master/src/images/pull-request-screen.jpg)
+    Agora é só clicar em Create pull request e pronto!
+
