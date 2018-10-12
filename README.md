@@ -49,13 +49,13 @@ Materais que tendem a ser repetidos por vários semestres diferentes, como slide
 2. Adicionar os novos aquivos ao repositório (fork).
     A forma mais siples de fazer isso é simplesmente arrastar os novos aquivos para o seu repositório ou clicar no botão upload files que fica no header.
 
-3. Commit
+3. Commit.
     Basta colcocar uma mensagem com os arquivos que foram adicionados e clicar em commit changes.
     <p>
         <img src="https://raw.githubusercontent.com/jullynobre/provas/master/src/images/commit.jpg"/>
     </p>
     
-4. Pull request
+4. Pull request.
     Clique no botão pull request do seu repositório: 
     <img src="https://raw.githubusercontent.com/jullynobre/provas/master/src/images/pull-request.jpg"/>
     Deve aparecer uma tela semelhante a esta: 
