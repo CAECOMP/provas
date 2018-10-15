@@ -11,7 +11,7 @@ Você pode contribuir enviando:
 
 # Organização do repositório
 
-A raiz do repositório deve conter apenas a pasta com o nome das cadeira. Dentro desta pasta, deve conter apenas outras pastas.
+A raiz do repositório deve conter apenas a pasta com o nome da cadeira. Dentro desta pasta, deve conter apenas outras pastas.
 
 Nomeie a pasta com o padrão "Semestre - Nome do professor" e, dentro dela organize os materais por etapa. Por exemplo:
 
