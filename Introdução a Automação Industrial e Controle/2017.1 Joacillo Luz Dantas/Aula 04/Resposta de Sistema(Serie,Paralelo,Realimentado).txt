@@ -1,0 +1,20 @@
+Mathlab
+Calcular a Resposta de Um Sistema
+Dados
+g1 = 5/(2s^2+2s+10)
+g2 = s + 1/(s^2+s+8)
+
+g1numerador = [5]
+g1denominador = [2 2 10]
+
+g2numerador = [1 1]
+g1denominador = [1 1 8]
+
+Sistema em Serie
+[num,den] = series(g1numerador,g1denominador,g2numerador,g2denominador)
+
+Sistema em Paralelo
+[num,den] = parallel(g1numerador,g1denominador,g2numerador,g2denominador)
+
+Sistema em Realimentação(FeedBack)
+[num,den] = feedback(g1numerador,g1denominador,g2numerador,g2denominador)
