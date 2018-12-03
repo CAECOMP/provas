@@ -1,0 +1,39 @@
+Sistema de Operação em Caixa Eletronico
+
+Operação Caixa Eletronico
+
+A - Inserir Cartão
+B - Opção 1
+C - Opção 2
+D - Opção 3
+S - Confirmado
+N - Não Confirmado
+? - Qualquer Valor
+
+Estado Inicial
+0 - Inicio         	:(q1) 
+
+1 - Insere Cartão  	:(q1,A => q2)
+
+2 - Escolhe Opção  	:(q2,B => q3)
+			:(q2,C => q4)
+			:(q2,D => q5)
+
+3.1 - Insere Senha OK	:(q3,S => q7)  3.2 - Insere Senha ERR	:(q3,? => q1)
+			:(q4,S => q6)  				:(q4,? => q1)
+			:(q5,S => q6)  				:(q5,? => q1)
+
+
+4.1 - Outra Operacao S  :(q6,S => q1)  4.1 - Outra Operacao N   :(q6,N => q9)  
+			:(q7,S => q1)	  			:(q7,N => q9)  
+
+
+5.1 - Outra Operação S  :(q6,S => q1)  5.2 - Outra Operação N   :(q6,N => q9)
+			:(q7,S => q1)				:(q7,N => q9)
+
+Estado Final q1,q9
+
+
+
+
+
