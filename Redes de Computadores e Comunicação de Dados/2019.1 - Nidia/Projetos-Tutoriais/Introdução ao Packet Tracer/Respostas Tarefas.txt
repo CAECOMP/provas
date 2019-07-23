@@ -1,0 +1,7 @@
+Respostas
+
+01) Após o HUB receber o pacote, ele envia às outras portas, desde que não seja daquela que foi recebida. Mesmo 
+	assim, só o host de destino recebe o pacote.
+
+02) Após o SWITCH receber o pacote, ele envia diretamente para o destino, ou seja, é como se o switch soubesse 
+	dos endereços de origem e destino dos pacotes.

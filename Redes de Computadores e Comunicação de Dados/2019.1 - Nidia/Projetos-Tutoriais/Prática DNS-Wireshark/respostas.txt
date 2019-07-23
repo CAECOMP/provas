@@ -1,0 +1,33 @@
+04) UDP
+05) 53. 63807
+06) 200.129.46.13. São os mesmos ends.
+07) type A. 
+www.ietf.org: type A, class IN
+    Name: www.ietf.org
+    [Name Length: 12]
+    [Label Count: 3]
+    Type: A (Host Address) (1)
+    Class: IN (0x0001)
+08) 3 respostas.
+Answers
+    www.ietf.org: type CNAME, class IN, cname www.ietf.org.cdn.cloudflare.net
+        Name: www.ietf.org
+        Type: CNAME (Canonical NAME for an alias) (5)
+        Class: IN (0x0001)
+        Time to live: 60
+        Data length: 33
+        CNAME: www.ietf.org.cdn.cloudflare.net
+    www.ietf.org.cdn.cloudflare.net: type A, class IN, addr 104.20.1.85
+        Name: www.ietf.org.cdn.cloudflare.net
+        Type: A (Host Address) (1)
+        Class: IN (0x0001)
+        Time to live: 60
+        Data length: 4
+        Address: 104.20.1.85
+    www.ietf.org.cdn.cloudflare.net: type A, class IN, addr 104.20.0.85
+        Name: www.ietf.org.cdn.cloudflare.net
+        Type: A (Host Address) (1)
+        Class: IN (0x0001)
+        Time to live: 60
+        Data length: 4
+        Address: 104.20.0.85
