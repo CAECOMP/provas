@@ -1,0 +1,310 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Introdução Básica às Entradas e Saídas</h3>
+
+<ul>
+  <li><a HREF="#c241.html">Caracteres</a></li>
+  <li><a HREF="#c242.html">Strings</a></li>
+  <li><a HREF="#c243.html">printf</a></li>
+  <li><a HREF="#c244.html">scanf</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p><a NAME="c241.html"></a></p>
+
+<h4>Caracteres</h4>
+
+<p>Os caracteres são um tipo de dado: o <b>char</b>. O C trata os caracteres ('a', 'b',
+'x', etc ...) como sendo variáveis de um <em>byte </em>(8 <em>bit</em>s). Um <em>bit</em>
+é a menor unidade de armazenamento de informações em um computador. Os inteiros (<b>int</b>s)
+têm um número maior de <em>bytes</em>. Dependendo da implementação do compilador, eles
+podem ter 2 <em>bytes</em> (16 <em>bits</em>) ou 4 <em>bytes</em> (32 <em>bits</em>). Isto
+será melhor explicado na <a HREF="http://www.cpdee.ufmg.br/cursos/C/aulas/c320.html">aula
+3</a>. Na linguagem C, também podemos usar um <b>char</b> para armazenar valores
+numéricos inteiros, além de usá-lo para armazenar caracteres de texto. Para indicar um
+caractere de texto usamos apóstrofes. Veja um exemplo de programa que usa caracteres: <br>
+&nbsp; </p>
+
+<pre><tt>#include &lt;stdio.h&gt;
+int main ()
+{
+	char Ch;
+	Ch='D';
+	printf (&quot;%c&quot;,Ch);
+	return(0);
+}</tt></pre>
+
+<p>No programa acima, <b>%c</b> indica que <b>printf()</b> deve colocar um caractere na
+tela. Como vimos anteriormente, um <strong>char </strong>também é usado para armazenar
+um número inteiro. Este número é conhecido como o código ASCII correspondente ao
+caractere. Veja o programa abaixo:</p>
+
+<p><tt>#include &lt;stdio.h&gt;<br>
+int main ()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; char Ch;<br>
+&nbsp;&nbsp;&nbsp; Ch='D';<br>
+&nbsp;&nbsp;&nbsp; printf (&quot;%d&quot;,Ch);&nbsp; /* Imprime o caracter como inteiro */<br>
+&nbsp;&nbsp;&nbsp; return(0);<br>
+}</tt></p>
+
+<p>Este programa vai imprimir o número 68 na tela, que é o código ASCII correspondente
+ao caractere 'D'&nbsp; (d maiúsculo).</p>
+
+<p>Muitas vezes queremos ler um caractere fornecido pelo usuário. Para isto as funções
+mais usadas, quando se está trabalhando em ambiente DOS ou Windows, são <b>getch()</b> e
+<b>getche()</b>. Ambas retornam o caractere pressionado. <b>getche()</b> imprime o
+caractere na tela antes de retorná-lo e <b>getch()</b> apenas retorna o caractere
+pressionado sem imprimí-lo na tela. Ambas as funções podem ser encontradas no arquivo
+de cabeçalho <b>conio.h</b>. Geralmente estas funções <strong>não estão disponíveis</strong>
+<strong>em ambiente Unix </strong>(compiladores cc e gcc), pois não fazem parte do
+padrão ANSI. Podem ser substituídas pela função <a HREF="#c244.html">scanf()</a>,
+porém sem as mesmas funcionalidades. Eis um exemplo que usa a função <b>getch(), </b>e
+seu correspondente em ambiente Unix: <br>
+&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+/* Este programa usa conio.h . Se você não tiver a conio, ele não funcionará no Unix */
+int main ()
+{
+	char Ch;
+	Ch=getch();
+	printf (&quot;Voce pressionou a tecla %c&quot;,Ch);
+	return(0);
+}</pre>
+
+<pre><a NAME="c245.html"></a><b>Equivalente ANSI-C para o ambiente Unix do programa acima, sem usar getch():</b></pre>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	char Ch;
+	scanf(&quot;%c&quot;, &amp;Ch);
+	printf (&quot;Voce pressionou a tecla %c&quot;,Ch);
+	return(0);
+}</pre>
+
+<p>A principal diferença da versão que utiliza getch() para a versão que não utiliza
+getch() é que no primeiro caso o usuário simplesmente aperta a tecla e o sistema lê
+diretamente a tecla pressionada. No segundo caso, é necessário apertar também a tecla
+&lt;ENTER&gt;. <strong>Lembre-se que, se você quiser manter a portabilidade de seus
+programas, não deve utilizar as funções getch e getche, pois estas não fazem parte do
+padrão ANSI C !!!</strong></p>
+
+<p><a NAME="c242.html"></a> </p>
+
+<h4>Strings</h4>
+
+<p>No C uma string é um vetor de caracteres terminado com um caractere nulo. O caracter
+nulo é um caractere com valor inteiro igual a zero (código ASCII igual a 0). O
+terminador nulo também pode ser escrito usando a convenção de barra invertida do C como
+sendo '\0'. Embora o assunto vetores seja <a href="c520.html">discutido posteriormente</a>,
+veremos aqui os fundamentos necessários para que possamos utilizar as strings. Para
+declarar uma string, podemos usar o seguinte formato geral: </p>
+
+<p>&nbsp;<i>char nome_da_string[tamanho];</i> </p>
+
+<p>Isto declara um vetor de caracteres (uma string) com número de posições igual a <em>tamanho</em>.
+Note que, como temos que reservar um caractere para ser o terminador nulo, temos que
+declarar o comprimento da string como sendo, no mínimo, um caractere maior que a maior
+string que pretendemos armazenar. Vamos supor que declaremos uma string de 7 posições e
+coloquemos a palavra João nela. Teremos: </p>
+
+<p align="center">&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1">
+  <tr>
+    <td>J&nbsp;</td>
+    <td>o&nbsp;</td>
+    <td>a&nbsp;</td>
+    <td>o&nbsp;</td>
+    <td>\0&nbsp;</td>
+    <td>...&nbsp;</td>
+    <td>...&nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p>No caso acima, as duas células não usadas têm valores indeterminados. Isto acontece
+porque o C <i>não</i> inicializa variáveis, cabendo ao programador esta tarefa. Portanto
+as únicas células que são inicializadas são as que contêm os caracteres 'J', 'o',
+'a', 'o' e '\0' .</p>
+
+<p>Se quisermos ler uma string fornecida pelo usuário podemos usar a função <b>gets()</b>.
+Um exemplo do uso desta função é apresentado abaixo. A função <b>gets()</b> coloca o
+terminador nulo na string, quando você aperta a tecla &quot;Enter&quot;. </p>
+
+<p><tt>#include &lt;stdio.h&gt;</tt> <br>
+<tt>int main ()</tt> <br>
+<tt>{</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; char string[100];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; printf (&quot;Digite uma string: &quot;);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; gets (string);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; printf (&quot;\n\nVoce digitou %s&quot;,string);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; return(0);<br>
+}</tt> </p>
+
+<p>Neste programa, o tamanho máximo da string que você pode entrar é uma string de 99
+caracteres. Se você entrar com uma string de comprimento maior, o programa irá aceitar,
+mas os resultados podem ser desastrosos. Veremos porque posteriormente.</p>
+
+<p>Como as strings são <a HREF="c520.html">vetores de caracteres</a>, para se acessar um
+determinado caracter de uma string, basta &quot;indexarmos&quot;, ou seja, usarmos um
+índice para acessarmos o caracter desejado dentro da string. Suponha uma string chamada <i>str</i>.
+Podemos acessar a <strong>segunda</strong> letra de <i>str </i>da seguinte forma: </p>
+
+<p><tt>&nbsp;&nbsp; str[1] = 'a';</tt> </p>
+
+<p>Por quê se está acessando a segunda letra e não a primeira? Na linguagem C, o
+índice <em><strong>começa em zero. </strong></em>Assim, a primeira letra da string
+sempre estará na posição 0. A segunda letra sempre estará na posição 1 e assim
+sucessivamente. Segue um exemplo que imprimirá a segunda letra da string
+&quot;Joao&quot;, apresentada acima. Em seguida, ele mudará esta letra e apresentará a
+string no final. </p>
+
+<p><tt>#include &lt;stdio.h&gt;</tt> <br>
+<tt>int main()</tt> <br>
+<tt>{</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; char str[10] = &quot;Joao&quot;;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; printf(&quot;\n\nString: %s&quot;, str);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; printf(&quot;\nSegunda letra: %c&quot;, str[1]);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; str[1] = 'U';</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; printf(&quot;\nAgora a segunda letra eh: %c&quot;, str[1]);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; printf(&quot;\n\nString resultante: %s&quot;, str);</tt><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New">return(0);</font><font
+face="Courier"> </font><br>
+<tt>}</tt> </p>
+
+<p>Nesta string, o terminador nulo está na posição 4. Das posições 0 a 4, sabemos que
+temos caracteres válidos, e portanto podemos escrevê-los. Note a forma como
+inicializamos a string <b>str </b>com os caracteres 'J' 'o' 'a' 'o'&nbsp; e '\0'&nbsp;
+simplesmente declarando char str[10] = &quot;Joao&quot;. Veremos, posteriormente que
+&quot;Joao&quot; (uma cadeia de caracteres entre aspas) é o que chamamos de string
+constante, isto é, uma cadeia de caracteres que está pré-carregada com valores que não
+podem ser modificados. Já a string str é uma string variável, pois podemos modificar o
+que nela está armazenado, como de fato fizemos. </p>
+
+<p>No programa acima, <b>%s</b> indica que <b>printf()</b> deve colocar uma string na
+tela. Vamos agora fazer uma abordagem inicial às duas funções que já temos usado para
+fazer a entrada e saída. </p>
+
+<p>&nbsp;<a NAME="c243.html"></a> </p>
+
+<h4>printf</h4>
+
+<p>A função <b>printf()</b> tem a seguinte forma geral: </p>
+
+<p>&nbsp;<i>printf (string_de_controle,lista_de_argumentos);</i> </p>
+
+<p>&nbsp;Teremos, na string de controle, uma descrição de tudo que a função vai
+colocar na tela. A string de controle mostra não apenas os caracteres que devem ser
+colocados na tela, mas também quais as variáveis e suas respectivas posições. Isto é
+feito usando-se os códigos de controle, que usam a notação <b>%</b>. Na string de
+controle indicamos quais, de qual tipo e em que posição estão as variáveis a serem
+apresentadas. É muito importante que, para cada código de controle, tenhamos um
+argumento na lista de argumentos. Apresentamos agora alguns dos códigos <b>%</b>: </p>
+
+<p align="center">&nbsp; </p>
+<div align="center"><center>
+
+<table BORDER="1" WIDTH="35%">
+  <tr>
+    <td>Código&nbsp;</td>
+    <td>Significado</td>
+  </tr>
+  <tr>
+    <td>%d&nbsp;</td>
+    <td>Inteiro</td>
+  </tr>
+  <tr>
+    <td>%f&nbsp;</td>
+    <td>Float</td>
+  </tr>
+  <tr>
+    <td>%c&nbsp;</td>
+    <td>Caractere</td>
+  </tr>
+  <tr>
+    <td>%s&nbsp;</td>
+    <td>String</td>
+  </tr>
+  <tr VALIGN="TOP">
+    <td>%%&nbsp;</td>
+    <td>Coloca na tela um %&nbsp; <br>
+    &nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p>Vamos ver alguns exemplos de <b>printf()</b> e o que eles exibem: <br>
+&nbsp; </p>
+
+<pre>printf (&quot;Teste %% %%&quot;) -&gt; &quot;Teste % %&quot;
+printf (&quot;%f&quot;,40.345) -&gt; &quot;40.345&quot;
+printf (&quot;Um caractere %c e um inteiro %d&quot;,'D',120) -&gt; &quot;Um caractere D e um inteiro 120&quot;
+printf (&quot;%s e um exemplo&quot;,&quot;Este&quot;) -&gt; &quot;Este e um exemplo&quot;
+printf (&quot;%s%d%%&quot;,&quot;Juros de &quot;,10) -&gt; &quot;Juros de 10%&quot;</pre>
+
+<p>Maiores detalhes sobre a função <b>printf()</b> (incluindo outros códigos de
+controle) serão vistos posteriormente, <a HREF="c940.html#c941">mas podem ser consultados
+de antemão pelos interessados</a>. <br>
+<a NAME="c244.html"></a> </p>
+
+<h4>scanf</h4>
+
+<p>O formato geral da função <b>scanf()</b> é: </p>
+
+<p>&nbsp;<i>scanf (string-de-controle,lista-de-argumentos);</i> </p>
+
+<p>&nbsp;Usando a função <b>scanf()</b> podemos pedir dados ao usuário. Um exemplo de
+uso, <a HREF="#c245.html">pode ser visto acima</a>. Mais uma vez, devemos ficar atentos a
+fim de colocar o mesmo número de argumentos que o de códigos de controle na string de
+controle. Outra coisa importante é lembrarmos de colocar o <b>&amp;</b> antes das
+variáveis da lista de argumentos. É impossível justificar isto agora, mas veremos
+depois a razão para este procedimento.&nbsp; Maiores detalhes sobre a função <b>scanf()</b>
+serão vistos posteriormente, <a HREF="c940.html#c942">mas podem ser consultados de
+antemão pelos interessados</a>. </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</font></p>
+
+<p><font SIZE="+1">a) Escreva um programa que leia um caracter digitado pelo usuário,
+imprima o caracter digitado e o código ASCII correspondente a este caracter.</font></p>
+
+<p><font SIZE="+1">b)</font> <font SIZE="+1">Escreva um programa que leia duas strings e
+as coloque na tela. Imprima também a segunda letra de cada string.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c230.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c200.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c250.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2001</font></small></p>
+</body>
+</html>

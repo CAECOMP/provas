@@ -1,0 +1,156 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Declaração e Inicialização de Variáveis</h3>
+
+<p>As variáveis no C devem ser declaradas antes de serem usadas. A forma geral da
+declaração de variáveis é: </p>
+
+<p>&nbsp;<i>tipo_da_variável lista_de_variáveis;</i> </p>
+
+<p>&nbsp;As variáveis da lista de variáveis terão todas o mesmo tipo e deverão ser
+separadas por vírgula. Como o tipo default do C é o <b>int</b>, quando vamos declarar
+variáveis <b>int</b> com algum dos modificadores de tipo, basta colocar o nome do
+modificador de tipo. Assim um <b>long</b> basta para declarar um <b>long int</b>. </p>
+
+<p>Por exemplo, as declarações </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char ch, letra;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long count;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float pi;</pre>
+
+<p>declaram duas variáveis do tipo <b>char</b> (ch e letra), uma variavel <b>long int</b>
+(count) e um <b>float</b> pi. </p>
+
+<p>&nbsp;Há três lugares nos quais podemos declarar variáveis. O primeiro é fora de
+todas as funções do programa. Estas variáveis são chamadas<b> variáveis globais</b> e
+podem ser usadas a partir de qualquer lugar no programa. Pode-se dizer que, como elas
+estão fora de todas as funções, todas as funções as vêem. O segundo lugar no qual se
+pode declarar variáveis é <strong>no início </strong>de um bloco de código. Estas
+variáveis são chamadas<b> locais </b>e só têm validade dentro do bloco no qual são
+declaradas, isto é, só a função à qual ela pertence sabe da existência desta
+variável, dentro do bloco no qual foram declaradas.&nbsp; O terceiro lugar onde se pode
+declarar variáveis é na <strong>lista de parâmetros</strong> de uma função. Mais uma
+vez, apesar de estas variáveis receberem valores externos, estas variáveis são
+conhecidas apenas pela função onde são declaradas. </p>
+
+<p>Veja o programa abaixo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int contador;</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int func1(int j) {</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* aqui viria o código da funcao 
+			...
+		*/</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char condicao;</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (i=0; i&lt;100; i=i+1)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Bloco do for */</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float f2;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* etc ...
+			...
+		    */</pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func1(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* etc  ...&nbsp;&nbsp;*/
+		  return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<p>&nbsp;</p>
+
+<p>A variável <i>contador</i> é uma variável global, e é acessível de qualquer parte
+do programa. As variáveis <i>condição&nbsp; </i>e<i> i,</i> só existem dentro de
+main(), isto é são variáveis locais de main. A variável float <i>f2</i> é um exemplo
+de uma variável de bloco, isto é, ela somente é conhecida dentro do bloco do for,
+pertencente à função main. A variável inteira <i>j</i> é um exemplo de declaração
+na lista de parâmetros de uma função (a função <i>func1</i>). </p>
+
+<p>&nbsp;As regras que regem <i>onde</i> uma variável é válida chamam-se regras de <i>escopo</i>
+da variável. Há mais dois detalhes que devem ser ressaltados. Duas variáveis globais
+não podem ter o mesmo nome. O mesmo vale para duas variáveis locais de uma mesma
+função. Já duas variáveis locais, de funções diferentes, podem ter o mesmo nome sem
+perigo algum de conflito. </p>
+
+<p>&nbsp;Podemos inicializar variáveis no momento de sua declaração. Para fazer isto
+podemos usar a forma geral </p>
+
+<p>&nbsp;<i>tipo_da_variável nome_da_variável = constante;</i> </p>
+
+<p>&nbsp;Isto é importante pois quando o C cria uma variável ele <i>não</i> a
+inicializa. Isto significa que até que um primeiro valor seja atribuído à nova
+variável ela tem um valor <i>indefinido</i> e que não pode ser utilizado para nada. <i>Nunca</i>
+presuma que uma variável declarada vale zero ou qualquer outro valor. Exemplos de
+inicialização são dados abaixo: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char ch='D';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count=0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float pi=3.141;</pre>
+
+<p>&nbsp;Ressalte-se novamente que, em C, uma variável tem que ser declarada no início
+de um bloco de código. Assim, o programa a seguir não é válido em C (embora seja
+válido em C++).</p>
+
+<pre>int  main()
+{
+        int i;
+        int j;
+        j = 10; 
+        int k = 20;  /* Esta declaracao de variável não é válida, pois não está sendo feita no início do bloco */
+	return(0);
+}</pre>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está:</font></p>
+
+<p><font SIZE="+1">Escreva um programa que declare uma variável inteira global e atribua
+o valor 10 a ela. Declare outras 5 variáveis inteiras locais ao programa principal e
+atribua os valores 20, 30, ..., 60 a elas.</font> <big>Declare 6 variáveis caracteres e
+atribua a elas as letras c, o, e, l, h, a</big> . <big>Finalmente, o programa deverá
+imprimir, usando todas as variaveis declaradas:</big></p>
+
+<p><font face="Courier New">As variaveis inteiras contem os numeros: 10,20,30,40,50,60</font></p>
+
+<p><font face="Courier New">O animal contido nas variaveis caracteres e' a coelha</font></p>
+
+<hr WIDTH="300">
+<a HREF="c320.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c300.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c340.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

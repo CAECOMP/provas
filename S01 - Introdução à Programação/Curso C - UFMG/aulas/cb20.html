@@ -1,0 +1,223 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Estruturas - Segunda parte</h3>
+
+<ul>
+  <li><a HREF="#cB14">Atribuindo</a></li>
+  <li><a HREF="#cB15">Passando para funções</a></li>
+  <li><a HREF="#cB16">Ponteiros</a></li>
+</ul>
+
+<hr>
+
+<h4><a NAME="cB14"></a>Atribuindo</h4>
+
+<p>Podemos atribuir duas estruturas que sejam do <i>mesmo</i> tipo. O C irá, neste caso,
+copiar uma estrutura, campo por campo, na outra. Veja o programa abaixo: </p>
+
+<p><font face="Courier New">struct est1 {<br>
+&nbsp;&nbsp;&nbsp; int i;<br>
+&nbsp;&nbsp;&nbsp; float f;<br>
+};</font></p>
+
+<p><tt>void main()</tt> <br>
+<tt>{</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp; struct est1 primeira, segunda;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New">/* Declara primeira e
+segunda como structs do tipo est1 */ </font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New">primeira.i
+= 10;<br>
+&nbsp;&nbsp;&nbsp; primeira.f = 3.1415;</font><br>
+<tt>&nbsp;&nbsp;&nbsp; segunda = primeira;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Courier New">&nbsp; /* A segunda struct e' agora igual a primeira */ </font><br>
+<font face="Courier New"><tt>&nbsp;&nbsp;&nbsp; </tt>printf(&quot; Os valores armazenasdos
+na segunda struct sao :&nbsp; %d&nbsp; e&nbsp; %f &quot;, segunda.i , segunda.f);<br>
+<tt>}</tt> </font></p>
+
+<p>São declaradas duas estruturas do tipo <i>est1, </i>uma chamada <i>primeira</i> e
+outra chamada <i>segunda</i>. Atribuem-se valores aos dois campos da struct primeira.
+&nbsp; Os valores de <i>primeira </i>são copiados em <i>segunda </i>apenas com a
+expressão de atribuição: </p>
+
+<p><tt>segunda = primeira;</tt> </p>
+
+<p>Todos os campos de primeira serão copiados na segunda. Note que <strong>isto é
+diferente do que acontecia em vetores</strong>, onde, para fazer a cópia dos elementos de
+um vetor em outro, tínhamos que copiar elemento por elemento do vetor. Nas structs é
+muito mais fácil! </p>
+
+<p>Porém, devemos tomar cuidado na atribuição de structs que contenham campos
+ponteiros. Veja abaixo: </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct tipo_end
+{
+	char *rua;     /* A struct possui um campo que é um ponteiro */
+	int numero;
+};
+
+void main()
+{
+   struct tipo_end end1, end2;
+   char buffer[50];
+   printf(&quot;\nEntre o nome da rua:&quot;);
+   gets(buffer);         /* Le o nome da rua em uma string de buffer */
+   end1.rua = (char *) malloc((strlen(buffer)+1)*sizeof(char));  /* Aloca a quantidade de memoria
+   							suficiente para armazenar a string */
+   strcpy(end1.rua, buffer);   /* Copia a string */
+   printf(&quot;\nEntre o numero:&quot;);
+   scanf(&quot;%d&quot;, &amp;end1.numero);
+
+   end2 = end1;      	/* ERRADO end2.rua e end1.rua estao apontando para a mesma regiao de memoria */
+
+   printf(&quot;Depois da atribuicao:\n Endereco em end1 %s %d  \n Endereco em end2 %s %d&quot;, end1.rua,end1.numero,end2.rua, end2.numero);
+
+   strcpy(end2.rua, &quot;Rua Mesquita&quot;); 		/* Uma modificacao na memoria apontada por end2.rua causara' a modificacao do
+ 						que e' apontado por end1.rua, o que, esta' errado !!!	*/
+   end2.numero = 1100;				/* Nesta atribuicao nao ha problemas */
+
+   printf(&quot; \n\nApos modificar o endereco em end2:\n Endereco em end1 %s %d \n Endereco em end2 %s %d&quot;, end1.rua, end1.numero, end2.rua, end2.numero);
+}</pre>
+
+<p>&nbsp;</p>
+
+<p>Neste programa há um erro grave, pois ao se fazer a atribuição end2 = end1, o campo
+rua de end2 estará apontando para a mesma posição de memória que o campo rua de end1.
+Assim, ao se modificar o conteúdo apontado por end2.rua estaremos também modificando o
+conteúdo apontado por end1.rua !!! </p>
+
+<h4><a NAME="cB15"></a>Passando para funções</h4>
+
+<p>No exemplo apresentado no ítem <a HREF="cb10.html#cB12">usando</a>, vimos o seguinte
+comando: </p>
+
+<pre>strcpy (ficha.nome,&quot;Luiz Osvaldo Silva&quot;);</pre>
+
+<p>Neste comando um elemento de uma estrutura é passado para uma função. Este tipo de
+operação pode ser feita sem maiores considerações. </p>
+
+<p>Podemos também passar para uma função uma estrutura inteira. Veja a seguinte
+função: </p>
+
+<pre>void PreencheFicha (struct ficha_pessoal ficha)
+{
+...
+}</pre>
+
+<p>Como vemos acima é fácil passar a estrutura como um todo para a função. Devemos
+observar que, como em qualquer outra função no C, a passagem da estrutura é feita por
+valor. A estrutura que está sendo passada, vai ser copiada, campo por campo, em uma
+variável local da função PreencheFicha. Isto significa que alterações na estrutura
+dentro da função não terão efeito na variável fora da função. Mais uma vez podemos
+contornar este pormenor usando ponteiros e passando para a função um ponteiro para a
+estrutura. </p>
+
+<h4><a NAME="cB16"></a>Ponteiros</h4>
+
+<p>Podemos ter um ponteiro para uma estrutura. Vamos ver como poderia ser declarado um
+ponteiro para as estruturas de ficha que estamos usando nestas seções: </p>
+
+<pre>struct ficha_pessoal *p;</pre>
+
+<p>Os ponteiros para uma estrutura funcionam como os ponteiros para qualquer outro tipo de
+dados no C. Para usá-lo, haveria duas possibilidades. A primeira é apontá-lo para uma
+variável struct já existente, da seguinte maneira:</p>
+
+<p><font face="Courier New">struct ficha_pessoal ficha;</font></p>
+
+<p><font face="Courier New">struct ficha_pessoal *p;</font></p>
+
+<p><font face="Courier New">p&nbsp; = &amp;ficha;</font></p>
+
+<p>A segunda é alocando memória para&nbsp; ficha_pessoal usando, por exemplo, malloc():</p>
+
+<p><font face="Courier New">#include &lt;stdlib.h&gt; </font></p>
+
+<p><font face="Courier New">main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; struct ficha_pessoal *p;<br>
+&nbsp;&nbsp;&nbsp; int a = 10; /* Faremos a alocacao dinamica de 10 fichas pessoais */<br>
+&nbsp;&nbsp;&nbsp; p = (struct ficha_pessoal *) malloc (a * sizeof(struct ficha_pessoal));<br>
+&nbsp;&nbsp;&nbsp; p[0].telefone = 3443768;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Exemplo de acesso ao
+campo telefone da primeira ficha apontada por p */<br>
+&nbsp;&nbsp;&nbsp; free(p);<br>
+}<br>
+</font></p>
+
+<p>Há mais um detalhe a ser considerado. Se apontarmos o ponteiro <b>p</b>&nbsp; para uma
+estrutura qualquer (como fizemos em <font face="Courier New">p&nbsp; = &amp;ficha;</font>
+) e quisermos acessar um elemento da estrutura poderíamos fazer: </p>
+
+<pre>(*p).nome</pre>
+
+<p>Os parênteses são necessários, porque o operador . tem precedência maior que o
+operador * . Porém, este formato não é&nbsp; muito usado. O que é comum de se fazer é
+acessar o elemento <b>nome</b> através do operador seta, que é formado por um sinal de
+&quot;menos&quot; (-) seguido por um sinal de &quot;maior que&quot; (&gt;), isto é: <b>-&gt;</b>
+. Assim faremos: </p>
+
+<pre>p-&gt;nome</pre>
+
+<p>A declaração acima é muito mais fácil e concisa. Para acessarmos o elemento <b>CEP</b>
+dentro de <b>endereco</b> faríamos: </p>
+
+<pre>p-&gt;endereco.CEP</pre>
+
+<p>Fácil, não? </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><big>Seja a seguinte struct que é utilizada para descrever os produtos que estão no
+estoque de uma loja :</big></p>
+
+<p><big>struct Produto {<br>
+&nbsp;&nbsp;&nbsp; char nome[30];&nbsp;&nbsp;&nbsp;&nbsp; /* Nome do produto */<br>
+&nbsp;&nbsp;&nbsp; int codigo;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Codigo do produto */<br>
+&nbsp;&nbsp;&nbsp; double&nbsp; preco;&nbsp;&nbsp;&nbsp;&nbsp; /* Preco do produto */<br>
+};</big></p>
+
+<p><big>a) Escreva uma instrução que declare uma matriz de Produto com 10 itens de
+produtos;<br>
+b) Atribua os valores &quot;Pe de Moleque&quot;, 13205 e R$0,20 aos membros da posição 0
+e os valores &quot;Cocada Baiana&quot;, 15202 e R$0,50 aos membros da posição 1 da
+matriz anterior;<br>
+c) Faça as mudanças que forem necessárias para usar um ponteiro para Produto ao invés
+de uma matriz de Produtos. Faça a alocação de memória de forma que se possa armazenar
+10 produtos na área de memória apontada por este ponteiro e refaça as atribuições da
+letra b;<br>
+d) Escreva as instruções para imprimir os campos que foram atribuídos na letra c.</big><br>
+</p>
+
+<hr WIDTH="300">
+<a HREF="cb00.html">
+
+<p align="center"></a><a HREF="cb10.html"><img src="left.gif" width="37" height="34"
+alt="left.gif (1505 bytes)" border="0"></a><a HREF="cb00.html"><img SRC="up.gif"
+ALT="Índice da Aula" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb30.html"><img
+SRC="right.gif" ALT="Próxima página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

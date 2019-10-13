@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CK'
+Slack : -1.942
+TNS   : -8.844
+
+Type  : Slow 1200mV 85C Model Setup 'conta_giro:inst6|7473:inst8|1'
+Slack : -0.560
+TNS   : -3.137
+
+Type  : Slow 1200mV 85C Model Setup 'conta_giro:inst|7473:inst8|1'
+Slack : -0.548
+TNS   : -2.984
+
+Type  : Slow 1200mV 85C Model Hold 'conta_giro:inst|7473:inst8|1'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'conta_giro:inst6|7473:inst8|1'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CK'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CK'
+Slack : -3.000
+TNS   : -11.418
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'conta_giro:inst6|7473:inst8|1'
+Slack : -1.403
+TNS   : -11.224
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'conta_giro:inst|7473:inst8|1'
+Slack : -1.403
+TNS   : -11.224
+
+Type  : Slow 1200mV 0C Model Setup 'CK'
+Slack : -1.787
+TNS   : -7.838
+
+Type  : Slow 1200mV 0C Model Setup 'conta_giro:inst6|7473:inst8|1'
+Slack : -0.421
+TNS   : -2.204
+
+Type  : Slow 1200mV 0C Model Setup 'conta_giro:inst|7473:inst8|1'
+Slack : -0.412
+TNS   : -2.076
+
+Type  : Slow 1200mV 0C Model Hold 'conta_giro:inst|7473:inst8|1'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'conta_giro:inst6|7473:inst8|1'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CK'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CK'
+Slack : -3.000
+TNS   : -11.418
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'conta_giro:inst6|7473:inst8|1'
+Slack : -1.403
+TNS   : -11.224
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'conta_giro:inst|7473:inst8|1'
+Slack : -1.403
+TNS   : -11.224
+
+Type  : Fast 1200mV 0C Model Setup 'CK'
+Slack : -0.333
+TNS   : -1.755
+
+Type  : Fast 1200mV 0C Model Setup 'conta_giro:inst6|7473:inst8|1'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'conta_giro:inst|7473:inst8|1'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'conta_giro:inst|7473:inst8|1'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'conta_giro:inst6|7473:inst8|1'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CK'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CK'
+Slack : -3.000
+TNS   : -9.208
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'conta_giro:inst6|7473:inst8|1'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'conta_giro:inst|7473:inst8|1'
+Slack : -1.000
+TNS   : -8.000
+
+------------------------------------------------------------

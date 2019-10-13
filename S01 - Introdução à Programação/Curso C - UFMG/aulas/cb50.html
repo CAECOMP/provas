@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>O Comando sizeof</h3>
+
+<p>O operador <b>sizeof</b> é usado para se saber o tamanho de variáveis ou de tipos.
+Ele retorna o tamanho do tipo ou variável em bytes. Devemos usá-lo para garantir
+portabilidade. Por exemplo, o tamanho de um inteiro pode depender do sistema para o qual
+se está compilando. O <b>sizeof</b> é&nbsp; um operador porque ele é substituído pelo
+tamanho do tipo ou variável <i>no momento da compilação</i>. Ele não é uma função.
+O <b>sizeof</b> admite duas formas: </p>
+
+<p><i>sizeof nome_da_variável</i> </p>
+
+<p><i>sizeof (nome_do_tipo)</i> </p>
+
+<p>Se quisermos então saber o tamanho de um <b>float</b> fazemos <b>sizeof(float)</b>. Se
+declararmos a variável <b>f</b> como <b>float</b> e quisermos saber o seu tamanho faremos
+<b>sizeof f</b>. O operador <b>sizeof</b> também funciona com estruturas, uniões e
+enumerações. <br>
+Outra aplicação importante do operador <b>sizeof </b>é para se saber o tamanho de tipos
+definidos pelo usuário. Seria, por exemplo, uma tarefa um tanto complicada a de alocar a
+memória para um ponteiro para a estrutura <i>ficha_pessoal</i>, criada na <a
+HREF="cb10.html#B11">primeira página</a> desta aula, se não fosse o uso de <b>sizeof</b>.
+Veja o exemplo: </p>
+
+<p><tt>#include &lt;stdio.h&gt;</tt> <br>
+<tt>struct tipo_endereco</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char rua [50];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int numero;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char bairro [20];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char cidade [30];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char sigla_estado [3];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int CEP;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt> <br>
+<tt>struct ficha_pessoal</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char nome [50];</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long int telefone;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct tipo_endereco endereco;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt> <br>
+<tt>void main(void)</tt> <br>
+<tt>{</tt> <br>
+<tt>struct ficha_pessoal *ex;</tt> <br>
+<tt>ex = (struct ficha_pessoal *) malloc(sizeof(struct ficha_pessoal));</tt> <br>
+<tt>...</tt> <br>
+<tt>free(ex);</tt> <br>
+<tt>}</tt> </p>
+<a HREF="cb40.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="cb00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb60.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

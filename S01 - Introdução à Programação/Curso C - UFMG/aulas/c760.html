@@ -1,0 +1,176 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font> </p>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Escopo de Variáveis</h3>
+
+<ul>
+  <li><a HREF="#c761.html">Variáveis locais</a></li>
+  <li><a HREF="#c762.html">Parâmetros formais</a></li>
+  <li><a HREF="#c763.html">Variáveis globais</a></li>
+</ul>
+
+<hr WIDTH="300" <P>
+<a HREF="c330.html">
+
+<p>Já foi dada</a> uma introdução ao escopo de variáveis. O escopo é o conjunto de
+regras que determinam o uso e a validade de variáveis nas diversas partes do programa. </p>
+
+<p>&nbsp;<a NAME="c761.html"></a> </p>
+
+<h4>Variáveis locais</h4>
+
+<p>O primeiro tipo de variáveis que veremos são as variáveis locais. Estas são aquelas
+que só têm validade dentro do bloco no qual são declaradas. Sim. Podemos declarar
+variáveis dentro de qualquer bloco. Só para lembrar: um bloco começa quando abrimos uma
+chave e termina quando fechamos a chave. Até agora só tínhamos visto variáveis locais
+para funções completas. Mas um comando <b>for</b> pode ter variáveis locais e que não
+serão conhecidas fora dali. A declaração de variáveis locais é a primeira coisa que
+devemos colocar num bloco. A característica que torna as variáveis locais tão
+importantes é justamente a de serem exclusivas do bloco. Podemos ter quantos blocos
+quisermos com uma variável local chamada <b>x</b>, por exemplo, e elas não apresentarão
+conflito entre elas. </p>
+
+<p>&nbsp;A palavra reservada do C <b>auto</b> serve para dizer que uma variável é local.
+Mas não precisaremos usá-la pois as variáveis declaradas dentro de um bloco já são
+consideradas locais. </p>
+
+<p>&nbsp;Abaixo vemos um exemplo de variáveis locais: </p>
+
+<p>&nbsp; </p>
+
+<pre>func1 (...)
+{
+	int abc,x;
+	...
+}
+func (...)
+{
+	int abc;
+	...
+}
+void main ()
+{
+	int a,x,y;
+	for (...)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	float a,b,c;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	...
+}</pre>
+
+<p>No programa acima temos três funções. As variáveis locais de cada uma delas não
+irão interferir com as variáveis locais de outras funções. Assim, a variável <b>abc</b>
+de <b>func1()</b> não tem nada a ver (e pode ser tratada independentemente) com a
+variável <b>abc</b> de <b>func2()</b>. A variável <b>x</b> de <b>func1()</b> é também
+completamente independente da variável <b>x</b> de <b>main()</b>. As variáveis <b>a</b>,
+<b>b</b> e <b>c</b> são locais ao bloco <b>for</b>. Isto quer dizer que só são
+conhecidas dentro deste bloco <b>for</b> e são desconhecidas no resto da função <b>main()</b>.
+Quando usarmos a variável <b>a</b> dentro do bloco <b>for</b> estaremos usando a
+variável <b>a</b> local ao <b>for</b> e não a variável <b>a</b> da função <b>main()</b>.
+</p>
+
+<p>&nbsp;<a NAME="c762.html"></a> </p>
+
+<h4>Parâmetros formais</h4>
+
+<p>O segundo tipo de variável que veremos são os parâmetros formais. Estes são
+declarados como sendo as entradas de uma função. Não há motivo para se preocupar com o
+escopo deles. É fácil: o parâmetro formal é&nbsp; uma variável local da função.
+Você pode também alterar o valor de um parâmetro formal, pois esta alteração não
+terá efeito na variável que foi passada à função. Isto tem sentido, pois quando o C
+passa parâmetros para uma função, são passadas apenas cópias das variáveis. Isto é,
+os parâmetros formais existem independentemente das variáveis que foram passadas para a
+função. Eles tomam apenas uma cópia dos valores passados para a função. </p>
+
+<p>&nbsp;<a NAME="c763.html"></a> </p>
+
+<h4>Variáveis globais</h4>
+
+<p>Variáveis globais são declaradas, como já sabemos, fora de todas as funções do
+programa. Elas são conhecidas e podem ser alteradas por todas as funções do programa.
+Quando uma função tem uma variável local com o mesmo nome de uma variável global a
+função dará preferência à variável local. Vamos ver um exemplo: </p>
+
+<p>&nbsp; </p>
+
+<pre>int z,k;
+func1 (...)
+{
+	int x,y;
+	...
+}
+
+func2 (...)
+{
+	int x,y,z;
+	...
+	z=10;
+	...
+}
+
+main ()
+{
+	int count;
+...
+}</pre>
+
+<p>No exemplo acima as variáveis <b>z</b> e <b>k</b> são globais. Veja que <b>func2()</b>
+tem uma variável local chamada <b>z</b>. Quando temos então, em <b>func2()</b>, o
+comando <b>z=10</b> quem recebe o valor de 10 é a variável <i>local</i>, não afetando o
+valor da variável global <b>z</b>. </p>
+
+<p>&nbsp;Evite <i>ao máximo</i> o uso de variáveis globais. Elas ocupam memória o tempo
+todo (as locais só ocupam memória enquanto estão sendo usadas) e tornam o programa mais
+difícil de ser entendido e menos geral. </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Estude o seguinte
+programa e aponte o valor de cada variável sempre que solicitado:</font> </p>
+
+<pre><font SIZE="+1">#include &lt;stdio.h&gt;
+int num;
+int func(int a, int b)
+{
+	a = (a+b)/2;&nbsp; /* Qual e o valor de a apos a atribuicao? */
+	num -= a;
+	return a;
+}
+
+main()
+{
+	int first = 0, sec = 50;
+	num = 10;
+	num += func(first, sec);&nbsp; /* Qual e o valor de num, first e sec */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* antes e depois da atribuicao?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */
+	printf(&quot;\n\nConfira! num = %d\tfirst = %d\tsec = %d&quot;,num, first, sec);
+}</font></pre>
+<a HREF="c750.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c700.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c770.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

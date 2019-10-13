@@ -1,0 +1,73 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Modificadores de Funções</h3>
+
+<ul>
+  <li><a HREF="#cA41">pascal</a></li>
+  <li><a HREF="#cA42">cdecl</a></li>
+  <li><a HREF="#cA43">interrupt</a></li>
+</ul>
+
+<hr>
+
+<p>A forma geral de uma função é, como já foi visto, 
+
+<dl>
+  <dt><i>tipo_de_retorno nome_da_função (declaração_de_parâmetros)</i></dt>
+  <dd><i>{</i></dd>
+  <dd><i>corpo_da_função</i></dd>
+  <dd><i>}</i></dd>
+</dl>
+
+<p>Uma função pode aceitar um modificador de tipo. Este vai modificar o modo como a
+função opera na passagem de parâmetros. A forma geral da função ficaria então: 
+
+<dl>
+  <dt><i>modificador_de_tipo tipo_de_retorno nome_da_função (declaração_de_parâmetros)</i></dt>
+  <dd><i>{</i></dd>
+  <dd><i>corpo_da_função</i></dd>
+  <dd><i>}</i></dd>
+</dl>
+
+<p>O nosso curso não aborda detalhes do funcionamento interno de funções. Para saber
+mais, consulte o manual do seu compilador ou algum livro especializado. </p>
+
+<h4><a NAME="cA41"></a>pascal</h4>
+
+<p>Faz com que a função use a convenção de funções da linguagem de programação
+Pascal. Isto faz com que as funções sejam compatíveis com programas em Pascal. </p>
+
+<h4><a NAME="cA42"></a>cdecl</h4>
+
+<p>O modificador de tipo <b>cdecl</b> faz com que a função use a convenção para
+funções do C. Raramente é usado pois é o default. Pode-se pensar no <b>cdecl</b> como
+sendo o &quot;inverso&quot; do <b>pascal</b>. </p>
+
+<h4><a NAME="cA43"></a>interrupt</h4>
+
+<p>Diz ao compilador que a função em questão será usada como um manipulador de
+interrupções. Isto faz com que o compilador preserve os registradores da CPU antes e
+depois da chamada à função. Mais uma vez este tópico está fora do escopo do curso. </p>
+<a HREF="ca30.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="ca50.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

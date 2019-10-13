@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>O comando do-while</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" HEIGHT="8" WIDTH="485"> </p>
+
+<h3>O Comando do-while</h3>
+
+<p>A terceira estrutura de repetição que veremos é o <b>do-while</b> de forma geral: </p>
+
+<p align="left">&nbsp; </p>
+
+<dl>
+  <dt><i>do</i></dt>
+  <dd><i>{</i></dd>
+  <dd><i>declaração;</i> <br>
+    <i>} while (condição);</i> </dd>
+</dl>
+
+<p align="left">Mesmo que a declaração seja apenas um comando é uma boa prática deixar
+as chaves. O ponto-e- vírgula final é obrigatório. Vamos, como anteriormente, ver o
+funcionamento da estrutura <b>do-while</b> &quot;por dentro&quot;: </p>
+
+<p align="left">&nbsp;<i>declaração;</i> <br>
+<i>if (condição) &quot;Volta para a declaração&quot;</i> </p>
+
+<p align="left">&nbsp;Vemos pela análise do bloco acima que a estrutura <b>do-while</b>
+executa a declaração, testa a condição e, se esta for verdadeira, volta para a
+declaração. A grande novidade no comando <b>do-while</b> é que ele, ao contrário do <b><a
+HREF="c430.html">for</a></b> e do <b><a HREF="c440.html">while</a></b>, garante que a
+declaração será executada pelo menos uma vez. </p>
+
+<p align="left">&nbsp;Um dos usos da extrutura <b>do-while</b> é em menus, nos quais
+você quer garantir que o valor digitado pelo usuário seja válido, conforme apresentado
+abaixo: </p>
+
+<p align="left">&nbsp; </p>
+<div align="left">
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int  i;
+	do
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nEscolha a fruta pelo numero:\n\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\t(1)...Mamao\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\t(2)...Abacaxi\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\t(3)...Laranja\n\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	scanf(&quot;%d&quot;, &amp;i); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } while ((i&lt;1)||(i&gt;3));
+
+	switch (i)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	case 1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\t\tVoce escolheu Mamao.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	case 2:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\t\tVoce escolheu Abacaxi.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	case 3:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\t\tVoce escolheu Laranja.\n&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+	return(0);
+}</pre>
+</div>
+
+<hr WIDTH="300" align="center">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p align="left"><font SIZE="+1">Veja como você está.</font> </p>
+
+<p align="left"><font SIZE="+1">Refaça o exercício da página <a
+HREF="c410.html#c416.html">c410.html</a> utilizando o laço do-while para controlar o
+fluxo.</font> <br>
+</p>
+
+<hr WIDTH="300" align="center">
+<a HREF="c440.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c400.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c460.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><font size="-1" face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font> </p>
+</body>
+</html>

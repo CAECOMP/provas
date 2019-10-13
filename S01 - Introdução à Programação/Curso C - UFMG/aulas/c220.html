@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Dois Primeiros Programas</h3>
+
+<p>Vejamos um primeiro programa em C: </p>
+
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Um Primeiro Programa */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()&nbsp;&nbsp;&nbsp; </tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;Ola!
+Eu estou vivo!\n&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(0);</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt> </p>
+
+<p>Compilando e executando este programa você verá que ele coloca a mensagem&nbsp; <i>Ola!
+Eu estou vivo!&nbsp;</i> na tela. </p>
+
+<p><a href="../faq-main.html#din17">Veja como compilar e executar este programa usando o
+DevC++, disponível gratuitamente na Internet</a>.</p>
+
+<p> <a HREF="../rhide.html">Veja como compilar e executar este programa usando o DJGPP e o
+RHIDE, disponíveis de graça na Internet</a>. </p>
+
+<p><b>Vamos analisar o programa por partes.</b> </p>
+
+<p>&nbsp;A linha <b>#include &lt;stdio.h&gt;</b> diz ao compilador que ele deve incluir o
+arquivo-cabeçalho <b>stdio.h</b>. Neste arquivo existem declarações de funções úteis
+para entrada e saída de dados (std = standard, padrão em inglês; io = Input/Output,
+entrada e saída ==&gt; stdio = Entrada e saída padronizadas). Toda vez que você quiser
+usar uma destas funções deve-se incluir este comando. O C possui diversos
+arquivos-cabeçalhos. </p>
+
+<p>&nbsp;Quando fazemos um programa, uma boa idéia é usar comentários que ajudem a
+elucidar o funcionamento do mesmo. No caso acima temos um comentário: <b>/* Um Primeiro
+Programa */</b>. O compilador C desconsidera qualquer coisa que esteja começando com <b>/*</b>
+e terminando com <b>*/</b>. Um comentário pode, inclusive, ter mais de uma linha. </p>
+
+<p>&nbsp;A linha <b>int main()</b> indica que estamos definindo uma função de nome <b>main</b>.
+Todos os programas em C têm que ter uma função <b>main</b>, pois é esta função que
+será chamada quando o programa for executado. O conteúdo da função é delimitado por
+chaves <b>{ }</b>. O código que estiver dentro das chaves será executado sequencialmente
+quando a função for chamada. A palavra int indica que esta função retorna um inteiro.
+O que significa este retorno será visto posteriormente, quando estudarmos um pouco mais
+detalhadamente as funções do C. A última linha do programa, <strong>return(0)</strong>;
+, indica o número inteiro que está sendo retornado pela função, no caso o número 0. </p>
+
+<p>&nbsp;A única coisa que o programa <i>realmente</i> faz é chamar a função <b>printf()</b>,
+passando a string (uma string é uma seqüência de caracteres, como veremos brevemente) <b>&quot;Ola!
+Eu estou vivo!\n&quot;</b> como argumento. É por causa do uso da função <b>printf()</b>
+pelo programa que devemos incluir o arquivo- cabeçalho <b>stdio.h</b> . A função <b>printf()</b>
+neste caso irá apenas colocar a string na tela do computador. O <b>\n</b> é uma
+constante chamada de <i>constante barra invertida</i>. No caso, o \<b>n</b> é a constante
+barra invertida de &quot;new line&quot; e ele é interpretado como um comando de mudança
+de linha, isto é, após imprimir <i>Ola! Eu estou vivo!</i> o cursor passará para a
+próxima linha. É importante observar também que os <i>comandos</i> do C terminam com <b>;</b>
+. </p>
+
+<p>&nbsp;Podemos agora tentar um programa mais complicado: <br>
+&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main ()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	int Dias;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Declaracao de Variaveis */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	float Anos;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;Entre com o número de dias: &quot;); /* Entrada de Dados */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	scanf (&quot;%d&quot;,&amp;Dias);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	Anos=Dias/365.25;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Conversao Dias-&gt;Anos */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\n%d dias equivalem a %f anos.\n&quot;,Dias,Anos);
+		return(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<p>Vamos entender como o programa acima funciona. São declaradas duas variáveis chamadas
+<b>Dias</b> e <b>Anos</b>. A primeira é um <b>int</b> (inteiro) e a segunda um <b>float</b>
+(ponto flutuante). As variáveis declaradas como ponto flutuante existem para armazenar
+números que possuem casas decimais, como 5,1497. </p>
+
+<p>É feita então uma chamada à função <b>printf()</b>, que coloca uma mensagem na
+tela. </p>
+
+<p>&nbsp;Queremos agora ler um dado que será fornecido pelo usuário e colocá-lo na
+variável inteira <b>Dias</b>. Para tanto usamos a função <b>scanf()</b>. A string <b>&quot;%d&quot;</b>
+diz à função que iremos ler um inteiro. O segundo parâmetro passado à função diz
+que o dado lido deverá ser armazenado na variável <b>Dias</b>. É importante ressaltar a
+necessidade de se colocar um <b>&amp;</b> antes do nome da variável a ser lida quando se
+usa a função <b>scanf()</b>. O motivo disto só ficará claro mais tarde. Observe que,
+no C, quando temos mais de um parâmetro para uma função, eles serão separados por
+vírgula. </p>
+
+<p>&nbsp;Temos então uma expressão matemática simples que atribui a <b>Anos</b> o valor
+de <b>Dias</b> dividido por 365.25 (365.25 é uma constante ponto flutuante 365,25). Como <b>Anos</b>
+é uma variável <b>float</b> o compilador fará uma conversão automática entre os tipos
+das variáveis (veremos isto com detalhes mais tarde). </p>
+
+<p>&nbsp;A segunda chamada à função <b>printf()</b> tem três argumentos. A string <b>&quot;\n\n%d
+dias equivalem a %f anos.\n&quot;</b> diz à função para pular duas linhas, colocar um
+inteiro na tela, colocar a mensagem <b>&quot; dias equivalem a &quot;</b>, colocar um
+valor <strong>float</strong> na tela, colocar a mensagem <b>&quot; anos.&quot;</b> e pular
+outra linha. Os outros parâmetros são as variáveis, <strong>Dias</strong> e <strong>Anos</strong>,
+das quais devem ser lidos os valores do inteiro e do <b>float</b>, respectivamente. </p>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">1 - Veja como você está.</font> <font SIZE="+1">O que faz o seguinte
+programa?</font> <br>
+<font SIZE="+1">&nbsp;&nbsp;&nbsp;</font><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include
+&lt;stdio.h&gt;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main()</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+scanf(&quot;%d&quot;,&amp;x);</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+printf(&quot;%d&quot;,x);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(0);</tt><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<tt>}</tt> </p>
+
+<p><font SIZE="+1">2 - Compile e execute os programas desta página</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c210.html">
+
+<p align="center"><img SRC="left.gif" ALT="Voltar" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a
+HREF="c200.html"><img SRC="up.gif" ALT="Índice" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a
+HREF="c230.html"><img SRC="right.gif" ALT="Prosseguir" BORDER="0" HEIGHT="34" WIDTH="37"></a>
+</p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>
