@@ -1,0 +1,11 @@
+module Matematica{
+	exception DivisaoPorZero{
+		float arg1;
+		float arg2;
+	};
+	interface Calculadora{
+		float soma (in float arg1, in float arg2);
+		float divisao (in float arg1, in float arg2) 
+			raises (DivisaoPorZero);
+	};
+};

@@ -1,0 +1,266 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<h2 align="center"><img SRC="line.gif" width="485" height="8"></h2>
+
+<h3>Alocação Dinâmica</h3>
+
+<p>A alocação dinâmica permite ao programador&nbsp; alocar memória para variáveis
+quando o programa está sendo executado. Assim, poderemos definir, por exemplo, um vetor
+ou uma matriz cujo tamanho descobriremos em tempo de execução. O padrão C ANSI define
+apenas 4 funções para o sistema de alocação dinâmica, disponíveis na biblioteca <b>stdlib.h</b>:
+
+<ul>
+  <li><a HREF="#cA61">malloc</a></li>
+  <li><a HREF="#cA62">calloc</a></li>
+  <li><a HREF="#cA63">realloc</a></li>
+  <li><a HREF="#cA64">free</a></li>
+</ul>
+
+<hr>
+
+<p>No entanto, existem diversas outras funções que são amplamente utilizadas, mas
+dependentes do ambiente e compilador. Neste curso serão abordadas somente estas funções
+padronizadas. </p>
+
+<h4><a NAME="cA61"></a>malloc</h4>
+
+<p>A função <b>malloc()</b> serve para alocar memória e tem o seguinte protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void *malloc (unsigned int num);</pre>
+
+<p>A funçao toma o número de bytes que queremos alocar (<b>num</b>), aloca na memória e
+retorna um ponteiro <b>void *</b> para o primeiro byte alocado. O ponteiro <b>void *</b>
+pode ser atribuído a qualquer tipo de ponteiro. Se não houver memória suficiente para
+alocar a memória requisitada a função <b>malloc()</b> retorna um ponteiro nulo. Veja um
+exemplo de alocação dinâmica com malloc(): </p>
+
+<pre>#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;	/* Para usar malloc() */
+
+main (void)
+
+{
+
+	int *p;
+	int a;
+	int i;
+
+... /* Determina o valor de a em algum lugar */
+
+	p=(int *)malloc(a*sizeof(int));		/* Aloca a números inteiros 
+						   p pode agora ser tratado como um vetor com
+						   a posicoes				*/
+	if (!p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	exit;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+	for (i=0; i&lt;a ; i++)		/* p pode ser tratado como um vetor com a posicoes */
+		p[i] = i*i;
+	
+...
+
+	return 0;
+}</pre>
+
+<p>No exemplo acima, é alocada memória suficiente para se armazenar <b>a</b> números
+inteiros. O operador <b>sizeof()</b> retorna o número de bytes de um inteiro. Ele é util
+para se saber o tamanho de tipos. O ponteiro <b>void*</b> que <b>malloc()</b> retorna é
+convertido para um <b>int*</b> pelo cast e é atribuído a <b>p</b>. A declaração
+seguinte testa se a operação foi bem sucedida. Se não tiver sido, <b>p</b> terá um
+valor nulo, o que fará com que <b>!p</b> retorne verdadeiro. Se a operação tiver sido
+bem sucedida, podemos usar o vetor de inteiros alocados normalmente, por exemplo,
+indexando-o de <b>p[0]</b> a <b>p[(a-1)]</b>. </p>
+
+<h4><a NAME="cA62"></a>calloc</h4>
+
+<p>A função <b>calloc()</b> também serve para alocar memória, mas possui um protótipo
+um pouco diferente: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void *calloc (unsigned int num, unsigned int size);</pre>
+
+<p>A funçao aloca uma quantidade de memória igual a <b>num * size</b>, isto é, aloca
+memória suficiente para um vetor de <b>num</b> objetos de tamanho <b>size</b>. Retorna um
+ponteiro <b>void *</b> para o primeiro byte alocado. O ponteiro <b>void *</b> pode ser
+atribuído a qualquer tipo de ponteiro. Se não houver memória suficiente para alocar a
+memória requisitada a função <b>calloc()</b> retorna um ponteiro nulo. Veja um exemplo
+de alocação dinâmica com calloc(): </p>
+
+<p>&nbsp;</p>
+
+<pre>#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;	/* Para usar calloc() */
+
+main (void)
+
+{
+
+	int *p;
+	int a;
+	int i;
+
+... /* Determina o valor de a em algum lugar */
+
+	p=(int *)calloc(a,sizeof(int));		/* Aloca a números inteiros 
+						   p pode agora ser tratado como um vetor com
+						   a posicoes				*/
+	if (!p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	exit;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+	for (i=0; i&lt;a ; i++)		/* p pode ser tratado como um vetor com a posicoes */
+		p[i] = i*i;
+	
+...
+
+	return 0;
+}</pre>
+
+<p>No exemplo acima, é alocada memória suficiente para se colocar <b>a</b> números
+inteiros. O operador <b>sizeof()</b> retorna o número de bytes de um inteiro. Ele é util
+para se saber o tamanho de tipos. O ponteiro <b>void *</b> que <b>calloc()</b> retorna é
+convertido para um <b>int *</b> pelo cast e é atribuído a <b>p</b>. A declaração
+seguinte testa se a operação foi bem sucedida. Se não tiver sido, <b>p</b> terá um
+valor nulo, o que fará com que <b>!p</b> retorne verdadeiro. Se a operação tiver sido
+bem sucedida, podemos usar o vetor de inteiros alocados normalmente, por exemplo,
+indexando-o de <b>p[0]</b> a <b>p[(a-1)]</b>. </p>
+
+<h4><a NAME="cA63"></a>realloc</h4>
+
+<p>A função <b>realloc()</b> serve para realocar memória e tem o seguinte protótipo: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void *realloc (void *ptr, unsigned int num);</pre>
+
+<p>A funçao modifica o tamanho da memória previamente alocada apontada por <b>*ptr</b>
+para aquele especificado por <b>num</b>. O valor de <b>num</b> pode ser maior ou menor que
+o original. Um ponteiro para o bloco é devolvido porque <b>realloc()</b> pode precisar
+mover o bloco para aumentar seu tamanho. Se isso ocorrer, o conteúdo do bloco antigo é
+copiado no novo bloco, e nenhuma informação é perdida. Se <b>ptr</b> for nulo, aloca <b>size</b>
+bytes e devolve um ponteiro; se <b>size</b> é zero, a memória apontada por <b>ptr</b> é
+liberada. Se não houver memória suficiente para a alocação, um ponteiro nulo é
+devolvido e o bloco original é deixado inalterado. </p>
+
+<p>&nbsp;</p>
+
+<pre>#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;	/* Para usar malloc()  e realloc*/
+
+main (void)
+
+{
+
+	int *p;
+	int a;
+	int i;
+
+... /* Determina o valor de a em algum lugar */</pre>
+
+<pre>	a = 30;
+
+	p=(int *)malloc(a*sizeof(int));		/* Aloca a números inteiros 
+						   p pode agora ser tratado como um vetor com
+						   a posicoes				*/
+	if (!p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	exit;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+	for (i=0; i&lt;a ; i++)		/* p pode ser tratado como um vetor com a posicoes */
+		p[i] = i*i;
+	
+	/* O tamanho de p deve ser modificado, por algum motivo ... */</pre>
+
+<pre>	a = 100;</pre>
+
+<pre>	p = realloc (p, a*sizeof(int));</pre>
+
+<pre>	for (i=0; i&lt;a ; i++)		/* p pode ser tratado como um vetor com a posicoes */
+		p[i] = a*i*(i-6);
+...
+
+	return 0;
+}</pre>
+
+<p>&nbsp;</p>
+
+<h4><a NAME="cA64"></a>free</h4>
+
+<p>Quando alocamos memória dinamicamente é necessário que nós a liberemos quando ela
+não for mais necessária. Para isto existe a função <b>free()</b> cujo protótipo é: </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void free (void *p);</pre>
+
+<p>Basta então passar para <b>free()</b> o ponteiro que aponta para o início da memória
+alocada. Mas você pode se perguntar: como é que o programa vai saber quantos bytes devem
+ser liberados? Ele sabe pois quando você alocou a memória, ele guardou o número de
+bytes alocados numa &quot;tabela de alocação&quot; interna. Vamos reescrever o exemplo
+usado para a função <b>malloc()</b> usando o <b>free()</b> também agora: </p>
+
+<pre>#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;	/* Para usar malloc e free */
+
+main (void)
+{
+	int *p;
+	int a;
+	
+	...
+	
+	p=(int *)malloc(a*sizeof(int));
+
+	if (!p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (&quot;** Erro: Memoria Insuficiente **&quot;);
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+	...
+
+	free(p);
+
+	...
+
+	return 0;
+
+}</pre>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> <font SIZE="+1">Refaça os exemplos desta
+página, mas ao invés de trabalhar com um vetor de inteiros, use um vetor de strings (ou
+uma matriz de char, como você preferir). Faça leituras e apresente os resultados na
+tela.</font> </p>
+<a HREF="ca50.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="ca00.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="ca70.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

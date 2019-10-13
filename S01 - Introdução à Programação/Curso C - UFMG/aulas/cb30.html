@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<h2 align="center">Curso de C</h2>
+
+<p align="center"><img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Declaração Union</h3>
+
+<p>Uma declaração <b>union</b> determina uma <i>única</i> localização de memória
+onde podem estar armazenadas várias variáveis diferentes. A declaração de uma união
+é semelhante à declaração de uma estrutura: 
+
+<dl>
+  <dt><i>union nome_do_tipo_da_union</i></dt>
+  <dd><i>{</i></dd>
+  <dd><i>tipo_1 nome_1;</i></dd>
+  <dd><i>tipo_2 nome_2;</i></dd>
+  <dd><i>...</i></dd>
+  <dd><i>tipo_n nome_n;</i></dd>
+  <dd><i>} variáveis_union;</i></dd>
+</dl>
+
+<p>Como exemplo, vamos considerar a seguinte união: </p>
+
+<pre>union angulo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float graus;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float radianos;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</pre>
+
+<p>Nela, temos duas variáveis (<b>graus</b> e <b>radianos</b>) que, apesar de terem nomes
+diferentes, ocupam o <i>mesmo</i> local da memória. Isto quer dizer que só gastamos o
+espaço equivalente a um único <b>float</b>. Uniões podem ser feitas também com
+variáveis de diferentes tipos. Neste caso, a memória alocada corresponde ao tamanho da
+maior variável no union. Veja o exemplo: </p>
+
+<p><tt>#include &lt;stdio.h&gt;</tt> <br>
+<tt>#define GRAUS 'G'</tt> <br>
+<tt>#define RAD 'R'</tt> <br>
+<tt><u>u</u>nion angulo</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int graus;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float radianos;</tt> <br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt> <br>
+<tt>void main()</tt> <br>
+<tt>{</tt> <br>
+<tt>union angulo ang;</tt> <br>
+<tt>char op;</tt> <br>
+<tt>printf(&quot;\nNumeros em graus ou radianos? (G/R):&quot;);</tt> <br>
+<tt>scanf(&quot;%c&quot;,&amp;op);</tt> <br>
+<tt>if (op == GRAUS)</tt> <br>
+<tt>&nbsp; {</tt> <br>
+<tt>&nbsp; ang.graus = 180;</tt> <br>
+<tt>&nbsp; printf(&quot;\nAngulo: %d\n&quot;,ang.graus);</tt> <br>
+<tt>&nbsp; }</tt> <br>
+<tt>else if (op == RAD)</tt> <br>
+<tt>&nbsp; {</tt> <br>
+<tt>&nbsp; ang.radianos = 3.1415;</tt> <br>
+<tt>&nbsp; printf(&quot;\nAngulo: %f\n&quot;,ang.radianos);</tt> <br>
+<tt>&nbsp; }</tt> <br>
+<tt>else printf(&quot;\nEntrada invalida!!\n&quot;);</tt> <br>
+<tt>}</tt> </p>
+
+<p>Temos que tomar o maior cuidado pois poderíamos fazer: </p>
+
+<pre>#include &lt;stdio.h&gt;
+union numero
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char Ch;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int I;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float F;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</pre>
+
+<pre>main (void)
+{
+union numero N;
+N.I = 123;
+printf (&quot;%f&quot;,N.F);	/* Vai imprimir algo que nao e' necessariamente 123 ...*/
+return 0;
+}</pre>
+
+<p>O programa acima é muito perigoso pois você está lendo uma região da memória, que
+foi &quot;gravada&quot; como um inteiro, como se fosse um ponto flutuante. Tome cuidado! O
+resultado pode não fazer sentido. <br>
+&nbsp; </p>
+<a HREF="cb10.html">
+
+<p align="center"></a><a HREF="cb20.html"><img SRC="left.gif" ALT="Página Anterior"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb00.html"><img SRC="up.gif"
+ALT="Índice da Aula" BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="cb40.html"><img
+SRC="right.gif" ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>

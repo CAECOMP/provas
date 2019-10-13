@@ -1,0 +1,225 @@
+With Ada.Integer_Text_IO, Ada.Text_IO, Ada.Calendar;
+Use Ada.Integer_Text_IO, Ada.Text_IO, Ada.Calendar;
+
+procedure teste_task is
+   protected type Resource is
+      entry Seize;
+      procedure Release;
+   private
+      Busy : Boolean := False;
+   end Resource;
+   protected body Resource is
+      entry Seize when not Busy is
+      begin
+         Busy := True;
+      end Seize;
+      procedure Release is
+      begin
+         Busy := False;
+      end Release;
+   end Resource;
+   X,Z,J:Integer;
+   control1: Resource;
+   control2: Resource;
+   control3: Resource;
+   indice: Integer:= 1;
+   i: Integer:= 1;
+   Y: Integer;
+   function TesteValor(teste1: in Integer; testeX: out Integer) return Integer;
+   vetor: array(1..30) of Character; 
+   type vetorInt is array(1..6) of Integer;
+   vetor1: vetorInt:= (2,2,2,2,2,2);
+   vetorResource : array(1..6) of Resource;
+   SendSem: array (1..3) of Resource;
+   ReceiveSem: array (1..3) of Resource;
+   TesteVetor : array (1..6) of Integer:= (-1,-1,-1,-1,-1,-1);
+   canais : array (1..6) of Integer:=(-1,-1,-1,-1,-1,-1);
+   
+   
+   type valor is access function(teste1: in Integer; testeX: out Integer) return Integer; 
+   function TesteValor(teste1: in Integer; testeX: out Integer) return Integer is
+      Sum : Integer := 0;
+     -- teste : valor;
+   begin
+      
+      Sum := teste1;
+      testeX:= (Sum + 10);
+      return Sum;
+   end TesteValor;
+   
+   value : valor := TesteValor'Access;  
+   
+   function TestVetor(vector: in vetorInt) return Integer is
+      choice : Integer := 0;
+     -- teste : valor;
+   begin
+      choice:=vector(1);
+      return choice;
+   end TestVetor;
+   
+   function send_sync(mensagem: in Integer; canal : in Integer) return Integer is
+   begin
+      canais(canal):= mensagem;
+      SendSem(canal).Release;
+      ReceiveSem(canal).Seize;
+      return 0;
+   end send_sync;
+      
+   function receive(mensagem: out Integer; canal : in Integer) return Integer is
+   begin
+      SendSem(canal).Seize;
+      mensagem:= canais(canal); 
+      ReceiveSem(canal).Release;
+      return 0;
+   end receive;   
+   
+   task type Mostra1 is
+     --entry mostra(Item: in Integer);
+   end Mostra1;
+   task body Mostra1 is
+   begin
+      delay 1.0;
+      while indice < 29 loop
+         control1.Seize;
+       --  vetorResource(1).Seize;
+         vetor(indice):='a';
+         indice:=indice+1;
+         control2.Release;   
+       --  vetorResource(2).Release;
+      end loop;
+           
+          
+   end Mostra1;
+   
+   task type Mostra2 is
+    -- entry mostra(Item: in Integer);
+   end Mostra2;
+   task body Mostra2 is
+   begin
+     delay 1.0;
+     while indice < 30 loop
+         control2.Seize;
+         --vetorResource(2).Seize;
+         vetor(indice):='b';
+         indice:=indice+1;
+         control3.Release;
+         --vetorResource(3).Release;
+
+     end loop;
+      
+   end Mostra2;
+   
+   task type Mostra3 is
+     --entry mostra(Item: in Integer);
+   end Mostra3;
+   task body Mostra3 is
+      K: Integer;
+   begin
+      delay 1.0;
+      while indice < 31 loop
+         control3.Seize;
+         --vetorResource(3).Seize;
+         vetor(indice):='c';
+         indice:=indice+1;
+         control1.Release;   
+         --vetorResource(1).Release;
+
+      end loop;
+      for i in 1..30 loop
+         null;
+       --  Put(vetor(i));
+      end loop;
+   end Mostra3;
+   
+   task type origem is
+     entry exchange(mens_in: in integer; mens_out: out integer);
+   end origem;
+   task body origem is
+      K : integer := 222;
+      L : integer;
+      begin
+      accept exchange (mens_in : in integer; mens_out : out integer) do
+         mens_out := K;
+         L := mens_in; 
+      end exchange;
+     -- New_Line;
+      Put("valor recebido na origem" & Integer'Image(L));
+      New_Line;
+    
+   end origem;
+   
+   A : Mostra1;
+   B : Mostra2;
+   C : Mostra3;
+   D : origem;
+   
+   task type destino is
+      
+   end destino;
+   task body destino is
+      N: integer;
+      M: integer;
+   begin
+      D.exchange(20,M); 
+    --  New_Line;
+      Put("valor recebido no destino" & Integer'Image(M));
+      New_Line; 
+   end destino;
+   
+   task type timeout is
+      entry troca(entrada: in Integer; saida: out Integer);
+   end timeout;
+   task body timeout is
+      K: integer;
+      L: integer;
+   begin
+     -- loop
+         select
+            accept troca (entrada : in integer; saida : out integer) do
+               K:= entrada;
+               saida:= 10; 
+            end troca;
+           -- New_Line; 
+            Put_Line("valor recebido por canal dentro do timeout"); 
+         or
+            delay 5.0;
+           -- New_Line; 
+            Put_line("estouro de timeout"); -- estouro de timeout 
+         end select;
+     -- end loop;
+   end timeout;
+      
+   E : destino;
+   F : timeout;
+   
+   task type Teste_timeout is
+     
+   end Teste_timeout;
+   task body Teste_timeout is
+      K: Integer;
+   begin
+      delay 6.0;
+      F.troca(20,K);
+   end Teste_timeout;
+       
+   G : Teste_timeout;
+   
+begin
+ --vetorResource(2).Seize;
+ --vetorResource(3).Seize;
+ control2.Seize;
+ control3.Seize;
+ for i in 1..3 loop
+      SendSem(i).Seize;
+      ReceiveSem(i).Seize;
+ end loop;
+ X:= TesteValor(50,Y);
+ Z:= TestVetor(vetor1);
+ --Put(Y);  
+ --Put(X);
+ --Put(Z); 
+-- Put_Line("Teste finalizado!!");  
+-- D.exchange(20, Z);
+-- Put(Z);
+
+end teste_task;   

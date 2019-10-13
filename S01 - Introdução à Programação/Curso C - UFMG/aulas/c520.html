@@ -1,0 +1,230 @@
+<html>
+
+<head>
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Curso de C</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#000000" ALINK="#0000FF">
+<font SIZE="+3">
+
+<p align="center">CURSO DE C</font></p>
+
+<p align="center">&nbsp;<img SRC="line.gif" width="485" height="8"> </p>
+
+<h3>Strings</h3>
+
+<ul>
+  <li><a HREF="#c521.html">gets</a></li>
+  <li><a HREF="#c522.html">strcpy</a></li>
+  <li><a HREF="#c523.html">strcat</a></li>
+  <li><a HREF="#c524.html">strlen</a></li>
+  <li><a HREF="#c525.html">strcmp</a></li>
+</ul>
+
+<hr WIDTH="300">
+
+<p>Strings são vetores de <a HREF="c320.html"><b>char</b>s</a>. Nada mais e nada menos.
+As strings são o uso mais comum para os vetores. Devemos apenas ficar atentos para o fato
+de que as strings têm o seu último elemento como&nbsp; um '\0'. A declaração geral
+para uma string é: </p>
+
+<p>&nbsp;<i>char nome_da_string [tamanho];</i> </p>
+
+<p>&nbsp;Devemos lembrar que o tamanho da string deve incluir o '\0' final. A biblioteca
+padrão do C possui diversas funções que manipulam strings. Estas funções são úteis
+pois não se pode, por exemplo, igualar duas strings: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string1=string2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* NAO faca isto */</pre>
+
+<p>Fazer isto é um desastre. Quando você terminar de ler a seção que trata de
+ponteiros você entenderá porquê. As strings devem ser igualadas elemento a elemento. </p>
+
+<p>&nbsp;Quando vamos fazer programas que tratam de string muitas vezes podemos fazer bom
+proveito do fato de que uma string termina com '\0' (isto é, o número inteiro 0). Veja,
+por exemplo, o programa abaixo que serve para igualar duas strings (isto é, copia os
+caracteres de uma string para o vetor da outra): </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	int count;
+	char str1[100],str2[100];
+	....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Aqui o programa le str1 que sera copiada para str2 */
+	for (count=0;str1[count];count++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; str2[count]=str1[count];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; str2[count]='\0';
+....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Aqui o programa continua */
+}</pre>
+
+<p>A condição no loop <b><a HREF="c430.html">for</a></b> acima é baseada no fato de que
+a string que está sendo copiada termina em '\0'. Quando o elemento encontrado em <b>str1[count]</b>
+é o '\0', o valor retornado para o teste condicional é falso (nulo). Desta forma a
+expressão que vinha sendo verdadeira (não zero) continuamente, torna-se falsa. </p>
+
+<p>&nbsp;Vamos ver agora algumas funções básicas para manipulação de strings. </p>
+
+<p>&nbsp;<a NAME="c521.html"></a> </p>
+
+<h4>gets</h4>
+
+<p>A função <b>gets()</b> lê uma string do teclado. Sua forma geral é: </p>
+
+<p>&nbsp;<i>gets (nome_da_string);</i> </p>
+
+<p>&nbsp;O programa abaixo demonstra o funcionamento da função <b>gets()</b>: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+int main ()
+{
+	char string[100];
+	printf (&quot;Digite o seu nome: &quot;);
+	gets (string);
+	printf (&quot;\n\n Ola %s&quot;,string);
+	return(0);
+}</pre>
+
+<p>Repare que é válido passar para a função <b>printf()</b> o nome da string. Você
+verá mais adiante porque isto é válido. Como o primeiro argumento da função <b>printf()</b>
+é uma string também é válido fazer: </p>
+
+<p>&nbsp; </p>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf (string);</pre>
+
+<p>&nbsp; isto simplesmente imprimirá a string. <br>
+<a NAME="c522.html"></a> </p>
+
+<h4>strcpy</h4>
+
+<p>Sua forma geral é: </p>
+
+<p>&nbsp;<i>strcpy (string_destino,string_origem);</i> </p>
+
+<p>&nbsp;A função <b>strcpy()</b> copia a string-origem para a string- destino. Seu
+funcionamento é semelhante ao da rotina apresentada na <a HREF="c520.html">seção
+anterior</a>. As funções apresentadas nestas seções estão no arquivo cabeçalho <b>string.h</b>.
+A seguir apresentamos um exemplo de uso da função <b>strcpy()</b>: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main ()
+{
+	char str1[100],str2[100],str3[100];
+	printf (&quot;Entre com uma string: &quot;);
+	gets (str1);
+	strcpy (str2,str1);	/* Copia str1 em str2 */
+	strcpy (str3,&quot;Voce digitou a string &quot;); /* Copia &quot;Voce digitou a string&quot; em str3 */
+	printf (&quot;\n\n%s%s&quot;,str3,str2);
+	return(0);
+}</pre>
+
+<h4>strcat</h4>
+
+<p>A função <b>strcat()</b> tem a seguinte forma geral: </p>
+
+<p>&nbsp;<i>strcat (string_destino,string_origem);</i> </p>
+
+<p>&nbsp;A string de origem permanecerá inalterada e será anexada ao fim da string de
+destino. Um exemplo: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main ()
+{
+	char str1[100],str2[100];
+	printf (&quot;Entre com uma string: &quot;);
+	gets (str1);
+	strcpy (str2,&quot;Voce digitou a string &quot;);
+	strcat (str2,str1);	/* str2 armazenara' Voce digitou a string + o conteudo de str1 */
+	printf (&quot;\n\n%s&quot;,str2);
+	return(0);
+}</pre>
+
+<h4>strlen</h4>
+
+<p>Sua forma geral é: </p>
+
+<p>&nbsp;<i>strlen (string);</i> </p>
+
+<p>&nbsp;A função <b>strlen()</b> retorna o comprimento da string fornecida. O
+terminador nulo não é contado. Isto quer dizer que, de fato, o comprimento do vetor da
+string deve ser um a mais que o inteiro retornado por <b>strlen()</b>. Um exemplo do seu
+uso: </p>
+
+<p>&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main ()
+{
+	int size;
+	char str[100];
+	printf (&quot;Entre com uma string: &quot;);
+	gets (str);
+	size=strlen (str);
+	printf (&quot;\n\nA string que voce digitou tem tamanho %d&quot;,size);
+	return(0);
+}</pre>
+
+<h4>strcmp</h4>
+
+<p>Sua forma geral é: </p>
+
+<p>&nbsp;<i>strcmp (string1,string2);</i> </p>
+
+<p>&nbsp;A função <b>strcmp()</b> compara a string 1 com a string 2. Se as duas forem
+idênticas a função retorna zero. Se elas forem diferentes a função retorna não-zero.
+Um exemplo da sua utilização:&nbsp; </p>
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main ()
+{
+	char str1[100],str2[100];
+	printf (&quot;Entre com uma string: &quot;);
+	gets (str1);
+	printf (&quot;\n\nEntre com outra string: &quot;);
+	gets (str2);
+	if (strcmp(str1,str2))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	printf (&quot;\n\nAs duas strings são diferentes.&quot;);
+	else printf (&quot;\n\nAs duas strings são iguais.&quot;);
+	return(0);
+}</pre>
+
+<p>&nbsp; </p>
+
+<hr WIDTH="300">
+<font SIZE="+1">
+
+<p align="center">AUTO AVALIAÇÃO</font> </p>
+
+<p><font SIZE="+1">Veja como você está.</font> </p>
+
+<p><font SIZE="+1">Faça um programa que leia quatro palavras pelo teclado, e armazene
+cada palavra em uma string. Depois, concatene todas as strings lidas numa única string.
+Por fim apresente esta como resultado ao final do programa.</font> </p>
+
+<hr WIDTH="300">
+<a HREF="c510.html">
+
+<p align="center"><img SRC="left.gif" ALT="Página Anterior" BORDER="0" HEIGHT="34"
+WIDTH="37"></a>&nbsp;<a HREF="c500.html"><img SRC="up.gif" ALT="Índice da Aula"
+BORDER="0" HEIGHT="34" WIDTH="37"></a>&nbsp;<a HREF="c530.html"><img SRC="right.gif"
+ALT="Próxima Página" BORDER="0" HEIGHT="34" WIDTH="37"></a> </p>
+
+<hr>
+
+<p><small><font face="Arial">Curso de C da EE/UFMG - 1996 - 2000</font></small></p>
+</body>
+</html>
