@@ -1,0 +1,75 @@
+nx = 10;
+ny = 10;
+l = -10;
+b = -10;
+r = 10;
+t = 10;
+
+origem = [5 5 5];
+w = origem / norm(origem);
+tempV = w;
+minIndex = find(abs(min(tempV)));
+
+if (tempV(minIndex) == 1)
+	tempV(minIndex) = 0;
+else
+	tempV(minIndex) = 1;
+end
+
+u = cross(w,tempV) / norm(cross(w,tempV));
+v = cross(w,u);
+figure;
+hold on;
+
+
+for i=1:1:nx;
+for j = 1:1:ny;
+ul = l + (r -  l) * (0.5 + i) / nx;
+vl = b + (t -  b) * (0.5 + j) / ny;
+raio = origem + ul * u + vl * v;
+quiver3(origem(1),origem(2),origem(3),raio(1),raio(2),raio(3));
+
+eminusc = origem - c
+termo1 = (2 * dot(raio, eminusc)) * (2 * dot(raio, eminusc))
+termo1 = (2 * dot(w, eminusc)) * (2 * dot(w, eminusc))
+termo2 = -4 * dot(eminusc,eminusc) * dot(w,w) + 4 * dot(w,w) * (r * r)
+delta  = termo1 + termo2
+
+end
+end
+
+############################################################
+eminusc = origem - c
+termo1 = (2 * dot(raio, eminusc)) * (2 * dot(raio, eminusc))
+termo1 = (2 * dot(w, eminusc)) * (2 * dot(w, eminusc))
+termo2 = -4 * dot(eminusc,eminusc) * dot(w,w) + 4 * dot(w,w) * (r * r)
+delta  = termo1 + termo2
+
+if (delta ==  0)
+	//pinta pixel valor x
+
+elif if(delta > 0)
+	//cálcular raizes
+	//pinta
+
+############################################################
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+
+
+
+
