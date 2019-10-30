@@ -1,0 +1,13 @@
+Resolução de Fraçãoes parciais:
+
+
+5/s^2+2s+3
+Matlab
+Coeficientes do Numerador = [a b c] = [0 0 5]
+Coeficientes do Numerador = [a b c] = [1 2 3]
+
+na linha de Comando do Matlab;
+num = [5]
+den = [1 2 3]
+
+[r,p,k] = residue(num,den) 
