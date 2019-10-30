@@ -1,0 +1,19 @@
+With Ada.Text_IO; Use Ada.Text_IO;
+With Ada.Integer_Text_IO, Ada.Text_IO;
+Use Ada.Integer_Text_IO, Ada.Text_IO;
+Procedure entra_sai is
+	x,y:natural;
+begin
+   Put_Line("Entre com um numero natural:");
+   Get(x);
+   Put_Line("Entre com outro numero natural:");
+   Get(y);
+   Put_Line("A soma desses dois numeros e:");
+   Put(x+y);
+   Put_Line("");
+   if x >= 100 then
+      Put_Line("O primeiro numero e maior ou igual a 100!");
+   else
+     Put_Line("O primeiro numero e menor do que 100!");
+   end if;
+end entra_sai;

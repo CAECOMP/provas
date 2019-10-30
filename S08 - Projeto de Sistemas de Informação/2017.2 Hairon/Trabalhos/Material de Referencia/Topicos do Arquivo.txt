@@ -1,0 +1,20 @@
+Tópicos do Artigo
+
+Resumo (Abstract)
+
+Introdução
+
+Objetivos (Gerais e Específicos)
+
+Motivação
+
+Trabalhos Relacionados
+
+Métodos e Ferramentas
+
+Trabalho propriamente dito
+
+Conclusão e Trabalhos Futuros
+
+Referências Bibliográficas
+*Estilo SBC do Sharelatex
