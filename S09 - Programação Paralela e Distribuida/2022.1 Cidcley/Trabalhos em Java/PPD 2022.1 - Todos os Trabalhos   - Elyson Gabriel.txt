@@ -1,0 +1,15 @@
+- Trabalhos da Cadeira de Programação Paralela e Distribuída - PPD, Prof. Cidcley Sousa
+
+- Semestre: 2022.1
+
+- Linguagem: Java (Todos feitos em Java)
+
+*Links do Github de cada trabalho:
+
+1°Trabalho - Tabuleiro Tsoro Yematatu para 2 Jogadores com Chat - Sockets: https://github.com/Elysson-Gabriel/TsoroYematatu/tree/versao-socket/src/main
+2°Trabalho - Tabuleiro Tsoro Yematatu para 2 Jogadores com Chat - RPC/RMI: https://github.com/Elysson-Gabriel/TsoroYematatu/tree/versao-rpc/src/main
+3°Trabalho - Rede de Sensores - Message Oriented Middleware (MOM): https://github.com/Elysson-Gabriel/RedeSensores
+4°Trabalho - Chat - Espaço de Tuplas https://github.com/Elysson-Gabriel/ChatEspacoTuplas
+5°Trabalho - Trabalho Final (Usando TODAS as tecnologias dos outros trabalhos): https://github.com/Elysson-Gabriel/ppdFinal
+
+...
