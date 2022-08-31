@@ -1,0 +1,3 @@
+Aqui, todos os 5 trabalhos da cadeira no semestre de 2022.1 em Python 3, todos funcionando com os executáveis. RECOMENDO 
+baixar esses mesmo você não programando em Python pois eles estão mais bem explicados, isso pode ajudar vc a entender
+melhor as lógicas!

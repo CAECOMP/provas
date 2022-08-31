@@ -1,0 +1,7 @@
+- Projeto da Cadeira de Sistemas Operacionais - SO, Prof. FERNANDO PARENTE
+
+- Semestre: 2022.1
+
+*Link do github do projeto Completo e Funcional (Até o Parente gostou e deu 11/10 kkkk, mas ficou massa msm!): https://github.com/mateuzin/Projeto-Trem-Empacotador
+
+...
