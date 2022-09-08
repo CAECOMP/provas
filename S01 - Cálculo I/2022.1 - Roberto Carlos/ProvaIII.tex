@@ -1,0 +1,634 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\highlight}[1]{\colorbox{yellow}{$\displaystyle #1$}}
+
+\title{III Prova - Cálculo I}
+\author{Raquel Maciel Coelho de Sousa}
+\date{27 de Maio 2022}
+
+\geometry{
+a4paper,
+total={170mm,257mm},
+left=20mm,
+top=20mm,
+}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{Questão:}
+\begin{flalign}
+& f(x) = x^2 + x \cdot \cos{x} + \pi && \nonumber \\
+& f'(x) && \nonumber
+\end{flalign}
+
+
+\subsection{Derivada da soma}
+A derivada da soma é a soma das derivadas
+\begin{flalign}
+& \highlight{f(x) = f_1(x) + f_2(x) + \dots + f_n(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) + f_2'(x) + \dots + f_n'(x)} && \nonumber \\ \nonumber \\
+& f'(x) = (x^2)' + (x \cdot \cos{x})' + (\pi)' && \nonumber
+\end{flalign}
+
+\subsection{Derivada da base da potência}
+\begin{flalign}
+& \highlight{f(x) = x^a, a \in \mathbb{R} } && \nonumber \\
+& \highlight{f'(x) = a \cdot x^{a-1}}  && \nonumber \\ \nonumber \\
+& (x^2)' = 2 \cdot x  && \nonumber \\
+& f'(x) = (2 x) + (x \cdot \cos{x})' + (\pi)' && \nonumber
+\\
+& f'(x) = 2 x + (x \cdot \cos{x})' + (\pi)' && \nonumber
+\end{flalign}
+
+\subsection{Derivada do produto}
+\begin{flalign}
+& \highlight{f(x) = f_1(x) \cdot f_2(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) \cdot f_2(x) + f_1(x) \cdot f_2'(x)} && \nonumber \\ \nonumber \\
+& (x \cdot \cos{x})' = ((x)' \cdot \cos{x}) + (x \cdot (\cos{x})')  && \nonumber \\
+& f'(x) = 2 x + ((x)' \cdot \cos{x}) + (x \cdot (\cos{x})') + (\pi)' && \nonumber
+\end{flalign}
+
+\subsection{Derivada da função identidade}
+\begin{flalign}
+& \highlight{f(x) = x} && \nonumber \\
+& \highlight{f'(x) = 1} && \nonumber \\ \nonumber \\
+& f'(x) = 2 x + (1 \cdot \cos{x}) + (x \cdot (\cos{x})') + (\pi)' && \nonumber \\
+& f'(x) = 2 x + \cos{x} + (x \cdot (\cos{x})') + (\pi)' && \nonumber
+\end{flalign}
+
+\subsection{Derivada trigonométrica do cosseno}
+\begin{flalign}
+& \highlight{f(x) = \cos{(x)}} && \nonumber  \\
+& \highlight{f'(x) = -\sin{(x)}} && \nonumber \\ \nonumber \\
+& f'(x) = 2 x + \cos{x} + (x \cdot (-\sin{x})) + (\pi)' && \nonumber \\
+& f'(x) = 2 x + \cos{x} -(x \cdot \sin{x} ) + (\pi)' && \nonumber
+\end{flalign}
+
+\subsection{Derivada da constante}
+\begin{flalign}
+& \highlight{f(x) = c} && \nonumber \\
+& \highlight{f'(x) = 0} && \nonumber \\ \nonumber \\
+& f'(x) = 2 x + \cos{x} -(x \cdot \sin{x} ) + 0 && \nonumber
+\end{flalign}
+
+\subsection{A derivada da função f(x) em relação à variável x é portanto:}
+\begin{flalign}
+& f'(x) = 2 x + \cos{x} -(x \cdot \sin{x} ) && \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+& g(x) =\ln{x} - \frac{3^x}{\sin{x}} - \frac{1}{x}&&\nonumber \\
+& g'(x) && \nonumber
+\end{flalign}
+
+
+
+\subsection{Derivada da diferença}
+A derivada da diferença é a diferença das derivadas
+\begin{flalign}
+& \highlight{f(x) = f_1(x) - f_2(x) - \dots - f_n(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) - f_2'(x) - \dots - f_n'(x)} && \nonumber \\ \nonumber \\
+& g'(x) = (\ln{x})' - \left(\frac{3^x}{\sin{x}}\right)' - \left(\frac{1}{x}\right)' && \nonumber
+\end{flalign}
+
+\subsection{Derivada do logarítmo}
+\begin{flalign}
+& \highlight{f(x) = \log_a x} && \nonumber \\
+& \highlight{f'(x) = \frac{1}{x \cdot \ln{a}}} && \nonumber \\ \nonumber \\
+& (\ln{x})' = \frac{1}{x \cdot \ln{e}}&&\nonumber \\
+& (\ln{x})' = \frac{1}{x}&&\nonumber \\
+& g'(x) = \frac{1}{x} - \left(\frac{3^x}{\sin{x}}\right)' - \left(\frac{1}{x}\right)'&&\nonumber
+\end{flalign}
+
+
+\subsection{Derivada do produto}
+\begin{flalign}
+& \highlight{f(x) = f_1(x) \cdot f_2(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) \cdot f_2(x) + f_1(x) \cdot f_2'(x)} && \nonumber \\ \nonumber \\
+& \left(\frac{3^x}{\sin{x}}\right)' = (3^x \cdot cossec(x))'&&\nonumber \\
+& (3^x \cdot cossec(x))' = ((3^x)' \cdot cossec(x)) + (3^x \cdot (cossec(x))')&&\nonumber
+\end{flalign}
+
+\subsubsection{Derivada trigonométrica da cossecante}
+\begin{flalign}
+& \highlight{f(x) = cossec{(x)}} && \nonumber  \\
+& \highlight{f'(x) = -cossec(x)cotg(x) } && \nonumber \\ \nonumber \\
+& (3^x \cdot cossec(x))' = ((3^x)' \cdot cossec(x)) + (3^x \cdot (cossec(x))')&&\nonumber \\
+& (3^x \cdot cossec(x))' = ((3^x)' \cdot cossec(x)) + (3^x \cdot (-cossec(x)cotg(x)))&&\nonumber
+\end{flalign}
+
+\subsubsection{Derivada do expoente da potência}
+\begin{flalign}
+& \highlight{f(x) = a^x} && \nonumber \\
+& \highlight{f'(x) = a^x \cdot \ln{a}} && \nonumber \\ \nonumber \\
+& (3^x)' = 3^x \cdot \ln{3} \nonumber \\
+& (3^x \cdot cossec(x))' = (3^x \cdot \ln{3} \cdot cossec(x)) + (3^x \cdot -cossec(x) \cdot cotg(x))&&\nonumber
+\end{flalign}
+
+\subsubsection{Derivada final do segundo termo}
+\begin{flalign}
+& (3^x \cdot cossec(x))' = 3^x \cdot cossec(x) \cdot \ln{3} - 3^x \cdot cossec(x) \cdot cotg(x)&&\nonumber \\
+& g'(x) = \frac{1}{x} - \left(3^x \cdot cossec(x) \cdot \ln{3} - 3^x \cdot cossec(x) \cdot cotg(x) \right) - \left(\frac{1}{x}\right)'&&\nonumber \\
+& g'(x) = \frac{1}{x} - 3^x \cdot cossec(x) \cdot \ln{3} + 3^x \cdot cossec(x) \cdot cotg(x) - \left(\frac{1}{x}\right)'&&\nonumber
+\end{flalign}
+
+\subsection{Derivada da base da potência}
+\begin{flalign}
+& \highlight{f(x) = x^a, a \in \mathbb{R} } && \nonumber \\
+& \highlight{f'(x) = a \cdot x^{a-1}}  && \nonumber \\ \nonumber \\
+& \left(\frac{1}{x}\right)' = (x^{-1})' = -1 \cdot x^{-2} = -\frac{1}{x^2}&&\nonumber \\
+& g'(x) = \frac{1}{x} - 3^x \cdot cossec(x) \cdot \ln{3} + 3^x \cdot cossec(x) \cdot cotg(x) - \left(-\frac{1}{x^2}\right)&&\nonumber
+\end{flalign}
+
+\subsection{A derivada da função g(x) em relação à variável x é portanto :}
+\begin{flalign}
+& g'(x) = \frac{1}{x} - 3^x \cdot cossec(x) \cdot \ln{3} + 3^x \cdot cossec(x) \cdot cotg(x) + \frac{1}{x^2}&&\nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+& \phi(\theta) = \cosh{(\sin{e^\theta})} - \sinh{(\cos{e^\theta})}&&\nonumber \\
+& \phi'(\theta) && \nonumber
+\end{flalign}
+
+\subsection{Derivada da diferença}
+A derivada da diferença é a diferença das derivadas
+\begin{flalign}
+& \highlight{f(x) = f_1(x) - f_2(x) - \dots - f_n(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) - f_2'(x) - \dots - f_n'(x)} && \nonumber \\ \nonumber \\
+& \phi'(\theta) = (\cosh{(\sin{e^\theta})})' - (\sinh{(\cos{e^\theta})})'&& \nonumber
+\end{flalign}
+
+\subsection{Regra da Cadeia aplicada ao primeiro termo}
+De acordo com a regra da cadeia a derivada de uma função que utiliza de outras seria o produto da derivada de cada uma de suas funções membros.
+\begin{flalign}
+& \highlight{ y = u(x)} && \nonumber \\
+& \highlight{\frac{d y}{d x} = \frac{d y}{d u} \cdot \frac{d u}{d x}} && \nonumber \\ \nonumber \\
+& a(\theta) = \cosh{(b(\theta))}&&\nonumber \\
+& b(\theta) = \sin{(c(\theta))}&&\nonumber \\
+& c(\theta) = e^{\theta}&&\nonumber \\
+& \frac{da}{d \theta} = \frac{da}{db} \cdot \frac{db}{dc} \cdot \frac{dc}{d \theta}\nonumber \\
+& \frac{da}{d \theta} = \frac{d(\cosh{b})}{db} \cdot \frac{d(\sin{c})}{dc} \cdot \frac{d(e^{\theta})}{d \theta}&&\nonumber 
+\end{flalign}
+
+\subsubsection{Derivada do cosseno hiperbólico}
+\begin{flalign}
+& \highlight{f(x) = \cosh{(x)}} && \nonumber \\ 
+& \highlight{f'(x) = \sinh{(x)}} && \nonumber \\ \nonumber \\
+& \frac{da}{d \theta} = \sinh{b} \cdot \frac{d(\sin{c})}{dc} \cdot \frac{d(e^{\theta})}{d \theta}&&\nonumber
+\end{flalign}
+
+\subsubsection{Derivada trigonométrica do seno}
+\begin{flalign}
+& \highlight{f(x) = \sin{(x)}} && \nonumber \\
+& \highlight{f'(x) = \cos{(x)}} && \nonumber \\ \nonumber \\
+& \frac{da}{d \theta} = \sinh{b} \cdot \cos{c} \cdot \frac{d(e^{\theta})}{d \theta}&&\nonumber
+\end{flalign}
+
+\subsubsection{Derivada do expoente da potência}
+\begin{flalign}
+& \highlight{f(x) = a^x} && \nonumber \\
+& \highlight{f'(x) = a^x \cdot \ln{a}} && \nonumber \\ \nonumber \\
+& \frac{da}{d \theta} = \sinh{b} \cdot \cos{c} \cdot e^{\theta} \cdot \ln{e}&&\nonumber 
+\end{flalign}
+
+\subsubsection{Derivada do primeiro termo de $\phi'(\theta)$}
+\begin{flalign}
+& \frac{da}{d \theta} = \sinh{(\sin{e^{\theta}})} \cdot \cos{e^{\theta}} \cdot e^{\theta}&&\nonumber
+\end{flalign}
+
+\subsection{Regra da Cadeia aplicada ao segundo termo}
+De acordo com a regra da cadeia a derivada de uma função que utiliza de outras seria o produto da derivada de cada uma de suas funções membros.
+\begin{flalign}
+& \highlight{ y = u(x)} && \nonumber \\
+& \highlight{\frac{d y}{d x} = \frac{d y}{d u} \cdot \frac{d u}{d x}} && \nonumber \\ \nonumber \\
+& a(\theta) = \sinh{(b(\theta))}&&\nonumber \\
+& b(\theta) = \cos{(c(\theta))}&&\nonumber \\
+& c(\theta) = e^{\theta}&&\nonumber \\
+& \frac{da}{d \theta} = \frac{da}{db} \cdot \frac{db}{dc} \cdot \frac{dc}{d \theta}\nonumber \\
+& \frac{da}{d \theta} = \frac{d(\sinh{b})}{db} \cdot \frac{d(\cos{c})}{dc} \cdot \frac{d(e^{\theta})}{d \theta}&&\nonumber 
+\end{flalign}
+
+\subsubsection{Derivada do seno hiperbólico}
+\begin{flalign}
+& \highlight{f(x) = \sinh{(x)}} && \nonumber \\
+& \highlight{f'(x) = \cosh{(x)}} && \nonumber \\ \nonumber \\
+& \frac{da}{d \theta} = \cosh{b} \cdot \frac{d(\cos{c})}{dc} \cdot \frac{d(e^{\theta})}{d \theta}&&\nonumber 
+\end{flalign}
+
+\subsubsection{Derivada trigonométrica do cosseno}
+\begin{flalign}
+& \highlight{f(x) = \cos{(x)}} && \nonumber  \\
+& \highlight{f'(x) = -\sin{(x)}} && \nonumber \\ \nonumber \\
+& \frac{da}{d \theta} = \cosh{b} \cdot (-\sin{c}) \cdot \frac{d(e^{\theta})}{d \theta}&&\nonumber 
+\end{flalign}
+
+\subsubsection{Derivada do expoente da potência}
+\begin{flalign}
+& \highlight{f(x) = a^x} && \nonumber \\
+& \highlight{f'(x) = a^x \cdot \ln{a}} && \nonumber \\ \nonumber \\
+& \frac{da}{d \theta} = \cosh{b} \cdot (-\sin{c}) \cdot e^{\theta} \cdot \ln{e}&&\nonumber 
+\end{flalign}
+
+\subsubsection{Derivada do segundo termo de $\phi'(\theta)$}
+\begin{flalign}
+& \frac{da}{d \theta} = \cosh{(\cos{e^{\theta}})} \cdot (-\sin{e^{\theta}}) \cdot e^{\theta}&&\nonumber
+\end{flalign}
+
+
+\subsection{A derivada da função $\phi(\theta)$ em relação à variável $\theta$ é portanto:}
+\begin{flalign}
+& \phi'(\theta) = (\sinh{(\sin{e^{\theta}})} \cdot \cos{e^{\theta}} \cdot e^{\theta})  - (\cosh{(\cos{e^{\theta}})} \cdot (-\sin{e^{\theta}}) \cdot e^{\theta})&&\nonumber \\
+& \phi'(\theta) = (\sinh{(\sin{e^{\theta}})} \cdot \cos{e^{\theta}} \cdot e^{\theta})  + (\cosh{(\cos{e^{\theta}})} \cdot \sin{e^{\theta}} \cdot e^{\theta})&&\nonumber 
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+& y = x^{72} + \cos{x} + e^x&&\nonumber \\
+& \frac{d^{72}y}{d x^{72}} && \nonumber
+\end{flalign}
+
+\subsection{Derivada de Ordem Superior}
+\subsubsection{Derivada da soma}
+A derivada da soma é a soma das derivadas
+\begin{flalign}
+& \highlight{f(x) = f_1(x) + f_2(x) + \dots + f_n(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) + f_2'(x) + \dots + f_n'(x)} && \nonumber \\ \nonumber \\
+& y = x^{72} + \cos{x} + e^x&&\nonumber \\
+& \frac{d^{72}y}{d x^{72}} = \frac{d^{72}(x^{72})}{dx^{72}} + \frac{d^{72}(\cos{x})}{dx^{72}} + \frac{d^{72}(e^x)}{dx^{72}} && \nonumber
+\end{flalign}
+
+
+\subsection{Padrões de Comportamento}
+Para analisarmos esta derivada de 72° Ordem Superior iremos analisar se esta tem padrões de repetições na derivação de seus termos membros.
+\subsubsection{Comportamento da derivada da variável como base de potência}
+Vamos observar o padrão de comportamento em derivadas de bases em uma potência
+\begin{flalign}
+& \highlight{f(x) = x^a, a \in \mathbb{R} }&&\nonumber \\
+& \highlight{f'(x) = a \cdot x^{a-1}} &&\nonumber \\
+& f''(x) = a \cdot (a-1) \cdot x^{a-2} &&\nonumber \\
+& f'''(x) = a \cdot (a-1) \cdot (a-2) \cdot x^{a-3} &&\nonumber \\
+& f^{(4)}(x) = a \cdot (a-1) \cdot (a-2) \cdot (a-3) \cdot x^{a-4} &&\nonumber \\
+& \dots&&\nonumber \\
+& f^{(n)}(x) = \frac{a!}{(a - n)!}\cdot x^{a-n}&&\nonumber \\ \nonumber \\
+& \text{isto se } n \leq a \text{ e } a \in \mathbb{R}&&\nonumber
+\end{flalign}
+Logo podemos concluir que: 
+
+\begin{flalign}
+& \frac{d^{72}(x^{72})}{dx^{72}} =  \frac{72!}{(72 - 72)!} \cdot x^{72 - 72}&&\nonumber \\
+& \frac{d^{72}(x^{72})}{dx^{72}} =  \frac{72!}{0!} \cdot x^0&&\nonumber \\
+& \frac{d^{72}(x^{72})}{dx^{72}} =  \frac{72!}{1} \cdot 1&&\nonumber \\
+& \frac{d^{72}(x^{72})}{dx^{72}} =  72!&&\nonumber 
+\end{flalign}
+
+\subsubsection{Comportamento recursivo na derivada trigonométrica seno ou cosseno}
+\begin{flalign}
+& \highlight{(\sin{(x)})' = \cos{(x)}} && \nonumber \\
+& \highlight{(\cos{(x)})' = -\sin{(x)}} && \nonumber \\ 
+& f(x) = \sin{(x)} && \nonumber \\
+& f'(x) = \cos{(x)} && \nonumber \\ 
+& f''(x) = -\sin{(x)} && \nonumber \\
+& f'''(x) = -\cos{(x)} && \nonumber \\ 
+& f^{(4)}(x) = \sin{(x)} \to \text{ início do loop novamente} && \nonumber \\
+& \dots && \nonumber
+\end{flalign}
+Percebemos aqui que temos um laço repetitivo de casos de derivada, a única condição para saber qual valor que a derivada de ordem superior n receberá é justamente o seu resto pela divisão do total de casos possíveis (4 casos possíveis).
+
+\begin{flalign}
+& \text{resto } 0 \to f(x) = \sin{(x)} && \nonumber \\
+& \text{resto } 1 \to f'(x) = \cos{(x)} && \nonumber \\ 
+& \text{resto } 2 \to f''(x) = -\sin{(x)} && \nonumber \\
+& \text{resto } 3 \to f'''(x) = -\cos{(x)} && \nonumber \\ 
+& \text{resto } 4 \to f^{(4)}(x) = \sin{(x)} \to \text{ início do loop novamente} && \nonumber \\
+& \dots && \nonumber
+\end{flalign}
+Este mapeamento de cada resto de divisão com cada valor respectivo depende unicamente do valor da função original, as outras serão alinhadas a partir desta, mas sempre seguindo esta ordem de loop. 
+Logo podemos concluir que como a função original é cosx este será o primeiro item do loop:
+
+\begin{flalign}
+& \text{resto } 0 \to f(x) = \cos{(x)} && \nonumber \\
+& \text{resto } 1 \to f'(x) = -\sin{(x)} && \nonumber \\ 
+& \text{resto } 2 \to f''(x) = -\cos{(x)} && \nonumber \\
+& \text{resto } 3 \to f'''(x) = \sin{(x)} && \nonumber \\ 
+& \text{resto } 4 \to f^{(4)}(x) = \cos{(x)} \to \text{ início do loop novamente} && \nonumber 
+\end{flalign}
+A Ordem Superior de número 72 nos indica uma ordem de número que é divisível por 4, logo seu resto é 0 tendo então seu valor referente ao que inicia o loop novamente, ou seja, ele mesmo.
+
+\begin{flalign}
+& \frac{d^{72}(\cos{x})}{dx^{72}} =  \cos{x}&&\nonumber 
+\end{flalign}
+
+
+\subsubsection{Comportamento de Idempotência}
+\begin{flalign}
+& \highlight{f(x) = a^x} && \nonumber \\
+& \highlight{f'(x) = a^x \cdot \ln{a}} && \nonumber \\ \nonumber \\
+& (e^x)' = (e^x) \cdot \ln{e}&&\nonumber \\
+& (e^x)' = (e^x)&&\nonumber
+\end{flalign}
+O comportamento analisado neste caso é o da idempotência de $e^x$ onde a derivada de Ordem Superior n sempre irá resultar nele mesmo. Então:
+
+\begin{flalign}
+& \frac{d^{72}(e^x)}{dx^{72}} = (e^x)&&\nonumber
+\end{flalign}
+
+\subsection{A derivada de 72° ordem da função y em relação à variável x é portanto:}
+\begin{flalign}
+& \frac{d^{72}y}{d x^{72}} = \frac{d^{72}(x^{72})}{dx^{72}} + \frac{d^{72}(\cos{x})}{dx^{72}} + \frac{d^{72}(e^x)}{dx^{72}} && \nonumber \\
+& \frac{d^{72}(x^{72})}{dx^{72}} =  72!&&\nonumber \\
+& \frac{d^{72}(\cos{x})}{dx^{72}} =  \cos{x}&&\nonumber \\
+& \frac{d^{72}(e^x)}{dx^{72}} = (e^x)&&\nonumber \\
+& \frac{d^{72}y}{d x^{72}} = 72! + \cos{x} + e^x && \nonumber 
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+& y - x^2 y^2 - \cos{x y} = 4&&\nonumber \\
+& \frac{d y}{d x},  \frac{d x}{d y} && \nonumber
+\end{flalign}
+
+\subsection{Derivadas Implícitas em relação à variável x}
+Pela função não dispor as variáveis de forma
+a permitir o isolamento claro destas podemos tratá-la
+como implícita, calculando então a derivada de seus membros
+da igualdade individualmente.
+
+\begin{flalign}
+& y - x^2 y^2 - \cos{x y} = 4&&\nonumber \\
+& \frac{d (y - x^2 y^2 - \cos{x y})}{d x} = \frac{d(4)}{d x}  && \nonumber
+\end{flalign}
+
+\subsection{Derivada da diferença}
+A derivada da diferença é a diferença das derivadas
+\begin{flalign}
+& \highlight{f(x) = f_1(x) - f_2(x) - \dots - f_n(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) - f_2'(x) - \dots - f_n'(x)} && \nonumber \\ \nonumber \\
+& \frac{dy}{dx} - \frac{d(x^2 y^2)}{dx} - \frac{d(\cos{x y})}{d x} = \frac{d(4)}{d x}  && \nonumber
+\end{flalign}
+
+\subsection{Derivada da constante}
+\begin{flalign}
+& \highlight{f(x) = c} && \nonumber \\
+& \highlight{f'(x) = 0} && \nonumber \\ \nonumber \\ 
+& \frac{dy}{dx} - \frac{d(x^2 y^2)}{dx} - \frac{d(\cos{x y})}{d x} = 0  && \nonumber
+\end{flalign}
+
+
+\subsection{Derivada do produto}
+\begin{flalign}
+& \highlight{f(x) = f_1(x) \cdot f_2(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) \cdot f_2(x) + f_1(x) \cdot f_2'(x)} && \nonumber \\ \nonumber \\
+& \frac{dy}{dx} - \left(\left(\frac{d(x^2)}{dx} \cdot y^2 \right) + \left(x^2 \cdot\frac{d(y^2)}{dx}\right) \right) - \frac{d(\cos{x y})}{d x} = 0  && \nonumber
+\end{flalign}
+
+\subsection{Derivada da base da potência}
+\begin{flalign}
+& \highlight{f(x) = x^a, a \in \mathbb{R} } && \nonumber \\
+& \highlight{f'(x) = a \cdot x^{a-1}}  && \nonumber \\ \nonumber \\
+& \frac{dy}{dx} - \left(\left(2x \cdot y^2 \right) + \left(x^2 \cdot\frac{d(y^2)}{dx}\right) \right) - \frac{d(\cos{x y})}{d x} = 0  && \nonumber
+\end{flalign}
+
+\subsection{Regra da Cadeia}
+De acordo com a regra da cadeia, a derivada de uma função que é composta de outras funções resulta no produto da derivada de cada uma de suas funções membros.
+Como y é uma função, além de realizar a derivação da base da potência também iremos multiplicar pela sua derivada com relação à variável x.
+
+\begin{flalign}
+& \highlight{ y = u(x)} && \nonumber \\
+& \highlight{\frac{d y}{d x} = \frac{d y}{d u} \cdot \frac{d u}{d x}} && \nonumber \\ \nonumber \\ 
+& \frac{d(y^2)}{dx} = 2y \cdot \frac{dy}{dx}&&\nonumber \\
+& \frac{dy}{dx} - \left(\left(2x \cdot y^2 \right) + \left(x^2 \cdot 2y \cdot \frac{dy}{dx}\right) \right) - \frac{d(\cos{x y})}{d x} = 0  && \nonumber \\
+& \frac{dy}{dx} - \left(\left(2xy^2 \right) + \left(2x^{2}y \cdot \frac{dy}{dx}\right) \right) - \frac{d(\cos{x y})}{d x} = 0  && \nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} - \frac{d(\cos{x y})}{d x} = 0  && \nonumber
+\end{flalign}
+
+\subsection{Regra da Cadeia}
+De acordo com a regra da cadeia, a derivada de uma função que é composta de outras funções resulta no produto da derivada de cada uma de suas funções membros.
+
+\begin{flalign}
+& \highlight{ y = u(x)} && \nonumber \\
+& \highlight{\frac{d y}{d x} = \frac{d y}{d u} \cdot \frac{d u}{d x}} && \nonumber \\ \nonumber \\ 
+& a(x) = \cos{b(x)}&&\nonumber \\
+& b(x) = x \cdot y(x)&&\nonumber \\
+& \frac{da}{dx} = \frac{da}{db} \cdot \frac{db}{dx} &&\nonumber \\
+& \frac{d(\cos{xy})}{dx} = \frac{d(cosb)}{db} \cdot \frac{d(xy)}{dx}&&\nonumber \\
+& \frac{d(\cos{xy})}{dx} = -\sin{b} \cdot \frac{d(xy)}{dx}&&\nonumber \\
+& \frac{d(\cos{xy})}{dx} = -\sin{xy} \cdot \frac{d(xy)}{dx}&&\nonumber \\ \nonumber \\
+& \text{Aplicando na função completa: }&&\nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} - \left(-\sin{xy} \cdot \frac{d(xy)}{dx} \right) = 0  && \nonumber
+\end{flalign}
+
+\subsection{Derivada do produto}
+\begin{flalign}
+& \highlight{f(x) = f_1(x) \cdot f_2(x)} && \nonumber \\
+& \highlight{f'(x) = f_1'(x) \cdot f_2(x) + f_1(x) \cdot f_2'(x)} && \nonumber \\ \nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} - \left(-\sin{xy} \cdot \left(\frac{dx}{dx} \cdot y + x \cdot \frac{dy}{dx}\right) \right) = 0  && \nonumber
+\end{flalign}
+
+\subsection{Derivada da função identidade}
+\begin{flalign}
+& \highlight{f(x) = x} && \nonumber \\
+& \highlight{f'(x) = 1} && \nonumber \\ \nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} - \left(-\sin{xy} \cdot \left(1 \cdot y + x \cdot \frac{dy}{dx}\right) \right) = 0  && \nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} - \left(-\sin{xy} \cdot \left(y + x \cdot \frac{dy}{dx}\right) \right) = 0  && \nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} - \left(-y\sin{xy} -x\sin{xy}\frac{dy}{dx} \right) = 0  && \nonumber \\
+& \frac{dy}{dx} -2xy^2 -2x^{2}y\frac{dy}{dx} + y\sin{xy} + x\sin{xy}\frac{dy}{dx} = 0  && \nonumber 
+\end{flalign}
+
+\subsection{A derivada implícita da função y em relação à variável x é portanto:}
+\begin{flalign}
+& \frac{dy}{dx} \left(1 -2x^{2}y + x\sin{xy}\right)  -2xy^2 + y\sin{xy} = 0  && \nonumber \\
+& \frac{dy}{dx} \left(1 -2x^{2}y + x\sin{xy}\right) = 2xy^2 - y\sin{xy}   && \nonumber \\
+& \frac{dy}{dx}  = \frac{2xy^2 - y\sin{xy}}{1 -2x^{2}y + x\sin{xy}}   && \nonumber
+\end{flalign}
+
+\subsection{Derivada da inversa é a inversa da derivada}
+\begin{flalign}
+& \highlight{(f(x)^{-1})' = \frac{1}{f'(x)}} && \nonumber \\ \nonumber \\
+& \frac{dx}{dy}  = - \frac{1 -2x^{2}y + x\sin{xy}}{2xy^2 - y\sin{xy}}   && \nonumber \\
+& \frac{dx}{dy}  = \frac{2x^{2}y - x\sin{xy} -1}{2xy^2 - y\sin{xy}}   && \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+Encontre uma equação da reta tangente e uma da
+reta normal à curva $ y = \sqrt{x} + \frac{1}{x^2}$ no ponto de abscissa $x = 1$.
+
+\subsection{Descobrindo o Ponto}
+Para descobrirmos a reta que tangencia nossa função
+y iremos primeiramente analisar o ponto pertencente a imagem
+da função na qual também pertencerá a reta tangente. 
+A abscissa analisada é 1, logo podemos descobrir sua ordenada
+aplicarmos a função ao x.
+
+\begin{flalign}
+& f(x) = \sqrt{x} + \frac{1}{x^2}&&\nonumber \\
+& f(1) = \sqrt{1} + \frac{1}{1^2}&&\nonumber \\
+& f(1) = 2&&\nonumber
+\end{flalign}
+
+As coordenadas do nosso ponto P são P(1, 2).
+
+
+\subsection{Análise da Reta secante e tangente}
+Visto que uma reta secante seria aquela que intercepta
+dois pontos da função e podemos calcular seu coeficiente angular
+através da razão entre a variação das ordenadas dos pontos sobre 
+a variação das abscissas, podemos utilizar isso
+para descobrir o coeficiente angular da tangente, pois uma reta tangente nada mais é do que uma secante onde os dois pontos pertencentes estão no mesmo lugar e são o mesmo ponto, ou seja, sua variação de x tende a zero. 
+
+
+\subsection{Coeficiente angular da reta secante e tangente}
+\begin{flalign}
+& m_{secante} = \frac{\Delta y}{\Delta x}&&\nonumber \\
+& m_{tangente} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}&&\nonumber \\
+& \Delta y = y_2 - y_1&&\nonumber \\
+& y_1 = f(x_1)&&\nonumber \\
+& y_2 = f(x_2) = f(x_1 + \Delta x)&&\nonumber \\
+& m_{tangente} = \lim_{\Delta x \to 0} \frac{f(x_1 + \Delta x) - f(\Delta x)}{\Delta x}
+& \nonumber
+\end{flalign}
+Sendo assim portanto podemos descobrir o coeficiente angular da reta tangente no Ponto P se aplicarmos a abscissa de P na derivada da função y. Achando a derivada:
+\begin{flalign}
+& f(x) = \sqrt{x} + \frac{1}{x^2}&&\nonumber \\
+& f'(x) = (\sqrt{x})' + \left(\frac{1}{x^2}\right)'&&\nonumber \\
+& f'(x) = (x^{\frac{1}{2}})' + (x^{-2})'&&\nonumber \\
+& f'(x) = \frac{1}{2} \cdot x^{-\frac{1}{2}} - 2x^{-3}&&\nonumber \\
+& f'(x) = \frac{1}{2\sqrt{x}} - \frac{2}{x^3}&&\nonumber
+\end{flalign}
+Aplicando x de P:
+\begin{flalign}
+& m_{tangente} = f'(1)&&\nonumber \\
+& f'(1) = \frac{1}{2\sqrt{1}} - \frac{2}{1^3}&&\nonumber \\
+& f'(1) = \frac{1}{2} - 2&&\nonumber \\
+& f'(1) = - \frac{3}{2}& \nonumber \\
+& f'(1) = - \frac{3}{2}& \nonumber \\
+& m_{tangente} = - \frac{3}{2}& \nonumber
+\end{flalign}
+
+\subsection{Equação da Reta}
+\begin{flalign}
+& \highlight{ (y - y_0) = m \cdot (x - x_0)} && \nonumber
+\end{flalign}
+
+\subsection{Equação da Reta Tangente}
+\begin{flalign}
+& (y - 2) = - \frac{3}{2} \cdot (x - 1) && \nonumber
+\end{flalign}
+
+
+\subsection{Coeficiente Angular da Reta Normal}
+\begin{flalign}
+& m_{normal} = - \frac{1}{m_{reta}} && \nonumber
+\end{flalign}
+
+\subsection{Equação da Reta Normal}
+\begin{flalign}
+& (y - 2) = \frac{2}{3} \cdot (x - 1) && \nonumber
+\end{flalign}
+
+
+\end{document}
