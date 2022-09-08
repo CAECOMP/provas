@@ -7,5 +7,6 @@ Aqui ficaram APENAS os arquivos .dns mas se você quiser:
 
 Você pode ir diretamente ao [Projetos Premium ✨](https://github.com/raquelmcoelho/digital-eletronics)
 
+# ✨ Exemplos Premium ✨
 ![Setup-Exemplo](https://github.com/raquelmcoelho/digital-eletronics/blob/main/07%20-%20Frequency%20meter/images/setup.jpeg)
 ![Circuito-Exemplo](https://github.com/raquelmcoelho/digital-eletronics/blob/main/07%20-%20Frequency%20meter/images/circuit.jpeg)
