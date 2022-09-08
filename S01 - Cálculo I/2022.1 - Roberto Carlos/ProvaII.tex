@@ -1,0 +1,596 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\highlight}[1]{\colorbox{yellow}{$\displaystyle #1$}}
+
+\title{II Prova - Cálculo I}
+\author{Raquel Maciel Coelho de Sousa}
+\date{25 de Abril 2022}
+
+\geometry{
+a4paper,
+total={170mm,257mm},
+left=20mm,
+top=20mm,
+}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+\section{Questão:}
+\begin{flalign}
+\lim_{x \to 0}\frac{sin3x}{4x} && \nonumber
+\end{flalign}
+
+\subsection{Aplicar $x_0$ na função}
+\begin{flalign}
+f(x_0) &= f(0) && \nonumber\\
+f(0) &= \frac{sin3 \cdot 0}{4 \cdot 0} && \nonumber\\
+f(0) &= \frac{0}{0} && \nonumber
+\end{flalign}
+(Indeterminado)
+
+\subsection{Para encontrar essa indeterminação} 
+
+\subsubsection{Propriedade que o limite do produto é o produto dos limites}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(f \cdot g)(x) = \lim_{x \to  x_0}f(x) \cdot \lim_{x \to  x_0}g(x)}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+& \lim_{x \to 0}\frac{sin3x}{4x} && \nonumber \\
+&= \lim_{x \to 0}\frac{1}{4} \cdot \frac{sin3x}{x} && \nonumber \\
+&= \lim_{x \to 0}\frac{1}{4} \cdot \lim_{x \to 0}\frac{sin3x}{x} && \nonumber
+\end{flalign}
+
+
+\subsubsection{Propriedade do limite da constante}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}c = c}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&= \frac{1}{4} \cdot \lim_{x \to 0}\frac{sin3x}{x} && \nonumber
+\end{flalign}
+
+\subsubsection{Multiplica o numerador e denominador por 3}
+\begin{flalign}
+&= \frac{1}{4} \cdot \lim_{x \to 0}\frac{sin3x \cdot 3}{3x} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade que o limite do produto é o produto dos limites}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(f \cdot g)(x) = \lim_{x \to  x_0}f(x) \cdot \lim_{x \to  x_0}g(x)}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&= \frac{1}{4} \cdot \lim_{x \to 0}\frac{sin3x}{3x} \cdot \lim_{x \to 0} 3 && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade do limite da constante}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}c = c}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&= \frac{1}{4} \cdot \lim_{x \to 0}\frac{sin3x}{3x} \cdot  3 && \nonumber
+\end{flalign}
+
+\subsubsection{Teorema da Troca}
+\begin{flalign}
+&\highlight{\lim_{x \to x_0}f(x) = \lim_{x \to x_0}g(x)} && \nonumber\\
+&\highlight{f(x) = g(x)} && \nonumber
+\end{flalign}
+
+\subsubsection{Substituição de variável}
+\begin{flalign}
+& 3x = t && \nonumber \\
+& x \to 0 && \nonumber \\
+& t \to 0 && \nonumber \\
+&= \frac{3}{4} \cdot \lim_{x \to 0}\frac{sin(t)}{t} && \nonumber
+\end{flalign}
+
+\subsubsection{Teorema do Confronto (Sanduíche) e Limite Trigonométrico Fundamental}
+\begin{flalign}
+& \highlight{cos(t) \leq \frac{sin(t)}{t}\leq 1} && \nonumber \\
+& \highlight{\lim_{x \to 0}\frac{sin(t)}{t} = 1} && \nonumber
+\end{flalign}
+
+\subsection{Finalização}
+\begin{flalign}
+&= \frac{3}{4} \cdot 1 && \nonumber \\
+&= \frac{3}{4} && \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+\lim_{x \to 0}\frac{x^2}{1-cos10x} && \nonumber
+\end{flalign}
+
+\subsection{Aplicar $x_0$ na função}
+\begin{flalign}
+f(x_0) &= f(0) && \nonumber\\
+f(0) &=\frac{0^2}{1-cos10 \cdot 0} && \nonumber\\
+f(0) &=\frac{0}{1-1} && \nonumber \\
+f(0) &=\frac{0}{0} && \nonumber
+\end{flalign}
+(Indeterminado)
+
+\subsection{Para encontrar essa indeterminação}
+
+\subsubsection{Multiplicando o numerador e o denominador pelo conjugado do denominador}
+\begin{flalign}
+& \lim_{x \to 0}\frac{x^2}{1-cos10x} && \nonumber\\
+&=\lim_{x \to 0}\frac{(x^2) \cdot (1+cos10x)}{(1-cos10x) \cdot (1+cos10x)} && \nonumber\\
+&=\lim_{x \to 0}\frac{(x^2) \cdot (1+cos10x)}{(1^2-cos^2(10x))} && \nonumber\\
+&=\lim_{x \to 0}\frac{(x^2) \cdot (1+cos10x)}{(1-cos^2(10x))} && \nonumber
+\end{flalign}
+
+\subsubsection{Utilizando a substituição pela Relação fundamental da trigonometria}
+\begin{flalign}
+& \highlight{sen^2(x) + cos^2(x) = 1} && \nonumber\\
+& sen^2(x) = 1 - cos^2(x) && \nonumber\\
+&=\lim_{x \to 0}\frac{(x^2) \cdot (1+cos10x)}{sen^2(10x)} && \nonumber
+\end{flalign}
+
+\subsubsection{Separação pelo produto dos quocientes}
+\begin{flalign}
+&=\lim_{x \to 0}\frac{(x^2)}{sen^2(10x)} \cdot \frac{1+cos10x}{1} && \nonumber
+\end{flalign}
+
+
+\subsubsection{Propriedade que o limite do produto é o produto dos limites}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(f \cdot g)(x) = \lim_{x \to  x_0}f(x) \cdot \lim_{x \to  x_0}g(x)}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&=\lim_{x \to 0}\frac{(x^2)}{sen^2(10x)} \cdot \lim_{x \to 0}\frac{1+cos10x}{1} && \nonumber
+\end{flalign}
+
+\subsubsection{Pondo o expoente comum do numerador e denominador como o expoente do quociente completo e o tornando negativo para inverter a fração}
+\begin{flalign}
+&=\lim_{x \to 0}\left(\frac{sen10x}{x}\right)^{-2} \cdot \lim_{x \to 0}\frac{1+cos10x}{1} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade em que o limite da potência é a potência do limite}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(a^b) = \left(\lim_{x \to  x_0}a\right) ^b}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&=\left(\lim_{x \to 0}\frac{sen10x}{x}\right)^{-2} \cdot \lim_{x \to 0}\frac{1+cos10x}{1} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade derivada do Limite Trigonométrico Fundamental}
+\begin{flalign}
+& \highlight{\lim_{x \to 0}\frac{sin(k\cdot t)}{t} = k} && \nonumber\\
+&= 10 ^ {-2} \cdot \lim_{x \to 0}\frac{1+cos10x}{1} && \nonumber
+\end{flalign}
+
+\subsection{Finalização}
+\begin{flalign}
+&= 10 ^ {-2} \cdot \frac{1+cos(10 \cdot 0)}{1} && \nonumber \\
+&= 10 ^ {-2} \cdot \frac{1+1}{1} && \nonumber \\
+&= \frac{1}{100} \cdot \frac{2}{1} && \nonumber \\
+&= \frac{1}{50} && \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+\lim_{x \to 0}3^{\frac{1-sec^2(20x)}{sec^2(10x)-1}} && \nonumber
+\end{flalign}
+
+\subsection{Aplicar $x_0$ na função}
+\begin{flalign}
+f(x_0) &= f(0) && \nonumber\\
+f(0) &= 3^{\frac{1-sec^2(20 \cdot 0)}{sec^2(10 \cdot 0)-1}} && \nonumber\\
+f(0) &= 3^{\frac{1- \frac{1}{cos^2(0)}}{\frac{1}{cos^2(0)}-1}} && \nonumber\\
+f(0) &= 3^{\frac{1- \frac{1}{1}}{\frac{1}{1}-1}} && \nonumber\\
+f(0) &= 3^{\frac{0}{0}} && \nonumber\\
+\end{flalign}
+(Indeterminado)
+
+\subsection{Para encontrar essa indeterminação}
+
+\subsubsection{Propriedade em que o limite da potência é a base elevada ao limite do expoente}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(a^b) = a^{\lim_{x \to  x_0}b}}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+& \lim_{x \to 0}3^{\frac{1-sec^2(20x)}{sec^2(10x)-1}} && \nonumber\\
+&= 3^{\lim_{x \to 0}\frac{1-sec^2(20x)}{sec^2(10x)-1}} && \nonumber
+\end{flalign}
+
+\subsubsection{Pondo o -1 em evidência}
+\begin{flalign}
+&= 3^{\lim_{x \to 0}\frac{-(sec^2(20x)-1)}{sec^2(10x)-1}} && \nonumber\\
+&= 3^{\lim_{x \to 0}-1 \cdot \frac{sec^2(20x)-1}{sec^2(10x)-1}} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade que o limite do produto é o produto dos limites}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(f \cdot g)(x) = \lim_{x \to  x_0}f(x) \cdot \lim_{x \to  x_0}g(x)}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&= 3^{\lim_{x \to 0}-1 \cdot \lim_{x \to 0}\frac{sec^2(20x)-1}{sec^2(10x)-1}} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade do limite da constante}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}c = c}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+&= 3^{-1 \cdot \lim_{x \to 0}\frac{sec^2(20x)-1}{sec^2(10x)-1}} && \nonumber\\
+&= 3^{-\lim_{x \to 0}\frac{sec^2(20x)-1}{sec^2(10x)-1}} && \nonumber
+\end{flalign}
+
+\subsubsection{Utilizando a substituição pela Relação da tangente com a secante}
+\begin{flalign}
+& \highlight{sec^2(x) - tg^2(x) = 1} && \nonumber\\
+& tg^2(x) = sec^2(x) - 1 && \nonumber\\
+&= 3^{-\lim_{x \to 0}\frac{tg^2(20x)}{tg^2(10x)}} && \nonumber
+\end{flalign}
+
+\subsubsection{Pondo o expoente comum do numerador e denominador como o expoente do quociente completo}
+\begin{flalign}
+&= 3^{-\lim_{x \to 0}\left(\frac{tg(20x)}{tg(10x)}\right)^2} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade em que o limite da potência é a potência do limite}
+\begin{flalign}
+& \highlight{\lim_{x \to  x_0}(a^b) = \left(\lim_{x \to  x_0}a\right) ^b}&& \nonumber \\
+&= 3^{-\left(\lim_{x \to 0}\frac{tg(20x)}{tg(10x)}\right)^2} && \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade do limite do quociente das tangentes}
+\begin{flalign}
+&\highlight{\lim_{x \to 0}\frac{tg(k \cdot x)}{tg(q \cdot x)} = \frac{k}{q}} && \nonumber\\
+&= 3^{-\left(\lim_{x \to 0}\frac{20}{10}\right)^2} && \nonumber
+\end{flalign}
+
+\subsection{Finalização}
+\begin{flalign}
+&= 3^{-\left(\frac{20}{10}\right)^2} && \nonumber\\
+&= 3^{-(2)^2} && \nonumber\\
+&= 3^{-4} && \nonumber\\
+&= \frac{1}{81}&& \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+\lim_{x \to +\infty}\left(\ln\left(1+\frac{3}{5x}\right)^{2x}\right)
+&& \nonumber
+\end{flalign}
+
+\subsection{Aplicar $x_0$ na função}
+Por se tratar de operações aritméticas entre inifnitos então é considerado Indeterminado.
+
+\subsection{Para encontrar essa indeterminação}
+\subsubsection{Propriedade em que o limite do log é o log do limite}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(\log a) = \log\left(\lim_{x \to  x_0}a \right)}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+\ln\left(\lim_{x \to +\infty}\left(1+\frac{3}{5x}\right)^{2x}\right)
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Teorema da Troca}
+\begin{flalign}
+&\highlight{\lim_{x \to x_0}f(x) = \lim_{x \to x_0}g(x)} && \nonumber\\
+&\highlight{f(x) = g(x)} && \nonumber
+\end{flalign}
+
+\subsubsection{Substituição de Variável}
+\begin{flalign}
+& \frac{3}{5x} = \frac{1}{t} 
+&& \nonumber \\
+& t = \frac{5x}{3}
+&& \nonumber \\
+& x = \frac{3t}{5} 
+&& \nonumber \\
+& x \to \infty
+&& \nonumber \\
+& t \to \infty 
+&& \nonumber \\
+& \ln\left(\lim_{t \to +\infty}\left(1+\frac{1}{t}\right)^{2 \cdot \frac{3t}{5}}\right)
+&& \nonumber\\
+& \ln\left(\lim_{t \to +\infty}\left(1+\frac{1}{t}\right)^{ \frac{6t}{5}}\right)
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Separação da multiplicação dos expoentes}
+\begin{flalign}
+& \ln\left(\lim_{t \to +\infty}\left(\left(1+\frac{1}{t}\right)^{t} \right)^{ \frac{6}{5}}\right)
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade o limite do expoente é o expoente do limite}
+\begin{flalign}
+& \ln\left(\lim_{t \to +\infty}\left(1+\frac{1}{t}\right)^{t}\right)^{ \frac{6}{5}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Limite Exponencial / Limite de Euler}
+\begin{flalign}
+& \highlight{\lim_{t \to \infty}\left(1+\frac{1}{t}\right)^{t}
+ = e } && \nonumber \\
+&= \ln(e)^{ \frac{6}{5}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade Logarítmica em que o expoente do Logaritmando vira o Fator do Logaritmo}
+\begin{flalign}
+&= \frac{6}{5} \cdot \ln(e)
+&& \nonumber
+\end{flalign}
+
+\subsection{Finalização}
+\begin{flalign}
+&= \frac{6}{5} \cdot 1
+&& \nonumber \\
+&= \frac{6}{5}
+&& \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão:}
+\begin{flalign}
+\lim_{x \to 0}\frac{2^x - 6^x}{10^x - 20^x}
+&& \nonumber
+\end{flalign}
+
+\subsection{Aplicar $x_0$ na função}
+\begin{flalign}
+& f(x_0)  = f(0) && \nonumber \\
+& f(0) = \frac{2^0 - 6^0}{10^0 - 20^0}
+&& \nonumber\\
+& f(0) = \frac{1 - 1}{1 - 1}
+&& \nonumber\\
+& f(0) = \frac{0}{0}
+&& \nonumber
+\end{flalign}
+(Indeterminado)
+
+\subsection{Para encontrar essa indeterminação}
+
+\subsubsection{Adicionando um e diminuindo um de ambos membros da fração}
+\begin{flalign}
+&\lim_{x \to 0}\frac{2^x -1 - 6^x + 1}{10^x -1 - 20^x + 1}
+&& \nonumber\\
+=& \lim_{x \to 0}\frac{(2^x -1) - (6^x - 1)}{(10^x -1) - (20^x - 1)}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Divindo ambos membros da fração por x}
+\begin{flalign}
+=& \lim_{x \to 0}\frac{\frac{(2^x -1) - (6^x - 1)}{x}}{\frac{(10^x -1) - (20^x - 1)}{x}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Transformando ambos membros da fração em Subtrações}
+\begin{flalign}
+=& \lim_{x \to 0}\frac{\frac{2^x -1}{x} - \frac{6^x - 1}{x}}{\frac{10^x -1}{x} - \frac{20^x - 1}{x}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{O limite do quociente é o quociente dos limites}
+\begin{flalign}
+& \highlight{\lim_{x \to  x_0}\left(\frac{f}{g}\right)(x) = \frac{\lim_{x \to  x_0}f(x)}{\lim_{x \to  x_0}g(x)}}&& \nonumber\\
+& \highlight{\lim_{x \to  x_0}g(x) \ne 0} && \nonumber
+\end{flalign}
+
+\begin{flalign}
+=& \frac{\lim_{x \to 0}\frac{2^x -1}{x} - \frac{6^x - 1}{x}}{\lim_{x \to 0}\frac{10^x -1}{x} - \frac{20^x - 1}{x}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade em que o limite da diferença é a diferença dos limites}
+\begin{flalign}
+\highlight{\lim_{x \to  x_0}(f - g)(x) = \lim_{x \to  x_0}f(x) - \lim_{x \to  x_0}g(x)}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+=& \frac{\lim_{x \to 0}\frac{2^x -1}{x} - \lim_{x \to 0}\frac{6^x - 1}{x}}{\lim_{x \to 0}\frac{10^x -1}{x} - \lim_{x \to 0}\frac{20^x - 1}{x}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Limite do Logaritmo Natural de X}
+\begin{flalign}
+\highlight{\lim_{x \to 0}\frac{a^x - 1}{x} = \log_e a = lna}&& \nonumber
+\end{flalign}
+
+\begin{flalign}
+=& \frac{ln2 - ln6}{ln10 - ln20}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade Logarítmica em que a diferença dos Logaritmos é o Logaritmo do quociente dos logaritmandos}
+\begin{flalign}
+& \highlight{\log_c a - \log_c b = \log_c \frac{a}{b}} && \nonumber
+\end{flalign}
+
+\begin{flalign}
+=& \frac{ln\frac{2}{6}}{ln\frac{10}{20}}
+&& \nonumber\\
+=& \frac{ln\frac{1}{3}}{ln\frac{1}{2}}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Revertendo a propriedade usada depois da fração ter sido simplificada}
+\begin{flalign}
+=& \frac{ln1- ln3}{ln1 - ln2}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade logarítmica onde o logaritmando é 1}
+\begin{flalign}
+& \highlight{\log_a 1 = 0} && \nonumber
+\end{flalign}
+
+\begin{flalign}
+=& \frac{0 - ln3}{0 - ln2}
+&& \nonumber
+\end{flalign}
+
+\subsubsection{Propriedade logarítmica da substituição de base através de uma razão}
+\begin{flalign}
+& \highlight{\frac{\log_c a}{\log_c b} = \log_b a} && \nonumber
+\end{flalign}
+
+\subsection{Finalização}
+\begin{flalign}
+=& \frac{ln3}{ln2}
+&& \nonumber\\
+=& \log_2 3&& \nonumber
+\end{flalign}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Questão: Analise a continuidade de }
+\begin{flalign}
+f(x) = 
+\begin{cases} 
+x+x^2, & \text{se $x < 1$ }\\ 
+3x^4 -1, & \text{se  $x \geq 1$}
+\end{cases} && \nonumber
+\end{flalign}
+
+\subsection{Variável $x_0$}
+Atribuindo uma variável $x_0$ a x de modo que  $x = x_0 \in D(f)$ iremos analizar sua continuidade. 
+
+\subsection{Condições da continuidade de função}
+\subsubsection{Se $f(x_0)$ está definido}
+\begin{flalign}
+f(x) = f(x_0) =
+\begin{cases} 
+x_0+(x_0)^2, & \text{se $x_0 < 1$ }\\ 
+3(x_0)^4 -1, & \text{se  $x_0 \geq 1$}
+\end{cases} && \nonumber
+\end{flalign}
+
+\subsubsection{Se $\lim_{x \to x_0}$ existe}
+\begin{flalign}
+\lim_{x \to x_0} = 
+\begin{cases} 
+x_0+(x_0)^2, & \text{se $x_0 < 1$ }\\ 
+3(x_0)^4 -1, & \text{se  $x_0 \geq 1$}
+\end{cases} && \nonumber
+\end{flalign}
+
+\subsubsection{Se $\lim_{x \to x_0} = f(x_0)$}
+\begin{flalign}
+&\text{se $x_0 < 1$ }
+\begin{cases} 
+f(x_0) = x_0+(x_0)^2\\ 
+\lim_{x\to x_0} = x_0+(x_0)^2 \\
+\\f(x_0) = \lim_{x\to x_0}
+\end{cases} && \nonumber\\ \nonumber \\ \nonumber
+&\text{se  $x_0 \geq 1$}
+\begin{cases} 
+f(x_0) = 3(x_0)^4 -1 \\
+\lim_{x\to x_0} = 3(x_0)^4 -1 \\
+\\f(x_0) = \lim_{x\to x_0}
+\end{cases} && \nonumber
+\end{flalign}
+
+\subsection{Finalização}
+Assim provamos que a função f(x) polinomial é contínua.
+
+\end{document}
