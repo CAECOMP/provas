@@ -1,0 +1,2 @@
+Warning[2068] C:\Users\megat\OneDrive\Documents\Programas\Proteus\Lista 2 MCMP\Q4\UARP.c 65 : obsolete use of implicit 'int' detected
+Warning[2103] C:\Users\megat\OneDrive\Documents\Programas\Proteus\Lista 2 MCMP\Q4\UARP.c 65 : default startup code expects main function declared as 'void main (void)'
