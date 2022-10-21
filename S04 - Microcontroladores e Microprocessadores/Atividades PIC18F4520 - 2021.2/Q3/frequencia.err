@@ -1,0 +1,2 @@
+Warning[2068] C:\Users\megat\OneDrive\Documents\Programas\Proteus\Lista 2 MCMP\Q3\frequencia.c 55 : obsolete use of implicit 'int' detected
+Warning[2103] C:\Users\megat\OneDrive\Documents\Programas\Proteus\Lista 2 MCMP\Q3\frequencia.c 55 : default startup code expects main function declared as 'void main (void)'
