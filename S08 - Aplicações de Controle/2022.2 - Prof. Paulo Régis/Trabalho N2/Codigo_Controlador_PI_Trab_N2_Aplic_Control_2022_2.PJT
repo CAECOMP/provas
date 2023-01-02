@@ -1,0 +1,35 @@
+[PROJECT]
+Target=Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.HEX
+Development_Mode=2
+Processor=0x874F
+ToolSuite=CCS
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+
+[Target Data]
+FileList=Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.c;
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+
+[Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=C:\Users\CRISTI~1\Desktop\TRABN2~1\CODIGO~1.C
+
+[Windows]
+0=0000 C:\Users\CRISTI~1\Desktop\TRABN2~1\CODIGO~1.C 0 0 796 451 3 0
+
+[Opened Files]
+1=C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.c
+2=

@@ -1,0 +1,77 @@
+008     PSP_DATA
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+01B-01C CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+024     @SCRATCH
+025     @TRIS_C
+026-029 main.ek
+02A-02D main.ek_1
+02E-031 main.uk
+032-035 main.uk_1
+036     main.out
+037     main.ref
+038-03B main.yk
+03C-03F @MULFF.P1
+03C-03D @ITOF.P2
+03C-03F @FLT.P3
+03C-03F @SFTOI.P4
+03C     main.@SCRATCH
+03D     main.@SCRATCH
+03E     main.@SCRATCH
+03F     main.@SCRATCH
+040-043 @FLT.P1
+040-043 @ADDFF.P2
+040-043 @MULFF.P3
+044-047 @ADDFF.P1
+044     @MULFF.@SCRATCH
+044     @FLT.@SCRATCH
+045     @MULFF.@SCRATCH
+045     @FLT.@SCRATCH
+046     @MULFF.@SCRATCH
+047     @MULFF.@SCRATCH
+048     @ADDFF.@SCRATCH
+048     @MULFF.@SCRATCH
+049     @ADDFF.@SCRATCH
+04A     @ADDFF.@SCRATCH
+04B     @ADDFF.@SCRATCH
+04C     @ADDFF.@SCRATCH
+04D     @ADDFF.@SCRATCH
+04E     @ADDFF.@SCRATCH
+04F     @ADDFF.@SCRATCH
+
+0238  main
+0004  @ITOF
+0022  @ADDFF
+0161  @MULFF
+01D8  @SFTOI
+01F9  @FLT
+0238  @cinit
+
+Project Files:
+    C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.c
+    C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\16F874.h
+
+Compiler Settings:
+    Processor:      PIC16F874
+    Pointer Size:   8
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: 1,8,16
+
+Output Files:
+    Errors:      C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.err
+    INHX8:       C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.HEX
+    Symbols:     C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.SYM
+    List:        C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.LST
+    Debug/COFF:  C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.cof
+    Project:     C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.PJT
+    Call Tree:   C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.tre
+    Statistics:  C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.sta
