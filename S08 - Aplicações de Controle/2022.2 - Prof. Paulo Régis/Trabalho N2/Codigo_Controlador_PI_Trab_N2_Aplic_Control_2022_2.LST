@@ -1,0 +1,327 @@
+CCS PCM C Compiler, Version 3.203, 16465
+
+               Filename: C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.LST
+
+               ROM used: 813 words (20%)
+                         Largest free fragment is 2048
+               RAM used: 32 (17%) at main() level
+                         48 (25%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   238
+0003:  NOP
+....................  // Inclusão de bibliotecas e componentes utilizados  
+.................... #include "16F874.h" 
+....................  //////// Standard Header file for the PIC16F874 device ////////////////  
+.................... #device PIC16F874  
+.................... #list  
+....................  
+.................... #device adc=8  
+.................... #use delay(clock=1000000)  
+.................... #fuses XT,NOWDT,NOPUT  
+....................   
+.................... void main()  
+.................... {  
+0238:  CLRF   04
+0239:  MOVLW  1F
+023A:  ANDWF  03,F
+023B:  BSF    03.5
+023C:  BSF    1F.0
+023D:  BSF    1F.1
+023E:  BSF    1F.2
+023F:  BCF    1F.3
+....................    float ek=0, ek_1=0, uk=0, uk_1=0; // Instanciando variaveis utiliadas  
+*
+0243:  CLRF   26
+0244:  CLRF   27
+0245:  CLRF   28
+0246:  CLRF   29
+0247:  CLRF   2A
+0248:  CLRF   2B
+0249:  CLRF   2C
+024A:  CLRF   2D
+024B:  CLRF   2E
+024C:  CLRF   2F
+024D:  CLRF   30
+024E:  CLRF   31
+024F:  CLRF   32
+0250:  CLRF   33
+0251:  CLRF   34
+0252:  CLRF   35
+....................   
+....................    int out = 0, ref=127;  
+0253:  CLRF   36
+0254:  MOVLW  7F
+0255:  MOVWF  37
+....................    float yk = 0;  //Equivalente a um valor de tensão 2.5v (Analógico)  
+0256:  CLRF   38
+0257:  CLRF   39
+0258:  CLRF   3A
+0259:  CLRF   3B
+....................      
+....................   
+....................    //static float ts = 0.0000333;  
+....................    //static float t;  
+....................   
+....................    // "Setando" configurações iniciais dos componentes usados no PIC  
+....................    setup_adc_ports(ALL_ANALOG);  
+025A:  BSF    03.5
+025B:  BCF    1F.0
+025C:  BCF    1F.1
+025D:  BCF    1F.2
+025E:  BCF    1F.3
+....................    setup_adc(ADC_CLOCK_INTERNAL);  
+025F:  BCF    03.5
+0260:  BSF    1F.6
+0261:  BSF    1F.7
+0262:  BSF    03.5
+0263:  BCF    1F.7
+0264:  BCF    03.5
+0265:  BSF    1F.0
+....................    set_adc_channel(0);  
+0266:  MOVLW  00
+0267:  MOVWF  21
+0268:  MOVF   1F,W
+0269:  ANDLW  C7
+026A:  IORWF  21,W
+026B:  MOVWF  1F
+....................    setup_timer_2(T2_DIV_BY_4,65,1);  
+026C:  MOVLW  00
+026D:  MOVWF  21
+026E:  IORLW  05
+026F:  MOVWF  12
+0270:  MOVLW  41
+0271:  BSF    03.5
+0272:  MOVWF  12
+....................    setup_ccp1(CCP_PWM);  
+*
+0240:  MOVLW  FF
+0241:  BCF    03.5
+0242:  MOVWF  25
+*
+0273:  BCF    03.5
+0274:  BCF    25.2
+0275:  MOVF   25,W
+0276:  BSF    03.5
+0277:  MOVWF  07
+0278:  BCF    03.5
+0279:  BCF    07.2
+027A:  MOVLW  0C
+027B:  MOVWF  17
+....................   
+....................    enable_interrupts(GLOBAL | INT_TIMER2);  
+027C:  MOVLW  C2
+027D:  BSF    03.5
+027E:  IORWF  0F,F
+....................    delay_us(100);  
+027F:  MOVLW  08
+0280:  BCF    03.5
+0281:  MOVWF  20
+0282:  DECFSZ 20,F
+0283:  GOTO   282
+....................   
+....................    while(1)  
+....................    {  
+....................       yk = read_adc();  
+0284:  BSF    1F.2
+0285:  BTFSC  1F.2
+0286:  GOTO   285
+0287:  MOVF   1E,W
+0288:  CLRF   3D
+0289:  MOVWF  3C
+028A:  CALL   004
+028B:  MOVF   23,W
+028C:  MOVWF  3B
+028D:  MOVF   22,W
+028E:  MOVWF  3A
+028F:  MOVF   21,W
+0290:  MOVWF  39
+0291:  MOVF   20,W
+0292:  MOVWF  38
+....................       // yk = yk*(5000/255);  
+....................       ek = ref - yk;  
+0293:  CLRF   3D
+0294:  MOVF   37,W
+0295:  MOVWF  3C
+0296:  CALL   004
+0297:  BSF    03.1
+0298:  MOVF   23,W
+0299:  MOVWF  43
+029A:  MOVF   22,W
+029B:  MOVWF  42
+029C:  MOVF   21,W
+029D:  MOVWF  41
+029E:  MOVF   20,W
+029F:  MOVWF  40
+02A0:  MOVF   3B,W
+02A1:  MOVWF  47
+02A2:  MOVF   3A,W
+02A3:  MOVWF  46
+02A4:  MOVF   39,W
+02A5:  MOVWF  45
+02A6:  MOVF   38,W
+02A7:  MOVWF  44
+02A8:  CALL   022
+02A9:  MOVF   23,W
+02AA:  MOVWF  29
+02AB:  MOVF   22,W
+02AC:  MOVWF  28
+02AD:  MOVF   21,W
+02AE:  MOVWF  27
+02AF:  MOVF   20,W
+02B0:  MOVWF  26
+....................         
+....................       // Estrutura direta não canônica   
+....................       uk = 0.09346 * ek_1 + uk_1;  
+02B1:  MOVLW  F5
+02B2:  MOVWF  3F
+02B3:  MOVLW  67
+02B4:  MOVWF  3E
+02B5:  MOVLW  3F
+02B6:  MOVWF  3D
+02B7:  MOVLW  7B
+02B8:  MOVWF  3C
+02B9:  MOVF   2D,W
+02BA:  MOVWF  43
+02BB:  MOVF   2C,W
+02BC:  MOVWF  42
+02BD:  MOVF   2B,W
+02BE:  MOVWF  41
+02BF:  MOVF   2A,W
+02C0:  MOVWF  40
+02C1:  GOTO   161
+02C2:  MOVF   20,W
+02C3:  MOVWF  3C
+02C4:  MOVF   21,W
+02C5:  MOVWF  3D
+02C6:  MOVF   22,W
+02C7:  MOVWF  3E
+02C8:  MOVF   23,W
+02C9:  MOVWF  3F
+02CA:  BCF    03.1
+02CB:  MOVF   23,W
+02CC:  MOVWF  43
+02CD:  MOVF   22,W
+02CE:  MOVWF  42
+02CF:  MOVF   21,W
+02D0:  MOVWF  41
+02D1:  MOVF   20,W
+02D2:  MOVWF  40
+02D3:  MOVF   35,W
+02D4:  MOVWF  47
+02D5:  MOVF   34,W
+02D6:  MOVWF  46
+02D7:  MOVF   33,W
+02D8:  MOVWF  45
+02D9:  MOVF   32,W
+02DA:  MOVWF  44
+02DB:  CALL   022
+02DC:  MOVF   23,W
+02DD:  MOVWF  31
+02DE:  MOVF   22,W
+02DF:  MOVWF  30
+02E0:  MOVF   21,W
+02E1:  MOVWF  2F
+02E2:  MOVF   20,W
+02E3:  MOVWF  2E
+....................       out = (int)(uk);  
+02E4:  MOVF   31,W
+02E5:  MOVWF  3F
+02E6:  MOVF   30,W
+02E7:  MOVWF  3E
+02E8:  MOVF   2F,W
+02E9:  MOVWF  3D
+02EA:  MOVF   2E,W
+02EB:  MOVWF  3C
+02EC:  GOTO   1D8
+02ED:  MOVF   21,W
+02EE:  MOVWF  36
+....................   
+....................       // Tratando o sinal para se estabilizar em 6V  
+....................       if (yk > 255){  
+02EF:  CLRF   3F
+02F0:  CLRF   3E
+02F1:  MOVLW  7F
+02F2:  MOVWF  3D
+02F3:  MOVLW  86
+02F4:  MOVWF  3C
+02F5:  MOVF   3B,W
+02F6:  MOVWF  43
+02F7:  MOVF   3A,W
+02F8:  MOVWF  42
+02F9:  MOVF   39,W
+02FA:  MOVWF  41
+02FB:  MOVF   38,W
+02FC:  MOVWF  40
+02FD:  CALL   1F9
+02FE:  BTFSS  03.0
+02FF:  GOTO   306
+....................          yk = 255;  
+0300:  CLRF   3B
+0301:  CLRF   3A
+0302:  MOVLW  7F
+0303:  MOVWF  39
+0304:  MOVLW  86
+0305:  MOVWF  38
+....................       }  
+....................       if (yk < 0){  
+0306:  MOVF   3B,W
+0307:  MOVWF  3F
+0308:  MOVF   3A,W
+0309:  MOVWF  3E
+030A:  MOVF   39,W
+030B:  MOVWF  3D
+030C:  MOVF   38,W
+030D:  MOVWF  3C
+030E:  CLRF   43
+030F:  CLRF   42
+0310:  CLRF   41
+0311:  CLRF   40
+0312:  CALL   1F9
+0313:  BTFSS  03.0
+0314:  GOTO   319
+....................          yk = 0;  
+0315:  CLRF   3B
+0316:  CLRF   3A
+0317:  CLRF   39
+0318:  CLRF   38
+....................       }  
+....................   
+....................       // Config pwm signal  
+....................       set_pwm1_duty(out);  
+0319:  MOVF   36,W
+031A:  MOVWF  15
+....................        
+....................   
+....................       // Estrutura direta não canônica  
+....................       uk_1 = uk;  
+031B:  MOVF   31,W
+031C:  MOVWF  35
+031D:  MOVF   30,W
+031E:  MOVWF  34
+031F:  MOVF   2F,W
+0320:  MOVWF  33
+0321:  MOVF   2E,W
+0322:  MOVWF  32
+....................       ek_1 = ek;  
+0323:  MOVF   29,W
+0324:  MOVWF  2D
+0325:  MOVF   28,W
+0326:  MOVWF  2C
+0327:  MOVF   27,W
+0328:  MOVWF  2B
+0329:  MOVF   26,W
+032A:  MOVWF  2A
+....................   
+....................    }  
+032B:  GOTO   284
+.................... }  
+....................   
+....................  
+032C:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3FF9   XT NOWDT NOPUT NOPROTECT LVP NOCPD NOWRT BROWNOUT NODEBUG

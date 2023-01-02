@@ -1,0 +1,32 @@
+
+ROM used: 813 (20%)
+          813 (20%) including unused fragments
+
+          2 Average locations per line
+          37 Average locations per statement
+
+RAM used: 32 (17%) at main() level
+          48 (25%) worst case
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   57    22 100  C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\Codigo_Controlador_PI_Trab_N2_Aplic_Control_2022_2.c
+  277     0   0  C:\Users\Cristiano Coutinho\Desktop\Trab N2 Aplic Control 2022_2\16F874.h
+----- -----
+  668    44 Total
+
+Page ROM  %  RAM  Functions:
+---- --- --- ---  ----------
+0    245  30  26  main
+0     30   4   2  @ITOF
+0    319  39  16  @ADDFF
+0    119  15  13  @MULFF
+0     33   4   4  @SFTOI
+0     63   8  10  @FLT
+
+ Segment   Used  Free
+---------  ----  ----
+00000-00003     4  0
+00004-007FF   809  1235
+00800-00FFF     0  2048
+
