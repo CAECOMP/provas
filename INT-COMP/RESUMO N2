@@ -1,1 +1,271 @@
-RESUMOS
+RESUMO
+Probabilidade:
+A probabilidade é uma medida que quantifica a incerteza associada a um evento. É amplamente utilizada na análise de dados e na tomada de decisões em situações incertas. Alguns conceitos fundamentais na teoria da probabilidade incluem:
+
+Espaço amostral: é o conjunto de todos os possíveis resultados de um experimento.
+Evento: é um subconjunto do espaço amostral, que corresponde a um resultado específico ou a uma combinação de resultados.
+
+Regras de probabilidade: existem três regras básicas na teoria da probabilidade.
+ A primeira é a Regra da Soma, que estabelece que a probabilidade de pelo menos um dos eventos ocorrer é igual à soma das probabilidades individuais dos eventos. 
+ A segunda é a Regra do Produto, que diz que a probabilidade conjunta de dois eventos ocorrerem é o produto das probabilidades individuais dos eventos. 
+ A terceira é a Regra da Complementaridade, que relaciona a probabilidade de um evento ocorrer com a probabilidade de seu complementar (evento não ocorrer).
+
+Teorema de Bayes: é uma ferramenta fundamental para a atualização de probabilidades em face de novas informações. O teorema de Bayes relaciona a probabilidade condicional de um evento dado outro evento com a probabilidade condicional inversa. Essa relação é expressa matematicamente por meio da fórmula de Bayes.
+
+A introdução de métodos de tratamento da incerteza em sistemas inteligentes é consequência de alguns problemas inerentes à lógica clássica
+ Impossibilidade de expressar a observabilidade parcial de eventos do mundo real
+ Incerteza nos resultados de certas ações
+ Complexidade excessiva de modelagem e previsão em certos tipos de problemas
+
+Quais as reais razões que nos levam à necessidade de utilização da teoria da probabilidade em sistemas inteligentes? Necessidade de suavizar as asserções, ou seja, dar um certo grau a cada afirmação ou sentença lógica
+Redes Bayesianas:
+As Redes Bayesianas, também conhecidas como redes de crença ou modelos de probabilidade gráfica, são representações gráficas de relacionamentos probabilísticos entre um conjunto de variáveis. Elas fornecem um método para modelar e raciocinar sobre incertezas. As redes Bayesianas são compostas por nós (variáveis) e arestas direcionadas (relações de dependência probabilística entre as variáveis). A estrutura de uma rede bayesiana é baseada em um grafo acíclico dirigido, em que cada nó representa uma variável e as arestas indicam as dependências probabilísticas.
+
+Além disso, cada nó em uma rede bayesiana está associado a uma tabela de probabilidade condicional (TPC), que especifica as probabilidades condicionais para cada valor do nó dado os valores de seus pais. Essas TPCs são construídas com base em conhecimento prévio ou são estimadas a partir de dados observados.
+
+Uma rede bayesiana permite fazer inferências probabilísticas, ou seja, calcular a probabilidade de um conjunto de variáveis desconhecidas com base nas variáveis observadas. Isso é feito utilizando as regras da teoria da probabilidade, como a regra da soma e o teorema de Bayes, juntamente com a estrutura da rede bayesiana e as TPCs associadas aos nós.
+
+As Redes Bayesianas são amplamente aplicadas em áreas como diagnóstico médico, previsão de falhas em sistemas complexos, análise de risco e tomada de decisões em ambientes incertos.
+
+Lógica tradicional vs. Lógica Fuzzy:
+A lógica tradicional, também conhecida como lógica clássica ou binária, é baseada em valores booleanos, ou seja, uma afirmação é considerada verdadeira (1) ou falsa (0). Essa abordagem é adequada para lidar com problemas em que as variáveis são claramente definidas e se enquadram em categorias precisas.
+
+Por outro lado, a Lógica Fuzzy é uma extensão da lógica tradicional que permite lidar com a incerteza e a imprecisão presentes em muitos problemas do mundo real. Ela foi proposta por Lotfi Zadeh na década de 1960 como uma maneira de lidar com a imprecisão linguística e a falta de clareza em termos de pertinência.
+
+Conjuntos Fuzzy:
+Na Lógica Fuzzy, os conjuntos fuzzy são utilizados para representar a imprecisão e a incerteza. Um conjunto fuzzy é definido por uma função de pertinência, que atribui a cada elemento de um universo de discurso um valor no intervalo [0, 1], indicando o grau de pertinência desse elemento ao conjunto.
+
+As operações nos conjuntos fuzzy incluem:
+
+União: combinação de dois conjuntos fuzzy, atribuindo a cada elemento o máximo valor de pertinência entre os dois conjuntos.
+
+Interseção: combinação de dois conjuntos fuzzy, atribuindo a cada elemento o mínimo valor de pertinência entre os dois conjuntos.
+
+Conjunto complementar: refere-se ao conjunto que contém todos os elementos que não estão contidos em um determinado conjunto difuso.
+
+É importante destacar que, na teoria dos conjuntos difusos, os conjuntos complementares podem conter elementos com graus de pertinência diferentes de zero e um. Isso ocorre porque a teoria dos conjuntos difusos lida com graus de pertinência que variam de forma contínua entre 0 e 1, permitindo a representação de incerteza e imprecisão.
+
+Funções de pertinência são utilizadas para descrever a forma e as características dos conjuntos fuzzy. Algumas funções de pertinência comuns incluem a função triangular, a função trapezoidal e a função gaussiana.
+
+Na teoria dos conjuntos difusos admite-se a existência de conjuntos que não contenham elementos com grau de pertinência 1. O nome dado a tal conjunto seria:   conjunto subnormal
+
+
+Lógica Fuzzy e tomada de decisões:
+A Lógica Fuzzy tem aplicações práticas em diversas áreas, especialmente na tomada de decisões em situações em que as informações disponíveis são vagas, imprecisas ou incertas.
+
+Na tomada de decisões com Lógica Fuzzy, os inputs são mapeados para conjuntos fuzzy e regras fuzzy são definidas para representar o conhecimento e as heurísticas do domínio. Essas regras são então utilizadas para inferir conclusões fuzzy a partir dos inputs fuzzy.
+
+Aplicações práticas da Lógica Fuzzy incluem sistemas de controle, diagnóstico médico, previsão do tempo, análise de mercado, entre outros. Essa abordagem permite uma modelagem mais flexível e mais próxima das capacidades de raciocínio humano, considerando a imprecisão e a incerteza inerentes a muitos problemas reais.
+
+Em resumo, a Lógica Fuzzy é uma extensão da lógica tradicional que permite lidar com a imprecisão e a incerteza. Ela utiliza conjuntos fuzzy e funções de pertinência para representar a incerteza e operações específicas para manipular conjuntos fuzzy. A Lógica Fuzzy tem aplicações práticas na tomada de decisões em problemas complexos e incertos, onde a lógica tradicional pode ser limitada.
+
+Com relação a lógica fuzzy podemos afirmar que:
+Ela relativiza o pertencimento de um elemento a um conjunto através dos graus de pertinência.
+
+ Sequência de fases de ação de um controlador difuso:
+ 	entrada de sensores - fuzificação - inferência - defuzificação - ação de controle
+
+Métodos usados no processo de defuzificação:
+ Método do centróide ou centro de gravidade ou centro estático
+ Primeiro dos Máximos (first of maxima)
+Média dos máximos
+
+
+
+
+
+Classificadores Elementares: conceito e importância:
+A classificação de padrões é uma tarefa fundamental na área de aprendizado de máquina e inteligência artificial. Consiste em atribuir rótulos ou categorias a objetos ou instâncias com base em suas características ou atributos. O objetivo é aprender um modelo ou um classificador capaz de generalizar a partir de um conjunto de dados de treinamento, de modo que possa classificar corretamente novos padrões que não foram vistos antes.
+
+A importância da classificação de padrões reside na sua ampla gama de aplicações. Por exemplo, em reconhecimento de voz, é necessário classificar os diferentes fonemas para entender a fala. Em diagnóstico médico, é preciso classificar pacientes em diferentes categorias de doenças com base em sintomas e histórico médico. A classificação também é usada em reconhecimento de imagem, detecção de spam, detecção de fraudes, entre muitas outras áreas.
+
+Classificador de vizinho mais próximo (KNN):
+O classificador de vizinho mais próximo (KNN) é um dos classificadores elementares mais simples e intuitivos. Ele classifica uma instância desconhecida com base na classe das K instâncias mais próximas a ela no conjunto de treinamento.
+
+VANTAGENS DO KNN EM RELAÇÃO AO NN:
+SIMPLES    
+IDEAL PARA TABELAS PEQUENAS OU MÉDIAS
+NÃO REQUER TREINAMENTO
+
+DESVANTAGENS:
+ALTO CUSTO COMPUTACIONAL
+CONSTANTE K É OBTIDA POR TENTATIVA E ERRO
+
+(DIST NCIA MÍNIMA AO CENTRÓIDE É UMA ALTERNATIVA AO KNN)
+
+O algoritmo kNN trabalha de forma levemente diferente do NN tornando mais confiável a solução de problema de classificação. Qual a primeira preocupação que devemos ter na escolha do valor de k?  k deve ser escolhido de forma a evitar empates entre as classes
+
+O algoritmo da distância mínima ao centróide não garante taxas de acerto maiores que o kNN porém apresenta uma grande vantagem. Esta vantagem seria:  Redução significativa dos cálculos a serem realizados em produção/uso 
+
+Os princípios básicos do K-NN são:
+Medida de distância: é utilizada para calcular a proximidade entre as instâncias. A distância Euclidiana é comumente utilizada, mas outras medidas, como a distância de Manhattan, também podem ser aplicadas.
+Escolha do valor de K: define o número de vizinhos próximos a serem considerados na classificação. É uma escolha importante, pois um valor muito baixo pode levar a uma classificação sensível a outliers, enquanto um valor muito alto pode suavizar as fronteiras entre as classes.
+Votação: após encontrar os K vizinhos mais próximos, o classificador realiza uma votação para determinar a classe da instância desconhecida. A classe mais frequente entre os K vizinhos é escolhida como a classe prevista.
+O treinamento do classificador K-NN envolve apenas a memorização do conjunto de treinamento, já que não há etapa explícita de aprendizado de parâmetros. Na etapa de classificação, o classificador calcula a distância entre a instância desconhecida e todas as instâncias do conjunto de treinamento, seleciona os K vizinhos mais próximos e realiza a votação para determinar a classe.
+
+Árvores de decisão:
+
+Ferramenta de apoio a decisão, graficamente com formato de raízes de uma árvore.
+
+
+
+As árvores de decisão são estruturas de classificação baseadas em regras hierárquicas que utilizam uma estrutura em forma de árvore para representar e organizar o conhecimento. Cada nó interno da árvore representa um teste em um atributo, e cada ramo representa uma possível resposta a esse teste. As folhas da árvore representam as classes ou categorias finais.
+
+Uma boa árvore tem características como:
+sintética ( pequena )
+capacidade de generalização
+
+
+A estrutura e a construção de uma árvore de decisão envolvem os seguintes passos:
+
+Escolha do atributo de maior relevância: é feita uma análise estatística para selecionar o atributo que melhor separa as classes ou reduz a incerteza.
+Criação de um nó para o atributo selecionado: esse nó representa o teste a ser realizado.
+Divisão do conjunto de dados com base no valor do atributo: os dados são particionados em subconjuntos com base nos valores do atributo selecionado.
+Recursão: os passos anteriores são aplicados para cada subconjunto de dados, formando uma estrutura em forma de árvore.
+O algoritmo ID3 (Iterative Dichotomiser 3) é um exemplo de algoritmo utilizado para construir árvores de decisão. Ele é baseado na maximização do ganho de informação ou da redução da entropia, medidas que quantificam a incerteza do conjunto de dados.
+
+Uma vez construída a árvore de decisão, a classificação de uma instância desconhecida ocorre percorrendo a árvore a partir da raiz, seguindo o caminho determinado pelos testes até chegar a uma folha, que representa a classe prevista para essa instância.
+
+As árvores de decisão são populares devido à sua interpretabilidade e à capacidade de lidar com dados categóricos e numéricos. No entanto, elas podem ser sensíveis a pequenas variações nos dados de treinamento e podem levar à criação de árvores complexas, que tendem ao overfitting (sobreajuste).
+
+
+
+A respeito do conceito de Machine Learning (ML) ou Aprendizagem de Máquina (AM) podemos afirmar:
+	ML é a utilização de computadores para descobrir padrões (leis, ou modelos) que de outra forma teriam que ser desenvolvidas por seres humanos.
+
+
+
+
+
+
+Avaliação de Classificadores:
+Acerta o que já conhece, porém.
+Se o modelo erra completamente quando a classe não pertence aos dados. Chamamos de OVERFITTING ou seja super ajustado.
+
+Como tratar isso
+Dividir o DATASET em conjunto de treinamento e testes
+
+Fazendo VALIDAÇÃO CRUZADA para fazer uma divisão de dados mais corretamente.
+
+Criando uma MATRIZ DE CONFUSÃO para medir as estatísticas dos classificadores. Medindo a taxa de acerto da validação cruzada.
+
+Métricas Curva ROC
+Medição da qualidade do trabalho de um operador
+Se a curva for abaixo da linha diagonal (<0.6), o classificador é inútil.
+(>0.8) classificador ótimo 
+
+
+
+CLASSIFICADOR ZERO R - CLASSIFICADOR DO PRECONCEITO :
+PELA MAIORIA 
+SERVE COMO BASELINE
+
+CLASSIFICADOR ONE R:
+BASEADO EM 1 REGRA
+
+Construção de regras é uma parte importante da inteligência artificial:
+Machine Learning 
+Observação (aquisição de conhecimento)
+
+Algoritmos de processamento de regras:
+Forward chaining
+Backward chaining
+Mistos
+RETE
+
+Métricas de desempenho:
+As métricas de desempenho são utilizadas para avaliar a qualidade e o desempenho de um classificador. Algumas métricas comumente utilizadas são:
+
+Acurácia (Accuracy): é a proporção de instâncias classificadas corretamente em relação ao total de instâncias. É uma métrica simples e intuitiva, mas pode ser enganosa em casos em que as classes são desbalanceadas.
+
+Precisão (Precision): é a proporção de instâncias classificadas como positivas corretamente em relação ao total de instâncias classificadas como positivas. Mede a capacidade do classificador de evitar falsos positivos.
+
+Recall (Sensibilidade ou Revocação): é a proporção de instâncias positivas corretamente classificadas em relação ao total de instâncias positivas no conjunto de dados. Mede a capacidade do classificador de evitar falsos negativos.
+
+F1-Score: é a média harmônica da precisão e do recall. É uma métrica útil para casos em que há um desequilíbrio entre as classes ou quando tanto a precisão quanto o recall são importantes.
+
+Matriz de Confusão:
+A matriz de confusão é uma tabela que mostra a performance de um classificador em relação às classes reais do conjunto de dados. Ela apresenta quatro elementos principais:
+
+Verdadeiros Positivos (TP): instâncias positivas corretamente classificadas.
+Falsos Positivos (FP): instâncias negativas erroneamente classificadas como positivas.
+Verdadeiros Negativos (TN): instâncias negativas corretamente classificadas.
+Falsos Negativos (FN): instâncias positivas erroneamente classificadas como negativas.
+Com base na matriz de confusão, podemos calcular as métricas de desempenho mencionadas anteriormente, como acurácia, precisão, recall e F1-score.
+
+Curva ROC e Área sob a curva (AUC):
+A curva ROC (Receiver Operating Characteristic) é uma representação gráfica do desempenho de um classificador binário em diferentes pontos de corte. Ela traça a taxa de verdadeiros positivos (recall) no eixo vertical em função da taxa de falsos positivos (1 - especificidade) no eixo horizontal.
+
+A Área sob a curva (AUC) da curva ROC é uma medida numérica do desempenho global do classificador. Quanto maior a área sob a curva, melhor o desempenho do classificador. Um valor de AUC igual a 1 indica um classificador perfeito, enquanto um valor próximo de 0,5 indica um classificador que está realizando classificações aleatórias.
+
+A curva ROC e a AUC são úteis para comparar diferentes classificadores e escolher o melhor ponto de corte, considerando o compromisso entre a taxa de verdadeiros positivos e a taxa de falsos positivos.
+
+Essas métricas e conceitos são amplamente utilizados na avaliação de classificadores, permitindo uma análise mais completa e detalhada do seu desempenho.
+
+Um exemplo de tarefa de classificação?
+	Identificar se uma transação financeira é fraudulenta ou não.
+
+
+Seguinte afirmações é verdadeira em relação à Curva ROC (Receiver Operating Characteristic)? A Curva ROC é utilizada para visualizar o desempenho de classificadores binários em diferentes pontos de corte.
+
+
+
+Conceito de regressão:
+A regressão é uma técnica estatística usada para modelar a relação entre uma variável dependente (variável de saída) e uma ou mais variáveis independentes (variáveis de entrada). O objetivo da regressão é encontrar uma função matemática que melhor descreva essa relação e possa ser usada para prever ou estimar valores da variável dependente com base nos valores das variáveis independentes.
+
+
+
+
+Regressão linear simples:
+A regressão linear simples é um caso especial da regressão em que existe apenas uma variável independente. A equação de regressão linear simples é dada por:
+
+Y = β0 + β1*X + ε
+
+Onde:
+
+Y é a variável dependente.
+X é a variável independente.
+β0 e β1 são os coeficientes de regressão que representam o intercepto e o coeficiente angular da reta de regressão, respectivamente.
+ε é o termo de erro, que representa a variabilidade não explicada pelo modelo.
+
+O método dos mínimos quadrados é usado para estimar os coeficientes de regressão que minimizam a soma dos quadrados dos resíduos entre os valores observados e os valores previstos pelo modelo.
+
+Avaliação de modelos de regressão:
+Existem várias métricas para avaliar o desempenho de modelos de regressão. 
+
+Duas das métricas mais comumente utilizadas são:
+
+Coeficiente de determinação (R²): O coeficiente de determinação varia de 0 a 1 e indica a proporção da variabilidade da variável dependente que é explicada pelo modelo de regressão. Um valor de R² próximo a 1 indica um modelo que se ajusta bem aos dados, enquanto um valor próximo a 0 indica que o modelo não explica bem a variabilidade dos dados.
+
+Erro quadrático médio (MSE): O MSE mede a média dos quadrados dos erros entre os valores observados e os valores previstos pelo modelo de regressão. Quanto menor o MSE, melhor é o desempenho do modelo em termos de ajuste aos dados.
+
+Outras métricas comuns de avaliação de modelos de regressão incluem o erro absoluto médio (MAE), o erro médio percentual absoluto (MAPE) e o erro percentual absoluto médio (MPE). Essas métricas são úteis para avaliar a magnitude dos erros em termos absolutos ou relativos.
+
+Essas métricas permitem uma avaliação objetiva do desempenho dos modelos de regressão, permitindo a comparação entre diferentes modelos ou a seleção do modelo mais adequado para uma determinada tarefa.
+
+GRADIENTE DESCENDENTE: Método guiado para chegar no valor mínimo
+RESUMIDO EM UMA SIMPLES FÓRMULA DE LAÇO DE REPETIÇÃO ATÉ CONVERGIR
+ALFA como uma constante arbitrária sendo TAXA DE APRENDIZAGEM 
+se for muito pequeno direciona lentamente até convergir
+
+
+Descida Gradiente: A cada iteração, o algoritmo calcula o gradiente da função de custo em relação aos parâmetros atuais e atualiza os parâmetros de acordo com a direção e magnitude do gradiente. Esse processo é repetido até que um critério de parada seja alcançado, como um número máximo de iterações ou uma tolerância de convergência.
+
+
+Solução para Overfitting : Regularização
+
+===========================================================================
+
+
+Exemplos considerado uma tarefa de regressão?
+	Calcular a nota que um aluno deve tirar na prova dado o número de horas que o mesmo estudou
+
+
+Característica do método dos mínimos quadrados?
+	Minimiza a soma dos quadrados das diferenças entre os valores observados e os valores preditos.
+
+Descreve corretamente uma função de perda ( Loss function) ? 
+Uma função matemática que define a penalidade por erros de previsão durante o treinamento do modelo.
+
+Descreve corretamente o Gradiente Descendente?
+	Um método para encontrar o mínimo local de uma função através da atualização iterativa dos parâmetros.
