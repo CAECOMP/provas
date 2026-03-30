@@ -1,3 +1,22 @@
+> [!IMPORTANT]
+> **Migração em andamento para o Notion**
+>
+> Este repositório está sendo gradualmente descontinuado como fonte principal.
+>
+> **Por quê?**
+> - Melhor busca e organização
+> - Contribuição sem fricção
+> - Estrutura flexível
+> - Atualização mais rápida
+>
+> Todo o conteúdo novo e manutenção ativa estão no Notion:
+> - Acervo: https://caecomp.notion.site/provas
+> - Form para contribuições: https://caecomp.notion.site/29f1ee84ee568023a3e6d520950e3b31  
+>
+> **Antes de contribuir ou buscar materiais, acesse o Notion.**
+>
+> Este repositório permanecerá como histórico/backup.
+
 # Provas
 
 Repositório com as provas, slides e outros materais do curso de Engenharia da Computação do IFCE, campus Fortaleza. O objetivo desse repositório é fornecer material de apoio para os estudantes.
