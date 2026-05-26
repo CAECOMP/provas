@@ -1,7 +1,7 @@
 > [!IMPORTANT]
-> **Migração em andamento para o Notion**
+> **Migração para o Notion concluída**
 >
-> Este repositório está sendo gradualmente descontinuado como fonte principal.
+> Este repositório está sendo descontinuado como fonte principal.
 >
 > **Por quê?**
 > - Melhor busca e organização
